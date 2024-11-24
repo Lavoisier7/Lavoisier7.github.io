@@ -397,21 +397,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-11-21
+                    2024-11-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    13.5k
+                    13.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    50 分
+                    49 分
                 </div>
                 
 
@@ -1023,14 +1023,37 @@
 </li>
 <li><p><strong>公式</strong>：<br>$$<br>\mathbf{P’} &#x3D; \mathbf{P} + \mathbf{d}<br>$$<br>其中，d 是平移向量，表示平移的方向和距离。</p>
 </li>
-<li><p><strong>齐次坐标表示</strong>：<br>$$<br>T &#x3D;<br>\begin{pmatrix}<br>1 &amp; 0 &amp; 0 &amp; d_x \<br>0 &amp; 1 &amp; 0 &amp; d_y \<br>0 &amp; 0 &amp; 1 &amp; d_z \<br>0 &amp; 0 &amp; 0 &amp; 1 \<br>\end{pmatrix}<br>$$<br>可以通过 4x4 齐次坐标矩阵表示平移变换。</p>
+<li><p><strong>齐次坐标表示</strong>：  </p>
+<div style="text-align: center;">
+$$
+T = 
+\begin{pmatrix}
+1 & 0 & 0 & d_x \\
+0 & 1 & 0 & d_y \\
+0 & 0 & 1 & d_z \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+$$
+</div>
+
+<p>可以通过 4x4 齐次坐标矩阵表示平移变换。</p>
 </li>
 </ul>
 <h4 id="3-4-旋转变换"><a href="#3-4-旋转变换" class="headerlink" title="3.4 旋转变换"></a>3.4 旋转变换</h4><ul>
 <li><p><strong>二维旋转</strong>：</p>
 <ul>
 <li><strong>定义</strong>：二维旋转是以原点为旋转中心，将向量逆时针旋转一定的角度。该变换是线性的。</li>
-<li><strong>公式</strong>：<br>$$<br>\mathbf{P}’ &#x3D;<br>\begin{pmatrix}<br>\cos(\theta) &amp; -\sin(\theta) \<br>\sin(\theta) &amp; \cos(\theta)<br>\end{pmatrix}<br>\mathbf{P}<br>$$<br>其中，θ 是旋转角度。</li>
+<li><strong>公式</strong>：    <div style="text-align: center;">
+$$
+\mathbf{P}' = 
+\begin{pmatrix}
+\cos(\theta) & -\sin(\theta) \\
+\sin(\theta) & \cos(\theta)
+\end{pmatrix}
+\mathbf{P}
+$$
+  </div>
+其中，θ 是旋转角度。</li>
 </ul>
 </li>
 <li><p><strong>三维旋转</strong>：</p>
@@ -1049,13 +1072,35 @@
 <li><p><strong>缩放变换</strong>：</p>
 <ul>
 <li><strong>定义</strong>：缩放变换是改变物体大小的变换，可以分别对 x, y, z 轴进行不同的缩放。</li>
-<li><strong>公式</strong>：<br>$$<br>S &#x3D;<br>\begin{pmatrix}<br>s_x &amp; 0 &amp; 0 &amp; 0 \<br>0 &amp; s_y &amp; 0 &amp; 0 \<br>0 &amp; 0 &amp; s_z &amp; 0 \<br>0 &amp; 0 &amp; 0 &amp; 1 \<br>\end{pmatrix}<br>$$<br>其中，s_x, s_y, s_z 是三个方向上的缩放系数。</li>
+<li><strong>公式</strong>：  <div style="text-align: center;">
+$$
+S = 
+\begin{pmatrix}
+s_x & 0 & 0 & 0 \\
+0 & s_y & 0 & 0 \\
+0 & 0 & s_z & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}
+$$
+</div>
+其中，s_x, s_y, s_z 是三个方向上的缩放系数。</li>
 </ul>
 </li>
 <li><p><strong>错切变换</strong>：</p>
 <ul>
 <li><strong>定义</strong>：错切变换是一种将物体形变为平行四边形的变换。它可以沿一个轴方向对物体进行拉伸或压缩。</li>
-<li><strong>公式</strong>：<br>$$<br>H &#x3D;<br>\begin{pmatrix}<br>1 &amp; k_x &amp; 0 &amp; 0 \<br>0 &amp; 1 &amp; k_y &amp; 0 \<br>0 &amp; 0 &amp; 1 &amp; 0 \<br>0 &amp; 0 &amp; 0 &amp; 1 \<br>\end{pmatrix}<br>$$<br>其中，k_x 和 k_y 是错切系数。</li>
+<li><strong>公式</strong>： <div style="text-align: center;"> 
+$$
+H = 
+\begin{pmatrix}
+1 & k_x & 0 & 0 \\
+0 & 1 & k_y & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}
+$$
+</div>
+其中，k_x 和 k_y 是错切系数。</li>
 </ul>
 </li>
 </ul>
@@ -1233,7 +1278,17 @@
 </ul>
 <h4 id="5-2-斜平行投影"><a href="#5-2-斜平行投影" class="headerlink" title="5.2 斜平行投影"></a>5.2 斜平行投影</h4><ul>
 <li><strong>斜平行投影</strong>：投影线与投影平面成任意角度。可以视为正投影与错切变换的组合：<ul>
-<li><strong>错切变换矩阵</strong>：<br>$$<br>M &#x3D;<br>\begin{bmatrix}<br>1 &amp; 0 &amp; \cot(\alpha) &amp; 0 \<br>0 &amp; 1 &amp; \cot(\beta) &amp; 0 \<br>0 &amp; 0 &amp; 0 &amp; 0 \<br>0 &amp; 0 &amp; 0 &amp; 1<br>\end{bmatrix}<br>$$</li>
+<li><strong>错切变换矩阵</strong>：  <div style="text-align: center;">
+$$
+M = 
+\begin{bmatrix}
+1 & 0 & \cot(\alpha) & 0 \\
+0 & 1 & \cot(\beta) & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+</div></li>
 </ul>
 </li>
 </ul>
@@ -1242,7 +1297,19 @@
 <li><strong>特点</strong>：近大远小，存在灭点。透视投影是保直线的，但不是仿射变换。</li>
 </ul>
 <h4 id="6-2-齐次坐标中的透视投影"><a href="#6-2-齐次坐标中的透视投影" class="headerlink" title="6.2 齐次坐标中的透视投影"></a>6.2 齐次坐标中的透视投影</h4><ul>
-<li><p><strong>透视投影矩阵</strong>：<br>$$<br>P &#x3D;<br>\begin{bmatrix}<br>1 &amp; 0 &amp; 0 &amp; 0 \<br>0 &amp; 1 &amp; 0 &amp; 0 \<br>0 &amp; 0 &amp; 1 &amp; \frac{1}{d} \<br>0 &amp; 0 &amp; 1 &amp; 0<br>\end{bmatrix}<br>$$<br>其中，d 是投影距离。</p>
+<li><p><strong>透视投影矩阵</strong>：  </p>
+<div style="text-align: center;">
+$$
+P = 
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & \frac{1}{d} \\
+0 & 0 & 1 & 0
+\end{bmatrix}
+$$
+</div>
+其中，d 是投影距离。
 </li>
 <li><p><strong>透视除法</strong>：透视投影的非线性缩短效果通过透视除法实现，离投影中心越远，缩短越大。</p>
 </li>
@@ -1574,8 +1641,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/Book-Review/" class="post-category">
+                                    Book Review
                                 </a>
                             
                             
@@ -1885,7 +1952,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">20.6k</span>
+                        class="white-color">28.5k</span>
             
             
             
