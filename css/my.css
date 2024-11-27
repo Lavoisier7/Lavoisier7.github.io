@@ -1,1 +1,530 @@
 /* Here is your custom css styles. */
+
+/* hexo-filter-github-emojis */
+.github-emoji{
+  height: 2em;
+  width: 2em;
+  display: inline-block !important;
+  position: relative;
+  margin: 0 3px !important;
+  padding: 0;
+}
+.github-emoji:hover{
+  animation: emoji-face 5s infinite ease-in-out;
+}
+@keyframes emoji-face {
+  2% {
+      transform: translate(0, 1.5px) rotate(1.5deg);
+  }
+  4% {
+      transform: translate(0, -1.5px) rotate(-0.5deg);
+  }
+  6% {
+      transform: translate(0, 1.5px) rotate(-1.5deg);
+  }
+  8% {
+      transform: translate(0, -1.5px) rotate(-1.5deg);
+  }
+  10% {
+      transform: translate(0, 2.5px) rotate(1.5deg);
+  }
+  12% {
+      transform: translate(0, -0.5px) rotate(1.5deg);
+  }
+  14% {
+      transform: translate(0, -1.5px) rotate(1.5deg);
+  }
+  16% {
+      transform: translate(0, -0.5px) rotate(-1.5deg);
+  }
+  18% {
+      transform: translate(0, 0.5px) rotate(-1.5deg);
+  }
+  20% {
+      transform: translate(0, -1.5px) rotate(2.5deg);
+  }
+  22% {
+      transform: translate(0, 0.5px) rotate(-1.5deg);
+  }
+  24% {
+      transform: translate(0, 1.5px) rotate(1.5deg);
+  }
+  26% {
+      transform: translate(0, 0.5px) rotate(0.5deg);
+  }
+  28% {
+      transform: translate(0, 0.5px) rotate(1.5deg);
+  }
+}
+
+@font-face{
+  font-family: 'myfont';
+  src: url('../font/myfont.ttf');
+
+}
+
+body{
+  font-family: 'myfont';
+}
+
+ol{
+  list-style: none;  /* 隐藏原来的 1. 2. 等序号样式 */
+  counter-reset: ol-li;
+}
+ 
+ol li:before {
+  display: block;
+  float: left;
+  width: 19px;   /* 宽度和高度需要根据自己的字体大小进行修正 */
+  height: 19px;
+  line-height: 19px;
+  margin: 4px 12px 0 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  background-color: #49b1f5;
+  border-radius: 50%;
+  text-align: center;
+  content: counter(ol-li);
+  counter-increment: ol-li;
+  transition: all .5s;
+}
+
+ol li:hover::before{
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+}
+
+
+
+/* 美化 hr 样式 */
+hr {
+  position: relative;
+  margin: 2rem auto;
+  width: calc(100% - 4px);
+  border: 2px dashed #a4d8fa;
+  background: #fff;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+hr:before {
+  position: absolute;
+  top: -10px;
+  left: 5%;
+  z-index: 1;
+  color: #49b1f5;
+  content: '\f0c4';
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 20px;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+hr:hover::before{
+  left: 95%;
+}
+
+
+#post ul {
+margin-top: 0.4rem;
+padding: 0 0 0 0.8rem;
+list-style: none;
+counter-reset: li;
+}
+  
+#post ul li {
+position: relative;
+margin: 0.2rem 0;
+padding: 0.1rem 0.5rem 0.1rem 1.5rem;
+}
+  
+#post ul li:hover:before {
+-webkit-transform: rotate(360deg);
+-moz-transform: rotate(360deg);
+-o-transform: rotate(360deg);
+-ms-transform: rotate(360deg);
+transform: rotate(360deg);
+}
+  
+#post ul li:before {
+position: absolute;
+top: 0;
+left: 0;
+background: #49b1f5;
+color: #fff;
+cursor: pointer;
+-webkit-transition: all 0.3s ease-out;
+-moz-transition: all 0.3s ease-out;
+-o-transition: all 0.3s ease-out;
+-ms-transition: all 0.3s ease-out;
+transition: all 0.3s ease-out;
+}
+  
+#post ul > li:hover:before {
+border-color: #ff7242;
+}
+#post ul > li:before {
+top: 12.5px;
+width: 0.8rem;
+height: 0.8rem;
+border: 0.2rem solid #49b1f5;
+border-radius: 0.4rem;
+background: transparent;
+content: '';
+line-height: 0.3rem;
+}
+
+
+.tip {
+  position: relative;
+  color: #fff;
+  background: #20a0ff;
+  background: -webkit-gradient(linear,left top,right top,from(#20a0ff),to(#20b8ff));
+  background: -webkit-linear-gradient(left,#20a0ff,#20b8ff);
+  background: linear-gradient(90deg,#20a0ff,#20b8ff);
+  padding: 6px 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 3px 5px rgba(32,160,255,.5);
+  box-shadow: 0 3px 5px rgba(32,160,255,.5);
+  margin-bottom: 20px
+}
+
+.tip p {
+  margin: 5px 0!important
+}
+
+.tip:before {
+  background: #20a0ff;
+  background: -webkit-gradient(linear,left bottom,left top,from(#0092ff),to(#20b8ff));
+  background: -webkit-linear-gradient(bottom,#0092ff,#20b8ff);
+  background: linear-gradient(0deg,#0092ff,#20b8ff);
+  border-radius: 50%;
+  color: #fff;
+  content: "\f129";
+  font-size: 12px;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  line-height: 24.5px;
+  left: -12px;
+  top: -12px;
+  -webkit-box-shadow: 0 0 0 2.5px #fff;
+  box-shadow: 0 0 0 2.5px #fff;
+  font-weight: 600;
+  font-family: "Font Awesome 5 Free";
+  text-align: center
+}
+
+.btn,.getit a {
+  position: relative
+}
+
+.well .tip:before {
+  -webkit-box-shadow: 0 0 0 2.5px #f7f8f9;
+  box-shadow: 0 0 0 2.5px #f7f8f9
+}
+
+.tip ol {
+  margin: 0
+}
+
+.tip.success {
+  background: #61be33;
+  background: -webkit-gradient(linear,left top,right top,from(#61be33),to(#8fce44));
+  background: -webkit-linear-gradient(left,#61be33,#8fce44);
+  background: linear-gradient(90deg,#61be33,#8fce44);
+  text-shadow: 0 -1px #61be33;
+  -webkit-box-shadow: 0 3px 5px rgba(104,195,59,.5);
+  box-shadow: 0 3px 5px rgba(104,195,59,.5)
+}
+
+.tip.success:before {
+  background: -webkit-gradient(linear,left bottom,left top,from(#52bb1d),to(#95d34b));
+  background: -webkit-linear-gradient(bottom,#52bb1d,#95d34b);
+  background: linear-gradient(0deg,#52bb1d,#95d34b);
+  content: "\f00c";
+  text-shadow: 0 -1px #61be33
+}
+
+.tip.warning {
+  background: #ff953f;
+  background: -webkit-gradient(linear,left top,right top,from(#ff953f),to(#ffb449));
+  background: -webkit-linear-gradient(left,#ff953f,#ffb449);
+  background: linear-gradient(90deg,#ff953f,#ffb449);
+  text-shadow: 0 -1px #ff953f;
+  -webkit-box-shadow: 0 3px 5px rgba(255,154,73,.5);
+  box-shadow: 0 3px 5px rgba(255,154,73,.5)
+}
+
+.tip.warning:before {
+  background: -webkit-gradient(linear,left bottom,left top,from(#ff8f35),to(#ffc149));
+  background: -webkit-linear-gradient(bottom,#ff8f35,#ffc149);
+  background: linear-gradient(0deg,#ff8f35,#ffc149);
+  content: "\f12a";
+  text-shadow: 0 -1px #ff953f
+}
+
+.tip.error {
+  background: #ff4949;
+  background: -webkit-gradient(linear,left top,right top,from(#ff4949),to(#ff7849));
+  background: -webkit-linear-gradient(left,#ff4949,#ff7849);
+  background: linear-gradient(90deg,#ff4949,#ff7849);
+  text-shadow: 0 -1px #ff4949;
+  -webkit-box-shadow: 0 3px 5px rgba(255,73,73,.5);
+  box-shadow: 0 3px 5px rgba(255,73,73,.5)
+}
+
+.tip.error:before {
+  background: -webkit-gradient(linear,left bottom,left top,from(#ff3838),to(#ff7849));
+  background: -webkit-linear-gradient(bottom,#ff3838,#ff7849);
+  background: linear-gradient(0deg,#ff3838,#ff7849);
+  content: "\f00d";
+  text-shadow: 0 -1px #ff4949
+}
+
+/*夜间适配*/
+.night .tip {
+  filter: brightness(0.7);
+}
+
+/* snote夜间模式 */
+.night .tip{
+color: #4c4948;
+}
+
+
+
+
+
+/* 背景颜色变灰色 */
+.dark tbody,
+body.dark #artDetail .post-info .post-date,
+body.dark #info_user_pool .moments_chart,
+body.dark .bg-cover .post-title,
+body.dark .biaotis span,
+body.dark .card .card-content p,
+body.dark .card .card-image .card-title,
+body.dark .card .toc-title,
+body.dark .card-content .categories-title,
+body.dark .card-content .de,
+body.dark .category-content a,
+body.dark .chip-container .tag-title,
+body.dark .fa-lightbulb:before,
+body.dark .fa-moon-o:before,
+body.dark .fab,
+body.dark .fas,
+body.dark .friends-container .tag-title,
+body.dark .frind-ship .title h1,
+body.dark .moments-item-info .moments-item-time,
+body.dark .moments_load_button,
+body.dark .notice,
+body.dark .panel-info,
+body.dark .post-info .info-break-policy,
+body.dark .publish-info .post-category,
+body.dark .publish-info .publish-date,
+body.dark .row .text,
+body.dark .statis .name,
+body.dark .supervise_details,
+body.dark .title,
+body.dark .v[data-class="v"] .vcount,
+body.dark .v[data-class="v"] .vcount .vnum,
+body.dark .valine-card .comment_headling,
+body.dark a body.dark table,
+body.dark article .article-content .summary,
+body.dark article .article-tags .chip,
+body.dark div.jqcloud a,
+body.dark footer .copy-right,
+body.dark footer a,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark header .side-nav .menu-list a,
+body.dark header .side-nav .mobile-head .logo-desc,
+body.dark header .side-nav .mobile-head .logo-name,
+body.dark li,
+body.dark p,
+body.dark pre code {
+  color: rgba(255, 255, 255, 0.85); /*.85为透明度，可依据需求修改*/
+}
+/* 背景颜色变黑色 */
+body.dark,
+body.dark #rewardModal .modal-content,
+body.dark .archive-container,
+body.dark .modal,
+body.dark .v[data-class="v"] .vcount,
+body.dark header .side-nav,
+body.dark header .side-nav .menu-list .m-nav-show {
+  background-color: #12121c;
+}
+/*首页文章滑动卡片文字*/
+body.dark #thisTime,
+body.dark .card-image-V .box-content .title {
+  color: #8a2be2;
+}
+/*音乐播放器*/
+body.dark .aplayer {
+  background: #2f3742 !important;
+}
+/*图片滤镜*/
+body.dark img,
+body.dark strong {
+  filter: brightness(0.7);
+}
+/*统计图表暗色样式*/
+body.dark #categories-chart,
+body.dark #category-radar,
+body.dark #post-calendar,
+body.dark #posts-chart,
+body.dark #tags-chart {
+  filter: invert(1);
+}
+
+/*toc目录滤镜*/
+body.dark .skillbar .skill-bar-percent {
+  color: #000;
+}
+
+/*加载动画（吃豆豆）文字颜色*/
+body.dark .loading-text {
+  color: #000;
+}
+/*一些细节背景*/
+body.dark .block-with-text:after,
+body.dark .card,
+body.dark .collapsible-header,
+body.dark .wxgzh,
+body.dark table tr:nth-child(2n),
+body.dark thead {
+  background-color: #282c34;
+}
+
+/*about页面细节*/
+body.dark .profile .author .title {
+  color: #faebd7;
+}
+body.dark .my-projects .info .info-title a {
+  color: tomato;
+}
+
+/*外挂标签*/
+.swbk .label {
+  color: currentColor;
+}
+
+
+/*给暗黑模式下的.test添加字体颜色变红样式*/
+body.dark .test {
+  color: red;
+}
+
+.textssl {
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  font-size: 1.2rem;
+}
+
+.notices {
+  border-radius: 10px;
+  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.5);
+  margin: .5rem auto 1rem;
+  /* background-image: url(https://files.islu.cn/detail/star.svg); */
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s,-webkit-box-shadow .25s;
+}
+
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#loading .loader {
+  width: 20em;
+  height: 20em;
+  font-size: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#loading .loader .face {
+  position: absolute;
+  border-radius: 50%;
+  border-style: solid;
+  animation: CW 3s linear infinite;
+}
+#loading .loader .face:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  color: #ffd700;
+  border-color: currentColor transparent transparent currentColor;
+  border-width: 0.2em 0.2em 0 0;
+  --deg: -45deg;
+  animation-direction: normal;
+}
+#loading .loader .face:nth-child(2) {
+  width: 70%;
+  height: 70%;
+  color: #0f0;
+  border-color: currentColor currentColor transparent transparent;
+  border-width: 0.2em 0 0 0.2em;
+  --deg: -135deg;
+  animation-direction: reverse;
+}
+#loading .loader .face .circle {
+  position: absolute;
+  width: 50%;
+  height: 0.1em;
+  top: 50%;
+  left: 50%;
+  background-color: transparent;
+  transform: rotate(var(--deg));
+  transform-origin: left;
+}
+#loading .loader .face .circle::before {
+  position: absolute;
+  top: -0.5em;
+  right: -0.5em;
+  content: '';
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  border-radius: 50%;
+  box-shadow: 0 0 2em, 0 0 4em, 0 0 6em, 0 0 8em, 0 0 10em, 0 0 0 0.5em rgba(255,255,0,0.1);
+}
+
+.pjax_progress{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 2px;
+  z-index: 103;
+  background: linear-gradient(130deg, #ff0, red);
+  transition: width .4s ease 0s;
+}
+

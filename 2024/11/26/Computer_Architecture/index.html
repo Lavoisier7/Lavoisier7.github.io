@@ -510,7 +510,7 @@
 </li>
 </ol>
 <h2 id="基准评测集"><a href="#基准评测集" class="headerlink" title="基准评测集"></a>基准评测集</h2><h3 id="一、计算机性能基础"><a href="#一、计算机性能基础" class="headerlink" title="一、计算机性能基础"></a>一、计算机性能基础</h3><h4 id="1-性能指标"><a href="#1-性能指标" class="headerlink" title="1. 性能指标"></a>1. 性能指标</h4><h5 id="重点：CPU性能评估方法"><a href="#重点：CPU性能评估方法" class="headerlink" title="重点：CPU性能评估方法"></a>重点：CPU性能评估方法</h5><ul>
-<li>CPU时间计算公式：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CPU Time = Instructions × CPI × Clock Cycle Time</span><br></pre></td></tr></table></figure></li>
+<li>CPU时间计算公式：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">CPU <span class="hljs-type">Time</span> <span class="hljs-operator">=</span> Instructions × CPI × Clock <span class="hljs-keyword">Cycle</span> <span class="hljs-type">Time</span><br></code></pre></td></tr></table></figure></li>
 <li>主要影响因素：<ul>
 <li>指令数(Instructions)</li>
 <li>每指令周期数(CPI)</li>
@@ -520,13 +520,13 @@
 </ul>
 <h5 id="性能度量标准："><a href="#性能度量标准：" class="headerlink" title="性能度量标准："></a>性能度量标准：</h5><ol>
 <li><p>MIPS (每秒百万指令数)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MIPS = Instructions Number/(Execution Time × 10^6)</span><br></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">MIPS</span> = Instructions Number/(Execution Time × <span class="hljs-number">10</span>^<span class="hljs-number">6</span>)<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>FLOPS (每秒浮点运算次数)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MFLOPS = Float Instructions Number/(Execution Time × 10^6)</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">MFLOPS</span> = Float Instructions Number/(Execution Time × <span class="hljs-number">10</span>^<span class="hljs-number">6</span>)<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h4 id="2-并行系统性能评估"><a href="#2-并行系统性能评估" class="headerlink" title="2. 并行系统性能评估"></a>2. 并行系统性能评估</h4><h4 id="重点概念："><a href="#重点概念：" class="headerlink" title="重点概念："></a>重点概念：</h4><ol>
-<li>加速比(Speedup)：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S = Ts/Tp</span><br></pre></td></tr></table></figure>
+<li>加速比(Speedup)：<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">S</span> <span class="hljs-operator">=</span> Ts/Tp<br></code></pre></td></tr></table></figure>
 其中：</li>
 </ol>
 <ul>
@@ -534,11 +534,11 @@
 <li>Tp：并行执行时间</li>
 </ul>
 <ol start="2">
-<li>效率(Efficiency)：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E = S/p</span><br></pre></td></tr></table></figure>
+<li>效率(Efficiency)：<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><span class="hljs-attribute">E</span> <span class="hljs-operator">=</span> S/p<br></code></pre></td></tr></table></figure>
 其中p为处理器数量</li>
 </ol>
 <h5 id="难点：Amdahl定律"><a href="#难点：Amdahl定律" class="headerlink" title="难点：Amdahl定律"></a>难点：Amdahl定律</h5><ol>
-<li>核心公式：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S = 1/(f + (1-f)/p)</span><br></pre></td></tr></table></figure>
+<li>核心公式：<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">S</span> = <span class="hljs-number">1</span>/(f + (<span class="hljs-number">1</span>-f)/p)<br></code></pre></td></tr></table></figure>
 其中：</li>
 </ol>
 <ul>
@@ -553,7 +553,7 @@
 <li>串行部分成为性能瓶颈</li>
 </ul>
 <h5 id="Gustafson定律"><a href="#Gustafson定律" class="headerlink" title="Gustafson定律"></a>Gustafson定律</h5><ol>
-<li>公式：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S&#x27; = p - f(p-1)</span><br></pre></td></tr></table></figure></li>
+<li>公式：<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">S</span>&#x27; = p - f(p-<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure></li>
 <li>特点：</li>
 </ol>
 <ul>
@@ -585,7 +585,7 @@
 <li>Graph500：图算法性能</li>
 </ul>
 <h4 id="实例分析：-1"><a href="#实例分析：-1" class="headerlink" title="实例分析："></a>实例分析：</h4><p>以龙芯3A5000处理器为例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SPEC CPU2006测试结果：</span><br><span class="line">- SPECint2006：27.87</span><br><span class="line">- SPECfp2006：30.29</span><br></pre></td></tr></table></figure>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc">SPEC CPU2006测试结果：<br><span class="hljs-bullet">- </span>SPECint2006：27.87<br><span class="hljs-bullet">- </span>SPECfp2006：30.29<br></code></pre></td></tr></table></figure>
 <p>性能分析表明：</p>
 <ul>
 <li>定点性能接近同代x86处理器</li>
@@ -784,13 +784,13 @@
 </ul>
 <h5 id="B-数据冒险："><a href="#B-数据冒险：" class="headerlink" title="B. 数据冒险："></a>B. 数据冒险：</h5><ol>
 <li><p>RAW(Read After Write)：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">I1: add r1,r2,r3</span><br><span class="line">I2: sub r4,r1,r3  // 等待r1</span><br></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">I1:</span> <span class="hljs-keyword">add</span> <span class="hljs-built_in">r1</span>,<span class="hljs-built_in">r2</span>,<span class="hljs-built_in">r3</span><br><span class="hljs-symbol">I2:</span> <span class="hljs-keyword">sub</span> <span class="hljs-built_in">r4</span>,<span class="hljs-built_in">r1</span>,<span class="hljs-built_in">r3</span>  // 等待<span class="hljs-built_in">r1</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>WAR(Write After Read)：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">I1: sub r4,r1,r3</span><br><span class="line">I2: add r1,r2,r3  // 必须等I1读完r1</span><br></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">I1:</span> <span class="hljs-keyword">sub</span> <span class="hljs-built_in">r4</span>,<span class="hljs-built_in">r1</span>,<span class="hljs-built_in">r3</span><br><span class="hljs-symbol">I2:</span> <span class="hljs-keyword">add</span> <span class="hljs-built_in">r1</span>,<span class="hljs-built_in">r2</span>,<span class="hljs-built_in">r3</span>  // 必须等I1读完<span class="hljs-built_in">r1</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>WAW(Write After Write)：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">I1: sub r1,r4,r3</span><br><span class="line">I2: add r1,r2,r3  // 写入次序不能颠倒</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">I1:</span> <span class="hljs-keyword">sub</span> <span class="hljs-built_in">r1</span>,<span class="hljs-built_in">r4</span>,<span class="hljs-built_in">r3</span><br><span class="hljs-symbol">I2:</span> <span class="hljs-keyword">add</span> <span class="hljs-built_in">r1</span>,<span class="hljs-built_in">r2</span>,<span class="hljs-built_in">r3</span>  // 写入次序不能颠倒<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h5 id="C-控制冒险："><a href="#C-控制冒险：" class="headerlink" title="C. 控制冒险："></a>C. 控制冒险：</h5><ul>
 <li>由分支指令引起</li>
@@ -820,10 +820,10 @@
 <li>分析存储地址相关性</li>
 <li>进行指令调度</li>
 </ul>
-<h5 id="实例分析：-2"><a href="#实例分析：-2" class="headerlink" title="实例分析："></a>实例分析：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">原始循环：</span><br><span class="line">Loop: fld f0,0(x1)</span><br><span class="line">      fadd.d f4,f0,f2</span><br><span class="line">      fsd f4,0(x1)</span><br><span class="line">      addi x1,x1,-8</span><br><span class="line">      bne x1,x2,Loop</span><br></pre></td></tr></table></figure>
+<h5 id="实例分析：-2"><a href="#实例分析：-2" class="headerlink" title="实例分析："></a>实例分析：</h5><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs armasm">原始循环：<br><span class="hljs-symbol">Loop:</span> fld <span class="hljs-built_in">f0</span>,<span class="hljs-number">0</span>(<span class="hljs-built_in">x1</span>)<br>      fadd.d <span class="hljs-built_in">f4</span>,<span class="hljs-built_in">f0</span>,<span class="hljs-built_in">f2</span><br>      fsd <span class="hljs-built_in">f4</span>,<span class="hljs-number">0</span>(<span class="hljs-built_in">x1</span>)<br>      addi <span class="hljs-built_in">x1</span>,<span class="hljs-built_in">x1</span>,-<span class="hljs-number">8</span><br>      <span class="hljs-keyword">bne</span> <span class="hljs-built_in">x1</span>,<span class="hljs-built_in">x2</span>,Loop<br></code></pre></td></tr></table></figure>
 
 <p>展开优化后：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Loop: fld f0,0(x1)</span><br><span class="line">      fld f6,8(x1)</span><br><span class="line">      fld f10,16(x1)</span><br><span class="line">      fld f14,24(x1)</span><br><span class="line">      fadd.d f4,f0,f2</span><br><span class="line">      fadd.d f8,f6,f2</span><br><span class="line">      fadd.d f12,f0,f2</span><br><span class="line">      fadd.d f16,f14,f2</span><br><span class="line">      fsd f4,0(x1)</span><br><span class="line">      fsd f8,8(x1)</span><br><span class="line">      addi x1,x1,32</span><br><span class="line">      fsd f12,16(x1)</span><br><span class="line">      bne x1,x2,Loop</span><br><span class="line">      fsd f16,24(x1)</span><br></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-symbol">Loop:</span> fld <span class="hljs-built_in">f0</span>,<span class="hljs-number">0</span>(<span class="hljs-built_in">x1</span>)<br>      fld <span class="hljs-built_in">f6</span>,<span class="hljs-number">8</span>(<span class="hljs-built_in">x1</span>)<br>      fld f10,<span class="hljs-number">16</span>(<span class="hljs-built_in">x1</span>)<br>      fld f14,<span class="hljs-number">24</span>(<span class="hljs-built_in">x1</span>)<br>      fadd.d <span class="hljs-built_in">f4</span>,<span class="hljs-built_in">f0</span>,<span class="hljs-built_in">f2</span><br>      fadd.d f8,<span class="hljs-built_in">f6</span>,<span class="hljs-built_in">f2</span><br>      fadd.d f12,<span class="hljs-built_in">f0</span>,<span class="hljs-built_in">f2</span><br>      fadd.d f16,f14,<span class="hljs-built_in">f2</span><br>      fsd <span class="hljs-built_in">f4</span>,<span class="hljs-number">0</span>(<span class="hljs-built_in">x1</span>)<br>      fsd f8,<span class="hljs-number">8</span>(<span class="hljs-built_in">x1</span>)<br>      addi <span class="hljs-built_in">x1</span>,<span class="hljs-built_in">x1</span>,<span class="hljs-number">32</span><br>      fsd f12,<span class="hljs-number">16</span>(<span class="hljs-built_in">x1</span>)<br>      <span class="hljs-keyword">bne</span> <span class="hljs-built_in">x1</span>,<span class="hljs-built_in">x2</span>,Loop<br>      fsd f16,<span class="hljs-number">24</span>(<span class="hljs-built_in">x1</span>)<br></code></pre></td></tr></table></figure>
 
 <p>优化效果：</p>
 <ul>
@@ -890,10 +890,10 @@
 </ul>
 <ol start="2">
 <li><p>工作流程：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (PC in BTB) &#123;</span><br><span class="line">    next_PC = predicted_target;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    next_PC = PC + 4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-symbol">if</span> (<span class="hljs-built_in">PC</span> in BTB) &#123;<br>    next_PC = predicted_target<span class="hljs-comment">;</span><br>&#125; <span class="hljs-meta">else</span> &#123;<br>    next_PC = <span class="hljs-built_in">PC</span> + <span class="hljs-number">4</span><span class="hljs-comment">;</span><br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>失效代价：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">BTB失效类型   预测   实际   惩罚周期</span><br><span class="line">命中          跳转   跳转   0</span><br><span class="line">命中          跳转   不跳转 2</span><br><span class="line">未命中        -      跳转   2</span><br><span class="line">未命中        -      不跳转 0</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">BTB失效类型 </span>  预测   实际   惩罚周期<br>命中          跳转   跳转   <span class="hljs-number">0</span><br>命中          跳转   不跳转 <span class="hljs-number">2</span><br>未命中        -      跳转   <span class="hljs-number">2</span><br>未命中        -      不跳转 <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="五、推测执行"><a href="#五、推测执行" class="headerlink" title="五、推测执行"></a>五、推测执行</h3><h4 id="1-重排序缓冲区-ROB"><a href="#1-重排序缓冲区-ROB" class="headerlink" title="1. 重排序缓冲区(ROB)"></a>1. 重排序缓冲区(ROB)</h4><h5 id="重点概念：-3"><a href="#重点概念：-3" class="headerlink" title="重点概念："></a>重点概念：</h5><ol>
 <li>ROB的基本功能：</li>
@@ -941,7 +941,7 @@
 <li>确保精确中断</li>
 <li>处理预测错误</li>
 </ul>
-<h4 id="2-实例分析"><a href="#2-实例分析" class="headerlink" title="2. 实例分析"></a>2. 实例分析</h4><h5 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">L.D F6,34(R2)</span><br><span class="line">L.D F2,45(R3)</span><br><span class="line">MUL.D F0,F2,F4</span><br><span class="line">SUB.D F8,F6,F2</span><br><span class="line">DIV.D F10,F0,F6</span><br><span class="line">ADD.D F6,F8,F2</span><br></pre></td></tr></table></figure>
+<h4 id="2-实例分析"><a href="#2-实例分析" class="headerlink" title="2. 实例分析"></a>2. 实例分析</h4><h5 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs assembly">L.D F6,34(R2)<br>L.D F2,45(R3)<br>MUL.D F0,F2,F4<br>SUB.D F8,F6,F2<br>DIV.D F10,F0,F6<br>ADD.D F6,F8,F2<br></code></pre></td></tr></table></figure>
 
 <h5 id="执行过程："><a href="#执行过程：" class="headerlink" title="执行过程："></a>执行过程：</h5><ol>
 <li>Load指令:</li>
@@ -998,7 +998,7 @@
 <li>转发(Forward)复杂度增加</li>
 </ol>
 <h4 id="3-实例分析"><a href="#3-实例分析" class="headerlink" title="3. 实例分析"></a>3. 实例分析</h4><p>双发射MIPS处理器示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Loop: L.D F0,0(R1)</span><br><span class="line">      ADD.D F4,F0,F2</span><br><span class="line">      S.D F4,0(R1)</span><br><span class="line">      DADDIU R1,R1,#-8</span><br><span class="line">      BNE R1,R2,Loop</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs assembly">Loop: L.D F0,0(R1)<br>      ADD.D F4,F0,F2<br>      S.D F4,0(R1)<br>      DADDIU R1,R1,#-8<br>      BNE R1,R2,Loop<br></code></pre></td></tr></table></figure>
 
 <p>执行效率：</p>
 <ul>
