@@ -40,7 +40,7 @@
       
       <categories>
           
-          <category> Computer Sciencce </category>
+          <category> Computer Science </category>
           
       </categories>
       
@@ -236,9 +236,9 @@
       
         <tags>
             
-            <tag> Who am &quot;I&quot; </tag>
-            
             <tag> history </tag>
+            
+            <tag> Who am &quot;I&quot; </tag>
             
         </tags>
       
@@ -263,9 +263,9 @@
       
         <tags>
             
-            <tag> history </tag>
-            
             <tag> Hello World! </tag>
+            
+            <tag> history </tag>
             
         </tags>
       
