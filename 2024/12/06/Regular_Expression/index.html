@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="正则表达式, Lavoisier の Blog">
+    <meta name="keywords" content="正则表达式, D">
     <meta name="description" content="计算机里的八股">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>正则表达式 | Lavoisier の Blog</title>
+    <title>正则表达式 | D</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -64,7 +64,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Lavoisier の Blog</span>
+                    <span class="logo-span">D</span>
                 </a>
             </div>
             
@@ -168,7 +168,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Lavoisier の Blog</div>
+        <div class="logo-name">D</div>
         <div class="logo-desc">
             
             世故消耗激情，岁月打磨棱角，现实浪掷理想。
@@ -395,14 +395,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-12-06
+                    2024-12-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.2k
                 </div>
                 
 
@@ -431,77 +431,60 @@
 <hr>
 <h3 id="一、正则表达式的组成"><a href="#一、正则表达式的组成" class="headerlink" title="一、正则表达式的组成"></a><strong>一、正则表达式的组成</strong></h3><p>正则表达式由普通字符和具有特殊含义的元字符（metacharacters）组成。普通字符包括字母、数字和其他未被正则表达式解释的字符。而元字符则用来构建匹配规则。</p>
 <hr>
-<h3 id="二、元字符"><a href="#二、元字符" class="headerlink" title="二、元字符"></a><strong>二、元字符</strong></h3><p>元字符是正则表达式中具有特殊含义的字符。以下是常见的元字符及其功能，配合详细的示例说明。</p>
+<h3 id="二、元字符"><a href="#二、元字符" class="headerlink" title="二、元字符"></a><strong>二、元字符</strong></h3><p>元字符是正则表达式中具有特殊含义的字符。以下是常见的元字符及其功能：</p>
 <table>
 <thead>
 <tr>
 <th align="left">元字符</th>
 <th align="left">说明</th>
-<th align="left">示例表达式</th>
-<th align="left">匹配结果</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left"><code>.</code></td>
 <td align="left">匹配除换行符以外的任意单个字符</td>
-<td align="left"><code>a.b</code></td>
-<td align="left">匹配：<code>acb</code>、<code>a1b</code>、<code>a_b</code>；不匹配：<code>ab</code>、<code>a\nb</code></td>
 </tr>
 <tr>
 <td align="left"><code>\w</code></td>
 <td align="left">匹配字母、数字、下划线</td>
-<td align="left"><code>\w+</code></td>
-<td align="left">匹配：<code>abc123</code>、<code>_name_</code>；不匹配：<code>abc-123</code></td>
 </tr>
 <tr>
 <td align="left"><code>\s</code></td>
 <td align="left">匹配空白字符（空格、制表符、换页符等）</td>
-<td align="left"><code>a\s+b</code></td>
-<td align="left">匹配：<code>a b</code>、<code>a   b</code>；不匹配：<code>ab</code></td>
 </tr>
 <tr>
 <td align="left"><code>\d</code></td>
 <td align="left">匹配数字（0-9）</td>
-<td align="left"><code>\d&#123;3&#125;</code></td>
-<td align="left">匹配：<code>123</code>、<code>456</code>；不匹配：<code>12</code>、<code>abc</code></td>
 </tr>
 <tr>
 <td align="left"><code>\b</code></td>
 <td align="left">匹配单词边界</td>
-<td align="left"><code>\bword\b</code></td>
-<td align="left">匹配：<code>word</code>（独立单词）；不匹配：<code>sword</code>、<code>wording</code></td>
 </tr>
 <tr>
 <td align="left"><code>^</code></td>
-<td align="left">匹配字符串的开头</td>
-<td align="left"><code>^Hello</code></td>
-<td align="left">匹配：<code>Hello world</code>；不匹配：<code>world Hello</code></td>
+<td align="left">匹配字符串的开头（在集合内，如 <code>[^a]</code>，表示“非”）</td>
 </tr>
 <tr>
 <td align="left"><code>$</code></td>
 <td align="left">匹配字符串的结尾</td>
-<td align="left"><code>world$</code></td>
-<td align="left">匹配：<code>Hello world</code>；不匹配：<code>world Hello</code></td>
 </tr>
 <tr>
 <td align="left"><code>[]</code></td>
-<td align="left">匹配方括号内的任意字符</td>
-<td align="left"><code>[aeiou]</code></td>
-<td align="left">匹配：<code>a</code>、<code>e</code>；不匹配：<code>b</code>、<code>z</code></td>
+<td align="left">匹配方括号内的任意字符，例如 <code>[aeiou]</code> 匹配任意元音字母</td>
 </tr>
 <tr>
 <td align="left"><code>[^]</code></td>
-<td align="left">匹配不在括号内的任意字符</td>
-<td align="left"><code>[^aeiou]</code></td>
-<td align="left">匹配：<code>b</code>、<code>z</code>；不匹配：<code>a</code>、<code>e</code></td>
+<td align="left">匹配不在括号内的字符，例如 <code>[^aeiou]</code> 匹配非元音字母</td>
 </tr>
 <tr>
 <td align="left"><code>\</code></td>
-<td align="left">转义字符，用于匹配元字符本身</td>
-<td align="left"><code>\.</code></td>
-<td align="left">匹配：<code>.</code>；不匹配：<code>a</code>、<code>b</code></td>
+<td align="left">转义字符，用于匹配元字符本身（如 <code>\.</code> 匹配字符 <code>.</code>）</td>
 </tr>
 </tbody></table>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a><strong>示例</strong></h4><ol>
+<li><strong><code>.</code> 匹配任意字符</strong>：<code>a.b</code> 匹配 <code>acb</code>、<code>a1b</code> 等，但不匹配 <code>ab</code>。</li>
+<li><strong><code>\d</code> 匹配数字</strong>：<code>\d&#123;3&#125;</code> 匹配连续的三个数字，如 <code>123</code>。</li>
+<li><strong><code>^</code> 和 <code>$</code> 匹配开头和结尾</strong>：<code>^abc$</code> 匹配整个字符串是 <code>abc</code>。</li>
+</ol>
 <hr>
 <h3 id="三、反义字符"><a href="#三、反义字符" class="headerlink" title="三、反义字符"></a><strong>三、反义字符</strong></h3><p>反义字符用于匹配某类字符的非集合内容。</p>
 <table>
@@ -509,47 +492,37 @@
 <tr>
 <th align="left">反义字符</th>
 <th align="left">说明</th>
-<th align="left">示例表达式</th>
-<th align="left">匹配结果</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left"><code>\W</code></td>
 <td align="left">匹配非字母、数字、下划线的字符</td>
-<td align="left"><code>\W+</code></td>
-<td align="left">匹配：<code>#+!@</code>、<code>&amp;^%</code>；不匹配：<code>abc123</code></td>
 </tr>
 <tr>
 <td align="left"><code>\S</code></td>
 <td align="left">匹配非空白字符</td>
-<td align="left"><code>\S+</code></td>
-<td align="left">匹配：<code>hello</code>、<code>12345</code>；不匹配：<code> </code>、<code>\t</code></td>
 </tr>
 <tr>
 <td align="left"><code>\D</code></td>
 <td align="left">匹配非数字字符</td>
-<td align="left"><code>\D+</code></td>
-<td align="left">匹配：<code>abc</code>、<code>hello</code>；不匹配：<code>123</code></td>
 </tr>
 <tr>
 <td align="left"><code>\B</code></td>
 <td align="left">匹配非单词边界</td>
-<td align="left"><code>\Bword\B</code></td>
-<td align="left">匹配：<code>swording</code>；不匹配：<code>word</code></td>
 </tr>
 <tr>
 <td align="left"><code>[^x]</code></td>
 <td align="left">匹配除了 <code>x</code> 以外的任意字符</td>
-<td align="left"><code>[^x]</code></td>
-<td align="left">匹配：<code>a</code>、<code>b</code>；不匹配：<code>x</code></td>
 </tr>
 <tr>
 <td align="left"><code>[^abc]</code></td>
 <td align="left">匹配除了 <code>a</code>、<code>b</code>、<code>c</code> 以外的任意字符</td>
-<td align="left"><code>[^abc]</code></td>
-<td align="left">匹配：<code>z</code>、<code>d</code>；不匹配：<code>a</code>、<code>b</code>、<code>c</code></td>
 </tr>
 </tbody></table>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a><strong>示例</strong></h4><ol>
+<li><strong><code>\W</code> 匹配非单词字符</strong>：如 <code>+</code>、<code>#</code> 等。</li>
+<li><strong><code>\S</code> 匹配非空白字符</strong>：如 <code>a</code> 或 <code>1</code>。</li>
+</ol>
 <hr>
 <h3 id="四、限定符"><a href="#四、限定符" class="headerlink" title="四、限定符"></a><strong>四、限定符</strong></h3><p>限定符用于指定匹配字符的重复次数。</p>
 <table>
@@ -557,184 +530,173 @@
 <tr>
 <th align="left">限定符</th>
 <th align="left">说明</th>
-<th align="left">示例表达式</th>
-<th align="left">匹配结果</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left"><code>*</code></td>
 <td align="left">匹配前面的字符 0 次或多次</td>
-<td align="left"><code>ba*</code></td>
-<td align="left">匹配：<code>b</code>、<code>ba</code>、<code>baaa</code>；不匹配：<code>bc</code></td>
 </tr>
 <tr>
 <td align="left"><code>+</code></td>
 <td align="left">匹配前面的字符 1 次或多次</td>
-<td align="left"><code>ba+</code></td>
-<td align="left">匹配：<code>ba</code>、<code>baaa</code>；不匹配：<code>b</code></td>
 </tr>
 <tr>
 <td align="left"><code>?</code></td>
 <td align="left">匹配前面的字符 0 次或 1 次</td>
-<td align="left"><code>ba?</code></td>
-<td align="left">匹配：<code>b</code>、<code>ba</code>；不匹配：<code>baa</code></td>
 </tr>
 <tr>
 <td align="left"><code>&#123;n&#125;</code></td>
 <td align="left">匹配前面的字符恰好 n 次</td>
-<td align="left"><code>\d&#123;3&#125;</code></td>
-<td align="left">匹配：<code>123</code>；不匹配：<code>12</code>、<code>1234</code></td>
 </tr>
 <tr>
 <td align="left"><code>&#123;n,&#125;</code></td>
 <td align="left">匹配前面的字符至少 n 次</td>
-<td align="left"><code>\d&#123;3,&#125;</code></td>
-<td align="left">匹配：<code>123</code>、<code>1234</code>；不匹配：<code>12</code></td>
 </tr>
 <tr>
 <td align="left"><code>&#123;n,m&#125;</code></td>
 <td align="left">匹配前面的字符 n 到 m 次</td>
-<td align="left"><code>\d&#123;3,5&#125;</code></td>
-<td align="left">匹配：<code>123</code>、<code>12345</code>；不匹配：<code>12</code>、<code>123456</code></td>
 </tr>
 </tbody></table>
+<h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a><strong>示例</strong></h4><ol>
+<li><strong><code>a*</code> 匹配 0 或多次 a</strong>：可匹配 <code>&quot;&quot;</code>、<code>a</code>、<code>aa</code> 等。</li>
+<li><strong><code>\d&#123;3,5&#125;</code> 匹配 3 到 5 位数字</strong>：如 <code>123</code> 或 <code>12345</code>。</li>
+</ol>
 <hr>
-<h3 id="五、贪婪与懒惰匹配"><a href="#五、贪婪与懒惰匹配" class="headerlink" title="五、贪婪与懒惰匹配"></a><strong>五、贪婪与懒惰匹配</strong></h3><table>
+<h3 id="五、懒惰匹配和贪婪匹配"><a href="#五、懒惰匹配和贪婪匹配" class="headerlink" title="五、懒惰匹配和贪婪匹配"></a><strong>五、懒惰匹配和贪婪匹配</strong></h3><ul>
+<li><strong>贪婪匹配</strong>：默认行为，尽可能多地匹配字符。</li>
+<li><strong>懒惰匹配</strong>：通过添加 <code>?</code>，匹配尽可能少的字符。</li>
+</ul>
+<table>
 <thead>
 <tr>
-<th align="left">匹配模式</th>
-<th align="left">说明</th>
-<th align="left">示例表达式</th>
-<th align="left">匹配结果</th>
+<th align="left">贪婪匹配</th>
+<th align="left">懒惰匹配</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">贪婪匹配</td>
-<td align="left">默认行为，尽可能多地匹配字符</td>
-<td align="left"><code>a.*b</code></td>
-<td align="left">输入：<code>a123b456b</code>，匹配：<code>a123b456b</code>（尽可能多匹配）</td>
+<td align="left"><code>.*</code></td>
+<td align="left"><code>.*?</code></td>
 </tr>
 <tr>
-<td align="left">懒惰匹配</td>
-<td align="left">添加 <code>?</code>，匹配尽可能少的字符</td>
-<td align="left"><code>a.*?b</code></td>
-<td align="left">输入：<code>a123b456b</code>，匹配：<code>a123b</code>（尽可能少匹配）</td>
+<td align="left"><code>.+</code></td>
+<td align="left"><code>.+?</code></td>
+</tr>
+<tr>
+<td align="left"><code>.?</code></td>
+<td align="left"><code>??</code></td>
+</tr>
+<tr>
+<td align="left"><code>&#123;n,m&#125;</code></td>
+<td align="left"><code>&#123;n,m&#125;?</code></td>
 </tr>
 </tbody></table>
+<h4 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a><strong>示例</strong></h4><ol>
+<li><strong>贪婪匹配</strong>：<code>a.*b</code> 匹配 <code>a123b456b</code> 的整个字符串。</li>
+<li><strong>懒惰匹配</strong>：<code>a.*?b</code> 匹配 <code>a123b</code>。</li>
+</ol>
 <hr>
-<h3 id="六、分组与分枝"><a href="#六、分组与分枝" class="headerlink" title="六、分组与分枝"></a><strong>六、分组与分枝</strong></h3><table>
+<h3 id="六、分组与分枝"><a href="#六、分组与分枝" class="headerlink" title="六、分组与分枝"></a><strong>六、分组与分枝</strong></h3><h4 id="1-分组"><a href="#1-分组" class="headerlink" title="1. 分组"></a><strong>1. 分组</strong></h4><p>分组通过括号 <code>()</code> 将一部分规则组合为一个整体。</p>
+<table>
 <thead>
 <tr>
-<th align="left">类型</th>
+<th align="left">语法</th>
 <th align="left">说明</th>
-<th align="left">示例表达式</th>
-<th align="left">匹配结果</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">分组</td>
-<td align="left">使用括号将一部分规则组合</td>
-<td align="left"><code>(ab)+</code></td>
-<td align="left">输入：<code>abab</code>，匹配：<code>abab</code>，捕获：<code>ab</code></td>
+<td align="left"><code>(exp)</code></td>
+<td align="left">捕获分组，匹配 exp 并捕获到分组</td>
 </tr>
 <tr>
-<td align="left">非捕获</td>
-<td align="left">不捕获分组内容</td>
-<td align="left"><code>(?:ab)+</code></td>
-<td align="left">输入：<code>abab</code>，匹配：<code>abab</code>，但不会捕获 <code>ab</code></td>
+<td align="left"><code>(?:exp)</code></td>
+<td align="left">非捕获分组，匹配 exp 但不捕获</td>
 </tr>
 <tr>
-<td align="left">分枝</td>
-<td align="left">使用 &#96;</td>
-<td align="left">&#96; 表示“或”关系</td>
-<td align="left">&#96;a</td>
+<td align="left"><code>(?&lt;name&gt;exp)</code></td>
+<td align="left">命名捕获分组，匹配 exp 并捕获为 name 的组</td>
 </tr>
 </tbody></table>
+<h4 id="2-分枝"><a href="#2-分枝" class="headerlink" title="2. 分枝"></a><strong>2. 分枝</strong></h4><p>分枝通过 <code>|</code> 表示“或”关系。</p>
+<h4 id="示例-4"><a href="#示例-4" class="headerlink" title="示例"></a><strong>示例</strong></h4><ol>
+<li><strong>捕获分组</strong>：<code>(ab)+</code> 匹配 <code>abab</code>，捕获 <code>ab</code>。</li>
+<li><strong>分枝</strong>：<code>a|b</code> 匹配 <code>a</code> 或 <code>b</code>，例如 <code>cat|dog</code> 匹配 <code>cat</code> 或 <code>dog</code>。</li>
+</ol>
 <hr>
-<h3 id="七、零宽断言"><a href="#七、零宽断言" class="headerlink" title="七、零宽断言"></a><strong>七、零宽断言</strong></h3><table>
+<h3 id="七、零宽断言"><a href="#七、零宽断言" class="headerlink" title="七、零宽断言"></a><strong>七、零宽断言</strong></h3><p>零宽断言用于匹配满足某些条件的位置，而不消费字符。</p>
+<table>
 <thead>
 <tr>
-<th align="left">断言类型</th>
+<th align="left">语法</th>
 <th align="left">说明</th>
-<th align="left">示例表达式</th>
-<th align="left">匹配结果</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">正向预测断言</td>
-<td align="left">匹配后面是指定内容的位置</td>
-<td align="left"><code>\w+(?=ing)</code></td>
-<td align="left">输入：<code>singing</code>，匹配：<code>sing</code></td>
+<td align="left"><code>(?=exp)</code></td>
+<td align="left">正向预测断言，匹配后面是 exp 的位置</td>
 </tr>
 <tr>
-<td align="left">负向预测断言</td>
-<td align="left">匹配后面不是指定内容的位置</td>
-<td align="left"><code>\w+(?!ing)</code></td>
-<td align="left">输入：<code>sing</code>，匹配：<code>s</code></td>
+<td align="left"><code>(?!exp)</code></td>
+<td align="left">负向预测断言，匹配后面不是 exp 的位置</td>
 </tr>
 <tr>
-<td align="left">正向回顾断言</td>
-<td align="left">匹配前面是指定内容的位置</td>
-<td align="left"><code>(?&lt;=not )good</code></td>
-<td align="left">输入：<code>not good</code>，匹配：<code>good</code></td>
+<td align="left"><code>(?&lt;=exp)</code></td>
+<td align="left">正向回顾断言，匹配前面是 exp 的位置</td>
 </tr>
 <tr>
-<td align="left">负向回顾断言</td>
-<td align="left">匹配前面不是指定内容的位置</td>
-<td align="left"><code>(?&lt;!not )good</code></td>
-<td align="left">输入：<code>good</code>，匹配：<code>good</code>；不匹配：<code>not good</code></td>
+<td align="left"><code>(?&lt;!exp)</code></td>
+<td align="left">负向回顾断言，匹配前面不是 exp 的位置</td>
 </tr>
 </tbody></table>
+<h4 id="示例-5"><a href="#示例-5" class="headerlink" title="示例"></a><strong>示例</strong></h4><ol>
+<li><strong>正向预测</strong>：<code>\w+(?=ing)</code> 匹配 <code>sing</code> 中的 <code>sing</code>。</li>
+<li><strong>负向回顾</strong>：<code>(?&lt;!not )good</code> 匹配 <code>good</code>，但不匹配 <code>not good</code>。</li>
+</ol>
 <hr>
-<h3 id="八、后向引用"><a href="#八、后向引用" class="headerlink" title="八、后向引用"></a><strong>八、后向引用</strong></h3><table>
+<h3 id="八、后向引用"><a href="#八、后向引用" class="headerlink" title="八、后向引用"></a><strong>八、后向引用</strong></h3><p>后向引用可以重复匹配捕获分组内的内容。</p>
+<table>
 <thead>
 <tr>
-<th align="left">类型</th>
+<th align="left">语法</th>
 <th align="left">说明</th>
-<th align="left">示例表达式</th>
-<th align="left">匹配结果</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">捕获引用</td>
-<td align="left">使用 <code>\1</code> 引用捕获分组内容</td>
-<td align="left"><code>\b(\w+)\b\s+\1</code></td>
-<td align="left">输入：<code>go go</code>，匹配：<code>go go</code></td>
+<td align="left"><code>\1</code></td>
+<td align="left">引用第一个捕获分组的内容</td>
 </tr>
 <tr>
-<td align="left">命名引用</td>
-<td align="left">使用 <code>\k&lt;name&gt;</code> 引用命名分组</td>
-<td align="left"><code>(?&lt;word&gt;\w+)\s+\k&lt;word&gt;</code></td>
-<td align="left">输入：<code>hello hello</code>，匹配：<code>hello hello</code></td>
+<td align="left"><code>\k&lt;name&gt;</code></td>
+<td align="left">引用命名捕获分组 name 的内容</td>
 </tr>
 </tbody></table>
+<h4 id="示例-6"><a href="#示例-6" class="headerlink" title="示例"></a><strong>示例</strong></h4><ol>
+<li>**<code>\1</code>**：<code>\b(\w+)\b\s+\1</code> 匹配重复单词（如 <code>go go</code>）。</li>
+<li>**<code>\k&lt;name&gt;</code>**：<code>(?&lt;word&gt;\w+)\s+\k&lt;word&gt;</code> 匹配命名分组的重复。</li>
+</ol>
 <hr>
-<h3 id="九、转义字符"><a href="#九、转义字符" class="headerlink" title="九、转义字符"></a><strong>九、转义字符</strong></h3><table>
+<h3 id="九、转义字符"><a href="#九、转义字符" class="headerlink" title="九、转义字符"></a><strong>九、转义字符</strong></h3><p>转义字符用于匹配元字符本身。</p>
+<table>
 <thead>
 <tr>
 <th align="left">转义字符</th>
 <th align="left">说明</th>
-<th align="left">示例表达式</th>
-<th align="left">匹配结果</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left"><code>\.</code></td>
 <td align="left">匹配字符 <code>.</code></td>
-<td align="left"><code>a\.b</code></td>
-<td align="left">匹配：<code>a.b</code>；不匹配：<code>acb</code></td>
 </tr>
 <tr>
 <td align="left"><code>\*</code></td>
 <td align="left">匹配字符 <code>*</code></td>
-<td align="left"><code>a\*b</code></td>
-<td align="left">匹配：<code>a*b</code>；不匹配：<code>ab</code></td>
+</tr>
+<tr>
+<td align="left"><code>\?</code></td>
+<td align="left">匹配字符 <code>?</code></td>
 </tr>
 <tr>
 <td align="left"><code>\\</code></td>
 <td align="left">匹配字符 <code>\</code></td>
-<td align="left"><code>a\\b</code></td>
-<td align="left">匹配：<code>a\b</code>；不匹配：<code>ab</code></td>
 </tr>
 </tbody></table>
 <hr>
@@ -743,45 +705,56 @@
 <tr>
 <th align="left">功能</th>
 <th align="left">表达式</th>
-<th align="left">示例输入</th>
-<th align="left">匹配结果</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left">匹配数字</td>
 <td align="left"><code>^\d+$</code></td>
-<td align="left"><code>12345</code>、<code>6789</code></td>
-<td align="left">匹配：所有数字</td>
 </tr>
 <tr>
 <td align="left">匹配邮箱</td>
 <td align="left"><code>^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$</code></td>
-<td align="left"><code>test@example.com</code></td>
-<td align="left">匹配：有效邮箱</td>
 </tr>
 <tr>
 <td align="left">匹配 IP 地址</td>
 <td align="left">&#96;^((25[0-5]</td>
-<td align="left">2[0-4]\d</td>
-<td align="left">1\d{2}</td>
 </tr>
 <tr>
 <td align="left">匹配日期（yyyy-mm-dd）</td>
 <td align="left">&#96;^(19</td>
-<td align="left">20)\d\d-(0[1-9]</td>
-<td align="left">1[0-2])-(0[1-9]</td>
 </tr>
 <tr>
 <td align="left">匹配中文</td>
 <td align="left"><code>^[\u4e00-\u9fa5]+$</code></td>
-<td align="left"><code>你好</code></td>
-<td align="left">匹配：所有中文字符</td>
 </tr>
 <tr>
 <td align="left">匹配 URL</td>
 <td align="left"><code>^https?:\/\/[\w\-]+(\.[\w\-]+)+[\w\-\.,@?^=%&amp;:/~+#]*$</code></td>
-<td align="left"><code>https://www.google.com</code></td>
-<td align="left">匹配：有效 URL</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="十一、正则表达式的模式修饰符"><a href="#十一、正则表达式的模式修饰符" class="headerlink" title="十一、正则表达式的模式修饰符"></a><strong>十一、正则表达式的模式修饰符</strong></h3><table>
+<thead>
+<tr>
+<th align="left">修饰符</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>i</code></td>
+<td align="left">忽略大小写</td>
+</tr>
+<tr>
+<td align="left"><code>m</code></td>
+<td align="left">多行模式，<code>^</code> 和 <code>$</code> 匹配每行的开头和结尾</td>
+</tr>
+<tr>
+<td align="left"><code>s</code></td>
+<td align="left">单行模式，使 <code>.</code> 匹配包括换行符在内的所有字符</td>
+</tr>
+<tr>
+<td align="left"><code>x</code></td>
+<td align="left">忽略空白符并启用注释</td>
 </tr>
 </tbody></table>
 
@@ -1174,7 +1147,7 @@
             avatar: 'monsterid',
             pageSize: '10',
             lang: 'zh-cn',
-            placeholder: 'just go go',
+            placeholder: 'circumspection',
             enableQQ: true,
             emojiCDN: '//i0.hdslb.com/bfs/emote/', 
             // 表情title和图片映射
@@ -1251,48 +1224,50 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/12/06/Regular_Expression/">
+                <a href="/2024/12/11/Book_Review3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="书评特辑·第三期">
                         
-                        <span class="card-title">正则表达式</span>
+                        <span class="card-title">书评特辑·第三期</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            计算机里的八股
+                            周 vs 赵
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-06
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-12-11
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Computer-Science/" class="post-category">
-                                    Computer Science
+                            <a href="/categories/Book-Review/" class="post-category">
+                                    Book Review
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-                        <span class="chip bg-color">基础知识</span>
+                    <a href="/tags/%E9%87%91%E5%BA%B8/">
+                        <span class="chip bg-color">金庸</span>
+                    </a>
+                    
+                    <a href="/tags/%E3%80%8A%E5%80%9A%E5%A4%A9%E5%B1%A0%E9%BE%99%E8%AE%B0%E3%80%8B/">
+                        <span class="chip bg-color">《倚天屠龙记》</span>
                     </a>
                     
                 </div>
@@ -1382,7 +1357,7 @@
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + '来源: Lavoisier の Blog<br />'
+            + '来源: D<br />'
             + '文章作者: Lavoisier<br />'
             + '文章链接: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者Lavoisier所有，任何形式的转载都请注明出处。';
@@ -1795,17 +1770,16 @@ $(function () {
     
     
     
-        
+
+    <!-- 雪花特效 -->
+     
         <script type="text/javascript">
             // 只在桌面版网页启用特效
             var windowWidth = $(window).width();
             if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
             }
         </script>
-    
-
-    <!-- 雪花特效 -->
     
 
     <!-- 鼠标星星特效 -->
