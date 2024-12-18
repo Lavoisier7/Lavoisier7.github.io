@@ -399,14 +399,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-11-28
+                    2024-12-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    14.5k
+                    14.4k
                 </div>
                 
 
@@ -582,8 +582,10 @@
 </ul>
 <p><strong>实例分析：</strong></p>
 <ul>
-<li><strong>外键示例</strong>：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">student (dept-no, student-no, name, sex)<br>department (dept-no, dept-name)<br></code></pre></td></tr></table></figure>
-<code>dept-no</code>在<code>student</code>中作为外键，引用<code>department</code>中的主键<code>dept-no</code>。</li>
+<li><p><strong>外键示例</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">student (dept-no, student-no, name, sex)<br>department (dept-no, dept-name)<br></code></pre></td></tr></table></figure>
+<p><code>dept-no</code>在<code>student</code>中作为外键，引用<code>department</code>中的主键<code>dept-no</code>。</p>
+</li>
 </ul>
 <h3 id="2-4-关系代数操作"><a href="#2-4-关系代数操作" class="headerlink" title="2.4 关系代数操作"></a>2.4 关系代数操作</h3><p><strong>重点：</strong></p>
 <ul>
@@ -595,12 +597,18 @@
 </ul>
 <p><strong>实例分析：</strong></p>
 <ul>
-<li><strong>选择操作</strong>：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">σ dept_name=&quot;Physics&quot; (instructor)<br></code></pre></td></tr></table></figure></li>
-<li><strong>投影操作</strong>：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">π name (σ dept_name=&quot;Physics&quot; (instructor))<br></code></pre></td></tr></table></figure></li>
-<li><strong>联合操作</strong>：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">π course_id (σ semester=&quot;Fall&quot; AND year=2017 (section)) <br>∪ <br>π course_id (σ semester=&quot;Spring&quot; AND year=2018 (section))<br></code></pre></td></tr></table></figure></li>
-<li><strong>差集操作</strong>：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">π course_id (σ semester=&quot;Fall&quot; AND year=2017 (section)) <br>− <br>π course_id (σ semester=&quot;Spring&quot; AND year=2018 (section))<br></code></pre></td></tr></table></figure></li>
-<li><strong>笛卡尔积与选择的结合</strong>：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">σ instructor.id = teaches.id (instructor × teaches)<br></code></pre></td></tr></table></figure></li>
-<li><strong>重命名操作</strong>：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ρ boy (σ sex=&quot;Male&quot; (student))<br></code></pre></td></tr></table></figure></li>
+<li><p><strong>选择操作</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">σ dept_name=&quot;Physics&quot; (instructor)<br></code></pre></td></tr></table></figure></li>
+<li><p><strong>投影操作</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">π name (σ dept_name=&quot;Physics&quot; (instructor))<br></code></pre></td></tr></table></figure></li>
+<li><p><strong>联合操作</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">π course_id (σ semester=&quot;Fall&quot; AND year=2017 (section)) <br>∪ <br>π course_id (σ semester=&quot;Spring&quot; AND year=2018 (section))<br></code></pre></td></tr></table></figure></li>
+<li><p><strong>差集操作</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">π course_id (σ semester=&quot;Fall&quot; AND year=2017 (section)) <br>− <br>π course_id (σ semester=&quot;Spring&quot; AND year=2018 (section))<br></code></pre></td></tr></table></figure></li>
+<li><p><strong>笛卡尔积与选择的结合</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">σ instructor.id = teaches.id (instructor × teaches)<br></code></pre></td></tr></table></figure></li>
+<li><p><strong>重命名操作</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ρ boy (σ sex=&quot;Male&quot; (student))<br></code></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="2-5-关系操作实例"><a href="#2-5-关系操作实例" class="headerlink" title="2.5 关系操作实例"></a>2.5 关系操作实例</h3><p><strong>重点：</strong></p>
 <ul>
@@ -649,14 +657,14 @@
 </li>
 </ul>
 <hr>
-<h4 id="重点与难点总结"><a href="#重点与难点总结" class="headerlink" title="重点与难点总结"></a>重点与难点总结</h4><h5 id="重点："><a href="#重点：" class="headerlink" title="重点："></a>重点：</h5><ol>
+<h3 id="重点与难点总结"><a href="#重点与难点总结" class="headerlink" title="重点与难点总结"></a>重点与难点总结</h3><h4 id="重点："><a href="#重点：" class="headerlink" title="重点："></a>重点：</h4><ol>
 <li><strong>关系模型的基本概念</strong>：关系、属性、元组、主键与外键。</li>
 <li><strong>关系代数的基本操作</strong>：选择、投影、并、差、笛卡尔积、重命名。</li>
 <li><strong>数据库设计</strong>：逻辑设计与物理设计，模式与实例的区别。</li>
 <li><strong>SQL语言</strong>：DDL与DML的使用，编写复杂查询。</li>
 <li><strong>数据库系统架构与组件</strong>：存储管理器、查询处理器、事务管理。</li>
 </ol>
-<h5 id="难点："><a href="#难点：" class="headerlink" title="难点："></a>难点：</h5><ol>
+<h4 id="难点："><a href="#难点：" class="headerlink" title="难点："></a>难点：</h4><ol>
 <li><strong>关系代数的复杂操作</strong>：多步操作的组合理解与应用。</li>
 <li><strong>数据库设计中的范式</strong>：确保数据库设计符合高范式以避免数据冗余。</li>
 <li><strong>事务管理与ACID特性</strong>：理解事务的原子性、一致性、隔离性与持久性。</li>
@@ -763,8 +771,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">instructor.ID | instructor.name | teaches.course_id<br>------------- | --------------- | -----------------<br>1             | 张三            | CS101<br>2             | 李四            | CS102<br></code></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="第3章：SQL查询语言概述"><a href="#第3章：SQL查询语言概述" class="headerlink" title="第3章：SQL查询语言概述"></a>第3章：SQL查询语言概述</h3><p><strong>重点：</strong></p>
-<ol>
+<h2 id="第三章-SQL查询语言概述"><a href="#第三章-SQL查询语言概述" class="headerlink" title="第三章 SQL查询语言概述"></a>第三章 SQL查询语言概述</h2><h3 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h3><ol>
 <li><p><strong>SQL语言的组成</strong>：</p>
 <ul>
 <li><strong>数据定义语言（DDL）</strong>：包括创建、修改和删除数据库对象（如表、视图、索引等）。</li>
@@ -792,49 +799,13 @@
 </ul>
 </li>
 </ol>
-<p><strong>难点：</strong></p>
-<ol>
+<h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><ol>
 <li><strong>子查询与嵌套查询</strong>：理解相关子查询与非相关子查询的区别及其在<code>SELECT</code>、<code>WHERE</code>、<code>FROM</code>子句中的应用。</li>
 <li><strong>复杂连接操作</strong>：掌握多表连接、不同类型的外连接及其在实际问题中的应用，如避免错误的自然连接导致的数据失配。</li>
 <li><strong>聚集函数与分组</strong>：正确使用<code>GROUP BY</code>和<code>HAVING</code>子句，理解聚集函数的作用及其在查询优化中的重要性。</li>
 <li><strong>视图的创建与管理</strong>：理解视图的本质、创建复杂视图的条件以及视图的更新限制。</li>
 </ol>
-<h3 id="第4章：访问SQL与触发器"><a href="#第4章：访问SQL与触发器" class="headerlink" title="第4章：访问SQL与触发器"></a>第4章：访问SQL与触发器</h3><p><strong>重点：</strong></p>
-<ol>
-<li><p><strong>访问SQL的两种方法</strong>：</p>
-<ul>
-<li><strong>动态SQL</strong>：在运行时生成和执行SQL语句，适合需要根据条件动态改变查询的场景。</li>
-<li><strong>嵌入式SQL</strong>：将SQL语句嵌入到一般编程语言中，编译时转换为函数调用，提高执行效率。</li>
-</ul>
-</li>
-<li><p><strong>JDBC（Java数据库连接）</strong>：</p>
-<ul>
-<li><strong>核心操作流程</strong>：加载驱动、建立连接、创建语句、执行查询、处理结果、关闭连接。</li>
-<li><strong>特点</strong>：跨平台、支持对象-关系映射、网络独立性、数据库独立性等。</li>
-</ul>
-</li>
-<li><p><strong>完整性约束与事务管理</strong>：</p>
-<ul>
-<li><strong>事务的ACID特性</strong>：原子性、一致性、隔离性、持久性。</li>
-<li><strong>事务控制语句</strong>：<code>BEGIN TRANSACTION</code>、<code>COMMIT</code>、<code>ROLLBACK</code>等。</li>
-</ul>
-</li>
-<li><p><strong>触发器</strong>：</p>
-<ul>
-<li><strong>定义与作用</strong>：在特定事件（如<code>INSERT</code>、<code>UPDATE</code>、<code>DELETE</code>）发生时自动执行的存储过程。</li>
-<li><strong>类型</strong>：<code>AFTER</code>触发器、<code>INSTEAD OF</code>触发器。</li>
-<li><strong>应用实例</strong>：维护数据一致性、自动更新相关表、日志记录等。</li>
-</ul>
-</li>
-</ol>
-<p><strong>难点：</strong></p>
-<ol>
-<li><strong>触发器的设计与实现</strong>：如何正确设计触发器的触发条件和执行动作，避免递归触发和性能问题。</li>
-<li><strong>事务的并发控制与隔离级别</strong>：理解不同隔离级别（如读未提交、读已提交、可重复读、串行化）的特点及其对数据库性能与一致性的影响。</li>
-<li><strong>JDBC的高级特性</strong>：如批处理、预编译语句、元数据获取等，需要深入理解其API的使用方法和最佳实践。</li>
-<li><strong>权限管理与安全性</strong>：正确配置用户权限，理解角色的创建与分配，以及视图在数据安全中的应用。</li>
-</ol>
-<h2 id="二、实例分析"><a href="#二、实例分析" class="headerlink" title="二、实例分析"></a>二、实例分析</h2><h3 id="第3章：SQL查询语言概述-1"><a href="#第3章：SQL查询语言概述-1" class="headerlink" title="第3章：SQL查询语言概述"></a>第3章：SQL查询语言概述</h3><p><strong>例1：查找所有导师的姓名</strong></p>
+<h3 id="实例分析"><a href="#实例分析" class="headerlink" title="实例分析"></a>实例分析</h3><p><strong>例1：查找所有导师的姓名</strong></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> name<br><span class="hljs-keyword">FROM</span> instructor;<br></code></pre></td></tr></table></figure>
 <p><strong>解答：</strong><br>该查询语句选择<code>instructor</code>关系中的<code>name</code>属性，返回所有导师的姓名。</p>
 <hr>
@@ -865,7 +836,40 @@
 </ul>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> Stu.name, Class.班主任<br><span class="hljs-keyword">FROM</span> Stu<br><span class="hljs-keyword">JOIN</span> Class <span class="hljs-keyword">ON</span> Stu.班号 <span class="hljs-operator">=</span> Class.班号;<br></code></pre></td></tr></table></figure>
 <p><strong>解答：</strong><br>该查询通过<code>JOIN</code>操作连接<code>Stu</code>和<code>Class</code>关系，返回每个学生的姓名及其对应的班主任。</p>
-<h3 id="第4章：访问SQL与触发器-1"><a href="#第4章：访问SQL与触发器-1" class="headerlink" title="第4章：访问SQL与触发器"></a>第4章：访问SQL与触发器</h3><p><strong>例1：使用JDBC连接数据库并查询导师信息</strong></p>
+<h2 id="第四章-访问SQL与触发器"><a href="#第四章-访问SQL与触发器" class="headerlink" title="第四章 访问SQL与触发器"></a>第四章 访问SQL与触发器</h2><h3 id="重点-1"><a href="#重点-1" class="headerlink" title="重点"></a>重点</h3><ol>
+<li><p><strong>访问SQL的两种方法</strong>：</p>
+<ul>
+<li><strong>动态SQL</strong>：在运行时生成和执行SQL语句，适合需要根据条件动态改变查询的场景。</li>
+<li><strong>嵌入式SQL</strong>：将SQL语句嵌入到一般编程语言中，编译时转换为函数调用，提高执行效率。</li>
+</ul>
+</li>
+<li><p><strong>JDBC（Java数据库连接）</strong>：</p>
+<ul>
+<li><strong>核心操作流程</strong>：加载驱动、建立连接、创建语句、执行查询、处理结果、关闭连接。</li>
+<li><strong>特点</strong>：跨平台、支持对象-关系映射、网络独立性、数据库独立性等。</li>
+</ul>
+</li>
+<li><p><strong>完整性约束与事务管理</strong>：</p>
+<ul>
+<li><strong>事务的ACID特性</strong>：原子性、一致性、隔离性、持久性。</li>
+<li><strong>事务控制语句</strong>：<code>BEGIN TRANSACTION</code>、<code>COMMIT</code>、<code>ROLLBACK</code>等。</li>
+</ul>
+</li>
+<li><p><strong>触发器</strong>：</p>
+<ul>
+<li><strong>定义与作用</strong>：在特定事件（如<code>INSERT</code>、<code>UPDATE</code>、<code>DELETE</code>）发生时自动执行的存储过程。</li>
+<li><strong>类型</strong>：<code>AFTER</code>触发器、<code>INSTEAD OF</code>触发器。</li>
+<li><strong>应用实例</strong>：维护数据一致性、自动更新相关表、日志记录等。</li>
+</ul>
+</li>
+</ol>
+<h3 id="难点-1"><a href="#难点-1" class="headerlink" title="难点"></a>难点</h3><ol>
+<li><strong>触发器的设计与实现</strong>：如何正确设计触发器的触发条件和执行动作，避免递归触发和性能问题。</li>
+<li><strong>事务的并发控制与隔离级别</strong>：理解不同隔离级别（如读未提交、读已提交、可重复读、串行化）的特点及其对数据库性能与一致性的影响。</li>
+<li><strong>JDBC的高级特性</strong>：如批处理、预编译语句、元数据获取等，需要深入理解其API的使用方法和最佳实践。</li>
+<li><strong>权限管理与安全性</strong>：正确配置用户权限，理解角色的创建与分配，以及视图在数据安全中的应用。</li>
+</ol>
+<h3 id="实例分析-1"><a href="#实例分析-1" class="headerlink" title="实例分析"></a>实例分析</h3><p><strong>例1：使用JDBC连接数据库并查询导师信息</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">JDBCexample</span><span class="hljs-params">(String dbid, String userid, String passwd)</span> &#123;<br>    <span class="hljs-keyword">try</span> (<span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> DriverManager.getConnection(<br>            <span class="hljs-string">&quot;jdbc:oracle:thin:@db.yale.edu:2000:univdb&quot;</span>, userid, passwd);<br>         <span class="hljs-type">Statement</span> <span class="hljs-variable">stmt</span> <span class="hljs-operator">=</span> conn.createStatement()) &#123;<br>        <span class="hljs-comment">// 执行查询</span><br>        <span class="hljs-type">ResultSet</span> <span class="hljs-variable">rs</span> <span class="hljs-operator">=</span> stmt.executeQuery(<span class="hljs-string">&quot;SELECT * FROM instructor&quot;</span>);<br>        <span class="hljs-keyword">while</span> (rs.next()) &#123;<br>            System.out.println(rs.getString(<span class="hljs-string">&quot;name&quot;</span>) + <span class="hljs-string">&quot; &quot;</span> + rs.getFloat(<span class="hljs-string">&quot;salary&quot;</span>));<br>        &#125;<br>    &#125; <span class="hljs-keyword">catch</span> (SQLException sqle) &#123;<br>        System.out.println(<span class="hljs-string">&quot;SQLException : &quot;</span> + sqle);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p><strong>解答：</strong><br>该Java方法使用JDBC连接到Oracle数据库，查询<code>instructor</code>关系中的所有记录，并输出导师姓名和薪水。使用了<code>try-with-resources</code>语法确保资源自动关闭。</p>
 <hr>
@@ -876,7 +880,7 @@
 <p><strong>例3：使用JDBC执行INSERT操作并处理潜在的SQL注入风险</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">String</span> <span class="hljs-variable">sql</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;INSERT INTO instructor (ID, name, dept_name, salary) VALUES (?, ?, ?, ?)&quot;</span>;<br><span class="hljs-type">PreparedStatement</span> <span class="hljs-variable">pstmt</span> <span class="hljs-operator">=</span> conn.prepareStatement(sql);<br>pstmt.setString(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;88877&quot;</span>);<br>pstmt.setString(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;Perry&quot;</span>);<br>pstmt.setString(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;Finance&quot;</span>);<br>pstmt.setInt(<span class="hljs-number">4</span>, <span class="hljs-number">125000</span>);<br>pstmt.executeUpdate();<br></code></pre></td></tr></table></figure>
 <p><strong>解答：</strong><br>该Java代码使用预编译语句<code>PreparedStatement</code>插入新导师记录，避免了通过字符串拼接可能引发的SQL注入风险。确保了数据的安全性和完整性。</p>
-<h2 id="三、图表与图示"><a href="#三、图表与图示" class="headerlink" title="三、图表与图示"></a>三、图表与图示</h2><h3 id="第3章与第4章中提及的重要图示描述"><a href="#第3章与第4章中提及的重要图示描述" class="headerlink" title="第3章与第4章中提及的重要图示描述"></a>第3章与第4章中提及的重要图示描述</h3><ol>
+<h3 id="第3章与第4章中提及的重要图示描述"><a href="#第3章与第4章中提及的重要图示描述" class="headerlink" title="第3章与第4章中提及的重要图示描述"></a>第3章与第4章中提及的重要图示描述</h3><ol>
 <li><p><strong>视图的依赖关系图</strong>：</p>
 <ul>
 <li><strong>说明</strong>：图中展示了视图之间的依赖关系，如视图<code>physics_fall_2017_watson</code>依赖于视图<code>physics_fall_2017</code>，而<code>physics_fall_2017</code>又依赖于基础关系<code>course</code>和<code>section</code>。</li>
@@ -902,15 +906,103 @@
 </ul>
 </li>
 </ol>
-<h2 id="四、结论"><a href="#四、结论" class="headerlink" title="四、结论"></a>四、结论</h2><p>通过对第3章和第4章内容的总结，我们可以系统地掌握SQL查询语言的基本语法、复杂查询的构建方法、数据完整性约束的应用以及数据库访问与触发器的高级功能。在学习过程中，重点应放在理解SQL语句的逻辑结构、掌握不同类型的JOIN操作及其应用，并深入学习事务管理和触发器的设计与实现。同时，通过实际编写和执行SQL语句，可以有效提升对理论知识的应用能力。</p>
-<h2 id="一、重点难点"><a href="#一、重点难点" class="headerlink" title="一、重点难点"></a>一、重点难点</h2><h3 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h3><ol>
+<h2 id="第五章-高级SQL"><a href="#第五章-高级SQL" class="headerlink" title="第五章 高级SQL"></a><strong>第五章 高级SQL</strong></h2><h3 id="重点-2"><a href="#重点-2" class="headerlink" title="重点"></a><strong>重点</strong></h3><ol>
+<li><p><strong>SQL与编程语言的集成：</strong></p>
+<ul>
+<li>理解如何通过不同的编程语言（如Java、Python、PHP等）访问和操作数据库。</li>
+</ul>
+</li>
+<li><p><strong>JDBC的使用：</strong></p>
+<ul>
+<li>掌握Java应用程序中使用JDBC连接数据库、执行SQL语句以及处理结果集的流程。</li>
+</ul>
+</li>
+<li><p><strong>函数与存储过程：</strong></p>
+<ul>
+<li>理解数据库中的函数和存储过程的定义与调用，掌握其在业务逻辑封装中的应用。</li>
+</ul>
+</li>
+<li><p><strong>触发器的设计与应用：</strong></p>
+<ul>
+<li>学会设计DML触发器（AFTER和INSTEAD OF），并理解其在自动执行副作用操作中的作用。</li>
+</ul>
+</li>
+</ol>
+<h3 id="难点-2"><a href="#难点-2" class="headerlink" title="难点"></a><strong>难点</strong></h3><ol>
+<li><p><strong>事务管理与连接池：</strong></p>
+<ul>
+<li>理解事务的概念，掌握如何在应用程序中正确管理事务，避免数据不一致。</li>
+</ul>
+</li>
+<li><p><strong>安全性问题：</strong></p>
+<ul>
+<li>理解SQL注入攻击的原理及防范措施，如使用预编译语句（Prepared Statements）。</li>
+</ul>
+</li>
+<li><p><strong>元数据的使用：</strong></p>
+<ul>
+<li>熟悉如何通过JDBC获取数据库及结果集的元数据，以动态处理不同的数据库结构。</li>
+</ul>
+</li>
+</ol>
+<h3 id="实例分析-2"><a href="#实例分析-2" class="headerlink" title="实例分析"></a><strong>实例分析</strong></h3><p><strong>例1：JDBC 连接与查询</strong></p>
+<p><strong>任务：</strong> 使用JDBC连接到SQL Server数据库，执行查询并处理结果集。</p>
+<p><strong>示例代码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.sql.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JDBCExample</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">dbURL</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;jdbc:sqlserver://localhost:1433;databaseName=univdb&quot;</span>;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;userid&quot;</span>;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;passwd&quot;</span>;<br><br>        <span class="hljs-keyword">try</span> (<span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> DriverManager.getConnection(dbURL, user, password);<br>             <span class="hljs-type">Statement</span> <span class="hljs-variable">stmt</span> <span class="hljs-operator">=</span> conn.createStatement()) &#123;<br><br>            <span class="hljs-type">String</span> <span class="hljs-variable">sql</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;SELECT dept_name, AVG(salary) as avg_salary FROM instructor GROUP BY dept_name&quot;</span>;<br>            <span class="hljs-type">ResultSet</span> <span class="hljs-variable">rs</span> <span class="hljs-operator">=</span> stmt.executeQuery(sql);<br><br>            <span class="hljs-keyword">while</span> (rs.next()) &#123;<br>                <span class="hljs-type">String</span> <span class="hljs-variable">deptName</span> <span class="hljs-operator">=</span> rs.getString(<span class="hljs-string">&quot;dept_name&quot;</span>);<br>                <span class="hljs-type">float</span> <span class="hljs-variable">avgSalary</span> <span class="hljs-operator">=</span> rs.getFloat(<span class="hljs-string">&quot;avg_salary&quot;</span>);<br>                System.out.println(deptName + <span class="hljs-string">&quot; &quot;</span> + avgSalary);<br>            &#125;<br><br>            rs.close();<br>        &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>            System.out.println(<span class="hljs-string">&quot;SQLException: &quot;</span> + e.getMessage());<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>说明：</strong></p>
+<ul>
+<li>使用<code>DriverManager.getConnection</code>建立连接。</li>
+<li>创建<code>Statement</code>对象执行SQL查询。</li>
+<li>使用<code>ResultSet</code>处理查询结果。</li>
+</ul>
+<p><strong>例2：使用预编译语句防止SQL注入</strong></p>
+<p><strong>任务：</strong> 安全地向<code>instructor</code>表插入数据，防止SQL注入攻击。</p>
+<p><strong>示例代码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.sql.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SecureInsertExample</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">dbURL</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;jdbc:sqlserver://localhost:1433;databaseName=univdb&quot;</span>;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;userid&quot;</span>;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;passwd&quot;</span>;<br><br>        <span class="hljs-type">String</span> <span class="hljs-variable">insertSQL</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;INSERT INTO instructor (ID, name, dept_name, salary) VALUES (?, ?, ?, ?)&quot;</span>;<br><br>        <span class="hljs-keyword">try</span> (<span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> DriverManager.getConnection(dbURL, user, password);<br>             <span class="hljs-type">PreparedStatement</span> <span class="hljs-variable">pstmt</span> <span class="hljs-operator">=</span> conn.prepareStatement(insertSQL)) &#123;<br><br>            <span class="hljs-comment">// 设置参数</span><br>            pstmt.setString(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;88877&quot;</span>);<br>            pstmt.setString(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;Perry&quot;</span>);<br>            pstmt.setString(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;Finance&quot;</span>);<br>            pstmt.setInt(<span class="hljs-number">4</span>, <span class="hljs-number">125000</span>);<br><br>            <span class="hljs-comment">// 执行插入</span><br>            pstmt.executeUpdate();<br><br>            <span class="hljs-comment">// 插入另一条记录</span><br>            pstmt.setString(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;88878&quot;</span>);<br>            pstmt.executeUpdate();<br><br>            System.out.println(<span class="hljs-string">&quot;数据插入成功。&quot;</span>);<br>        &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>            System.out.println(<span class="hljs-string">&quot;SQLException: &quot;</span> + e.getMessage());<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>说明：</strong></p>
+<ul>
+<li>使用<code>PreparedStatement</code>预编译SQL语句，防止恶意用户通过输入构造SQL注入攻击。</li>
+<li>通过<code>set</code>方法动态设置参数值。</li>
+</ul>
+<p><strong>例3：触发器的创建与使用</strong></p>
+<p><strong>任务：</strong> 为<code>student</code>表创建一个AFTER INSERT触发器，更新<code>student_sum</code>表中的学生总数。</p>
+<p><strong>示例SQL代码：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 创建student表</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student (<br>    stu_id <span class="hljs-type">INT</span> <span class="hljs-keyword">IDENTITY</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>) <span class="hljs-keyword">PRIMARY</span> KEY,<br>    stu_name <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">10</span>),<br>    stu_gender <span class="hljs-type">CHAR</span>(<span class="hljs-number">2</span>),<br>    stu_age <span class="hljs-type">INT</span><br>);<br><br><span class="hljs-comment">-- 创建student_sum表</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student_sum (<br>    stuCount <span class="hljs-type">INT</span> <span class="hljs-keyword">DEFAULT</span>(<span class="hljs-number">0</span>)<br>);<br><br><span class="hljs-comment">-- 创建AFTER INSERT触发器</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TRIGGER</span> trig_insert<br><span class="hljs-keyword">ON</span> student<br>AFTER <span class="hljs-keyword">INSERT</span><br><span class="hljs-keyword">AS</span><br><span class="hljs-keyword">BEGIN</span><br>    <span class="hljs-keyword">DECLARE</span> <span class="hljs-variable">@stuNumber</span> <span class="hljs-type">INT</span>;<br>    <span class="hljs-keyword">SELECT</span> <span class="hljs-variable">@stuNumber</span> <span class="hljs-operator">=</span> <span class="hljs-built_in">COUNT</span>(<span class="hljs-operator">*</span>) <span class="hljs-keyword">FROM</span> student;<br><br>    IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> (<span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> student_sum)<br>        <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> student_sum <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">0</span>);<br><br>    <span class="hljs-keyword">UPDATE</span> student_sum <span class="hljs-keyword">SET</span> stuCount <span class="hljs-operator">=</span> <span class="hljs-variable">@stuNumber</span>;<br><span class="hljs-keyword">END</span>;<br></code></pre></td></tr></table></figure>
+
+<p><strong>说明：</strong></p>
+<ul>
+<li>当向<code>student</code>表插入新记录时，触发器<code>trig_insert</code>自动执行，更新<code>student_sum</code>表中的<code>stuCount</code>为当前学生总数。</li>
+<li>使用<code>INSERTED</code>临时表来引用新插入的记录。</li>
+</ul>
+<h3 id="图表与图示"><a href="#图表与图示" class="headerlink" title="图表与图示"></a><strong>图表与图示</strong></h3><p><strong>1. JDBC 数据库访问流程图</strong></p>
+<ul>
+<li><strong>图1：JDBC 访问流程</strong><ol>
+<li>加载JDBC驱动程序。</li>
+<li>建立数据库连接。</li>
+<li>创建<code>Statement</code>或<code>PreparedStatement</code>对象。</li>
+<li>执行SQL语句。</li>
+<li>处理<code>ResultSet</code>。</li>
+<li>关闭资源（ResultSet、Statement、Connection）。</li>
+</ol>
+</li>
+</ul>
+<p><strong>2. 触发器的执行过程图示描述</strong></p>
+<ul>
+<li><strong>图2：触发器执行流程</strong><ul>
+<li>用户执行INSERT操作 → 系统将新记录插入表中 → 触发AFTER INSERT触发器 → 触发器执行定义的逻辑（如更新<code>student_sum</code>表）。</li>
+</ul>
+</li>
+</ul>
+<h2 id="一、重点难点"><a href="#一、重点难点" class="headerlink" title="一、重点难点"></a>一、重点难点</h2><h3 id="重点-3"><a href="#重点-3" class="headerlink" title="重点"></a>重点</h3><ol>
 <li><strong>实体-关系模型（E-R模型）</strong>：理解实体、属性、关系及其在数据库设计中的应用。</li>
 <li><strong>属性类型</strong>：掌握简单属性、复合属性、多值属性和派生属性的区别及其表示方法。</li>
 <li><strong>关系的基数约束</strong>：熟悉一对一、一对多、多对多等关系的特点及其在E-R图中的表示。</li>
 <li><strong>主键</strong>：了解实体集和关系集的主键选择及其在唯一标识实体中的作用。</li>
 <li><strong>弱实体集与标识关系</strong>：掌握弱实体集的定义及其与标识实体集之间的关系。</li>
 </ol>
-<h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><ol>
+<h3 id="难点-3"><a href="#难点-3" class="headerlink" title="难点"></a>难点</h3><ol>
 <li><strong>E-R图到关系模式的转换</strong>：如何准确地将E-R图中的各个元素映射到关系数据库的模式中。</li>
 <li><strong>处理多值属性</strong>：理解如何通过分离关系来消除多值属性带来的冗余。</li>
 <li><strong>聚合与泛化&#x2F;特化</strong>：掌握在E-R模型中表示复杂关系和层次结构的方法。</li>
@@ -1065,8 +1157,7 @@
 <li>Teacher(teacher_id [PK], name, age, dept_name [FK])</li>
 <li>Advisor(teacher_id [PK, FK], class_id [FK])<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><br><span class="hljs-section">## 五、总结与建议</span><br><br><span class="hljs-section">### 总结</span><br>数据库设计是一个系统性工程，需要从需求分析开始，经过概念设计、逻辑设计到物理设计的多个阶段。在E-R模型的帮助下，可以清晰地描述实体、属性和它们之间的关系。通过将E-R图转换为关系模式，并应用规范化理论，可以有效地消除冗余、避免更新异常，提升数据库的整体质量。<br><br><span class="hljs-section">### 建议</span><br><span class="hljs-bullet">1.</span> <span class="hljs-strong">**深入理解E-R模型**</span>：通过实践绘制E-R图，掌握不同关系的表示方法。<br><span class="hljs-bullet">2.</span> <span class="hljs-strong">**多练习E-R图到关系模式的转换**</span>：理解各种关系的映射规则，特别是处理多值属性和弱实体集时的细节。<br><span class="hljs-bullet">3.</span> <span class="hljs-strong">**掌握规范化理论**</span>：学习不同范式的定义及其目的，应用规范化过程优化数据库设计。<br><span class="hljs-bullet">4.</span> <span class="hljs-strong">**使用专业工具辅助设计**</span>：利用数据库设计工具（如ERwin、PowerDesigner）绘制E-R图，提高设计效率和准确性。<br><br>通过系统地学习和实践，相信您能够在数据库设计方面取得良好的成绩。<br></code></pre></td></tr></table></figure></li>
 </ol>
-<h3 id="数据库系统原理课件知识点总结（第七章）"><a href="#数据库系统原理课件知识点总结（第七章）" class="headerlink" title="数据库系统原理课件知识点总结（第七章）"></a>数据库系统原理课件知识点总结（第七章）</h3><hr>
-<h4 id="7-2-7-4-关系数据库设计中的问题"><a href="#7-2-7-4-关系数据库设计中的问题" class="headerlink" title="7.2 - 7.4 关系数据库设计中的问题"></a><strong>7.2 - 7.4 关系数据库设计中的问题</strong></h4><p><strong>重点难点：</strong></p>
+<h2 id="第七章-标准化"><a href="#第七章-标准化" class="headerlink" title="第七章 标准化"></a>第七章 标准化</h2><h3 id="关系数据库设计中的问题（7-2-7-4）"><a href="#关系数据库设计中的问题（7-2-7-4）" class="headerlink" title="关系数据库设计中的问题（7.2 - 7.4）"></a><strong>关系数据库设计中的问题（7.2 - 7.4）</strong></h3><p><strong>重点难点：</strong></p>
 <ul>
 <li><strong>重点：</strong> 理解关系数据库设计中的数据冗余和异常问题。</li>
 <li><strong>难点：</strong> 识别不同类型的异常（更新异常、插入异常、删除异常）及其产生原因。</li>
@@ -1082,7 +1173,7 @@
 </li>
 </ul>
 <hr>
-<h4 id="7-5-7-9-不良数据依赖与关系分解"><a href="#7-5-7-9-不良数据依赖与关系分解" class="headerlink" title="7.5 - 7.9 不良数据依赖与关系分解"></a><strong>7.5 - 7.9 不良数据依赖与关系分解</strong></h4><p><strong>重点难点：</strong></p>
+<h3 id="不良数据依赖与关系分解（7-5-7-9）"><a href="#不良数据依赖与关系分解（7-5-7-9）" class="headerlink" title="不良数据依赖与关系分解（7.5 - 7.9）"></a><strong>不良数据依赖与关系分解（7.5 - 7.9）</strong></h3><p><strong>重点难点：</strong></p>
 <ul>
 <li><strong>重点：</strong> 理解函数依赖的概念及其在关系数据库设计中的应用。</li>
 <li><strong>难点：</strong> 辨别“好”与“不好”的函数依赖，以及进行关系分解以消除不良依赖。</li>
@@ -1113,7 +1204,7 @@
 </li>
 </ul>
 <hr>
-<h4 id="7-10-7-20-正规化与范式"><a href="#7-10-7-20-正规化与范式" class="headerlink" title="7.10 - 7.20 正规化与范式"></a><strong>7.10 - 7.20 正规化与范式</strong></h4><p><strong>重点难点：</strong></p>
+<h3 id="正规化与范式（7-10-7-20）"><a href="#正规化与范式（7-10-7-20）" class="headerlink" title="正规化与范式（7.10 - 7.20）"></a><strong>正规化与范式（7.10 - 7.20）</strong></h3><p><strong>重点难点：</strong></p>
 <ul>
 <li><strong>重点：</strong> 理解不同范式（第一范式1NF，第二范式2NF，第三范式3NF，BCNF，第四范式4NF）的定义及其重要性。</li>
 <li><strong>难点：</strong> 识别关系是否满足特定范式，以及进行规范化分解。</li>
@@ -1145,7 +1236,7 @@
 </li>
 </ul>
 <hr>
-<h4 id="7-21-7-40-规范化算法与依赖闭包"><a href="#7-21-7-40-规范化算法与依赖闭包" class="headerlink" title="7.21 - 7.40 规范化算法与依赖闭包"></a><strong>7.21 - 7.40 规范化算法与依赖闭包</strong></h4><p><strong>重点难点：</strong></p>
+<h3 id="规范化算法与依赖闭包（7-21-7-40）"><a href="#规范化算法与依赖闭包（7-21-7-40）" class="headerlink" title="规范化算法与依赖闭包（7.21 - 7.40）"></a><strong>规范化算法与依赖闭包（7.21 - 7.40）</strong></h3><p><strong>重点难点：</strong></p>
 <ul>
 <li><strong>重点：</strong> 掌握属性闭包（Attribute Closure）及其在确定函数依赖和候选键中的应用。</li>
 <li><strong>难点：</strong> 计算函数依赖的闭包，理解规范化过程中的依赖保留和无损连接。</li>
@@ -1182,7 +1273,7 @@
 </li>
 </ul>
 <hr>
-<h4 id="7-41-7-60-依赖与范式的深入理解"><a href="#7-41-7-60-依赖与范式的深入理解" class="headerlink" title="7.41 - 7.60 依赖与范式的深入理解"></a><strong>7.41 - 7.60 依赖与范式的深入理解</strong></h4><p><strong>重点难点：</strong></p>
+<h3 id="依赖与范式的深入理解（7-41-7-60）"><a href="#依赖与范式的深入理解（7-41-7-60）" class="headerlink" title="依赖与范式的深入理解（7.41 - 7.60）"></a><strong>依赖与范式的深入理解（7.41 - 7.60）</strong></h3><p><strong>重点难点：</strong></p>
 <ul>
 <li><strong>重点：</strong> 了解函数依赖的规范形式（如规范覆盖Canonical Cover），以及在规范化过程中的应用。</li>
 <li><strong>难点：</strong> 理解并应用规范覆盖的简化规则，进行关系的规范化分解。</li>
@@ -1218,7 +1309,7 @@
 </li>
 </ul>
 <hr>
-<h4 id="7-61-7-80-无损连接与依赖保留的算法"><a href="#7-61-7-80-无损连接与依赖保留的算法" class="headerlink" title="7.61 - 7.80 无损连接与依赖保留的算法"></a><strong>7.61 - 7.80 无损连接与依赖保留的算法</strong></h4><p><strong>重点难点：</strong></p>
+<h3 id="无损连接与依赖保留的算法（7-61-7-80）"><a href="#无损连接与依赖保留的算法（7-61-7-80）" class="headerlink" title="无损连接与依赖保留的算法（7.61 - 7.80）"></a><strong>无损连接与依赖保留的算法（7.61 - 7.80）</strong></h3><p><strong>重点难点：</strong></p>
 <ul>
 <li><strong>重点：</strong> 掌握无损连接分解的判定条件及依赖是否保留的算法。</li>
 <li><strong>难点：</strong> 理解并应用算法判断分解是否无损连接和依赖保留。</li>
@@ -1252,7 +1343,7 @@
 </li>
 </ul>
 <hr>
-<h4 id="7-81-7-90-多值依赖与第四范式（4NF）"><a href="#7-81-7-90-多值依赖与第四范式（4NF）" class="headerlink" title="7.81 - 7.90 多值依赖与第四范式（4NF）"></a><strong>7.81 - 7.90 多值依赖与第四范式（4NF）</strong></h4><p><strong>重点难点：</strong></p>
+<h3 id="多值依赖与第四范式（4NF）（7-81-7-90）"><a href="#多值依赖与第四范式（4NF）（7-81-7-90）" class="headerlink" title="多值依赖与第四范式（4NF）（7.81 - 7.90）"></a><strong>多值依赖与第四范式（4NF）（7.81 - 7.90）</strong></h3><p><strong>重点难点：</strong></p>
 <ul>
 <li><strong>重点：</strong> 理解多值依赖（Multivalued Dependency）的概念及其在规范化中的作用。</li>
 <li><strong>难点：</strong> 识别多值依赖并进行符合第四范式的分解。</li>
@@ -1280,7 +1371,7 @@
 </li>
 </ul>
 <hr>
-<h4 id="7-91-7-100-规范化注意事项与高级范式"><a href="#7-91-7-100-规范化注意事项与高级范式" class="headerlink" title="7.91 - 7.100 规范化注意事项与高级范式"></a><strong>7.91 - 7.100 规范化注意事项与高级范式</strong></h4><p><strong>重点难点：</strong></p>
+<h3 id="规范化注意事项与高级范式（7-91-7-100）"><a href="#规范化注意事项与高级范式（7-91-7-100）" class="headerlink" title="规范化注意事项与高级范式（7.91 - 7.100）"></a><strong>规范化注意事项与高级范式（7.91 - 7.100）</strong></h3><p><strong>重点难点：</strong></p>
 <ul>
 <li><strong>重点：</strong> 理解更高级范式（如第五范式PJNF）及其在特定情况下的应用。</li>
 <li><strong>难点：</strong> 处理复杂的多值依赖和连接依赖，理解规范化与性能优化之间的权衡。</li>
@@ -1303,7 +1394,7 @@
 </li>
 </ul>
 <hr>
-<h4 id="7-101-7-116-综合实例与规范化总结"><a href="#7-101-7-116-综合实例与规范化总结" class="headerlink" title="7.101 - 7.116 综合实例与规范化总结"></a><strong>7.101 - 7.116 综合实例与规范化总结</strong></h4><p><strong>重点难点：</strong></p>
+<h3 id="综合实例与规范化总结（7-101-7-116）"><a href="#综合实例与规范化总结（7-101-7-116）" class="headerlink" title="综合实例与规范化总结（7.101 - 7.116）"></a><strong>综合实例与规范化总结（7.101 - 7.116）</strong></h3><p><strong>重点难点：</strong></p>
 <ul>
 <li><strong>重点：</strong> 综合运用所学知识进行实际关系的规范化。</li>
 <li><strong>难点：</strong> 在实际应用中识别和解决复杂的函数依赖和多值依赖问题，确保分解的正确性（无损和依赖保留）。</li>
@@ -1345,7 +1436,7 @@
 </li>
 </ul>
 <hr>
-<h4 id="7-117-7-140-多值依赖与进一步规范化"><a href="#7-117-7-140-多值依赖与进一步规范化" class="headerlink" title="7.117 - 7.140 多值依赖与进一步规范化"></a><strong>7.117 - 7.140 多值依赖与进一步规范化</strong></h4><p><strong>重点难点：</strong></p>
+<h3 id="多值依赖与进一步规范化（7-117-7-140）"><a href="#多值依赖与进一步规范化（7-117-7-140）" class="headerlink" title="多值依赖与进一步规范化（7.117 - 7.140）"></a><strong>多值依赖与进一步规范化（7.117 - 7.140）</strong></h3><p><strong>重点难点：</strong></p>
 <ul>
 <li><strong>重点：</strong> 深入理解多值依赖在规范化过程中的应用，特别是第四范式（4NF）。</li>
 <li><strong>难点：</strong> 处理属性间复杂的多值依赖，确保分解后的关系结构合理且无冗余。</li>
@@ -1383,7 +1474,7 @@
 </li>
 </ul>
 <hr>
-<h4 id="7-141-7-150-方法论与最佳实践"><a href="#7-141-7-150-方法论与最佳实践" class="headerlink" title="7.141 - 7.150 方法论与最佳实践"></a><strong>7.141 - 7.150 方法论与最佳实践</strong></h4><p><strong>重点难点：</strong></p>
+<h3 id="方法论与最佳实践（7-141-7-150）"><a href="#方法论与最佳实践（7-141-7-150）" class="headerlink" title="方法论与最佳实践（7.141 - 7.150）"></a><strong>方法论与最佳实践（7.141 - 7.150）</strong></h3><p><strong>重点难点：</strong></p>
 <ul>
 <li><strong>重点：</strong> 了解如何在实际数据库设计中应用规范化原则与方法。</li>
 <li><strong>难点：</strong> 在复杂的实际场景中平衡规范化与性能需求，避免信息丢失和确保数据完整性。</li>
@@ -1413,7 +1504,7 @@
 </li>
 </ul>
 <hr>
-<h4 id="总结与复习要点"><a href="#总结与复习要点" class="headerlink" title="总结与复习要点"></a><strong>总结与复习要点</strong></h4><ul>
+<h3 id="总结与复习要点"><a href="#总结与复习要点" class="headerlink" title="总结与复习要点"></a><strong>总结与复习要点</strong></h3><ul>
 <li><strong>函数依赖和多值依赖：</strong> 理解其定义和在规范化中的作用。</li>
 <li><strong>范式的层次与要求：</strong> 按照1NF到4NF逐步规范化，理解每个范式消除的冗余类型。</li>
 <li><strong>关系分解原则：</strong> 确保分解是无损连接且依赖保留。</li>
@@ -1442,8 +1533,7 @@
 <p>通过以上总结，学生可以系统地掌握数据库规范化的理论与实践，理解不同范式的意义及其应用，熟悉在SQL Server环境下实现规范化设计的具体步骤与SQL语句。</p>
 <p>以下是根据您提供的数据库原理课件整理的详尽知识点总结。每个PDF文档的总结都是独立的，包含重点难点、实例分析以及图表与图示的描述。</p>
 <hr>
-<h2 id="一、mvds-pdf"><a href="#一、mvds-pdf" class="headerlink" title="一、mvds.pdf"></a><strong>一、mvds.pdf</strong></h2><h3 id="重点难点"><a href="#重点难点" class="headerlink" title="重点难点"></a><strong>重点难点</strong></h3><p><strong>重点：</strong></p>
-<ol>
+<h2 id="第八章-mvds"><a href="#第八章-mvds" class="headerlink" title="第八章 mvds"></a><strong>第八章 mvds</strong></h2><h3 id="重点-4"><a href="#重点-4" class="headerlink" title="重点"></a><strong>重点</strong></h3><ol>
 <li><p><strong>多值依赖（MVD）的定义与理解：</strong></p>
 <ul>
 <li>理解多值依赖的概念，即在关系模式中，如果属性集合X多值依赖于Y，意味着对于每个X的值，Y的值是相互独立的。</li>
@@ -1462,8 +1552,7 @@
 </ul>
 </li>
 </ol>
-<p><strong>难点：</strong></p>
-<ol>
+<h3 id="难点-4"><a href="#难点-4" class="headerlink" title="难点"></a><strong>难点</strong></h3><ol>
 <li><p><strong>多值依赖的识别与应用：</strong></p>
 <ul>
 <li>在复杂的关系模式中识别哪些属性之间存在多值依赖，区分多值依赖和函数依赖。</li>
@@ -1480,7 +1569,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="实例分析"><a href="#实例分析" class="headerlink" title="实例分析"></a><strong>实例分析</strong></h3><p><strong>例1：多值依赖的定义与应用</strong></p>
+<h3 id="实例分析-3"><a href="#实例分析-3" class="headerlink" title="实例分析"></a><strong>实例分析</strong></h3><p><strong>例1：多值依赖的定义与应用</strong></p>
 <p><strong>关系模式：Drinkers(name, addr, phones, beersLiked)</strong></p>
 <p><strong>多值依赖：</strong></p>
 <ul>
@@ -1532,7 +1621,7 @@
 
 <p><strong>确保分解无损连接：</strong></p>
 <p>通过连接 Drinkers_AreaPhone 和 Drinkers_BeersManf 可以恢复原始数据。</p>
-<h3 id="图表与图示"><a href="#图表与图示" class="headerlink" title="图表与图示"></a><strong>图表与图示</strong></h3><p><strong>1. 多值依赖的图示描述</strong></p>
+<h3 id="图表与图示-1"><a href="#图表与图示-1" class="headerlink" title="图表与图示"></a><strong>图表与图示</strong></h3><p><strong>1. 多值依赖的图示描述</strong></p>
 <ul>
 <li><strong>图1：MVD X →→ Y 的图示</strong><ul>
 <li>关系模式 R 包含属性集 X、Y 和其他属性。</li>
@@ -1550,100 +1639,7 @@
 </li>
 </ul>
 <hr>
-<h2 id="二、ch5-pdf"><a href="#二、ch5-pdf" class="headerlink" title="二、ch5.pdf"></a><strong>二、ch5.pdf</strong></h2><h3 id="重点难点-1"><a href="#重点难点-1" class="headerlink" title="重点难点"></a><strong>重点难点</strong></h3><p><strong>重点：</strong></p>
-<ol>
-<li><p><strong>SQL与编程语言的集成：</strong></p>
-<ul>
-<li>理解如何通过不同的编程语言（如Java、Python、PHP等）访问和操作数据库。</li>
-</ul>
-</li>
-<li><p><strong>JDBC的使用：</strong></p>
-<ul>
-<li>掌握Java应用程序中使用JDBC连接数据库、执行SQL语句以及处理结果集的流程。</li>
-</ul>
-</li>
-<li><p><strong>函数与存储过程：</strong></p>
-<ul>
-<li>理解数据库中的函数和存储过程的定义与调用，掌握其在业务逻辑封装中的应用。</li>
-</ul>
-</li>
-<li><p><strong>触发器的设计与应用：</strong></p>
-<ul>
-<li>学会设计DML触发器（AFTER和INSTEAD OF），并理解其在自动执行副作用操作中的作用。</li>
-</ul>
-</li>
-</ol>
-<p><strong>难点：</strong></p>
-<ol>
-<li><p><strong>事务管理与连接池：</strong></p>
-<ul>
-<li>理解事务的概念，掌握如何在应用程序中正确管理事务，避免数据不一致。</li>
-</ul>
-</li>
-<li><p><strong>安全性问题：</strong></p>
-<ul>
-<li>理解SQL注入攻击的原理及防范措施，如使用预编译语句（Prepared Statements）。</li>
-</ul>
-</li>
-<li><p><strong>元数据的使用：</strong></p>
-<ul>
-<li>熟悉如何通过JDBC获取数据库及结果集的元数据，以动态处理不同的数据库结构。</li>
-</ul>
-</li>
-</ol>
-<h3 id="实例分析-1"><a href="#实例分析-1" class="headerlink" title="实例分析"></a><strong>实例分析</strong></h3><p><strong>例1：JDBC 连接与查询</strong></p>
-<p><strong>任务：</strong> 使用JDBC连接到SQL Server数据库，执行查询并处理结果集。</p>
-<p><strong>示例代码：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.sql.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JDBCExample</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">dbURL</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;jdbc:sqlserver://localhost:1433;databaseName=univdb&quot;</span>;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;userid&quot;</span>;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;passwd&quot;</span>;<br><br>        <span class="hljs-keyword">try</span> (<span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> DriverManager.getConnection(dbURL, user, password);<br>             <span class="hljs-type">Statement</span> <span class="hljs-variable">stmt</span> <span class="hljs-operator">=</span> conn.createStatement()) &#123;<br><br>            <span class="hljs-type">String</span> <span class="hljs-variable">sql</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;SELECT dept_name, AVG(salary) as avg_salary FROM instructor GROUP BY dept_name&quot;</span>;<br>            <span class="hljs-type">ResultSet</span> <span class="hljs-variable">rs</span> <span class="hljs-operator">=</span> stmt.executeQuery(sql);<br><br>            <span class="hljs-keyword">while</span> (rs.next()) &#123;<br>                <span class="hljs-type">String</span> <span class="hljs-variable">deptName</span> <span class="hljs-operator">=</span> rs.getString(<span class="hljs-string">&quot;dept_name&quot;</span>);<br>                <span class="hljs-type">float</span> <span class="hljs-variable">avgSalary</span> <span class="hljs-operator">=</span> rs.getFloat(<span class="hljs-string">&quot;avg_salary&quot;</span>);<br>                System.out.println(deptName + <span class="hljs-string">&quot; &quot;</span> + avgSalary);<br>            &#125;<br><br>            rs.close();<br>        &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>            System.out.println(<span class="hljs-string">&quot;SQLException: &quot;</span> + e.getMessage());<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p><strong>说明：</strong></p>
-<ul>
-<li>使用<code>DriverManager.getConnection</code>建立连接。</li>
-<li>创建<code>Statement</code>对象执行SQL查询。</li>
-<li>使用<code>ResultSet</code>处理查询结果。</li>
-</ul>
-<p><strong>例2：使用预编译语句防止SQL注入</strong></p>
-<p><strong>任务：</strong> 安全地向<code>instructor</code>表插入数据，防止SQL注入攻击。</p>
-<p><strong>示例代码：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.sql.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SecureInsertExample</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">dbURL</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;jdbc:sqlserver://localhost:1433;databaseName=univdb&quot;</span>;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;userid&quot;</span>;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;passwd&quot;</span>;<br><br>        <span class="hljs-type">String</span> <span class="hljs-variable">insertSQL</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;INSERT INTO instructor (ID, name, dept_name, salary) VALUES (?, ?, ?, ?)&quot;</span>;<br><br>        <span class="hljs-keyword">try</span> (<span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> DriverManager.getConnection(dbURL, user, password);<br>             <span class="hljs-type">PreparedStatement</span> <span class="hljs-variable">pstmt</span> <span class="hljs-operator">=</span> conn.prepareStatement(insertSQL)) &#123;<br><br>            <span class="hljs-comment">// 设置参数</span><br>            pstmt.setString(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;88877&quot;</span>);<br>            pstmt.setString(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;Perry&quot;</span>);<br>            pstmt.setString(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;Finance&quot;</span>);<br>            pstmt.setInt(<span class="hljs-number">4</span>, <span class="hljs-number">125000</span>);<br><br>            <span class="hljs-comment">// 执行插入</span><br>            pstmt.executeUpdate();<br><br>            <span class="hljs-comment">// 插入另一条记录</span><br>            pstmt.setString(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;88878&quot;</span>);<br>            pstmt.executeUpdate();<br><br>            System.out.println(<span class="hljs-string">&quot;数据插入成功。&quot;</span>);<br>        &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>            System.out.println(<span class="hljs-string">&quot;SQLException: &quot;</span> + e.getMessage());<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p><strong>说明：</strong></p>
-<ul>
-<li>使用<code>PreparedStatement</code>预编译SQL语句，防止恶意用户通过输入构造SQL注入攻击。</li>
-<li>通过<code>set</code>方法动态设置参数值。</li>
-</ul>
-<p><strong>例3：触发器的创建与使用</strong></p>
-<p><strong>任务：</strong> 为<code>student</code>表创建一个AFTER INSERT触发器，更新<code>student_sum</code>表中的学生总数。</p>
-<p><strong>示例SQL代码：</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 创建student表</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student (<br>    stu_id <span class="hljs-type">INT</span> <span class="hljs-keyword">IDENTITY</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>) <span class="hljs-keyword">PRIMARY</span> KEY,<br>    stu_name <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">10</span>),<br>    stu_gender <span class="hljs-type">CHAR</span>(<span class="hljs-number">2</span>),<br>    stu_age <span class="hljs-type">INT</span><br>);<br><br><span class="hljs-comment">-- 创建student_sum表</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student_sum (<br>    stuCount <span class="hljs-type">INT</span> <span class="hljs-keyword">DEFAULT</span>(<span class="hljs-number">0</span>)<br>);<br><br><span class="hljs-comment">-- 创建AFTER INSERT触发器</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TRIGGER</span> trig_insert<br><span class="hljs-keyword">ON</span> student<br>AFTER <span class="hljs-keyword">INSERT</span><br><span class="hljs-keyword">AS</span><br><span class="hljs-keyword">BEGIN</span><br>    <span class="hljs-keyword">DECLARE</span> <span class="hljs-variable">@stuNumber</span> <span class="hljs-type">INT</span>;<br>    <span class="hljs-keyword">SELECT</span> <span class="hljs-variable">@stuNumber</span> <span class="hljs-operator">=</span> <span class="hljs-built_in">COUNT</span>(<span class="hljs-operator">*</span>) <span class="hljs-keyword">FROM</span> student;<br><br>    IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> (<span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> student_sum)<br>        <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> student_sum <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">0</span>);<br><br>    <span class="hljs-keyword">UPDATE</span> student_sum <span class="hljs-keyword">SET</span> stuCount <span class="hljs-operator">=</span> <span class="hljs-variable">@stuNumber</span>;<br><span class="hljs-keyword">END</span>;<br></code></pre></td></tr></table></figure>
-
-<p><strong>说明：</strong></p>
-<ul>
-<li>当向<code>student</code>表插入新记录时，触发器<code>trig_insert</code>自动执行，更新<code>student_sum</code>表中的<code>stuCount</code>为当前学生总数。</li>
-<li>使用<code>INSERTED</code>临时表来引用新插入的记录。</li>
-</ul>
-<h3 id="图表与图示-1"><a href="#图表与图示-1" class="headerlink" title="图表与图示"></a><strong>图表与图示</strong></h3><p><strong>1. JDBC 数据库访问流程图</strong></p>
-<ul>
-<li><strong>图1：JDBC 访问流程</strong><ol>
-<li>加载JDBC驱动程序。</li>
-<li>建立数据库连接。</li>
-<li>创建<code>Statement</code>或<code>PreparedStatement</code>对象。</li>
-<li>执行SQL语句。</li>
-<li>处理<code>ResultSet</code>。</li>
-<li>关闭资源（ResultSet、Statement、Connection）。</li>
-</ol>
-</li>
-</ul>
-<p><strong>2. 触发器的执行过程图示描述</strong></p>
-<ul>
-<li><strong>图2：触发器执行流程</strong><ul>
-<li>用户执行INSERT操作 → 系统将新记录插入表中 → 触发AFTER INSERT触发器 → 触发器执行定义的逻辑（如更新<code>student_sum</code>表）。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="三、ch9-pdf"><a href="#三、ch9-pdf" class="headerlink" title="三、ch9.pdf"></a><strong>三、ch9.pdf</strong></h2><h3 id="重点难点-2"><a href="#重点难点-2" class="headerlink" title="重点难点"></a><strong>重点难点</strong></h3><p><strong>重点：</strong></p>
-<ol>
+<h2 id="第九章-应用程序开发"><a href="#第九章-应用程序开发" class="headerlink" title="第九章 应用程序开发"></a><strong>第九章 应用程序开发</strong></h2><h3 id="重点-5"><a href="#重点-5" class="headerlink" title="重点"></a><strong>重点</strong></h3><ol>
 <li><p><strong>应用程序架构与Web基础：</strong></p>
 <ul>
 <li>理解现代应用程序的多层架构（前端、中间层、后端）及其各自的职责。</li>
@@ -1667,8 +1663,7 @@
 </ul>
 </li>
 </ol>
-<p><strong>难点：</strong></p>
-<ol>
+<h3 id="难点-5"><a href="#难点-5" class="headerlink" title="难点"></a><strong>难点</strong></h3><ol>
 <li><p><strong>会话管理与状态保持：</strong></p>
 <ul>
 <li>理解无状态的HTTP协议如何通过会话（Session）管理用户状态，掌握Cookies、Session等技术。</li>
@@ -1690,7 +1685,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="实例分析-2"><a href="#实例分析-2" class="headerlink" title="实例分析"></a><strong>实例分析</strong></h3><p><strong>例1：创建和使用触发器</strong></p>
+<h3 id="实例分析-4"><a href="#实例分析-4" class="headerlink" title="实例分析"></a><strong>实例分析</strong></h3><p><strong>例1：创建和使用触发器</strong></p>
 <p><strong>任务：</strong> 为<code>student</code>表创建一个AFTER UPDATE触发器，更新<code>student_sum</code>表中的学生总数，并记录更新前后的学生信息。</p>
 <p><strong>示例SQL代码：</strong></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 创建student表</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student (<br>    stu_id <span class="hljs-type">INT</span> <span class="hljs-keyword">IDENTITY</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>) <span class="hljs-keyword">PRIMARY</span> KEY,<br>    stu_name <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">10</span>),<br>    stu_gender <span class="hljs-type">CHAR</span>(<span class="hljs-number">2</span>),<br>    stu_age <span class="hljs-type">INT</span><br>);<br><br><span class="hljs-comment">-- 创建student_sum表</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student_sum (<br>    stuCount <span class="hljs-type">INT</span> <span class="hljs-keyword">DEFAULT</span>(<span class="hljs-number">0</span>)<br>);<br><br><span class="hljs-comment">-- 创建AFTER UPDATE触发器</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TRIGGER</span> trig_update<br><span class="hljs-keyword">ON</span> student<br>AFTER <span class="hljs-keyword">UPDATE</span><br><span class="hljs-keyword">AS</span><br><span class="hljs-keyword">BEGIN</span><br>    <span class="hljs-keyword">DECLARE</span> <span class="hljs-variable">@stuCount</span> <span class="hljs-type">INT</span>;<br>    <span class="hljs-keyword">SELECT</span> <span class="hljs-variable">@stuCount</span> <span class="hljs-operator">=</span> <span class="hljs-built_in">COUNT</span>(<span class="hljs-operator">*</span>) <span class="hljs-keyword">FROM</span> student;<br>    <span class="hljs-keyword">UPDATE</span> student_sum <span class="hljs-keyword">SET</span> stuCount <span class="hljs-operator">=</span> <span class="hljs-variable">@stuCount</span>;<br><br>    <span class="hljs-comment">-- 显示更新前后的学生信息</span><br>    <span class="hljs-keyword">SELECT</span> stu_id <span class="hljs-keyword">AS</span> 更新前学生编号, stu_name <span class="hljs-keyword">AS</span> 更新前学生姓名 <span class="hljs-keyword">FROM</span> deleted;<br>    <span class="hljs-keyword">SELECT</span> stu_id <span class="hljs-keyword">AS</span> 更新后学生编号, stu_name <span class="hljs-keyword">AS</span> 更新后学生姓名 <span class="hljs-keyword">FROM</span> inserted;<br><span class="hljs-keyword">END</span>;<br></code></pre></td></tr></table></figure>
@@ -2507,7 +2502,7 @@
                             
                                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
                                         class="white-color">
-                                        56.8k
+                                        59.6k
                                     </span>
                                     
                                         
