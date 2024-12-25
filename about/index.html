@@ -615,7 +615,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Computer Science","value":10},{"name":"Book Review","value":3},{"name":"Literary giants","value":1},{"name":"Before Starting","value":2}],
+                data: [{"name":"Computer Science","value":10},{"name":"Book Review","value":3},{"name":"Before Starting","value":2},{"name":"Literary giants","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -639,7 +639,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["金庸","《倚天屠龙记》","Operation System","history","Base64","赵敏","周芷若","elective","CA","计网"]
+                data: ["金庸","《倚天屠龙记》","history","Operation System","Base64","赵敏","周芷若","elective","CA","Hello World!"]
             }
         ],
         yAxis: [
@@ -1042,14 +1042,6 @@ $(function () {
     
 
     <!-- 鼠标星星特效 -->
-     
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
-            }
-        </script>
     
 
     
@@ -1072,6 +1064,8 @@ $(function () {
     })();
 </script>
 
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
     
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
