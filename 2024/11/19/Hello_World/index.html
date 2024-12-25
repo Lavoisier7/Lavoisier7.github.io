@@ -18,7 +18,7 @@
 
 
     <title>Hello World | D</title>
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
     
 
 
@@ -26,31 +26,31 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/awesome/css/all.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/materialize/materialize.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/aos/aos.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/animate/animate.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/lightGallery/css/lightgallery.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/css/matery.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/css/my.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/css/dark.css" media="none" onload="if(media!='all')media='all'">
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
 
 
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/tocbot/tocbot.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/css/post.css">
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
 
 
 
 
     
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/css/reward.css">
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
     
 
 
 
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 7.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
@@ -62,7 +62,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">D</span>
                 </a>
@@ -166,7 +166,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">D</div>
         <div class="logo-desc">
@@ -331,10 +331,23 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/featureimages/12.jpg')">
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -423,6 +436,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -433,7 +449,7 @@
 <h5 id="战火中的巨人"><a href="#战火中的巨人" class="headerlink" title="战火中的巨人"></a>战火中的巨人</h5><p>二战期间，为了破解德军的密码系统，英国数学家艾伦·图灵设计了图灵机，这是一种理论上能够解决所有可计算问题的模型。而到了1943年，美国宾夕法尼亚大学研制成功了世界上第一台电子计算机ENIAC，它拥有惊人的计算速度，能够处理复杂的军事计算任务。ENIAC的出现，标志着电子计算机时代的正式开启。</p>
 <h5 id="编程语言的革命"><a href="#编程语言的革命" class="headerlink" title="编程语言的革命"></a>编程语言的革命</h5><p>随着时间的流逝，计算机开始逐渐走出实验室，进入大学、企业和家庭。但是，早期的编程工作异常艰难，程序员需要直接用二进制代码编写程序。直到20世纪50年代末期，FORTRAN（公式翻译器）的问世彻底改变了这一局面，它允许程序员使用接近自然语言的命令来编写程序，极大地提高了开发效率。从此以后，更多高级编程语言如雨后春笋般涌现，包括COBOL、LISP、C语言等，它们共同推动了软件行业的繁荣。</p>
 <h4 id="Hello-World：编程之旅的起点"><a href="#Hello-World：编程之旅的起点" class="headerlink" title="Hello World：编程之旅的起点"></a>Hello World：编程之旅的起点</h4><h5 id="第一缕晨光"><a href="#第一缕晨光" class="headerlink" title="第一缕晨光"></a>第一缕晨光</h5><p>1978年，对于无数程序员来说，是值得纪念的一年。这一年，《The C Programming Language》一书出版，书中包含了这样一个简单的例子：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这段代码虽小，意义非凡。它就像是编程世界的第一缕晨光，温暖而明亮，指引着后来者踏上探索未知的道路。</p>
 <h5 id="传承与发展"><a href="#传承与发展" class="headerlink" title="传承与发展"></a>传承与发展</h5><p>从那以后，“Hello World”成为了编程教育的传统，几乎每个学习编程的人都是从这里起步。无论是初学者还是经验丰富的开发者，每当他们面对一种全新的编程语言或开发环境时，都会首先尝试运行这段经典的代码。它不仅是一个练习，更是一种仪式，象征着对知识的渴望和对创新的追求。</p>
 <h4 id="数字时代的交响乐章"><a href="#数字时代的交响乐章" class="headerlink" title="数字时代的交响乐章"></a>数字时代的交响乐章</h4><h5 id="创造者的乐园"><a href="#创造者的乐园" class="headerlink" title="创造者的乐园"></a>创造者的乐园</h5><p>如今，计算机技术已经渗透到生活的每一个角落，从智能手机到智能家居，从虚拟现实到人工智能，技术的发展正以前所未有的速度改变着世界。而这一切的背后，都离不开那些勇于探索、不断求知的程序员们。他们用一行行代码构建起了数字世界的基石，让梦想照进了现实。</p>
@@ -518,12 +534,12 @@
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
 <div id="article-share">
 
     
     <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/share/js/social-share.min.js"></script>
+    <script src="/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -548,10 +564,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -823,8 +839,8 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/valine/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.iohttps://unpkg.com/valine/dist/Valine.min.js"></script>
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
     new Valine({
             el: '#vcomments',
@@ -921,7 +937,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="Who is Lavoisier">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Who is Lavoisier">
                         
                         <span class="card-title">Who is Lavoisier</span>
                     </div>
@@ -974,7 +990,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/featureimages/23.jpg" class="responsive-img" alt="Computer Network">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Computer Network">
                         
                         <span class="card-title">Computer Network</span>
                     </div>
@@ -982,7 +998,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            2024-2025 计算机网络
+                            可联系bz获取密码喵
                         
                     </div>
                     <div class="publish-info">
@@ -1058,23 +1074,26 @@
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
 
@@ -1096,7 +1115,7 @@
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/tocbot/tocbot.min.js"></script>
+<script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1181,7 +1200,7 @@
                             
                                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
                                         class="white-color">
-                                        59.6k
+                                        66.9k
                                     </span>
                                     
                                         
@@ -1433,17 +1452,17 @@ $(function () {
 </div>
 
 
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/materialize/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/aos/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/js/matery.js"></script>
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
 
     
 
     
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/js/tw_cn.js"></script>
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
         <script type="text/javascript">
           var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
           var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
@@ -1461,7 +1480,7 @@ $(function () {
             // 只在桌面版网页启用特效
             var windowWidth = $(window).width();
             if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/others/sakura.js"><\/script>');
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
             }
         </script>
     
@@ -1475,7 +1494,7 @@ $(function () {
             // 只在桌面版网页启用特效
             var windowWidth = $(window).width();
             if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/others/star.js"><\/script>');
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
             }
         </script>
     
@@ -1502,7 +1521,7 @@ $(function () {
 
     
     
-    <script async src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1516,13 +1535,13 @@ $(function () {
     
     
     <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/background/ribbon-refresh.min.js" async="async"></script>
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     
 
     
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>

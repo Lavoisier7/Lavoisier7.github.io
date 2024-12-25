@@ -18,7 +18,7 @@
 
 
     <title>分布式系统 | D</title>
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
     
 
 
@@ -26,31 +26,31 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/awesome/css/all.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/materialize/materialize.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/aos/aos.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/animate/animate.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/lightGallery/css/lightgallery.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/css/matery.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/css/my.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/css/dark.css" media="none" onload="if(media!='all')media='all'">
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
 
 
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/tocbot/tocbot.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/css/post.css">
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
 
 
 
 
     
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/css/reward.css">
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
     
 
 
 
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 7.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
@@ -62,7 +62,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">D</span>
                 </a>
@@ -166,7 +166,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">D</div>
         <div class="logo-desc">
@@ -331,10 +331,23 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/featureimages/18.jpg')">
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -418,6 +431,9 @@
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -1197,7 +1213,7 @@
 <li>严格的接口约束</li>
 </ol>
 <h3 id="4-面向消息的通信"><a href="#4-面向消息的通信" class="headerlink" title="4. 面向消息的通信"></a>4. 面向消息的通信</h3><h4 id="4-1-Berkeley套接字"><a href="#4-1-Berkeley套接字" class="headerlink" title="4.1 Berkeley套接字"></a>4.1 Berkeley套接字</h4><p>主要原语：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">socket   - 创建通信端点</span><br><span class="line">bind     - 绑定本地地址</span><br><span class="line">listen   - 准备接受连接</span><br><span class="line">accept   - 等待连接请求</span><br><span class="line">connect  - 尝试建立连接</span><br><span class="line">send     - 发送数据</span><br><span class="line">receive  - 接收数据</span><br><span class="line">close    - 释放连接</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">socket   - 创建通信端点</span><br><span class="line">bind     - 绑定本地地址</span><br><span class="line">listen   - 准备接受连接</span><br><span class="line">accept   - 等待连接请求</span><br><span class="line">connect  - 尝试建立连接</span><br><span class="line">send     - 发送数据</span><br><span class="line">receive  - 接收数据</span><br><span class="line">close    - 释放连接</span><br></pre></td></tr></table></figure>
 
 <h4 id="4-2-ZeroMQ高级消息模式"><a href="#4-2-ZeroMQ高级消息模式" class="headerlink" title="4.2 ZeroMQ高级消息模式"></a>4.2 ZeroMQ高级消息模式</h4><ol>
 <li><strong>Request-Reply模式</strong></li>
@@ -1408,7 +1424,7 @@
 </ul>
 </li>
 <li><p><strong>时钟精度与准确度</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">精度定义：|Ci(t) - Cj(t)| ≤ ε</span><br><span class="line">准确度定义：|Ci(t) - t| ≤ α</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">精度定义：|Ci(t) - Cj(t)| ≤ ε</span><br><span class="line">准确度定义：|Ci(t) - t| ≤ α</span><br></pre></td></tr></table></figure>
 <p>其中：</p>
 </li>
 </ol>
@@ -1418,7 +1434,7 @@
 <li>α为准确度参数</li>
 </ul>
 <h4 id="2-2-时钟漂移"><a href="#2-2-时钟漂移" class="headerlink" title="2.2 时钟漂移"></a>2.2 时钟漂移</h4><ol>
-<li><strong>时钟规约</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(1-ρ) ≤ F(t)/F ≤ (1+ρ)</span><br></pre></td></tr></table></figure>
+<li><strong>时钟规约</strong><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(1-ρ) ≤ F(t)/F ≤ (1+ρ)</span><br></pre></td></tr></table></figure>
 其中：</li>
 </ol>
 <ul>
@@ -1456,7 +1472,7 @@
 <li>P2：消息发送事件a和接收事件b，则C(a)&lt;C(b)</li>
 </ul>
 <ol start="2">
-<li><strong>实现机制</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 每个进程Pi维护本地计数器Ci</span><br><span class="line">2. 进程内部事件发生时，Ci = Ci + 1</span><br><span class="line">3. 发送消息m时，Ci = Ci + 1，将时间戳ts=Ci附加到消息</span><br><span class="line">4. 接收消息m(ts)时，Ci = max(Ci, ts) + 1</span><br></pre></td></tr></table></figure></li>
+<li><strong>实现机制</strong><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 每个进程Pi维护本地计数器Ci</span><br><span class="line">2. 进程内部事件发生时，Ci = Ci + 1</span><br><span class="line">3. 发送消息m时，Ci = Ci + 1，将时间戳ts=Ci附加到消息</span><br><span class="line">4. 接收消息m(ts)时，Ci = max(Ci, ts) + 1</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h4 id="3-3-向量时钟"><a href="#3-3-向量时钟" class="headerlink" title="3.3 向量时钟"></a>3.3 向量时钟</h4><ol>
 <li><strong>数据结构</strong></li>
@@ -1466,7 +1482,7 @@
 <li>VCi[i]表示Pi已知的第i个进程的事件数</li>
 </ul>
 <ol start="2">
-<li><strong>更新规则</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 进程Pi本地事件：VCi[i] = VCi[i] + 1</span><br><span class="line">- Pi发送消息：先执行本地事件更新，再发送</span><br><span class="line">- Pi接收消息m(ts)：</span><br><span class="line">  - VCi[j] = max(VCi[j], ts[j]) 对所有j</span><br><span class="line">  - VCi[i] = VCi[i] + 1</span><br></pre></td></tr></table></figure></li>
+<li><strong>更新规则</strong><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- 进程Pi本地事件：VCi[i] = VCi[i] + 1</span><br><span class="line">- Pi发送消息：先执行本地事件更新，再发送</span><br><span class="line">- Pi接收消息m(ts)：</span><br><span class="line">  - VCi[j] = max(VCi[j], ts[j]) 对所有j</span><br><span class="line">  - VCi[i] = VCi[i] + 1</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="4-分布式互斥"><a href="#4-分布式互斥" class="headerlink" title="4. 分布式互斥"></a>4. 分布式互斥</h3><h4 id="4-1-基于许可的方法"><a href="#4-1-基于许可的方法" class="headerlink" title="4.1 基于许可的方法"></a>4.1 基于许可的方法</h4><ol>
 <li><p><strong>集中式方法</strong></p>
@@ -1476,7 +1492,7 @@
 </ul>
 </li>
 <li><p><strong>分布式方法(Ricart &amp; Agrawala算法)</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">请求访问资源时：</span><br><span class="line">1. 构造消息(资源名,进程号,逻辑时间)</span><br><span class="line">2. 发送给所有其他进程</span><br><span class="line">3. 等待所有进程回复OK</span><br><span class="line"></span><br><span class="line">接收请求时：</span><br><span class="line">1. 未访问资源：直接返回OK</span><br><span class="line">2. 已获得访问权：将请求加入队列</span><br><span class="line">3. 想访问但未获得：比较时间戳</span><br><span class="line">   - 收到消息时间戳早：返回OK</span><br><span class="line">   - 自己时间戳早：将请求加入队列</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">请求访问资源时：</span><br><span class="line">1. 构造消息(资源名,进程号,逻辑时间)</span><br><span class="line">2. 发送给所有其他进程</span><br><span class="line">3. 等待所有进程回复OK</span><br><span class="line"></span><br><span class="line">接收请求时：</span><br><span class="line">1. 未访问资源：直接返回OK</span><br><span class="line">2. 已获得访问权：将请求加入队列</span><br><span class="line">3. 想访问但未获得：比较时间戳</span><br><span class="line">   - 收到消息时间戳早：返回OK</span><br><span class="line">   - 自己时间戳早：将请求加入队列</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h4 id="4-2-基于令牌的方法"><a href="#4-2-基于令牌的方法" class="headerlink" title="4.2 基于令牌的方法"></a>4.2 基于令牌的方法</h4><p><strong>令牌环算法</strong></p>
 <ul>
@@ -1485,10 +1501,10 @@
 <li>持有令牌者可进入临界区</li>
 </ul>
 <h3 id="5-选举算法"><a href="#5-选举算法" class="headerlink" title="5. 选举算法"></a>5. 选举算法</h3><h4 id="5-1-Bully算法"><a href="#5-1-Bully算法" class="headerlink" title="5.1 Bully算法"></a>5.1 Bully算法</h4><p>运行机制：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1. Pi发起选举：</span><br><span class="line">   - 向所有ID更大的进程发送ELECTION消息</span><br><span class="line">   - 如无响应，Pi获胜</span><br><span class="line">   - 有响应则等待结果</span><br><span class="line"></span><br><span class="line">2. Pj收到ELECTION：</span><br><span class="line">   - 发送OK给Pi</span><br><span class="line">   - 向更高ID进程发起新一轮选举</span><br><span class="line"></span><br><span class="line">3. 胜出者向所有进程广播COORDINATOR消息</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. Pi发起选举：</span><br><span class="line">   - 向所有ID更大的进程发送ELECTION消息</span><br><span class="line">   - 如无响应，Pi获胜</span><br><span class="line">   - 有响应则等待结果</span><br><span class="line"></span><br><span class="line">2. Pj收到ELECTION：</span><br><span class="line">   - 发送OK给Pi</span><br><span class="line">   - 向更高ID进程发起新一轮选举</span><br><span class="line"></span><br><span class="line">3. 胜出者向所有进程广播COORDINATOR消息</span><br></pre></td></tr></table></figure>
 
 <h4 id="5-2-Ring算法"><a href="#5-2-Ring算法" class="headerlink" title="5.2 Ring算法"></a>5.2 Ring算法</h4><p>运行机制：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 进程组织成环形结构</span><br><span class="line">2. 选举发起者将ID加入消息列表</span><br><span class="line">3. 消息沿环传递，各进程添加自己ID</span><br><span class="line">4. 消息回到发起者时选出最大ID</span><br><span class="line">5. 再次环形广播通知结果</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 进程组织成环形结构</span><br><span class="line">2. 选举发起者将ID加入消息列表</span><br><span class="line">3. 消息沿环传递，各进程添加自己ID</span><br><span class="line">4. 消息回到发起者时选出最大ID</span><br><span class="line">5. 再次环形广播通知结果</span><br></pre></td></tr></table></figure>
 
 
 <h2 id="分布式系统一致性与复制总结"><a href="#分布式系统一致性与复制总结" class="headerlink" title="分布式系统一致性与复制总结"></a>分布式系统一致性与复制总结</h2><h3 id="1-基础概念-1"><a href="#1-基础概念-1" class="headerlink" title="1. 基础概念"></a>1. 基础概念</h3><h4 id="1-1-复制的原因"><a href="#1-1-复制的原因" class="headerlink" title="1.1 复制的原因"></a>1.1 复制的原因</h4><ol>
@@ -1524,11 +1540,11 @@
 </ul>
 </li>
 </ol>
-<h4 id="2-2-Conit-一致性单元"><a href="#2-2-Conit-一致性单元" class="headerlink" title="2.2 Conit (一致性单元)"></a>2.2 Conit (一致性单元)</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">结构组成：</span><br><span class="line">1. 包含多个数据项(如x,y)</span><br><span class="line">2. 每个副本维护向量时钟</span><br><span class="line">3. 操作持久化，不允许回滚</span><br><span class="line"></span><br><span class="line">偏差度量：</span><br><span class="line">- 数值偏差 = 未接收更新次数 × 偏差权重</span><br><span class="line">- 偏差权重 = max(已提交值与未收到操作结果间的差值)</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-Conit-一致性单元"><a href="#2-2-Conit-一致性单元" class="headerlink" title="2.2 Conit (一致性单元)"></a>2.2 Conit (一致性单元)</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">结构组成：</span><br><span class="line">1. 包含多个数据项(如x,y)</span><br><span class="line">2. 每个副本维护向量时钟</span><br><span class="line">3. 操作持久化，不允许回滚</span><br><span class="line"></span><br><span class="line">偏差度量：</span><br><span class="line">- 数值偏差 = 未接收更新次数 × 偏差权重</span><br><span class="line">- 偏差权重 = max(已提交值与未收到操作结果间的差值)</span><br></pre></td></tr></table></figure>
 
 <h4 id="2-3-顺序一致性"><a href="#2-3-顺序一致性" class="headerlink" title="2.3 顺序一致性"></a>2.3 顺序一致性</h4><p>定义：所有进程的操作按某种顺序执行，每个进程的操作按程序顺序出现。</p>
 <p>图示说明：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">时间轴示意：</span><br><span class="line">P1: W(x)a        R(x)b</span><br><span class="line">P2:     W(x)b    R(x)a   [非顺序一致]</span><br><span class="line">P1: W(x)a        R(x)b</span><br><span class="line">P2:     W(x)b    R(x)b   [顺序一致]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">时间轴示意：</span><br><span class="line">P1: W(x)a        R(x)b</span><br><span class="line">P2:     W(x)b    R(x)a   [非顺序一致]</span><br><span class="line">P1: W(x)a        R(x)b</span><br><span class="line">P2:     W(x)b    R(x)b   [顺序一致]</span><br></pre></td></tr></table></figure>
 
 <h4 id="2-4-因果一致性"><a href="#2-4-因果一致性" class="headerlink" title="2.4 因果一致性"></a>2.4 因果一致性</h4><p>定义：具有潜在因果关系的写操作必须以相同顺序被所有进程看到。</p>
 <p>特点：</p>
@@ -1538,7 +1554,7 @@
 <li>保持写操作的因果关系</li>
 </ul>
 <h3 id="3-客户端中心一致性模型"><a href="#3-客户端中心一致性模型" class="headerlink" title="3. 客户端中心一致性模型"></a>3. 客户端中心一致性模型</h3><h4 id="3-1-单调读一致性"><a href="#3-1-单调读一致性" class="headerlink" title="3.1 单调读一致性"></a>3.1 单调读一致性</h4><p>定义：如果进程读取数据项x的值，后续读取操作得到的值不会更旧。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">正确示例：</span><br><span class="line">P1: W(x)1    R(x)1    R(x)1</span><br><span class="line">P2:     W(x)2         R(x)2</span><br><span class="line"></span><br><span class="line">错误示例：</span><br><span class="line">P1: W(x)1    R(x)2    R(x)1  [违反单调读]</span><br><span class="line">P2:     W(x)2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">正确示例：</span><br><span class="line">P1: W(x)1    R(x)1    R(x)1</span><br><span class="line">P2:     W(x)2         R(x)2</span><br><span class="line"></span><br><span class="line">错误示例：</span><br><span class="line">P1: W(x)1    R(x)2    R(x)1  [违反单调读]</span><br><span class="line">P2:     W(x)2</span><br></pre></td></tr></table></figure>
 
 <h4 id="3-2-单调写一致性"><a href="#3-2-单调写一致性" class="headerlink" title="3.2 单调写一致性"></a>3.2 单调写一致性</h4><p>定义：一个进程的写操作必须在该进程的任何后续写操作前完成。</p>
 <h4 id="3-3-读写一致性"><a href="#3-3-读写一致性" class="headerlink" title="3.3 读写一致性"></a>3.3 读写一致性</h4><p>定义：进程的写操作结果必须对该进程的后续读操作可见。</p>
@@ -1567,24 +1583,24 @@
 </ul>
 </li>
 <li><p><strong>更新方式</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Push方式：</span><br><span class="line">- 服务器主动推送</span><br><span class="line">- 无需客户端请求</span><br><span class="line">- 适合频繁更新</span><br><span class="line"></span><br><span class="line">Pull方式：</span><br><span class="line">- 客户端主动请求</span><br><span class="line">- 按需获取更新</span><br><span class="line">- 适合低频更新</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Push方式：</span><br><span class="line">- 服务器主动推送</span><br><span class="line">- 无需客户端请求</span><br><span class="line">- 适合频繁更新</span><br><span class="line"></span><br><span class="line">Pull方式：</span><br><span class="line">- 客户端主动请求</span><br><span class="line">- 按需获取更新</span><br><span class="line">- 适合低频更新</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="5-一致性协议"><a href="#5-一致性协议" class="headerlink" title="5. 一致性协议"></a>5. 一致性协议</h3><h4 id="5-1-基于主备份的协议"><a href="#5-1-基于主备份的协议" class="headerlink" title="5.1 基于主备份的协议"></a>5.1 基于主备份的协议</h4><ol>
 <li><p><strong>远程写协议</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">步骤：</span><br><span class="line">1. 客户端发送更新到主副本</span><br><span class="line">2. 主副本转发到备份副本</span><br><span class="line">3. 备份确认接收</span><br><span class="line">4. 主副本响应客户端</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">步骤：</span><br><span class="line">1. 客户端发送更新到主副本</span><br><span class="line">2. 主副本转发到备份副本</span><br><span class="line">3. 备份确认接收</span><br><span class="line">4. 主副本响应客户端</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>本地写协议</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">适用场景：</span><br><span class="line">- 离线计算</span><br><span class="line">- 断线前数据传递</span><br><span class="line">- 移动计算环境</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">适用场景：</span><br><span class="line">- 离线计算</span><br><span class="line">- 断线前数据传递</span><br><span class="line">- 移动计算环境</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h4 id="5-2-客户端中心一致性协议"><a href="#5-2-客户端中心一致性协议" class="headerlink" title="5.2 客户端中心一致性协议"></a>5.2 客户端中心一致性协议</h4><p>实现机制：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">每个客户端维护：</span><br><span class="line">1. 读操作集：&#123;与客户端读操作相关的写操作&#125;</span><br><span class="line">2. 写操作集：&#123;客户端的写操作&#125;</span><br><span class="line"></span><br><span class="line">一致性检查：</span><br><span class="line">- 单调读/写：随请求发送相关操作集</span><br><span class="line">- 读写一致：读前检查写操作集</span><br><span class="line">- 写读一致：写前检查读操作集</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">每个客户端维护：</span><br><span class="line">1. 读操作集：&#123;与客户端读操作相关的写操作&#125;</span><br><span class="line">2. 写操作集：&#123;客户端的写操作&#125;</span><br><span class="line"></span><br><span class="line">一致性检查：</span><br><span class="line">- 单调读/写：随请求发送相关操作集</span><br><span class="line">- 读写一致：读前检查写操作集</span><br><span class="line">- 写读一致：写前检查读操作集</span><br></pre></td></tr></table></figure>
 
 <h2 id="分布式系统容错总结"><a href="#分布式系统容错总结" class="headerlink" title="分布式系统容错总结"></a>分布式系统容错总结</h2><h3 id="1-基本概念与术语"><a href="#1-基本概念与术语" class="headerlink" title="1. 基本概念与术语"></a>1. 基本概念与术语</h3><h4 id="1-1-可依赖性相关概念"><a href="#1-1-可依赖性相关概念" class="headerlink" title="1.1 可依赖性相关概念"></a>1.1 可依赖性相关概念</h4><ol>
 <li><p><strong>可靠性(Reliability)</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">定义：</span><br><span class="line">R(t) = P(组件从t=0到t时刻正常工作的概率)</span><br><span class="line"></span><br><span class="line">重要指标：</span><br><span class="line">- MTTF (平均失效时间)：直到组件失效的平均时间</span><br><span class="line">- MTTR (平均恢复时间)：恢复组件的平均时间</span><br><span class="line">- MTBF (两次失效平均时间) = MTTF + MTTR</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">定义：</span><br><span class="line">R(t) = P(组件从t=0到t时刻正常工作的概率)</span><br><span class="line"></span><br><span class="line">重要指标：</span><br><span class="line">- MTTF (平均失效时间)：直到组件失效的平均时间</span><br><span class="line">- MTTR (平均恢复时间)：恢复组件的平均时间</span><br><span class="line">- MTBF (两次失效平均时间) = MTTF + MTTR</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>可用性(Availability)</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">定义：</span><br><span class="line">A(t) = 在[0,t]时间内组件可用的时间比例</span><br><span class="line">长期可用性：A = MTTF/(MTTF + MTTR)</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">定义：</span><br><span class="line">A(t) = 在[0,t]时间内组件可用的时间比例</span><br><span class="line">长期可用性：A = MTTF/(MTTF + MTTR)</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h4 id="1-2-故障分类"><a href="#1-2-故障分类" class="headerlink" title="1.2 故障分类"></a>1.2 故障分类</h4><ol>
 <li><strong>按持续性分类</strong></li>
@@ -1618,10 +1634,10 @@
 </ul>
 </li>
 </ol>
-<h4 id="2-2-K-容错组"><a href="#2-2-K-容错组" class="headerlink" title="2.2 K-容错组"></a>2.2 K-容错组</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">容错度定义：</span><br><span class="line">- 停止失效：需要K+1个成员</span><br><span class="line">- 随意失效：需要2K+1个成员</span><br><span class="line"></span><br><span class="line">假设条件：</span><br><span class="line">1. 所有成员同质</span><br><span class="line">2. 所有成员以相同顺序处理命令</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-K-容错组"><a href="#2-2-K-容错组" class="headerlink" title="2.2 K-容错组"></a>2.2 K-容错组</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">容错度定义：</span><br><span class="line">- 停止失效：需要K+1个成员</span><br><span class="line">- 随意失效：需要2K+1个成员</span><br><span class="line"></span><br><span class="line">假设条件：</span><br><span class="line">1. 所有成员同质</span><br><span class="line">2. 所有成员以相同顺序处理命令</span><br></pre></td></tr></table></figure>
 
 <h3 id="3-共识协议"><a href="#3-共识协议" class="headerlink" title="3. 共识协议"></a>3. 共识协议</h3><h4 id="3-1-基于泛洪的共识"><a href="#3-1-基于泛洪的共识" class="headerlink" title="3.1 基于泛洪的共识"></a>3.1 基于泛洪的共识</h4><p>系统模型：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">组件：</span><br><span class="line">- 进程组 P = &#123;P1, P2, ..., Pn&#125;</span><br><span class="line">- Fail-stop失效语义</span><br><span class="line"></span><br><span class="line">过程：</span><br><span class="line">1. 客户端联系Pi执行命令</span><br><span class="line">2. 每个进程维护命令列表</span><br><span class="line">3. 基于轮数进行共识</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">组件：</span><br><span class="line">- 进程组 P = &#123;P1, P2, ..., Pn&#125;</span><br><span class="line">- Fail-stop失效语义</span><br><span class="line"></span><br><span class="line">过程：</span><br><span class="line">1. 客户端联系Pi执行命令</span><br><span class="line">2. 每个进程维护命令列表</span><br><span class="line">3. 基于轮数进行共识</span><br></pre></td></tr></table></figure>
 
 <h4 id="3-2-Paxos协议假设"><a href="#3-2-Paxos协议假设" class="headerlink" title="3.2 Paxos协议假设"></a>3.2 Paxos协议假设</h4><ol>
 <li>半同步系统</li>
@@ -1632,22 +1648,22 @@
 <li>进程不会串通欺骗</li>
 </ol>
 <h3 id="4-可靠通信"><a href="#4-可靠通信" class="headerlink" title="4. 可靠通信"></a>4. 可靠通信</h3><h4 id="4-1-可靠RPC机制"><a href="#4-1-可靠RPC机制" class="headerlink" title="4.1 可靠RPC机制"></a>4.1 可靠RPC机制</h4><p>错误类型及解决方案：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1. 不能定位服务器</span><br><span class="line">   - 向客户端返回错误信息</span><br><span class="line"></span><br><span class="line">2. 请求丢失</span><br><span class="line">   - 重新传输请求</span><br><span class="line"></span><br><span class="line">3. 服务器崩溃</span><br><span class="line">   - 使用幂等操作</span><br><span class="line">   - 事务处理机制</span><br><span class="line"></span><br><span class="line">4. 客户端崩溃解决方案</span><br><span class="line">   - 孤儿消灭</span><br><span class="line">   - 再生</span><br><span class="line">   - 优雅再生</span><br><span class="line">   - 超时机制</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 不能定位服务器</span><br><span class="line">   - 向客户端返回错误信息</span><br><span class="line"></span><br><span class="line">2. 请求丢失</span><br><span class="line">   - 重新传输请求</span><br><span class="line"></span><br><span class="line">3. 服务器崩溃</span><br><span class="line">   - 使用幂等操作</span><br><span class="line">   - 事务处理机制</span><br><span class="line"></span><br><span class="line">4. 客户端崩溃解决方案</span><br><span class="line">   - 孤儿消灭</span><br><span class="line">   - 再生</span><br><span class="line">   - 优雅再生</span><br><span class="line">   - 超时机制</span><br></pre></td></tr></table></figure>
 
 <h4 id="4-2-可靠组通信"><a href="#4-2-可靠组通信" class="headerlink" title="4.2 可靠组通信"></a>4.2 可靠组通信</h4><p>实现方式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 基本机制：</span><br><span class="line">   - 确保组内每个进程接收消息</span><br><span class="line">   - 区分消息接收和发送</span><br><span class="line"></span><br><span class="line">2. 反馈控制：</span><br><span class="line">   - 无等级反馈：多播反馈抑制</span><br><span class="line">   - 分等级反馈：树形组织结构</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 基本机制：</span><br><span class="line">   - 确保组内每个进程接收消息</span><br><span class="line">   - 区分消息接收和发送</span><br><span class="line"></span><br><span class="line">2. 反馈控制：</span><br><span class="line">   - 无等级反馈：多播反馈抑制</span><br><span class="line">   - 分等级反馈：树形组织结构</span><br></pre></td></tr></table></figure>
 
-<h3 id="5-分布式提交协议"><a href="#5-分布式提交协议" class="headerlink" title="5. 分布式提交协议"></a>5. 分布式提交协议</h3><h4 id="5-1-两阶段提交-2PC"><a href="#5-1-两阶段提交-2PC" class="headerlink" title="5.1 两阶段提交(2PC)"></a>5.1 两阶段提交(2PC)</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">阶段1(投票阶段)：</span><br><span class="line">1. 协调者发送VOTE_REQUEST</span><br><span class="line">2. 参与者回复VOTE_COMMIT或VOTE_ABORT</span><br><span class="line"></span><br><span class="line">阶段2(提交阶段)：</span><br><span class="line">1. 协调者发送GLOBAL_COMMIT或GLOBAL_ABORT</span><br><span class="line">2. 参与者执行相应操作并确认</span><br><span class="line"></span><br><span class="line">失效处理：</span><br><span class="line">- 参与者失效：使用日志记录恢复</span><br><span class="line">- 协调者失效：可能导致阻塞</span><br></pre></td></tr></table></figure>
+<h3 id="5-分布式提交协议"><a href="#5-分布式提交协议" class="headerlink" title="5. 分布式提交协议"></a>5. 分布式提交协议</h3><h4 id="5-1-两阶段提交-2PC"><a href="#5-1-两阶段提交-2PC" class="headerlink" title="5.1 两阶段提交(2PC)"></a>5.1 两阶段提交(2PC)</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">阶段1(投票阶段)：</span><br><span class="line">1. 协调者发送VOTE_REQUEST</span><br><span class="line">2. 参与者回复VOTE_COMMIT或VOTE_ABORT</span><br><span class="line"></span><br><span class="line">阶段2(提交阶段)：</span><br><span class="line">1. 协调者发送GLOBAL_COMMIT或GLOBAL_ABORT</span><br><span class="line">2. 参与者执行相应操作并确认</span><br><span class="line"></span><br><span class="line">失效处理：</span><br><span class="line">- 参与者失效：使用日志记录恢复</span><br><span class="line">- 协调者失效：可能导致阻塞</span><br></pre></td></tr></table></figure>
 
 <h4 id="5-2-恢复机制"><a href="#5-2-恢复机制" class="headerlink" title="5.2 恢复机制"></a>5.2 恢复机制</h4><ol>
 <li><p><strong>检查点机制</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">特点：</span><br><span class="line">- 周期性记录进程状态</span><br><span class="line">- 需要找到一致的恢复线路</span><br><span class="line">- 可能出现多米诺效应</span><br><span class="line"></span><br><span class="line">类型：</span><br><span class="line">- 独立检查点</span><br><span class="line">- 协调检查点</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">特点：</span><br><span class="line">- 周期性记录进程状态</span><br><span class="line">- 需要找到一致的恢复线路</span><br><span class="line">- 可能出现多米诺效应</span><br><span class="line"></span><br><span class="line">类型：</span><br><span class="line">- 独立检查点</span><br><span class="line">- 协调检查点</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>日志消息机制</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">优势：</span><br><span class="line">- 代价低于检查点</span><br><span class="line">- 通过重放达到一致状态</span><br><span class="line"></span><br><span class="line">实现方式：</span><br><span class="line">- 持久化消息</span><br><span class="line">- 保证消息顺序</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">优势：</span><br><span class="line">- 代价低于检查点</span><br><span class="line">- 通过重放达到一致状态</span><br><span class="line"></span><br><span class="line">实现方式：</span><br><span class="line">- 持久化消息</span><br><span class="line">- 保证消息顺序</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>面向恢复的计算(RoC)</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">特点：</span><br><span class="line">- 只重启部分系统</span><br><span class="line">- 组件高度分离</span><br><span class="line">- 组件间关联简单</span><br><span class="line">- 支持增量恢复</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">特点：</span><br><span class="line">- 只重启部分系统</span><br><span class="line">- 组件高度分离</span><br><span class="line">- 组件间关联简单</span><br><span class="line">- 支持增量恢复</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="分布式系统共识机制总结"><a href="#分布式系统共识机制总结" class="headerlink" title="分布式系统共识机制总结"></a>分布式系统共识机制总结</h2><h3 id="1-基础概念-2"><a href="#1-基础概念-2" class="headerlink" title="1. 基础概念"></a>1. 基础概念</h3><h4 id="1-1-背景"><a href="#1-1-背景" class="headerlink" title="1.1 背景"></a>1.1 背景</h4><ul>
 <li><strong>分布式系统协作</strong>：多个部分协同工作，对外呈现整体性</li>
@@ -1660,33 +1676,33 @@
 <li>Soft-state (软状态)</li>
 <li>Eventual Consistency (最终一致性)</li>
 </ul>
-<h3 id="2-Paxos算法"><a href="#2-Paxos算法" class="headerlink" title="2. Paxos算法"></a>2. Paxos算法</h3><h4 id="2-1-基本概念-1"><a href="#2-1-基本概念-1" class="headerlink" title="2.1 基本概念"></a>2.1 基本概念</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">角色定义：</span><br><span class="line">1. Proposer: 提议者</span><br><span class="line">2. Acceptor: 接受者</span><br><span class="line">3. Learner: 学习者</span><br><span class="line"></span><br><span class="line">消息类型：</span><br><span class="line">1. Prepare(n): 准备请求</span><br><span class="line">2. Promise(n,v): 承诺响应</span><br><span class="line">3. Accept(n,v): 接受请求</span><br><span class="line">4. Accepted(n,v): 接受响应</span><br></pre></td></tr></table></figure>
+<h3 id="2-Paxos算法"><a href="#2-Paxos算法" class="headerlink" title="2. Paxos算法"></a>2. Paxos算法</h3><h4 id="2-1-基本概念-1"><a href="#2-1-基本概念-1" class="headerlink" title="2.1 基本概念"></a>2.1 基本概念</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">角色定义：</span><br><span class="line">1. Proposer: 提议者</span><br><span class="line">2. Acceptor: 接受者</span><br><span class="line">3. Learner: 学习者</span><br><span class="line"></span><br><span class="line">消息类型：</span><br><span class="line">1. Prepare(n): 准备请求</span><br><span class="line">2. Promise(n,v): 承诺响应</span><br><span class="line">3. Accept(n,v): 接受请求</span><br><span class="line">4. Accepted(n,v): 接受响应</span><br></pre></td></tr></table></figure>
 
 <h4 id="2-2-算法流程"><a href="#2-2-算法流程" class="headerlink" title="2.2 算法流程"></a>2.2 算法流程</h4><p><strong>阶段1 (Prepare):</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Proposer:</span><br><span class="line">1. 选择提案编号n</span><br><span class="line">2. 向Acceptors发送Prepare(n)</span><br><span class="line"></span><br><span class="line">Acceptor:</span><br><span class="line">1. 如果n大于已承诺的所有编号:</span><br><span class="line">   - 承诺不再接受编号小于n的提案</span><br><span class="line">   - 返回Promise(n, 最高编号已接受的提案值)</span><br><span class="line">2. 否则拒绝</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Proposer:</span><br><span class="line">1. 选择提案编号n</span><br><span class="line">2. 向Acceptors发送Prepare(n)</span><br><span class="line"></span><br><span class="line">Acceptor:</span><br><span class="line">1. 如果n大于已承诺的所有编号:</span><br><span class="line">   - 承诺不再接受编号小于n的提案</span><br><span class="line">   - 返回Promise(n, 最高编号已接受的提案值)</span><br><span class="line">2. 否则拒绝</span><br></pre></td></tr></table></figure>
 
 <p><strong>阶段2 (Accept):</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Proposer:</span><br><span class="line">1. 如果收到多数Promise响应:</span><br><span class="line">   - 选择最高编号已接受的值v (如无则自由选择)</span><br><span class="line">   - 发送Accept(n,v)给所有Acceptor</span><br><span class="line"></span><br><span class="line">Acceptor:</span><br><span class="line">1. 如果未对更大编号做出承诺:</span><br><span class="line">   - 接受提案并发送Accepted(n,v)</span><br><span class="line">2. 否则拒绝</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Proposer:</span><br><span class="line">1. 如果收到多数Promise响应:</span><br><span class="line">   - 选择最高编号已接受的值v (如无则自由选择)</span><br><span class="line">   - 发送Accept(n,v)给所有Acceptor</span><br><span class="line"></span><br><span class="line">Acceptor:</span><br><span class="line">1. 如果未对更大编号做出承诺:</span><br><span class="line">   - 接受提案并发送Accepted(n,v)</span><br><span class="line">2. 否则拒绝</span><br></pre></td></tr></table></figure>
 
 <h4 id="2-3-算法特性示例"><a href="#2-3-算法特性示例" class="headerlink" title="2.3 算法特性示例"></a>2.3 算法特性示例</h4><ol>
 <li><p><strong>无冲突情况</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- Proposer P1提出值v1</span><br><span class="line">- 多数Acceptor接受v1</span><br><span class="line">- 共识达成值v1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- Proposer P1提出值v1</span><br><span class="line">- 多数Acceptor接受v1</span><br><span class="line">- 共识达成值v1</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>并发写冲突</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- P1和P2同时提议</span><br><span class="line">- 较大编号的提案胜出</span><br><span class="line">- 确保只有一个值被选定</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- P1和P2同时提议</span><br><span class="line">- 较大编号的提案胜出</span><br><span class="line">- 确保只有一个值被选定</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>安全性保证</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 已确定的值不会被修改</span><br><span class="line">- 较新的提案会继承已接受的值</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- 已确定的值不会被修改</span><br><span class="line">- 较新的提案会继承已接受的值</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h3 id="3-Raft算法"><a href="#3-Raft算法" class="headerlink" title="3. Raft算法"></a>3. Raft算法</h3><h4 id="3-1-核心概念"><a href="#3-1-核心概念" class="headerlink" title="3.1 核心概念"></a>3.1 核心概念</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">角色：</span><br><span class="line">1. Leader: 领导者</span><br><span class="line">2. Follower: 跟随者</span><br><span class="line">3. Candidate: 候选者</span><br><span class="line"></span><br><span class="line">任期：</span><br><span class="line">- 时间被划分为任意长度的任期</span><br><span class="line">- 每个任期有唯一的递增编号</span><br><span class="line">- 每个任期至多有一个Leader</span><br></pre></td></tr></table></figure>
+<h3 id="3-Raft算法"><a href="#3-Raft算法" class="headerlink" title="3. Raft算法"></a>3. Raft算法</h3><h4 id="3-1-核心概念"><a href="#3-1-核心概念" class="headerlink" title="3.1 核心概念"></a>3.1 核心概念</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">角色：</span><br><span class="line">1. Leader: 领导者</span><br><span class="line">2. Follower: 跟随者</span><br><span class="line">3. Candidate: 候选者</span><br><span class="line"></span><br><span class="line">任期：</span><br><span class="line">- 时间被划分为任意长度的任期</span><br><span class="line">- 每个任期有唯一的递增编号</span><br><span class="line">- 每个任期至多有一个Leader</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-2-选举过程"><a href="#3-2-选举过程" class="headerlink" title="3.2 选举过程"></a>3.2 选举过程</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1. Follower超时未收到Leader心跳:</span><br><span class="line">   - 转换为Candidate</span><br><span class="line">   - 增加当前任期</span><br><span class="line">   - 投票给自己</span><br><span class="line">   - 请求其他节点投票</span><br><span class="line"></span><br><span class="line">2. 获得多数选票:</span><br><span class="line">   - 成为Leader</span><br><span class="line">   - 定期发送心跳</span><br><span class="line"></span><br><span class="line">3. 发现更高任期:</span><br><span class="line">   - 转换为Follower</span><br></pre></td></tr></table></figure>
+<h4 id="3-2-选举过程"><a href="#3-2-选举过程" class="headerlink" title="3.2 选举过程"></a>3.2 选举过程</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. Follower超时未收到Leader心跳:</span><br><span class="line">   - 转换为Candidate</span><br><span class="line">   - 增加当前任期</span><br><span class="line">   - 投票给自己</span><br><span class="line">   - 请求其他节点投票</span><br><span class="line"></span><br><span class="line">2. 获得多数选票:</span><br><span class="line">   - 成为Leader</span><br><span class="line">   - 定期发送心跳</span><br><span class="line"></span><br><span class="line">3. 发现更高任期:</span><br><span class="line">   - 转换为Follower</span><br></pre></td></tr></table></figure>
 
-<h3 id="4-PBFT-实用拜占庭容错"><a href="#4-PBFT-实用拜占庭容错" class="headerlink" title="4. PBFT (实用拜占庭容错)"></a>4. PBFT (实用拜占庭容错)</h3><h4 id="4-1-系统模型"><a href="#4-1-系统模型" class="headerlink" title="4.1 系统模型"></a>4.1 系统模型</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">假设：</span><br><span class="line">- 最多f个节点可能是恶意的</span><br><span class="line">- 总节点数需要≥3f+1</span><br><span class="line">- 异步网络环境</span><br></pre></td></tr></table></figure>
+<h3 id="4-PBFT-实用拜占庭容错"><a href="#4-PBFT-实用拜占庭容错" class="headerlink" title="4. PBFT (实用拜占庭容错)"></a>4. PBFT (实用拜占庭容错)</h3><h4 id="4-1-系统模型"><a href="#4-1-系统模型" class="headerlink" title="4.1 系统模型"></a>4.1 系统模型</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">假设：</span><br><span class="line">- 最多f个节点可能是恶意的</span><br><span class="line">- 总节点数需要≥3f+1</span><br><span class="line">- 异步网络环境</span><br></pre></td></tr></table></figure>
 
-<h4 id="4-2-协议流程"><a href="#4-2-协议流程" class="headerlink" title="4.2 协议流程"></a>4.2 协议流程</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1. 请求阶段：</span><br><span class="line">   - 客户端发送请求到主节点</span><br><span class="line"></span><br><span class="line">2. 预准备阶段：</span><br><span class="line">   - 主节点分配序号</span><br><span class="line">   - 广播预准备消息</span><br><span class="line"></span><br><span class="line">3. 准备阶段：</span><br><span class="line">   - 副本验证预准备消息</span><br><span class="line">   - 广播准备消息</span><br><span class="line"></span><br><span class="line">4. 提交阶段：</span><br><span class="line">   - 收到2f+1个准备消息后</span><br><span class="line">   - 广播提交消息</span><br><span class="line"></span><br><span class="line">5. 回复阶段：</span><br><span class="line">   - 执行请求</span><br><span class="line">   - 向客户端发送回复</span><br></pre></td></tr></table></figure>
+<h4 id="4-2-协议流程"><a href="#4-2-协议流程" class="headerlink" title="4.2 协议流程"></a>4.2 协议流程</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 请求阶段：</span><br><span class="line">   - 客户端发送请求到主节点</span><br><span class="line"></span><br><span class="line">2. 预准备阶段：</span><br><span class="line">   - 主节点分配序号</span><br><span class="line">   - 广播预准备消息</span><br><span class="line"></span><br><span class="line">3. 准备阶段：</span><br><span class="line">   - 副本验证预准备消息</span><br><span class="line">   - 广播准备消息</span><br><span class="line"></span><br><span class="line">4. 提交阶段：</span><br><span class="line">   - 收到2f+1个准备消息后</span><br><span class="line">   - 广播提交消息</span><br><span class="line"></span><br><span class="line">5. 回复阶段：</span><br><span class="line">   - 执行请求</span><br><span class="line">   - 向客户端发送回复</span><br></pre></td></tr></table></figure>
 
-<h4 id="4-3-视图变更"><a href="#4-3-视图变更" class="headerlink" title="4.3 视图变更"></a>4.3 视图变更</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">触发条件：</span><br><span class="line">- 主节点失效</span><br><span class="line">- 网络分区</span><br><span class="line">- 超时</span><br><span class="line"></span><br><span class="line">过程：</span><br><span class="line">1. 副本广播视图变更请求</span><br><span class="line">2. 收到2f+1个请求后开始变更</span><br><span class="line">3. 选择新的主节点</span><br><span class="line">4. 同步状态</span><br></pre></td></tr></table></figure>
+<h4 id="4-3-视图变更"><a href="#4-3-视图变更" class="headerlink" title="4.3 视图变更"></a>4.3 视图变更</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">触发条件：</span><br><span class="line">- 主节点失效</span><br><span class="line">- 网络分区</span><br><span class="line">- 超时</span><br><span class="line"></span><br><span class="line">过程：</span><br><span class="line">1. 副本广播视图变更请求</span><br><span class="line">2. 收到2f+1个请求后开始变更</span><br><span class="line">3. 选择新的主节点</span><br><span class="line">4. 同步状态</span><br></pre></td></tr></table></figure>
 
 <p>这些共识算法各有特点：</p>
 <ul>
@@ -1767,12 +1783,12 @@
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
 <div id="article-share">
 
     
     <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/share/js/social-share.min.js"></script>
+    <script src="/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -1797,10 +1813,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -2072,8 +2088,8 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/valine/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.iohttps://unpkg.com/valine/dist/Valine.min.js"></script>
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
     new Valine({
             el: '#vcomments',
@@ -2170,7 +2186,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
                         
                         <span class="card-title">正则表达式</span>
                     </div>
@@ -2219,7 +2235,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="Computer Architecture">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Computer Architecture">
                         
                         <span class="card-title">Computer Architecture</span>
                     </div>
@@ -2307,23 +2323,26 @@
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
 
@@ -2345,7 +2364,7 @@
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/tocbot/tocbot.min.js"></script>
+<script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -2430,7 +2449,7 @@
                             
                                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
                                         class="white-color">
-                                        59.6k
+                                        66.9k
                                     </span>
                                     
                                         
@@ -2682,17 +2701,17 @@ $(function () {
 </div>
 
 
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/materialize/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/aos/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/js/matery.js"></script>
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
 
     
 
     
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/js/tw_cn.js"></script>
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
         <script type="text/javascript">
           var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
           var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
@@ -2710,7 +2729,7 @@ $(function () {
             // 只在桌面版网页启用特效
             var windowWidth = $(window).width();
             if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/others/sakura.js"><\/script>');
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
             }
         </script>
     
@@ -2724,7 +2743,7 @@ $(function () {
             // 只在桌面版网页启用特效
             var windowWidth = $(window).width();
             if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/others/star.js"><\/script>');
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
             }
         </script>
     
@@ -2751,7 +2770,7 @@ $(function () {
 
     
     
-    <script async src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -2765,13 +2784,13 @@ $(function () {
     
     
     <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/background/ribbon-refresh.min.js" async="async"></script>
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     
 
     
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>

@@ -18,7 +18,7 @@
 
 
     <title>Computer Architecture | D</title>
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
     
 
 
@@ -26,31 +26,31 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/awesome/css/all.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/materialize/materialize.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/aos/aos.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/animate/animate.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/lightGallery/css/lightgallery.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/css/matery.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/css/my.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/css/dark.css" media="none" onload="if(media!='all')media='all'">
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
 
 
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/tocbot/tocbot.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/css/post.css">
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
 
 
 
 
     
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/css/reward.css">
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
     
 
 
 
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 7.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
@@ -62,7 +62,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">D</span>
                 </a>
@@ -166,7 +166,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">D</div>
         <div class="logo-desc">
@@ -331,10 +331,23 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/featureimages/0.jpg')">
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -423,6 +436,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -507,7 +523,7 @@
 </li>
 </ol>
 <h2 id="基准评测集"><a href="#基准评测集" class="headerlink" title="基准评测集"></a>基准评测集</h2><h3 id="一、计算机性能基础"><a href="#一、计算机性能基础" class="headerlink" title="一、计算机性能基础"></a>一、计算机性能基础</h3><h4 id="1-性能指标"><a href="#1-性能指标" class="headerlink" title="1. 性能指标"></a>1. 性能指标</h4><h5 id="重点：CPU性能评估方法"><a href="#重点：CPU性能评估方法" class="headerlink" title="重点：CPU性能评估方法"></a>重点：CPU性能评估方法</h5><ul>
-<li>CPU时间计算公式：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CPU Time = Instructions × CPI × Clock Cycle Time</span><br></pre></td></tr></table></figure></li>
+<li>CPU时间计算公式：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CPU Time = Instructions × CPI × Clock Cycle Time</span><br></pre></td></tr></table></figure></li>
 <li>主要影响因素：<ul>
 <li>指令数(Instructions)</li>
 <li>每指令周期数(CPI)</li>
@@ -517,13 +533,13 @@
 </ul>
 <h5 id="性能度量标准："><a href="#性能度量标准：" class="headerlink" title="性能度量标准："></a>性能度量标准：</h5><ol>
 <li><p>MIPS (每秒百万指令数)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MIPS = Instructions Number/(Execution Time × 10^6)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MIPS = Instructions Number/(Execution Time × 10^6)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>FLOPS (每秒浮点运算次数)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MFLOPS = Float Instructions Number/(Execution Time × 10^6)</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MFLOPS = Float Instructions Number/(Execution Time × 10^6)</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h4 id="2-并行系统性能评估"><a href="#2-并行系统性能评估" class="headerlink" title="2. 并行系统性能评估"></a>2. 并行系统性能评估</h4><h4 id="重点概念："><a href="#重点概念：" class="headerlink" title="重点概念："></a>重点概念：</h4><ol>
-<li>加速比(Speedup)：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S = Ts/Tp</span><br></pre></td></tr></table></figure>
+<li>加速比(Speedup)：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">S = Ts/Tp</span><br></pre></td></tr></table></figure>
 其中：</li>
 </ol>
 <ul>
@@ -531,11 +547,11 @@
 <li>Tp：并行执行时间</li>
 </ul>
 <ol start="2">
-<li>效率(Efficiency)：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E = S/p</span><br></pre></td></tr></table></figure>
+<li>效率(Efficiency)：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">E = S/p</span><br></pre></td></tr></table></figure>
 其中p为处理器数量</li>
 </ol>
 <h5 id="难点：Amdahl定律"><a href="#难点：Amdahl定律" class="headerlink" title="难点：Amdahl定律"></a>难点：Amdahl定律</h5><ol>
-<li>核心公式：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S = 1/(f + (1-f)/p)</span><br></pre></td></tr></table></figure>
+<li>核心公式：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">S = 1/(f + (1-f)/p)</span><br></pre></td></tr></table></figure>
 其中：</li>
 </ol>
 <ul>
@@ -550,7 +566,7 @@
 <li>串行部分成为性能瓶颈</li>
 </ul>
 <h5 id="Gustafson定律"><a href="#Gustafson定律" class="headerlink" title="Gustafson定律"></a>Gustafson定律</h5><ol>
-<li>公式：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S&#x27; = p - f(p-1)</span><br></pre></td></tr></table></figure></li>
+<li>公式：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">S&#x27; = p - f(p-1)</span><br></pre></td></tr></table></figure></li>
 <li>特点：</li>
 </ol>
 <ul>
@@ -582,7 +598,7 @@
 <li>Graph500：图算法性能</li>
 </ul>
 <h4 id="实例分析：-1"><a href="#实例分析：-1" class="headerlink" title="实例分析："></a>实例分析：</h4><p>以龙芯3A5000处理器为例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SPEC CPU2006测试结果：</span><br><span class="line">- SPECint2006：27.87</span><br><span class="line">- SPECfp2006：30.29</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SPEC CPU2006测试结果：</span><br><span class="line">- SPECint2006：27.87</span><br><span class="line">- SPECfp2006：30.29</span><br></pre></td></tr></table></figure>
 <p>性能分析表明：</p>
 <ul>
 <li>定点性能接近同代x86处理器</li>
@@ -781,13 +797,13 @@
 </ul>
 <h5 id="B-数据冒险："><a href="#B-数据冒险：" class="headerlink" title="B. 数据冒险："></a>B. 数据冒险：</h5><ol>
 <li><p>RAW(Read After Write)：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">I1: add r1,r2,r3</span><br><span class="line">I2: sub r4,r1,r3  // 等待r1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">I1: add r1,r2,r3</span><br><span class="line">I2: sub r4,r1,r3  // 等待r1</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>WAR(Write After Read)：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">I1: sub r4,r1,r3</span><br><span class="line">I2: add r1,r2,r3  // 必须等I1读完r1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">I1: sub r4,r1,r3</span><br><span class="line">I2: add r1,r2,r3  // 必须等I1读完r1</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>WAW(Write After Write)：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">I1: sub r1,r4,r3</span><br><span class="line">I2: add r1,r2,r3  // 写入次序不能颠倒</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">I1: sub r1,r4,r3</span><br><span class="line">I2: add r1,r2,r3  // 写入次序不能颠倒</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h5 id="C-控制冒险："><a href="#C-控制冒险：" class="headerlink" title="C. 控制冒险："></a>C. 控制冒险：</h5><ul>
 <li>由分支指令引起</li>
@@ -817,10 +833,10 @@
 <li>分析存储地址相关性</li>
 <li>进行指令调度</li>
 </ul>
-<h5 id="实例分析：-2"><a href="#实例分析：-2" class="headerlink" title="实例分析："></a>实例分析：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">原始循环：</span><br><span class="line">Loop: fld f0,0(x1)</span><br><span class="line">      fadd.d f4,f0,f2</span><br><span class="line">      fsd f4,0(x1)</span><br><span class="line">      addi x1,x1,-8</span><br><span class="line">      bne x1,x2,Loop</span><br></pre></td></tr></table></figure>
+<h5 id="实例分析：-2"><a href="#实例分析：-2" class="headerlink" title="实例分析："></a>实例分析：</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">原始循环：</span><br><span class="line">Loop: fld f0,0(x1)</span><br><span class="line">      fadd.d f4,f0,f2</span><br><span class="line">      fsd f4,0(x1)</span><br><span class="line">      addi x1,x1,-8</span><br><span class="line">      bne x1,x2,Loop</span><br></pre></td></tr></table></figure>
 
 <p>展开优化后：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Loop: fld f0,0(x1)</span><br><span class="line">      fld f6,8(x1)</span><br><span class="line">      fld f10,16(x1)</span><br><span class="line">      fld f14,24(x1)</span><br><span class="line">      fadd.d f4,f0,f2</span><br><span class="line">      fadd.d f8,f6,f2</span><br><span class="line">      fadd.d f12,f0,f2</span><br><span class="line">      fadd.d f16,f14,f2</span><br><span class="line">      fsd f4,0(x1)</span><br><span class="line">      fsd f8,8(x1)</span><br><span class="line">      addi x1,x1,32</span><br><span class="line">      fsd f12,16(x1)</span><br><span class="line">      bne x1,x2,Loop</span><br><span class="line">      fsd f16,24(x1)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Loop: fld f0,0(x1)</span><br><span class="line">      fld f6,8(x1)</span><br><span class="line">      fld f10,16(x1)</span><br><span class="line">      fld f14,24(x1)</span><br><span class="line">      fadd.d f4,f0,f2</span><br><span class="line">      fadd.d f8,f6,f2</span><br><span class="line">      fadd.d f12,f0,f2</span><br><span class="line">      fadd.d f16,f14,f2</span><br><span class="line">      fsd f4,0(x1)</span><br><span class="line">      fsd f8,8(x1)</span><br><span class="line">      addi x1,x1,32</span><br><span class="line">      fsd f12,16(x1)</span><br><span class="line">      bne x1,x2,Loop</span><br><span class="line">      fsd f16,24(x1)</span><br></pre></td></tr></table></figure>
 
 <p>优化效果：</p>
 <ul>
@@ -887,10 +903,10 @@
 </ul>
 <ol start="2">
 <li><p>工作流程：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (PC in BTB) &#123;</span><br><span class="line">    next_PC = predicted_target;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    next_PC = PC + 4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if (PC in BTB) &#123;</span><br><span class="line">    next_PC = predicted_target;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    next_PC = PC + 4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>失效代价：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">BTB失效类型   预测   实际   惩罚周期</span><br><span class="line">命中          跳转   跳转   0</span><br><span class="line">命中          跳转   不跳转 2</span><br><span class="line">未命中        -      跳转   2</span><br><span class="line">未命中        -      不跳转 0</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">BTB失效类型   预测   实际   惩罚周期</span><br><span class="line">命中          跳转   跳转   0</span><br><span class="line">命中          跳转   不跳转 2</span><br><span class="line">未命中        -      跳转   2</span><br><span class="line">未命中        -      不跳转 0</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="五、推测执行"><a href="#五、推测执行" class="headerlink" title="五、推测执行"></a>五、推测执行</h3><h4 id="1-重排序缓冲区-ROB"><a href="#1-重排序缓冲区-ROB" class="headerlink" title="1. 重排序缓冲区(ROB)"></a>1. 重排序缓冲区(ROB)</h4><h5 id="重点概念：-3"><a href="#重点概念：-3" class="headerlink" title="重点概念："></a>重点概念：</h5><ol>
 <li>ROB的基本功能：</li>
@@ -938,7 +954,7 @@
 <li>确保精确中断</li>
 <li>处理预测错误</li>
 </ul>
-<h4 id="2-实例分析"><a href="#2-实例分析" class="headerlink" title="2. 实例分析"></a>2. 实例分析</h4><h5 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">L.D F6,34(R2)</span><br><span class="line">L.D F2,45(R3)</span><br><span class="line">MUL.D F0,F2,F4</span><br><span class="line">SUB.D F8,F6,F2</span><br><span class="line">DIV.D F10,F0,F6</span><br><span class="line">ADD.D F6,F8,F2</span><br></pre></td></tr></table></figure>
+<h4 id="2-实例分析"><a href="#2-实例分析" class="headerlink" title="2. 实例分析"></a>2. 实例分析</h4><h5 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">L.D F6,34(R2)</span><br><span class="line">L.D F2,45(R3)</span><br><span class="line">MUL.D F0,F2,F4</span><br><span class="line">SUB.D F8,F6,F2</span><br><span class="line">DIV.D F10,F0,F6</span><br><span class="line">ADD.D F6,F8,F2</span><br></pre></td></tr></table></figure>
 
 <h5 id="执行过程："><a href="#执行过程：" class="headerlink" title="执行过程："></a>执行过程：</h5><ol>
 <li>Load指令:</li>
@@ -995,7 +1011,7 @@
 <li>转发(Forward)复杂度增加</li>
 </ol>
 <h4 id="3-实例分析"><a href="#3-实例分析" class="headerlink" title="3. 实例分析"></a>3. 实例分析</h4><p>双发射MIPS处理器示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Loop: L.D F0,0(R1)</span><br><span class="line">      ADD.D F4,F0,F2</span><br><span class="line">      S.D F4,0(R1)</span><br><span class="line">      DADDIU R1,R1,#-8</span><br><span class="line">      BNE R1,R2,Loop</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Loop: L.D F0,0(R1)</span><br><span class="line">      ADD.D F4,F0,F2</span><br><span class="line">      S.D F4,0(R1)</span><br><span class="line">      DADDIU R1,R1,#-8</span><br><span class="line">      BNE R1,R2,Loop</span><br></pre></td></tr></table></figure>
 
 <p>执行效率：</p>
 <ul>
@@ -1156,12 +1172,12 @@
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
 <div id="article-share">
 
     
     <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/share/js/social-share.min.js"></script>
+    <script src="/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -1186,10 +1202,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1461,8 +1477,8 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/valine/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.iohttps://unpkg.com/valine/dist/Valine.min.js"></script>
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
     new Valine({
             el: '#vcomments',
@@ -1559,7 +1575,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/featureimages/18.jpg" class="responsive-img" alt="分布式系统">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="分布式系统">
                         
                         <span class="card-title">分布式系统</span>
                     </div>
@@ -1608,7 +1624,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="Database Principle">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Database Principle">
                         
                         <span class="card-title">Database Principle</span>
                     </div>
@@ -1616,7 +1632,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数据库原理（基于SQL Server）
+                            可联系bz获取密码喵
                         
                     </div>
                     <div class="publish-info">
@@ -1696,23 +1712,26 @@
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
 
@@ -1734,7 +1753,7 @@
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/tocbot/tocbot.min.js"></script>
+<script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1819,7 +1838,7 @@
                             
                                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
                                         class="white-color">
-                                        59.6k
+                                        66.9k
                                     </span>
                                     
                                         
@@ -2071,17 +2090,17 @@ $(function () {
 </div>
 
 
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/materialize/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/aos/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/js/matery.js"></script>
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
 
     
 
     
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/js/tw_cn.js"></script>
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
         <script type="text/javascript">
           var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
           var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
@@ -2099,7 +2118,7 @@ $(function () {
             // 只在桌面版网页启用特效
             var windowWidth = $(window).width();
             if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/others/sakura.js"><\/script>');
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
             }
         </script>
     
@@ -2113,7 +2132,7 @@ $(function () {
             // 只在桌面版网页启用特效
             var windowWidth = $(window).width();
             if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/others/star.js"><\/script>');
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
             }
         </script>
     
@@ -2140,7 +2159,7 @@ $(function () {
 
     
     
-    <script async src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -2154,13 +2173,13 @@ $(function () {
     
     
     <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/background/ribbon-refresh.min.js" async="async"></script>
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     
 
     
-    <script src="https://cdn.jsdelivr.net/gh/lavoisier7/lavoisier7.github.io/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>
