@@ -566,7 +566,7 @@
 <li><p>包含请求行、头部字段和可选的消息体。</p>
 </li>
 <li><p>示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET /index.html HTTP/1.1</span><br><span class="line">Host: www.example.com</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET /index.html HTTP/1.1</span><br><span class="line">Host: www.example.com</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p><strong>响应消息</strong>：</p>
@@ -574,7 +574,7 @@
 <li><p>包含状态行、头部字段和可选的数据部分。</p>
 </li>
 <li><p>示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Content-Type: text/html</span><br><span class="line">Content-Length: 100</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Content-Type: text/html</span><br><span class="line">Content-Length: 100</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ol>
@@ -1100,7 +1100,7 @@
 <li><p>数据包目的地址：<code>11001000 00010111 00011000 10101010</code>。</p>
 </li>
 <li><p>转发表：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">前缀              接口</span><br><span class="line">11001000 00010111 00010*** *********   0</span><br><span class="line">11001000 00010111 00011000 *********   1</span><br><span class="line">11001000 00010111 00011*** *********   2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">前缀              接口</span><br><span class="line">11001000 00010111 00010*** *********   0</span><br><span class="line">11001000 00010111 00011000 *********   1</span><br><span class="line">11001000 00010111 00011*** *********   2</span><br></pre></td></tr></table></figure>
 
 <p>匹配规则：选择匹配位数最多的条目，因此选择接口 <code>1</code>。</p>
 </li>
@@ -1179,7 +1179,7 @@
 <li><p>NAT 地址：<code>138.76.29.7</code>。</p>
 </li>
 <li><p>NAT 表：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">内部地址:端口 外部地址:端口</span><br><span class="line">10.0.0.1:3345    138.76.29.7:5001</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">内部地址:端口 外部地址:端口</span><br><span class="line">10.0.0.1:3345    138.76.29.7:5001</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
@@ -1209,7 +1209,7 @@
 <li><p><strong>场景</strong>：主机 <code>h5</code> 和 <code>h6</code> 的数据包需通过交换机 <code>s1</code> 和 <code>s2</code> 转发到主机 <code>h3</code> 或 <code>h4</code>。</p>
 </li>
 <li><p><strong>流表规则</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">匹配条件             动作</span><br><span class="line">src=10.3.*.*, dest=10.2.*.*  转发到端口 3</span><br><span class="line">ingress port=2, dest=10.2.0.3 转发到端口 4</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">匹配条件             动作</span><br><span class="line">src=10.3.*.*, dest=10.2.*.*  转发到端口 3</span><br><span class="line">ingress port=2, dest=10.2.0.3 转发到端口 4</span><br></pre></td></tr></table></figure></li>
 </ul>
 <hr>
 <h3 id="总结与复习重点-2"><a href="#总结与复习重点-2" class="headerlink" title="总结与复习重点"></a><strong>总结与复习重点</strong></h3><ol>
@@ -1306,7 +1306,7 @@
 <li>重复，直到所有节点都被加入 <code>N&#39;</code>。</li>
 </ol>
 <h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a><strong>示例</strong></h5><p>给定以下网络拓扑：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">u---1---x---2---y---3---z</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u---1---x---2---y---3---z</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>初始状态：<code>N&#39; = &#123;u&#125;</code>，路径成本为 <code>D(u) = 0</code>，其他节点为 ∞。</li>
@@ -1320,7 +1320,7 @@
 </ul>
 <hr>
 <h4 id="距离向量算法（Distance-Vector）"><a href="#距离向量算法（Distance-Vector）" class="headerlink" title="距离向量算法（Distance Vector）"></a><strong>距离向量算法（Distance Vector）</strong></h4><p>基于 <strong>Bellman-Ford 方程</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Dx(y) = min &#123;c(x, v) + Dv(y)&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dx(y) = min &#123;c(x, v) + Dv(y)&#125;</span><br></pre></td></tr></table></figure>
 
 <p>其中：</p>
 <ul>
@@ -1337,7 +1337,7 @@
 <li><p>节点 x 的初始距离向量：<code>Dx = [0, 2, 7]</code>。</p>
 </li>
 <li><p>从邻居 y 接收到 <code>Dy = [2, 0, 1]</code> 后，更新：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Dx(z) = min&#123;c(x, y) + Dy(z), Dx(z)&#125; = min&#123;2 + 1, 7&#125; = 3</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dx(z) = min&#123;c(x, y) + Dy(z), Dx(z)&#125; = min&#123;2 + 1, 7&#125; = 3</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h5 id="问题"><a href="#问题" class="headerlink" title="问题"></a><strong>问题</strong></h5><ul>
 <li><strong>计数到无穷问题</strong>：路径成本可能无限增加（如链路失效时）。</li>
@@ -1535,7 +1535,7 @@
 <li><p>检测能力强，广泛应用于以太网、WiFi 等。</p>
 </li>
 <li><p>基于数据和生成多项式 <code>G</code>，计算校验位 <code>R</code>：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">R = remainder(D * 2^r / G)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R = remainder(D * 2^r / G)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检测突发错误的概率非常高。</p>
 </li>
@@ -2513,7 +2513,7 @@
                             
                                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
                                         class="white-color">
-                                        70.8k
+                                        70.9k
                                     </span>
                                     
                                         
