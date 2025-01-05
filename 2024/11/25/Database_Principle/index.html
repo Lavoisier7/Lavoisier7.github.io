@@ -376,12 +376,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Database/">
-                                <span class="chip bg-color">Database</span>
-                            </a>
-                        
                             <a href="/tags/SQL-Server/">
                                 <span class="chip bg-color">SQL Server</span>
+                            </a>
+                        
+                            <a href="/tags/Database/">
+                                <span class="chip bg-color">Database</span>
                             </a>
                         
                     </div>
@@ -419,7 +419,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    14.3k
+                    23.1k
                 </div>
                 
 
@@ -444,7 +444,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="数据库原理"><a href="#数据库原理" class="headerlink" title="数据库原理"></a>数据库原理</h1><p>本文将基于《Database System Concepts, 7th Ed.》的课件内容，对计算机专业课《数据库原理》进行较为详尽的知识点总结，涵盖重点难点、实例分析及重要图表描述。</p>
+                <p>本文将基于《Database System Concepts, 7th Ed.》的课件内容，对计算机专业课《数据库原理》进行较为详尽的知识点总结，涵盖重点难点、实例分析及重要图表描述。</p>
 <hr>
 <h2 id="第一章-数据库系统概述"><a href="#第一章-数据库系统概述" class="headerlink" title="第一章 数据库系统概述"></a>第一章 数据库系统概述</h2><h3 id="1-1-数据库应用实例"><a href="#1-1-数据库应用实例" class="headerlink" title="1.1 数据库应用实例"></a>1.1 数据库应用实例</h3><p><strong>重点：</strong></p>
 <ul>
@@ -1763,8 +1763,1125 @@
 </ol>
 </li>
 </ul>
+<h2 id="第十章-物理存储系统和文件组织"><a href="#第十章-物理存储系统和文件组织" class="headerlink" title="第十章 物理存储系统和文件组织"></a>第十章 物理存储系统和文件组织</h2><h3 id="1-物理存储介质分类"><a href="#1-物理存储介质分类" class="headerlink" title="1. 物理存储介质分类"></a><strong>1. 物理存储介质分类</strong></h3><p>物理存储介质按数据存储的特性分为以下两类：</p>
+<ul>
+<li><strong>易失性存储（Volatile Storage）</strong>：<ul>
+<li>断电后数据丢失。</li>
+<li>例如：缓存（Cache）、主存（Main Memory）。</li>
+</ul>
+</li>
+<li><strong>非易失性存储（Non-Volatile Storage）</strong>：<ul>
+<li>断电后数据仍然保存。</li>
+<li>包括：二级存储（磁盘、闪存）、三级存储（磁带、光盘）和带有电池支持的主存。</li>
+</ul>
+</li>
+</ul>
+<p><strong>影响存储介质选择的因素</strong>：</p>
+<ul>
+<li>数据访问速度。</li>
+<li>单位存储成本。</li>
+<li>可靠性。</li>
+</ul>
 <hr>
-<p>以上总结涵盖了每个PDF文档中的主要知识点、重点与难点、实例分析及重要图表的文字描述，旨在帮助您更好地理解和复习数据库原理课程内容。如有需要进一步深入某一部分内容，建议参考具体的课件或教材章节。</p>
+<h3 id="2-存储层次结构"><a href="#2-存储层次结构" class="headerlink" title="2. 存储层次结构"></a><strong>2. 存储层次结构</strong></h3><p>存储设备按照速度、成本和存储容量形成一个层次结构：</p>
+<ul>
+<li><strong>主存储（Primary Storage）</strong>：<ul>
+<li><strong>特点</strong>：速度最快，但易失性。</li>
+<li><strong>举例</strong>：缓存、主存。</li>
+</ul>
+</li>
+<li><strong>二级存储（Secondary Storage）</strong>：<ul>
+<li><strong>特点</strong>：非易失性，速度适中。</li>
+<li><strong>举例</strong>：闪存、磁盘（HDD、SSD）。</li>
+</ul>
+</li>
+<li><strong>三级存储（Tertiary Storage）</strong>：<ul>
+<li><strong>特点</strong>：非易失性，访问速度慢，适合归档数据。</li>
+<li><strong>举例</strong>：磁带（顺序访问）、光盘。</li>
+</ul>
+</li>
+</ul>
+<p><strong>实例分析</strong>：</p>
+<ul>
+<li>磁带存储容量可达1-12TB，适合大规模归档存储，但访问速度慢（顺序访问）。</li>
+<li>磁盘存储的扇区（Sector）是访问的最小单位，一般大小为512字节。</li>
+</ul>
+<hr>
+<h3 id="3-磁盘存储机制"><a href="#3-磁盘存储机制" class="headerlink" title="3. 磁盘存储机制"></a><strong>3. 磁盘存储机制</strong></h3><p>磁盘存储的关键技术细节：</p>
+<ul>
+<li><p><strong>磁盘结构</strong>：</p>
+<ul>
+<li>磁盘由若干圆形磁盘组成，每个磁盘包含多个<strong>磁道（Tracks）</strong>，每个磁道再分为<strong>扇区（Sectors）</strong>。</li>
+<li>典型硬盘每个磁盘有50K-100K磁道，每扇区大小通常为512字节。</li>
+</ul>
+</li>
+<li><p><strong>读写过程</strong>：</p>
+<ul>
+<li><strong>磁臂定位时间（Seek Time）</strong>：磁臂移动到目标磁道的时间。</li>
+<li><strong>旋转延迟（Rotational Latency）</strong>：目标扇区旋转至磁头下的时间。</li>
+<li><strong>数据传输率（Data-Transfer Rate）</strong>：数据传输速率，典型范围为25至200MB&#x2F;s。</li>
+</ul>
+</li>
+</ul>
+<p><strong>实例分析</strong>：<br>假设一块硬盘的平均定位时间为5ms，旋转延迟为5ms，传输速率为100MB&#x2F;s，一次读取1MB数据：</p>
+<ul>
+<li>总延迟 &#x3D; 定位时间 + 旋转延迟 + 数据传输时间 &#x3D; 5ms + 5ms + (1MB &#x2F; 100MB&#x2F;s) &#x3D; 15ms。</li>
+</ul>
+<hr>
+<h3 id="4-磁盘可靠性与性能"><a href="#4-磁盘可靠性与性能" class="headerlink" title="4. 磁盘可靠性与性能"></a><strong>4. 磁盘可靠性与性能</strong></h3><ul>
+<li><p><strong>平均故障间隔时间（MTTF）</strong>：</p>
+<ul>
+<li>表示磁盘在连续运行中平均无故障的时间，通常为3-5年。</li>
+<li>例如：MTTF为120万小时，表示1000块新磁盘中，每1200小时可能损坏一块。</li>
+</ul>
+</li>
+<li><p><strong>磁盘控制器</strong>：</p>
+<ul>
+<li>负责磁盘与计算机的交互，执行磁臂移动、数据读写、校验和计算等任务。</li>
+<li>提供坏扇区重新映射功能以提高可靠性。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="5-闪存存储"><a href="#5-闪存存储" class="headerlink" title="5. 闪存存储"></a><strong>5. 闪存存储</strong></h3><ul>
+<li><p><strong>NAND闪存</strong>：</p>
+<ul>
+<li><strong>特点</strong>：广泛用于存储设备（如SSD），便宜但需要按页读取（页大小512B-4KB）。</li>
+<li><strong>速度</strong>：读取一页耗时20-100微秒。</li>
+<li><strong>限制</strong>：每个页只能写一次，重写需先擦除。</li>
+</ul>
+</li>
+<li><p><strong>固态硬盘（SSD）</strong>：</p>
+<ul>
+<li>内部使用多块闪存，提供块级接口。</li>
+<li><strong>传输速率</strong>：通过NVMe协议可达3GB&#x2F;s。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="6-RAID（独立磁盘冗余阵列）"><a href="#6-RAID（独立磁盘冗余阵列）" class="headerlink" title="6. RAID（独立磁盘冗余阵列）"></a><strong>6. RAID（独立磁盘冗余阵列）</strong></h3><p>RAID通过并行和冗余提升存储系统的性能和可靠性：</p>
+<ul>
+<li><strong>RAID 0（条带化存储，无冗余）</strong>：<ul>
+<li><strong>特点</strong>：将数据分块存储到多个磁盘中，读写性能高，但无数据保护。</li>
+<li><strong>用途</strong>：高性能、数据丢失风险可接受的场景。</li>
+</ul>
+</li>
+<li><strong>RAID 1（镜像存储）</strong>：<ul>
+<li><strong>特点</strong>：将每块磁盘的数据完全复制到另一块磁盘。</li>
+<li><strong>优点</strong>：提供高可靠性，适合日志存储。</li>
+</ul>
+</li>
+<li><strong>RAID 5（分布式奇偶校验）</strong>：<ul>
+<li><strong>特点</strong>：数据和奇偶校验分布在所有磁盘上，提供容错能力。</li>
+<li><strong>缺点</strong>：写性能较低。</li>
+</ul>
+</li>
+<li><strong>RAID 6（双奇偶校验）</strong>：<ul>
+<li><strong>特点</strong>：比RAID 5增加额外奇偶校验块，可容忍两块磁盘同时故障。</li>
+</ul>
+</li>
+</ul>
+<p><strong>实例分析</strong>：<br>RAID 1的两个磁盘MTTF均为10万小时，修复时间为10小时，则系统数据丢失的平均时间为：</p>
+<ul>
+<li>MTTDL ≈ (MTTF² &#x2F; 修复时间) &#x3D; (10万² &#x2F; 10) &#x3D; 10亿小时（约11万年）。</li>
+</ul>
+<hr>
+<h3 id="7-文件组织"><a href="#7-文件组织" class="headerlink" title="7. 文件组织"></a><strong>7. 文件组织</strong></h3><p>数据库存储为文件集合，每个文件由记录组成：</p>
+<ul>
+<li><strong>固定长度记录</strong>：<ul>
+<li><strong>存储方式</strong>：记录按固定字节偏移存储。</li>
+<li><strong>删除方式</strong>：可以通过移动记录或维护空闲列表实现。</li>
+</ul>
+</li>
+<li><strong>可变长度记录</strong>：<ul>
+<li><strong>存储方式</strong>：使用偏移量和长度标记字段，实际数据存储在记录末尾。</li>
+<li><strong>优点</strong>：支持变长字段（如VARCHAR）和重复字段。</li>
+</ul>
+</li>
+<li><strong>大对象存储</strong>：<ul>
+<li>例如：BLOB&#x2F;CLOB类型。</li>
+<li><strong>存储方式</strong>：可以拆分为多个元组存储，或者存储为文件系统中的文件。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="8-文件组织策略"><a href="#8-文件组织策略" class="headerlink" title="8. 文件组织策略"></a><strong>8. 文件组织策略</strong></h3><ul>
+<li><strong>堆文件（Heap）</strong>：<ul>
+<li>无序存储，记录插入到空闲空间。</li>
+<li>使用空闲空间映射表（Free-Space Map）来快速定位空闲块。</li>
+</ul>
+</li>
+<li><strong>顺序文件（Sequential）</strong>：<ul>
+<li>按搜索键值存储，适合顺序访问。</li>
+<li><strong>处理删除和插入</strong>：通过溢出块和指针链维护顺序。</li>
+</ul>
+</li>
+<li><strong>多表聚簇文件（Multitable Clustering）</strong>：<ul>
+<li>将多个关系存储在同一文件中，适合频繁的连接查询。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="9-列存储与压缩"><a href="#9-列存储与压缩" class="headerlink" title="9. 列存储与压缩"></a><strong>9. 列存储与压缩</strong></h3><ul>
+<li><p><strong>列存储（Column-Oriented Storage）</strong>：</p>
+<ul>
+<li>将每个属性单独存储，适合数据分析和决策支持。</li>
+<li><strong>优点</strong>：减少I&#x2F;O、提升压缩率、支持矢量化处理。</li>
+<li><strong>缺点</strong>：重建元组成本高，更新和删除效率低。</li>
+</ul>
+</li>
+<li><p><strong>实例：Parquet文件格式</strong>：</p>
+<ul>
+<li>广泛应用于大数据场景，提供高效的列式存储。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="10-缓存管理"><a href="#10-缓存管理" class="headerlink" title="10. 缓存管理"></a><strong>10. 缓存管理</strong></h3><ul>
+<li><strong>缓冲区管理器</strong>：<ul>
+<li><strong>功能</strong>：管理内存中的数据块缓存，减少磁盘访问次数。</li>
+<li><strong>替换策略</strong>：<ul>
+<li><strong>LRU（最近最少使用）</strong>：根据历史访问记录替换。</li>
+<li><strong>MRU（最近最多使用）</strong>：适合需要频繁访问的块。</li>
+<li><strong>Toss-Immediate</strong>：块处理完成后立即释放。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>实例分析</strong>：<br>嵌套循环连接可能导致LRU策略性能低下，因为循环内的访问模式会不断驱逐之前加载的块。</p>
+<hr>
+<h3 id="11-数据字典（系统目录）"><a href="#11-数据字典（系统目录）" class="headerlink" title="11. 数据字典（系统目录）"></a><strong>11. 数据字典（系统目录）</strong></h3><p>数据字典存储数据库的元数据，例如：</p>
+<ul>
+<li>关系的名称、属性及其类型。</li>
+<li>索引信息和物理存储位置。</li>
+<li>用户信息和统计数据。</li>
+</ul>
+<p>元数据的高效访问对数据库系统的运行至关重要。</p>
+<hr>
+<h2 id="第十一章-索引"><a href="#第十一章-索引" class="headerlink" title="第十一章 索引"></a>第十一章 索引</h2><h3 id="1-索引的基本概念"><a href="#1-索引的基本概念" class="headerlink" title="1. 索引的基本概念"></a><strong>1. 索引的基本概念</strong></h3><p>索引是用于加速对目标数据访问的机制，类似于图书馆中的作者目录。</p>
+<h4 id="关键概念"><a href="#关键概念" class="headerlink" title="关键概念"></a><strong>关键概念</strong></h4><ul>
+<li><strong>搜索键（Search Key）</strong>：<br>用于查找记录的一个或多个属性。</li>
+<li><strong>索引文件（Index File）</strong>：<br>包含形式为 <code>(search-key, pointer)</code> 的索引条目，指向实际数据记录。</li>
+<li><strong>索引的两种基本类型</strong>：<ol>
+<li><strong>有序索引（Ordered Indices）</strong>：按搜索键值排序存储。</li>
+<li><strong>哈希索引（Hash Indices）</strong>：通过哈希函数将搜索键均匀分布到“桶”中。</li>
+</ol>
+</li>
+</ul>
+<h4 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a><strong>评价指标</strong></h4><ul>
+<li><strong>支持的访问类型</strong>：<ul>
+<li>按指定值查找记录。</li>
+<li>按范围值查找记录。</li>
+</ul>
+</li>
+<li><strong>时间效率</strong>：访问、插入和删除的时间。</li>
+<li><strong>空间开销</strong>：索引的存储成本。</li>
+</ul>
+<hr>
+<h3 id="2-有序索引"><a href="#2-有序索引" class="headerlink" title="2. 有序索引"></a><strong>2. 有序索引</strong></h3><p>有序索引是基于搜索键值排序的索引方式。</p>
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a><strong>分类</strong></h4><ol>
+<li><strong>聚簇索引（Clustering Index）</strong>：<ul>
+<li>索引的键值与文件的物理顺序一致。</li>
+<li>通常是主键，但不一定必须是主键。</li>
+<li>又称<strong>主索引（Primary Index）</strong>。</li>
+</ul>
+</li>
+<li><strong>非聚簇索引（Non-Clustering Index）</strong>：<ul>
+<li>索引的键值与文件的物理顺序无关。</li>
+<li>又称<strong>次级索引（Secondary Index）</strong>。</li>
+</ul>
+</li>
+<li><strong>密集索引（Dense Index）</strong>：<ul>
+<li>每个搜索键值都有一个索引记录。</li>
+<li><strong>例子</strong>：对<code>instructor</code>关系的<code>ID</code>属性建立密集索引。<ul>
+<li><strong>解析</strong>：每个<code>ID</code>值在索引中都有一个对应的条目，指向实际数据记录。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>稀疏索引（Sparse Index）</strong>：<ul>
+<li>仅为部分搜索键值建立索引条目。</li>
+<li><strong>适用场景</strong>：文件按搜索键排序，例如每个块的第一个键值。</li>
+<li><strong>优缺点</strong>：稀疏索引节省空间，但查找速度较慢。</li>
+</ul>
+</li>
+</ol>
+<p><strong>例子解析</strong>：<br>假设文件根据<code>dept_name</code>排序，对其建立稀疏索引。要查找<code>Physics</code>，首先找到小于<code>Physics</code>的最大键值（例如<code>Mathematics</code>），然后从指针指定的位置顺序扫描。</p>
+<hr>
+<h3 id="3-多级索引"><a href="#3-多级索引" class="headerlink" title="3. 多级索引"></a><strong>3. 多级索引</strong></h3><p>当索引文件太大无法全部加载到内存时：</p>
+<ul>
+<li>将索引看作顺序文件，为其构建稀疏索引（称为<strong>外层索引</strong>）。</li>
+<li>如果外层索引仍然过大，可以继续构建更高层的索引，形成多层次结构。</li>
+</ul>
+<p><strong>优点</strong>：通过分层结构减少磁盘访问次数，提高查找效率。<br><strong>缺点</strong>：插入或删除时需要更新所有层次的索引。</p>
+<hr>
+<h3 id="4-B-树索引"><a href="#4-B-树索引" class="headerlink" title="4. B+树索引"></a><strong>4. B+树索引</strong></h3><p><strong>B+树</strong>是一种动态多级索引结构，广泛用于数据库系统中。</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a><strong>特点</strong></h4><ul>
+<li>自动调整以适应插入和删除，避免性能下降。</li>
+<li><strong>平衡性</strong>：从根到叶节点的路径长度相同。</li>
+<li><strong>节点结构</strong>：<ul>
+<li>非叶节点存储键值和指针，形成稀疏索引。</li>
+<li>叶节点存储所有搜索键值及对应指针，形成密集索引，并通过指针相连。</li>
+</ul>
+</li>
+</ul>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a><strong>优点</strong></h4><ul>
+<li>插入和删除只需局部调整，性能稳定。</li>
+<li>查找时间为<code>O(log n)</code>，其中<code>n</code>为树的阶。</li>
+</ul>
+<p><strong>例子解析</strong>：</p>
+<ol>
+<li><strong>插入“Adams”</strong>：<ul>
+<li>找到适当的叶节点，如果节点已满，拆分节点，将部分键值移至新节点，并将新节点的信息插入父节点。</li>
+<li>如果父节点也满，继续向上拆分，可能导致树高度增加。</li>
+</ul>
+</li>
+<li><strong>删除“Singh”</strong>：<ul>
+<li>如果删除导致节点不足，将其与相邻节点合并，或从邻居节点借用键值。</li>
+<li>如果父节点变得不足，继续调整，可能导致树高度减少。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="5-哈希索引"><a href="#5-哈希索引" class="headerlink" title="5. 哈希索引"></a><strong>5. 哈希索引</strong></h3><p>哈希索引通过哈希函数将搜索键值映射到桶地址。</p>
+<h4 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a><strong>分类</strong></h4><ol>
+<li><strong>静态哈希</strong>：<ul>
+<li>桶数量固定。</li>
+<li>缺点：当文件大小动态变化时，可能导致桶溢出或空间浪费。</li>
+</ul>
+</li>
+<li><strong>动态哈希</strong>：<ul>
+<li><strong>线性哈希（Linear Hashing）</strong>：增量扩展桶，以适应文件增长。</li>
+<li><strong>可扩展哈希（Extendable Hashing）</strong>：通过增加哈希表的深度而不增加桶数量。</li>
+</ul>
+</li>
+</ol>
+<h4 id="例子解析："><a href="#例子解析：" class="headerlink" title="例子解析："></a><strong>例子解析</strong>：</h4><p>对<code>instructor</code>的<code>ID</code>属性建立哈希索引：</p>
+<ol>
+<li>将<code>ID</code>值通过哈希函数映射到桶。</li>
+<li>如果多个键值映射到同一桶，使用溢出链表存储额外记录。</li>
+</ol>
+<p><strong>优缺点对比</strong>：</p>
+<ul>
+<li>哈希索引适合精确查找。</li>
+<li>有序索引适合范围查询。</li>
+</ul>
+<hr>
+<h3 id="6-复合索引"><a href="#6-复合索引" class="headerlink" title="6. 复合索引"></a><strong>6. 复合索引</strong></h3><p><strong>复合搜索键</strong>：包含多个属性的搜索键，例如<code>(dept_name, salary)</code>。</p>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a><strong>特点</strong></h4><ul>
+<li>按字典序排序（例如：<code>(Finance, 80000)</code> &lt; <code>(Marketing, 70000)</code>）。</li>
+<li>可以同时高效处理多个条件查询。</li>
+</ul>
+<p><strong>例子解析</strong>：<br>假设有索引<code>(dept_name, salary)</code>：</p>
+<ol>
+<li>查询条件<code>dept_name=&quot;Finance&quot; AND salary=80000</code>：<ul>
+<li>索引直接定位到满足条件的记录。</li>
+</ul>
+</li>
+<li>查询条件<code>dept_name=&quot;Finance&quot; AND salary&lt;80000</code>：<ul>
+<li>索引可快速定位到<code>Finance</code>，然后顺序扫描满足<code>salary&lt;80000</code>的记录。</li>
+</ul>
+</li>
+<li>查询条件<code>dept_name&lt;&quot;Finance&quot; AND salary=80000</code>：<ul>
+<li>无法高效利用索引，因为<code>dept_name</code>的范围查询优先级更高。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="7-位图索引"><a href="#7-位图索引" class="headerlink" title="7. 位图索引"></a><strong>7. 位图索引</strong></h3><p>位图索引通过位数组高效支持多键查询。</p>
+<h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a><strong>特点</strong></h4><ul>
+<li>每个属性值对应一个位图，位图每位表示一个记录是否具有该值。</li>
+<li>适合属性值数量较少的情况，例如性别、国家、收入等级。</li>
+</ul>
+<h4 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a><strong>查询操作</strong></h4><ul>
+<li>使用位运算（与、或、非）快速计算结果。</li>
+<li><strong>例子</strong>：<ul>
+<li>查询男性且收入等级为L1：<code>Bitmap(Male) AND Bitmap(L1)</code>。</li>
+<li>查询结果位图可以直接定位记录。</li>
+</ul>
+</li>
+</ul>
+<p><strong>优点</strong>：空间开销小，查询效率高。<br><strong>缺点</strong>：不适合动态变化的数据。</p>
+<hr>
+<h3 id="8-索引的创建与管理"><a href="#8-索引的创建与管理" class="headerlink" title="8. 索引的创建与管理"></a><strong>8. 索引的创建与管理</strong></h3><h4 id="SQL中的索引定义"><a href="#SQL中的索引定义" class="headerlink" title="SQL中的索引定义"></a><strong>SQL中的索引定义</strong></h4><ul>
+<li><strong>创建索引</strong>：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> INDEX index_name <span class="keyword">ON</span> table_name (attribute_list);</span><br></pre></td></tr></table></figure>
+<strong>例子</strong>：对<code>branch</code>表的<code>branch_name</code>属性创建索引：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> INDEX b_index <span class="keyword">ON</span> branch(branch_name);</span><br></pre></td></tr></table></figure></li>
+<li><strong>删除索引</strong>：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> INDEX index_name;</span><br></pre></td></tr></table></figure></li>
+<li><strong>唯一索引</strong>：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">UNIQUE</span> INDEX unique_index_name <span class="keyword">ON</span> table_name(attribute_list);</span><br></pre></td></tr></table></figure>
+用于强制候选键的唯一性。</li>
+</ul>
+<h4 id="数据库自动创建索引"><a href="#数据库自动创建索引" class="headerlink" title="数据库自动创建索引"></a><strong>数据库自动创建索引</strong></h4><ul>
+<li>数据库通常会自动为<strong>主键</strong>和<strong>外键</strong>创建索引：<ul>
+<li>主键索引：加速主键查找。</li>
+<li>外键索引：加速连接查询。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="9-索引的优化选择"><a href="#9-索引的优化选择" class="headerlink" title="9. 索引的优化选择"></a><strong>9. 索引的优化选择</strong></h3><p>索引的使用需权衡查询性能与更新成本：</p>
+<ul>
+<li><strong>查询优化</strong>：<ul>
+<li>索引加速查询，但复杂查询可能需要多个索引。</li>
+<li><strong>索引调优工具</strong>：部分数据库提供索引调优助手，根据查询和更新负载建议优化索引。</li>
+</ul>
+</li>
+<li><strong>更新代价</strong>：<ul>
+<li>插入、删除、更新操作需要维护索引，可能增加成本。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="第十三章-查询优化"><a href="#第十三章-查询优化" class="headerlink" title="第十三章 查询优化"></a>第十三章 查询优化</h2><h3 id="1-查询优化的目标"><a href="#1-查询优化的目标" class="headerlink" title="1. 查询优化的目标"></a><strong>1. 查询优化的目标</strong></h3><p>查询优化的目标是通过生成低成本的执行计划来提高查询性能。  </p>
+<ul>
+<li><strong>查询优化的两种方法</strong>：<ol>
+<li><strong>启发式优化（Heuristic Optimization）</strong>：<ul>
+<li>使用规则优化查询结构，不需要具体的统计信息。</li>
+<li>优化过程基于通用规则，如选择操作下推、投影操作提前等。</li>
+</ul>
+</li>
+<li><strong>基于成本的优化（Cost-Based Optimization）</strong>：<ul>
+<li>使用统计信息和模型估计查询计划的执行成本。</li>
+<li>比较多个等价查询计划，选择成本最低的方案。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="2-关系代数等价性与规则"><a href="#2-关系代数等价性与规则" class="headerlink" title="2. 关系代数等价性与规则"></a><strong>2. 关系代数等价性与规则</strong></h3><h4 id="等价性定义"><a href="#等价性定义" class="headerlink" title="等价性定义"></a><strong>等价性定义</strong></h4><p>两个关系代数表达式在所有合法的数据库实例上生成相同的结果集，则它们是等价的。</p>
+<h4 id="常用等价规则"><a href="#常用等价规则" class="headerlink" title="常用等价规则"></a><strong>常用等价规则</strong></h4><ol>
+<li><p><strong>选择操作规则</strong>：</p>
+<ul>
+<li>选择的分解与交换：<ul>
+<li><code>σθ1∧θ2(E) ≡ σθ1(σθ2(E))</code></li>
+<li><code>σθ1(σθ2(E)) ≡ σθ2(σθ1(E))</code></li>
+</ul>
+</li>
+<li>选择与笛卡尔积、连接的结合：<ul>
+<li><code>σθ(E1 × E2) ≡ E1 ⨝θ E2</code></li>
+<li><code>σθ1(E1 ⨝θ2 E2) ≡ E1 ⨝θ1∧θ2 E2</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>投影操作规则</strong>：</p>
+<ul>
+<li>只保留最后一个投影操作：<br><code>πL1(πL2(...πLn(E)...)) ≡ πL1(E)</code>，其中 <code>L1 ⊆ L2 ⊆ ... ⊆ Ln</code>。</li>
+</ul>
+</li>
+<li><p><strong>连接操作规则</strong>：</p>
+<ul>
+<li>连接的交换性：<code>E1 ⨝ E2 ≡ E2 ⨝ E1</code></li>
+<li>连接的结合性：<code>(E1 ⨝ E2) ⨝ E3 ≡ E1 ⨝ (E2 ⨝ E3)</code></li>
+</ul>
+</li>
+<li><p><strong>选择与连接的分配性</strong>：</p>
+<ul>
+<li><code>σθ(E1 ⨝ E2) ≡ (σθ(E1)) ⨝ E2</code>，条件是 <code>θ</code> 只涉及 <code>E1</code> 的属性。</li>
+</ul>
+</li>
+<li><p><strong>投影与连接的分配性</strong>：</p>
+<ul>
+<li><code>πL1∪L2(E1 ⨝ E2) ≡ (πL1(E1)) ⨝ (πL2(E2))</code>，条件是 <code>L1</code> 和 <code>L2</code> 包含连接所需的所有属性。</li>
+</ul>
+</li>
+<li><p><strong>集合操作规则</strong>：</p>
+<ul>
+<li>并集和交集的交换性与结合性：<ul>
+<li><code>E1 ∪ E2 ≡ E2 ∪ E1</code>，<code>(E1 ∪ E2) ∪ E3 ≡ E1 ∪ (E2 ∪ E3)</code></li>
+</ul>
+</li>
+<li>选择与集合操作的分配性：<ul>
+<li><code>σθ(E1 ∪ E2) ≡ σθ(E1) ∪ σθ(E2)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>例子解析</strong>：<br>查询：查找<code>Music</code>系的教师姓名及其在2017年授课的课程标题。  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, title</span><br><span class="line"><span class="keyword">FROM</span> instructor, teaches, course</span><br><span class="line"><span class="keyword">WHERE</span> instructor.dept_name <span class="operator">=</span> <span class="string">&#x27;Music&#x27;</span></span><br><span class="line">  <span class="keyword">AND</span> teaches.year <span class="operator">=</span> <span class="number">2017</span></span><br><span class="line">  <span class="keyword">AND</span> instructor.ID <span class="operator">=</span> teaches.ID</span><br><span class="line">  <span class="keyword">AND</span> teaches.course_id <span class="operator">=</span> course.course_id;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>初始表达式：<br><code>πname, title(σdept_name=&#39;Music&#39;∧year=2017(instructor ⨝ teaches ⨝ course))</code></li>
+<li>使用连接结合性：<br><code>(instructor ⨝ teaches) ⨝ course</code> 转换为 <code>instructor ⨝ (teaches ⨝ course)</code></li>
+<li>应用选择下推规则：<br><code>σdept_name=&#39;Music&#39;(instructor) ⨝ σyear=2017(teaches) ⨝ course</code></li>
+<li>提前投影：减少中间结果的大小。</li>
+</ol>
+<hr>
+<h3 id="3-基于成本的优化"><a href="#3-基于成本的优化" class="headerlink" title="3. 基于成本的优化"></a><strong>3. 基于成本的优化</strong></h3><h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a><strong>步骤</strong></h4><ol>
+<li><strong>生成等价表达式</strong>：<ul>
+<li>使用关系代数等价规则生成多个等价表达式。</li>
+</ul>
+</li>
+<li><strong>注释表达式</strong>：<ul>
+<li>为每个表达式选择具体的算法（如嵌套循环连接、哈希连接等）。</li>
+</ul>
+</li>
+<li><strong>估算成本</strong>：<ul>
+<li>基于统计信息估算每种执行计划的成本。</li>
+</ul>
+</li>
+<li><strong>选择最低成本计划</strong>：<ul>
+<li>比较所有计划，选择成本最低的一个。</li>
+</ul>
+</li>
+</ol>
+<h4 id="成本估算"><a href="#成本估算" class="headerlink" title="成本估算"></a><strong>成本估算</strong></h4><ul>
+<li><strong>统计信息</strong>：<ul>
+<li>记录的数量（<code>nr</code>）。</li>
+<li>每个块的记录数（<code>fr</code>）。</li>
+<li>属性的不同值数量（<code>V(A, r)</code>）。</li>
+</ul>
+</li>
+<li><strong>选择操作</strong>：<ul>
+<li><code>σA=v(r)</code> 的记录数：<code>nr / V(A, r)</code>。</li>
+<li><code>σA≥v(r)</code> 的记录数：<code>nr * (Amax - v + 1) / (Amax - Amin + 1)</code>。</li>
+</ul>
+</li>
+<li><strong>连接操作</strong>：<ul>
+<li>若 <code>R ⋂ S</code> 为键：<code>|r ⨝ s| = |s|</code>。</li>
+<li>一般情况：<code>|r ⨝ s| ≈ nr * ns / max(V(A, r), V(A, s))</code>。</li>
+</ul>
+</li>
+</ul>
+<p><strong>例子解析</strong>：<br>学生表（<code>student</code>）和选课表（<code>takes</code>）：  </p>
+<ul>
+<li><code>nstudent = 5000</code>, <code>bstudent = 100</code>, <code>ntakes = 10000</code>, <code>btakes = 400</code>。  </li>
+<li><code>V(ID, student) = 5000</code>, <code>V(ID, takes) = 2500</code>。<br>假设 <code>ID</code> 是 <code>takes</code> 的外键，连接结果的大小为 <code>ntakes = 10000</code>。</li>
+</ul>
+<hr>
+<h3 id="4-动态规划与连接顺序"><a href="#4-动态规划与连接顺序" class="headerlink" title="4. 动态规划与连接顺序"></a><strong>4. 动态规划与连接顺序</strong></h3><h4 id="连接顺序优化"><a href="#连接顺序优化" class="headerlink" title="连接顺序优化"></a><strong>连接顺序优化</strong></h4><ul>
+<li>连接顺序会显著影响查询性能。</li>
+<li>动态规划通过递归计算子集的最优连接计划，避免重复计算。</li>
+</ul>
+<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a><strong>算法</strong></h4><ol>
+<li>对于每个子集 <code>S</code>：<ul>
+<li>尝试所有可能的分割 <code>S1</code> 和 <code>S2</code>（<code>S1 ⨝ S2</code>）。</li>
+<li>计算每种分割的成本，选择最低成本的方案。</li>
+</ul>
+</li>
+<li>存储每个子集的最优计划，避免重复计算。</li>
+</ol>
+<p><strong>复杂性</strong>：  </p>
+<ul>
+<li><strong>一般情况</strong>：<code>O(3^n)</code>，其中 <code>n</code> 为关系数量。  </li>
+<li><strong>左深树优化</strong>：<code>O(n * 2^n)</code>，适用于优化复杂度较低的场景。</li>
+</ul>
+<hr>
+<h3 id="5-启发式优化"><a href="#5-启发式优化" class="headerlink" title="5. 启发式优化"></a><strong>5. 启发式优化</strong></h3><h4 id="启发式规则"><a href="#启发式规则" class="headerlink" title="启发式规则"></a><strong>启发式规则</strong></h4><ol>
+<li><strong>选择操作尽早执行</strong>：<ul>
+<li>减少待处理的元组数量。</li>
+</ul>
+</li>
+<li><strong>投影操作尽早执行</strong>：<ul>
+<li>减少待处理的属性数量。</li>
+</ul>
+</li>
+<li><strong>优先执行选择性强的操作</strong>：<ul>
+<li>选择性强的操作通常会显著减少中间结果的大小。</li>
+</ul>
+</li>
+<li><strong>避免笛卡尔积</strong>：<ul>
+<li>替换为连接操作。</li>
+</ul>
+</li>
+</ol>
+<p><strong>例子解析</strong>：<br>查询：查找专辑名称为“Andy’s OG Remix”的艺术家姓名。  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ARTIST.NAME</span><br><span class="line"><span class="keyword">FROM</span> ARTIST, APPEARS, ALBUM</span><br><span class="line"><span class="keyword">WHERE</span> ARTIST.ID <span class="operator">=</span> APPEARS.ARTIST_ID</span><br><span class="line">  <span class="keyword">AND</span> APPEARS.ALBUM_ID <span class="operator">=</span> ALBUM.ID</span><br><span class="line">  <span class="keyword">AND</span> ALBUM.NAME <span class="operator">=</span> &quot;Andy&#x27;s OG Remix&quot;;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>分解谓词</strong>：  <ul>
+<li><code>ARTIST.ID = APPEARS.ARTIST_ID</code>  </li>
+<li><code>APPEARS.ALBUM_ID = ALBUM.ID</code>  </li>
+<li><code>ALBUM.NAME = &quot;Andy&#39;s OG Remix&quot;</code></li>
+</ul>
+</li>
+<li><strong>谓词下推</strong>：  <ul>
+<li>将 <code>ALBUM.NAME = &quot;Andy&#39;s OG Remix&quot;</code> 下推到 <code>ALBUM</code> 中，减少中间结果。</li>
+</ul>
+</li>
+<li><strong>替换笛卡尔积</strong>：  <ul>
+<li>用连接代替笛卡尔积：<code>ARTIST ⨝ APPEARS ⨝ ALBUM</code>。</li>
+</ul>
+</li>
+<li><strong>提前投影</strong>：  <ul>
+<li>删除不必要的属性，减少中间结果的大小。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="6-统计信息与直方图"><a href="#6-统计信息与直方图" class="headerlink" title="6. 统计信息与直方图"></a><strong>6. 统计信息与直方图</strong></h3><ul>
+<li>数据库系统使用统计信息（如记录数、属性的不同值数）来估算查询成本。</li>
+<li><strong>直方图</strong>：<ul>
+<li><strong>等宽直方图</strong>：将值域划分为等宽区间。</li>
+<li><strong>等深直方图</strong>：每个区间包含相同数量的元组。</li>
+</ul>
+</li>
+</ul>
+<p><strong>例子解析</strong>：<br>假设 <code>V(age, people) = 5</code>, <code>nr = 5</code>：  </p>
+<ol>
+<li>查询 <code>age=2</code>：  <ul>
+<li>满足条件的记录数为 <code>nr / V(age, people) = 5 / 5 = 1</code>。</li>
+</ul>
+</li>
+<li>查询 <code>age&gt;=2</code>：  <ul>
+<li>满足条件的记录数为 <code>nr * (Amax - 2 + 1) / (Amax - Amin + 1)</code>。  </li>
+<li>结果为 <code>5 * (4 - 2 + 1) / (4 - 0 + 1) = 3</code>。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="第十四章-事务"><a href="#第十四章-事务" class="headerlink" title="第十四章 事务"></a>第十四章 事务</h2><h3 id="1-事务的基本概念"><a href="#1-事务的基本概念" class="headerlink" title="1. 事务的基本概念"></a><strong>1. 事务的基本概念</strong></h3><h4 id="事务（Transaction）"><a href="#事务（Transaction）" class="headerlink" title="事务（Transaction）"></a><strong>事务（Transaction）</strong></h4><ul>
+<li><strong>定义</strong>：事务是一个程序执行的单位，通过访问和可能更新数据库中的数据项来完成任务。</li>
+<li><strong>性质</strong>：事务要么完全执行（所有操作成功完成），要么完全不执行（任何操作都不生效）。</li>
+</ul>
+<p><strong>例子</strong>：<br>将$50从账户A转移到账户B的事务：</p>
+<ol>
+<li>读取账户A余额。</li>
+<li>从账户A扣除50。</li>
+<li>写回账户A的新余额。</li>
+<li>读取账户B余额。</li>
+<li>向账户B添加50。</li>
+<li>写回账户B的新余额。</li>
+</ol>
+<p><strong>问题</strong>：</p>
+<ul>
+<li>如果系统在步骤3和步骤6之间崩溃，可能导致数据不一致（$50丢失）。</li>
+</ul>
+<hr>
+<h3 id="2-事务的ACID属性"><a href="#2-事务的ACID属性" class="headerlink" title="2. 事务的ACID属性"></a><strong>2. 事务的ACID属性</strong></h3><p>事务需要满足以下四个关键特性以保证数据库的一致性：</p>
+<ol>
+<li><p><strong>原子性（Atomicity）</strong>：</p>
+<ul>
+<li>事务的所有操作要么全部执行，要么全部不执行。</li>
+<li><strong>解决方法</strong>：通过日志记录，在事务失败时回滚未完成的操作。</li>
+</ul>
+</li>
+<li><p><strong>一致性（Consistency）</strong>：</p>
+<ul>
+<li>事务的执行必须保证数据库从一个一致状态转变为另一个一致状态。</li>
+<li><strong>例子</strong>：在转账事务中，A和B账户余额之和在事务执行后保持不变。</li>
+</ul>
+</li>
+<li><p><strong>隔离性（Isolation）</strong>：</p>
+<ul>
+<li>事务彼此独立运行，每个事务的中间状态对其他事务不可见。</li>
+<li><strong>问题</strong>：如果隔离性未得到保证，可能导致数据不一致。</li>
+</ul>
+</li>
+<li><p><strong>持久性（Durability）</strong>：</p>
+<ul>
+<li>一旦事务提交，其对数据库的修改必须永久保存，即使系统崩溃。</li>
+<li><strong>解决方法</strong>：使用日志或稳定存储。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="3-事务的状态"><a href="#3-事务的状态" class="headerlink" title="3. 事务的状态"></a><strong>3. 事务的状态</strong></h3><p>事务的生命周期由以下几种状态组成：</p>
+<ul>
+<li><strong>活动状态（Active）</strong>：事务正在执行。</li>
+<li><strong>部分提交状态（Partially Committed）</strong>：事务的最后一条语句已经执行，但尚未完成提交。</li>
+<li><strong>失败状态（Failed）</strong>：事务由于某种原因无法继续。</li>
+<li><strong>中止状态（Aborted）</strong>：事务被回滚，数据库恢复到事务开始时的状态。</li>
+<li><strong>提交状态（Committed）</strong>：事务成功完成，所有修改被永久保存。</li>
+</ul>
+<p><strong>例子</strong>：  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">BEGIN</span> TRANSACTION;</span><br><span class="line"><span class="keyword">UPDATE</span> account <span class="keyword">SET</span> money <span class="operator">=</span> money <span class="operator">-</span> <span class="number">50</span> <span class="keyword">WHERE</span> <span class="keyword">no</span> <span class="operator">=</span> <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> account <span class="keyword">SET</span> money <span class="operator">=</span> money <span class="operator">+</span> <span class="number">50</span> <span class="keyword">WHERE</span> <span class="keyword">no</span> <span class="operator">=</span> <span class="string">&#x27;B&#x27;</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果在第一条<code>UPDATE</code>执行后系统崩溃，事务的<strong>原子性</strong>和<strong>一致性</strong>会受影响。</li>
+</ul>
+<hr>
+<h3 id="4-调度与并发执行"><a href="#4-调度与并发执行" class="headerlink" title="4. 调度与并发执行"></a><strong>4. 调度与并发执行</strong></h3><h4 id="调度（Schedule）"><a href="#调度（Schedule）" class="headerlink" title="调度（Schedule）"></a><strong>调度（Schedule）</strong></h4><ul>
+<li>调度是指事务中所有操作按照时间顺序执行的过程。</li>
+<li><strong>串行调度</strong>：<ul>
+<li>一个事务完成后再执行下一个事务。</li>
+<li>保证一致性，但效率低。</li>
+</ul>
+</li>
+<li><strong>并发调度</strong>：<ul>
+<li>多个事务交错执行，提高资源利用率和响应时间。</li>
+</ul>
+</li>
+</ul>
+<h4 id="并发执行的优点："><a href="#并发执行的优点：" class="headerlink" title="并发执行的优点："></a><strong>并发执行的优点</strong>：</h4><ol>
+<li>提高处理器和磁盘的利用率。</li>
+<li>减少事务的平均响应时间。</li>
+</ol>
+<h4 id="并发调度的问题"><a href="#并发调度的问题" class="headerlink" title="并发调度的问题"></a><strong>并发调度的问题</strong></h4><p>如果未正确处理并发调度，可能导致以下数据不一致性：</p>
+<ol>
+<li><p><strong>丢失修改</strong>：</p>
+<ul>
+<li>两个事务同时修改同一数据，一个事务的修改被另一个事务覆盖。</li>
+<li><strong>例子</strong>：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">T1: read(A); A :<span class="operator">=</span> A <span class="operator">+</span> <span class="number">100</span>; write(A);</span><br><span class="line">T2: read(A); A :<span class="operator">=</span> A <span class="operator">+</span> <span class="number">200</span>; write(A);</span><br></pre></td></tr></table></figure>
+如果<code>T1</code>和<code>T2</code>同时执行，<code>T2</code>的写入会覆盖<code>T1</code>的结果，导致<code>T1</code>的修改丢失。</li>
+</ul>
+</li>
+<li><p><strong>不可重复读</strong>：</p>
+<ul>
+<li>一个事务在两次读取同一数据时，数据值发生了变化。</li>
+<li><strong>例子</strong>：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">T1: read(A); print(A); read(A); print(A);</span><br><span class="line">T2: read(A); A :<span class="operator">=</span> A <span class="operator">+</span> <span class="number">100</span>; write(A);</span><br></pre></td></tr></table></figure>
+<code>T1</code>读取两次<code>A</code>的值可能不同。</li>
+</ul>
+</li>
+<li><p><strong>读“脏”数据</strong>：</p>
+<ul>
+<li>一个事务<code>T2</code>读取了另一个事务<code>T1</code>未提交的数据，如果<code>T1</code>回滚，则<code>T2</code>读取的数据无效。</li>
+<li><strong>例子</strong>：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">T1: read(A); A :<span class="operator">=</span> A <span class="operator">+</span> <span class="number">100</span>; write(A); <span class="keyword">rollback</span>;</span><br><span class="line">T2: read(A); print(A);</span><br></pre></td></tr></table></figure>
+<code>T2</code>读取了<code>T1</code>未提交的修改，导致读“脏”数据。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="5-可串行化（Serializability）"><a href="#5-可串行化（Serializability）" class="headerlink" title="5. 可串行化（Serializability）"></a><strong>5. 可串行化（Serializability）</strong></h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a><strong>定义</strong></h4><ul>
+<li>一个调度是<strong>可串行化的</strong>，如果它的执行效果与某个串行调度相同。</li>
+<li>可串行化是并发调度的正确性准则。</li>
+</ul>
+<h4 id="冲突可串行化（Conflict-Serializability）"><a href="#冲突可串行化（Conflict-Serializability）" class="headerlink" title="冲突可串行化（Conflict Serializability）"></a><strong>冲突可串行化（Conflict Serializability）</strong></h4><ul>
+<li>如果一个调度可以通过交换非冲突操作转换为串行调度，则该调度是冲突可串行化的。</li>
+<li><strong>冲突的定义</strong>：<ul>
+<li>两个操作访问同一数据，且至少有一个是写操作：<ul>
+<li><code>read(Q) vs write(Q)</code>：冲突。</li>
+<li><code>write(Q) vs write(Q)</code>：冲突。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="检测冲突可串行化"><a href="#检测冲突可串行化" class="headerlink" title="检测冲突可串行化"></a><strong>检测冲突可串行化</strong></h4><p>通过<strong>优先图（Precedence Graph）</strong>检测：</p>
+<ol>
+<li>图中每个节点表示一个事务。</li>
+<li>如果事务<code>Ti</code>的操作在事务<code>Tj</code>之前访问了数据，则添加一条从<code>Ti</code>到<code>Tj</code>的边。</li>
+<li><strong>判断方法</strong>：如果优先图无环，则调度是冲突可串行化的。</li>
+</ol>
+<p><strong>例子</strong>：  </p>
+<ul>
+<li>调度：<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">T1: read(A); write(A);</span><br><span class="line">T2: read(A); write(A);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优先图：<code>T1 → T2</code>，无环，因此可串行化。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="6-恢复性调度"><a href="#6-恢复性调度" class="headerlink" title="6. 恢复性调度"></a><strong>6. 恢复性调度</strong></h3><h4 id="恢复性（Recoverable）"><a href="#恢复性（Recoverable）" class="headerlink" title="恢复性（Recoverable）"></a><strong>恢复性（Recoverable）</strong></h4><ul>
+<li>如果事务<code>Tj</code>依赖于事务<code>Ti</code>写入的数据，则<code>Tj</code>必须在<code>Ti</code>提交后才能提交。</li>
+<li><strong>问题</strong>：如果<code>Tj</code>在<code>Ti</code>回滚之前提交，则可能导致不一致。</li>
+</ul>
+<h4 id="级联回滚（Cascading-Rollback）"><a href="#级联回滚（Cascading-Rollback）" class="headerlink" title="级联回滚（Cascading Rollback）"></a><strong>级联回滚（Cascading Rollback）</strong></h4><ul>
+<li>一个事务的失败可能导致多个事务回滚。</li>
+<li><strong>避免方法</strong>：<strong>无级联调度（Cascadeless Schedule）</strong>，要求<code>Tj</code>读取<code>Ti</code>的数据时，<code>Ti</code>必须已提交。</li>
+</ul>
+<hr>
+<h3 id="7-事务隔离级别"><a href="#7-事务隔离级别" class="headerlink" title="7. 事务隔离级别"></a><strong>7. 事务隔离级别</strong></h3><p>SQL-92定义了四种隔离级别，允许不同程度的并发性：</p>
+<ol>
+<li><strong>Serializable（可串行化）</strong>：<ul>
+<li>最严格的隔离级别，保证事务调度可串行化。</li>
+</ul>
+</li>
+<li><strong>Repeatable Read（可重复读）</strong>：<ul>
+<li>防止不可重复读，但无法避免幻影读。</li>
+</ul>
+</li>
+<li><strong>Read Committed（读已提交）</strong>：<ul>
+<li>只能读取已提交的数据，可能导致不可重复读。</li>
+</ul>
+</li>
+<li><strong>Read Uncommitted（读未提交）</strong>：<ul>
+<li>允许读取未提交的数据，可能导致读“脏”数据。</li>
+</ul>
+</li>
+</ol>
+<p><strong>例子解析</strong>：<br>事务1：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> accounts <span class="keyword">WHERE</span> balance <span class="operator">&gt;</span> <span class="number">1000</span>;</span><br></pre></td></tr></table></figure>
+<p>事务2：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> accounts <span class="keyword">SET</span> balance <span class="operator">=</span> balance <span class="operator">-</span> <span class="number">100</span> <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果隔离级别是<code>Read Uncommitted</code>，事务1可能读取到事务2未提交的结果。</li>
+</ul>
+<hr>
+<h2 id="第十五章-并发控制"><a href="#第十五章-并发控制" class="headerlink" title="第十五章 并发控制"></a>第十五章 并发控制</h2><h3 id="1-引言：并发控制的必要性"><a href="#1-引言：并发控制的必要性" class="headerlink" title="1. 引言：并发控制的必要性"></a><strong>1. 引言：并发控制的必要性</strong></h3><ul>
+<li><strong>目标</strong>：在不预先知道整个调度的情况下，确保所有执行调度都是正确的（即可串行化的）。</li>
+<li><strong>挑战</strong>：<ol>
+<li><strong>数据一致性</strong>：多事务并发执行时，可能导致数据不一致。</li>
+<li><strong>事务隔离性</strong>：必须避免事务间的互相干扰。</li>
+</ol>
+</li>
+<li><strong>解决方案</strong>：<ul>
+<li>使用并发控制协议，如<strong>锁机制</strong>、<strong>时间戳协议</strong>、<strong>多版本控制</strong>等。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-基于锁的并发控制"><a href="#2-基于锁的并发控制" class="headerlink" title="2. 基于锁的并发控制"></a><strong>2. 基于锁的并发控制</strong></h3><h4 id="2-1-锁的基本概念"><a href="#2-1-锁的基本概念" class="headerlink" title="2.1 锁的基本概念"></a><strong>2.1 锁的基本概念</strong></h4><ul>
+<li><strong>定义</strong>：锁是控制数据项并发访问的一种机制。</li>
+<li><strong>两种锁模式</strong>：<ol>
+<li><strong>共享锁（S锁）</strong>：允许事务读取数据，但不允许修改。</li>
+<li><strong>排它锁（X锁）</strong>：允许事务读取和修改数据。</li>
+</ol>
+</li>
+<li><strong>锁兼容矩阵</strong>：  <table>
+<thead>
+<tr>
+<th>请求锁类型</th>
+<th>已持有锁类型</th>
+<th>兼容性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S</td>
+<td>S</td>
+<td>是</td>
+</tr>
+<tr>
+<td>S</td>
+<td>X</td>
+<td>否</td>
+</tr>
+<tr>
+<td>X</td>
+<td>S</td>
+<td>否</td>
+</tr>
+<tr>
+<td>X</td>
+<td>X</td>
+<td>否</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p><strong>例子</strong>：<br>事务<code>T2</code>读取两个数据项：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">T2: lock-S(A); read(A); unlock(A);</span><br><span class="line">    lock-S(B); read(B); unlock(B);</span><br><span class="line">    display(A + B)</span><br></pre></td></tr></table></figure>
+<p>这种方式不能保证<strong>可串行化</strong>，因为没有控制事务间的交互。</p>
+<hr>
+<h4 id="2-2-两阶段锁协议（2PL）"><a href="#2-2-两阶段锁协议（2PL）" class="headerlink" title="2.2 两阶段锁协议（2PL）"></a><strong>2.2 两阶段锁协议（2PL）</strong></h4><ul>
+<li><strong>定义</strong>：一种确保冲突可串行化的协议，分为两个阶段：<ol>
+<li><strong>增长阶段</strong>：事务可以获取锁，但不能释放锁。</li>
+<li><strong>收缩阶段</strong>：事务可以释放锁，但不能获取新锁。</li>
+</ol>
+</li>
+<li><strong>关键点</strong>：事务的“锁点”（获取最后一个锁的时间）决定了事务的顺序。</li>
+</ul>
+<p><strong>例子</strong>：</p>
+<ol>
+<li>符合两阶段锁协议：<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">T1: lock-S(B); lock-X(A); read(B); read(A);</span><br><span class="line">    unlock(B); write(A); unlock(A)</span><br></pre></td></tr></table></figure></li>
+<li>不符合两阶段锁协议：<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">T1: lock-S(B); read(B); unlock(B);</span><br><span class="line">    lock-X(A); read(A); write(A); unlock(A)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><strong>扩展</strong>：</p>
+<ol>
+<li><strong>严格两阶段锁协议</strong>：事务直到提交或回滚后才释放其所有的排它锁，避免了<strong>级联回滚</strong>。</li>
+<li><strong>严格强制两阶段锁协议</strong>：事务直到提交或回滚后才释放所有的锁，保证了事务的可恢复性和串行化顺序。</li>
+</ol>
+<hr>
+<h4 id="2-3-死锁处理"><a href="#2-3-死锁处理" class="headerlink" title="2.3 死锁处理"></a><strong>2.3 死锁处理</strong></h4><ul>
+<li><strong>死锁</strong>：当一组事务彼此等待对方释放锁时，会导致系统无法继续执行。</li>
+<li><strong>死锁预防策略</strong>：<ol>
+<li><strong>等待-死（Wait-Die）</strong>：较老的事务可以等待较新的事务；较新的事务必须回滚。</li>
+<li><strong>伤害-等待（Wound-Wait）</strong>：较老的事务会中止较新的事务；较新的事务可以等待较老的事务。</li>
+</ol>
+</li>
+<li><strong>死锁检测</strong>：<ul>
+<li>使用<strong>等待图</strong>，如果图中存在环，则表示发生死锁。</li>
+</ul>
+</li>
+<li><strong>死锁恢复</strong>：<ul>
+<li>回滚代价最小的事务以打破死锁。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="3-基于时间戳的并发控制"><a href="#3-基于时间戳的并发控制" class="headerlink" title="3. 基于时间戳的并发控制"></a><strong>3. 基于时间戳的并发控制</strong></h3><h4 id="3-1-时间戳协议"><a href="#3-1-时间戳协议" class="headerlink" title="3.1 时间戳协议"></a><strong>3.1 时间戳协议</strong></h4><ul>
+<li><strong>时间戳</strong>：每个事务在开始时分配一个唯一的时间戳（TS）。</li>
+<li><strong>规则</strong>：<ol>
+<li>如果<code>TS(Ti) &lt; TS(Tj)</code>，则系统必须确保<code>Ti</code>的操作在<code>Tj</code>之前执行。</li>
+<li>每个数据项维护两个时间戳：<ul>
+<li>**W-timestamp(Q)**：最后写入<code>Q</code>的事务的时间戳。</li>
+<li>**R-timestamp(Q)**：最后读取<code>Q</code>的事务的时间戳。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p><strong>读操作规则</strong>：</p>
+<ol>
+<li>如果<code>TS(Ti) &lt; W-timestamp(Q)</code>，表示<code>Ti</code>试图读取已被覆盖的数据，<code>Ti</code>回滚。</li>
+<li>如果<code>TS(Ti) &gt;= W-timestamp(Q)</code>，执行读取操作，并更新<code>R-timestamp(Q)</code>。</li>
+</ol>
+<p><strong>写操作规则</strong>：</p>
+<ol>
+<li>如果<code>TS(Ti) &lt; R-timestamp(Q)</code>，表示<code>Ti</code>生成的值已经被其他事务读取，<code>Ti</code>回滚。</li>
+<li>如果<code>TS(Ti) &lt; W-timestamp(Q)</code>，表示<code>Ti</code>试图写入过期数据，<code>Ti</code>回滚。</li>
+<li>否则，执行写操作，并更新<code>W-timestamp(Q)</code>。</li>
+</ol>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>保证了可串行化。</li>
+<li>避免死锁（因为没有事务等待）。</li>
+</ul>
+<h4 id="3-2-Thomas写规则"><a href="#3-2-Thomas写规则" class="headerlink" title="3.2 Thomas写规则"></a><strong>3.2 Thomas写规则</strong></h4><ul>
+<li><strong>改进</strong>：当事务试图写入过期值时，直接忽略写操作，而不是回滚事务。</li>
+<li><strong>优势</strong>：允许更多的并发调度，支持一些不可冲突串行化的调度。</li>
+</ul>
+<hr>
+<h3 id="4-多版本并发控制（MVCC）"><a href="#4-多版本并发控制（MVCC）" class="headerlink" title="4. 多版本并发控制（MVCC）"></a><strong>4. 多版本并发控制（MVCC）</strong></h3><h4 id="4-1-多版本协议的核心思想"><a href="#4-1-多版本协议的核心思想" class="headerlink" title="4.1 多版本协议的核心思想"></a><strong>4.1 多版本协议的核心思想</strong></h4><ul>
+<li>数据库维护每个数据项的多个版本。</li>
+<li><strong>写入</strong>：创建新版本。</li>
+<li><strong>读取</strong>：根据事务的时间戳读取适当的版本。</li>
+</ul>
+<h4 id="4-2-多版本时间戳排序（MVTO）"><a href="#4-2-多版本时间戳排序（MVTO）" class="headerlink" title="4.2 多版本时间戳排序（MVTO）"></a><strong>4.2 多版本时间戳排序（MVTO）</strong></h4><ul>
+<li>每个数据项的版本包含：<ol>
+<li><strong>内容</strong>：版本的值。</li>
+<li><strong>W-timestamp</strong>：创建该版本的事务时间戳。</li>
+<li><strong>R-timestamp</strong>：读取该版本的最大事务时间戳。</li>
+</ol>
+</li>
+<li><strong>规则</strong>：<ol>
+<li><strong>读取</strong>：选择满足条件的最新版本。</li>
+<li><strong>写入</strong>：<ul>
+<li>如果<code>TS(Ti) &lt; R-timestamp(Qk)</code>，则回滚事务。</li>
+<li>否则，创建新版本。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>读取操作永不等待，提高了并发性。</li>
+<li>保证了可串行化。</li>
+</ul>
+<h4 id="4-3-快照隔离（Snapshot-Isolation-SI）"><a href="#4-3-快照隔离（Snapshot-Isolation-SI）" class="headerlink" title="4.3 快照隔离（Snapshot Isolation, SI）"></a><strong>4.3 快照隔离（Snapshot Isolation, SI）</strong></h4><ul>
+<li><strong>工作原理</strong>：<ul>
+<li>每个事务读取开始时的“快照”数据。</li>
+<li>写操作遵循<strong>第一个提交者获胜（First-Committer-Wins）</strong>规则。</li>
+</ul>
+</li>
+<li><strong>优点</strong>：<ul>
+<li>读操作不会阻塞，提高了读性能。</li>
+<li>写操作避免冲突。</li>
+</ul>
+</li>
+<li><strong>不足</strong>：<ul>
+<li>可能导致非串行化调度（如丢失更新）。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="5-其他并发控制协议"><a href="#5-其他并发控制协议" class="headerlink" title="5. 其他并发控制协议"></a><strong>5. 其他并发控制协议</strong></h3><h4 id="5-1-图锁协议"><a href="#5-1-图锁协议" class="headerlink" title="5.1 图锁协议"></a><strong>5.1 图锁协议</strong></h4><ul>
+<li>基于数据项的部分顺序关系（有向无环图）。</li>
+<li><strong>规则</strong>：<ul>
+<li>事务必须按规定的顺序访问数据。</li>
+<li><strong>优点</strong>：避免死锁，增加并发性。</li>
+<li><strong>缺点</strong>：可能需要锁定未访问的数据，增加开销。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-2-多粒度锁"><a href="#5-2-多粒度锁" class="headerlink" title="5.2 多粒度锁"></a><strong>5.2 多粒度锁</strong></h4><ul>
+<li>数据项可分为多种粒度（如数据库→表→记录）。</li>
+<li><strong>意向锁</strong>：<ul>
+<li><strong>IS（意向共享）</strong>：表示将对数据的子节点加共享锁。</li>
+<li><strong>IX（意向排它）</strong>：表示将对数据的子节点加排它锁。</li>
+<li><strong>SIX（共享且意向排它）</strong>：当前节点为共享锁，子节点可能加排它锁。</li>
+</ul>
+</li>
+<li><strong>优点</strong>：提高并发性，减少锁管理开销。</li>
+</ul>
+<hr>
+<h3 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a><strong>6. 总结</strong></h3><ul>
+<li>本章介绍了数据库并发控制的核心机制和协议，包括基于锁的控制、时间戳协议和多版本并发控制。</li>
+<li><strong>重点内容</strong>：<ol>
+<li>两阶段锁协议及其扩展（严格2PL、强制2PL）。</li>
+<li>时间戳协议和Thomas写规则。</li>
+<li>多版本控制中的快照隔离（SI）。</li>
+<li>死锁的检测与预防。</li>
+</ol>
+</li>
+<li><strong>实例分析</strong>：通过多个调度示例，详细阐述了并发控制协议在实际场景中的应用及其优缺点。</li>
+<li><strong>关键思想</strong>：在保证事务ACID特性的基础上，最大化并发性和系统性能。</li>
+</ul>
+<h2 id="第十六章-恢复系统"><a href="#第十六章-恢复系统" class="headerlink" title="第十六章 恢复系统"></a>第十六章 恢复系统</h2><h3 id="1-恢复系统的目标"><a href="#1-恢复系统的目标" class="headerlink" title="1. 恢复系统的目标"></a><strong>1. 恢复系统的目标</strong></h3><ul>
+<li><strong>核心问题</strong>：在系统发生故障时，如何保证数据库的一致性和事务的ACID特性（原子性、一致性、隔离性、持久性）。</li>
+<li><strong>恢复算法的两部分</strong>：<ol>
+<li><strong>正常事务处理期间的准备</strong>：<ul>
+<li>记录足够的信息以便在故障发生后能够恢复。</li>
+</ul>
+</li>
+<li><strong>故障后的恢复操作</strong>：<ul>
+<li>将数据库恢复到一致状态。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="2-故障分类"><a href="#2-故障分类" class="headerlink" title="2. 故障分类"></a><strong>2. 故障分类</strong></h3><ol>
+<li><p><strong>事务故障</strong>：</p>
+<ul>
+<li><strong>逻辑错误</strong>：由于内部错误（如违反约束条件）导致事务无法完成。</li>
+<li><strong>系统错误</strong>：如死锁，数据库系统需要终止某个事务。</li>
+</ul>
+</li>
+<li><p><strong>系统崩溃</strong>：</p>
+<ul>
+<li>由于硬件或软件故障导致系统崩溃。</li>
+<li><strong>假设</strong>：非易失性存储的数据不会被系统崩溃破坏（<strong>Fail-Stop假设</strong>）。</li>
+</ul>
+</li>
+<li><p><strong>磁盘故障</strong>：</p>
+<ul>
+<li>硬盘损坏或部分数据丢失。</li>
+<li>使用校验和检测磁盘故障。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="3-存储结构"><a href="#3-存储结构" class="headerlink" title="3. 存储结构"></a><strong>3. 存储结构</strong></h3><ol>
+<li><p><strong>易失性存储</strong>：</p>
+<ul>
+<li>不会在系统崩溃后保留数据。</li>
+<li>例如：主存、缓存。</li>
+</ul>
+</li>
+<li><p><strong>非易失性存储</strong>：</p>
+<ul>
+<li>系统崩溃后保留数据。</li>
+<li>例如：磁盘、闪存。</li>
+</ul>
+</li>
+<li><p><strong>稳定存储</strong>：</p>
+<ul>
+<li>理想化的存储，能够抵抗所有故障。</li>
+<li><strong>实现方式</strong>：保持多个副本（如RAID系统）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="4-日志和恢复机制"><a href="#4-日志和恢复机制" class="headerlink" title="4. 日志和恢复机制"></a><strong>4. 日志和恢复机制</strong></h3><h4 id="4-1-日志记录"><a href="#4-1-日志记录" class="headerlink" title="4.1 日志记录"></a><strong>4.1 日志记录</strong></h4><ul>
+<li><strong>日志的作用</strong>：记录事务的操作，以便在系统崩溃后进行恢复。</li>
+<li><strong>日志记录方式</strong>：<ol>
+<li><strong>事务开始</strong>：<code>&lt;Ti start&gt;</code>。</li>
+<li><strong>写操作</strong>：<code>&lt;Ti, X, V1, V2&gt;</code>，记录数据项<code>X</code>的旧值<code>V1</code>和新值<code>V2</code>。</li>
+<li><strong>事务提交</strong>：<code>&lt;Ti commit&gt;</code>。</li>
+</ol>
+</li>
+</ul>
+<p><strong>例子</strong>：<br>事务<code>T0</code>将$50从账户A转移到账户B：</p>
+<ol>
+<li>日志记录：<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;T0 start&gt;</span><br><span class="line">&lt;T0, A, 1000, 950&gt;</span><br><span class="line">&lt;T0, B, 2000, 2050&gt;</span><br><span class="line">&lt;T0 commit&gt;</span><br></pre></td></tr></table></figure></li>
+<li>如果系统崩溃：<ul>
+<li>若<code>&lt;T0 commit&gt;</code>存在，则需要重做（Redo）。</li>
+<li>若<code>&lt;T0 commit&gt;</code>不存在，则需要回滚（Undo）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="4-2-Undo和Redo操作"><a href="#4-2-Undo和Redo操作" class="headerlink" title="4.2 Undo和Redo操作"></a><strong>4.2 Undo和Redo操作</strong></h4><ol>
+<li><p><strong>Undo（回滚）</strong>：</p>
+<ul>
+<li>将事务所做的修改恢复为旧值。</li>
+<li>写入补偿日志记录：<code>&lt;Ti, X, V1&gt;</code>。</li>
+</ul>
+</li>
+<li><p><strong>Redo（重做）</strong>：</p>
+<ul>
+<li>将事务提交的修改重新应用于数据库。</li>
+</ul>
+</li>
+</ol>
+<p><strong>恢复规则</strong>：</p>
+<ul>
+<li>需要<strong>Undo</strong>：日志中有<code>&lt;Ti start&gt;</code>但没有<code>&lt;Ti commit&gt;</code>。</li>
+<li>需要<strong>Redo</strong>：日志中有<code>&lt;Ti start&gt;</code>且有<code>&lt;Ti commit&gt;</code>。</li>
+</ul>
+<hr>
+<h4 id="4-3-恢复算法"><a href="#4-3-恢复算法" class="headerlink" title="4.3 恢复算法"></a><strong>4.3 恢复算法</strong></h4><ol>
+<li><p><strong>Redo阶段</strong>：</p>
+<ul>
+<li>从最近的检查点开始，向前扫描日志，对所有提交的事务重做操作。</li>
+</ul>
+</li>
+<li><p><strong>Undo阶段</strong>：</p>
+<ul>
+<li>从日志末尾向后扫描，对未完成的事务进行回滚操作。</li>
+</ul>
+</li>
+</ol>
+<p><strong>示例</strong>：<br>假设以下日志记录：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;checkpoint L=&#123;T0, T1&#125;&gt;</span><br><span class="line">&lt;T0 start&gt;</span><br><span class="line">&lt;T0, A, 1000, 950&gt;</span><br><span class="line">&lt;T0, B, 2000, 2050&gt;</span><br><span class="line">&lt;T1 start&gt;</span><br><span class="line">&lt;T1, C, 700, 600&gt;</span><br><span class="line">&lt;T0 commit&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>恢复步骤：<ol>
+<li>Redo：重做<code>T0</code>的操作，因为<code>T0</code>已提交。</li>
+<li>Undo：回滚<code>T1</code>的操作，因为<code>T1</code>未提交。</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="5-检查点（Checkpoint）"><a href="#5-检查点（Checkpoint）" class="headerlink" title="5. 检查点（Checkpoint）"></a><strong>5. 检查点（Checkpoint）</strong></h3><h4 id="5-1-检查点的作用"><a href="#5-1-检查点的作用" class="headerlink" title="5.1 检查点的作用"></a><strong>5.1 检查点的作用</strong></h4><ul>
+<li>检查点减少了恢复时需要处理的日志记录长度。</li>
+<li><strong>步骤</strong>：<ol>
+<li>将内存中的日志记录写入稳定存储。</li>
+<li>将修改过的缓冲区块写回磁盘。</li>
+<li>写入<code>&lt;checkpoint L&gt;</code>日志记录，其中<code>L</code>是所有活跃事务的列表。</li>
+</ol>
+</li>
+</ul>
+<h4 id="5-2-恢复时的优化"><a href="#5-2-恢复时的优化" class="headerlink" title="5.2 恢复时的优化"></a><strong>5.2 恢复时的优化</strong></h4><ul>
+<li>从最近的检查点开始扫描日志。</li>
+<li>只需要处理检查点之后开始的事务，之前的日志可被忽略。</li>
+</ul>
+<p><strong>例子</strong>：<br>日志：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;checkpoint L=&#123;T1, T2&#125;&gt;</span><br><span class="line">&lt;T1 start&gt;</span><br><span class="line">&lt;T1, A, 100, 200&gt;</span><br><span class="line">&lt;T1 commit&gt;</span><br><span class="line">&lt;T2 start&gt;</span><br><span class="line">&lt;T2, B, 300, 400&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>T1</code>已提交，无需处理。</li>
+<li><code>T2</code>尚未完成，需要回滚。</li>
+</ul>
+<hr>
+<h3 id="6-Write-Ahead-Logging-WAL"><a href="#6-Write-Ahead-Logging-WAL" class="headerlink" title="6. Write-Ahead Logging (WAL)"></a><strong>6. Write-Ahead Logging (WAL)</strong></h3><ul>
+<li><strong>规则</strong>：写入数据块之前，必须先将对应的日志记录写入稳定存储。</li>
+<li><strong>目的</strong>：保证即使系统崩溃，也能通过日志恢复数据。</li>
+</ul>
+<hr>
+<h3 id="7-数据库缓冲管理"><a href="#7-数据库缓冲管理" class="headerlink" title="7. 数据库缓冲管理"></a><strong>7. 数据库缓冲管理</strong></h3><ul>
+<li><strong>No-Force策略</strong>：事务提交时，不强制将数据块写回磁盘。</li>
+<li><strong>Steal策略</strong>：允许未提交事务修改的数据块写回磁盘，但必须遵守WAL规则。</li>
+</ul>
+<p><strong>步骤</strong>：</p>
+<ol>
+<li>写入日志记录。</li>
+<li>刷新日志到稳定存储。</li>
+<li>将数据块写回磁盘。</li>
+</ol>
+<hr>
+<h3 id="8-模糊检查点（Fuzzy-Checkpointing）"><a href="#8-模糊检查点（Fuzzy-Checkpointing）" class="headerlink" title="8. 模糊检查点（Fuzzy Checkpointing）"></a><strong>8. 模糊检查点（Fuzzy Checkpointing）</strong></h3><ul>
+<li><strong>避免长时间中断</strong>：允许事务在检查点期间继续运行。</li>
+<li><strong>步骤</strong>：<ol>
+<li>暂停更新，写入<code>&lt;checkpoint L&gt;</code>日志记录。</li>
+<li>记录所有修改过的缓冲区块。</li>
+<li>恢复更新，将缓冲区块逐步写回磁盘。</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="9-远程备份系统"><a href="#9-远程备份系统" class="headerlink" title="9. 远程备份系统"></a><strong>9. 远程备份系统</strong></h3><h4 id="9-1-目的"><a href="#9-1-目的" class="headerlink" title="9.1 目的"></a><strong>9.1 目的</strong></h4><ul>
+<li>提供高可用性，即使主站点发生故障，事务处理仍可在备份站点继续。</li>
+</ul>
+<h4 id="9-2-工作原理"><a href="#9-2-工作原理" class="headerlink" title="9.2 工作原理"></a><strong>9.2 工作原理</strong></h4><ol>
+<li>主站点将日志记录传输到备份站点。</li>
+<li>备份站点应用日志更新本地数据库。</li>
+<li>主站点故障后，备份站点接管事务处理。</li>
+</ol>
+<h4 id="9-3-提交策略"><a href="#9-3-提交策略" class="headerlink" title="9.3 提交策略"></a><strong>9.3 提交策略</strong></h4><ul>
+<li><strong>One-Safe</strong>：主站点提交后即可返回结果，但可能导致更新丢失。</li>
+<li><strong>Two-Very-Safe</strong>：主备站点同时记录提交，可靠但延迟高。</li>
+<li><strong>Two-Safe</strong>：在主站点和备份站点之间权衡性能和可靠性。</li>
+</ul>
+<hr>
+<h3 id="10-总结"><a href="#10-总结" class="headerlink" title="10. 总结"></a><strong>10. 总结</strong></h3><p>本章详细讲解了数据库恢复的核心机制，包括日志记录、Undo&#x2F;Redo操作、检查点和远程备份系统。通过具体的例子说明了如何在事务失败或系统崩溃后恢复数据库的一致性。重难点如下：</p>
+<ul>
+<li><strong>日志记录与WAL规则</strong>：日志是恢复的核心，必须首先写入稳定存储。</li>
+<li><strong>检查点的优化作用</strong>：减少日志扫描的范围，加速恢复。</li>
+<li><strong>恢复算法的两个阶段</strong>：Redo和Undo。</li>
+<li><strong>远程备份系统</strong>：提高系统的可用性和容错能力。</li>
+</ul>
+<p>通过这些机制，数据库系统能够在故障后快速恢复，同时保证事务的ACID特性。</p>
 
                 
             </div>
@@ -1829,12 +2946,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Database/">
-                                    <span class="chip bg-color">Database</span>
-                                </a>
-                            
                                 <a href="/tags/SQL-Server/">
                                     <span class="chip bg-color">SQL Server</span>
+                                </a>
+                            
+                                <a href="/tags/Database/">
+                                    <span class="chip bg-color">Database</span>
                                 </a>
                             
                         </div>
@@ -2518,7 +3635,7 @@
                             
                                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
                                         class="white-color">
-                                        72.4k
+                                        81.2k
                                     </span>
                                     
                                         
