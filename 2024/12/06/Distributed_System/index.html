@@ -1,0 +1,3188 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="分布式系统, D">
+    <meta name="description" content="2024-2025 分布式系统">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>分布式系统 | D</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">D</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">D</div>
+        <div class="logo-desc">
+            
+            世故消耗激情，岁月打磨棱角，现实浪掷理想。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Lavoisier7/Lavoisier7.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Lavoisier7/Lavoisier7.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">分布式系统</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Operation-System/">
+                                <span class="chip bg-color">Operation System</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Computer-Science/" class="post-category">
+                                Computer Science
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-12-06
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2025-04-30
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    13.2k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>本文基于 SYSU-DCS325 的内容，对计算机专业课《分布式系统》进行较为详尽的知识点总结，涵盖少量实例分析。</p>
+<h3 id="1-课程概述"><a href="#1-课程概述" class="headerlink" title="1. 课程概述"></a>1. 课程概述</h3><h4 id="1-1-课程目标"><a href="#1-1-课程目标" class="headerlink" title="1.1 课程目标"></a>1.1 课程目标</h4><ol>
+<li>理解分布式系统的基本概念与核心原理。</li>
+<li>掌握分布式系统的架构设计方法。</li>
+<li>学习分布式系统的编程技术与工具。</li>
+<li>了解分布式系统的运维与管理策略。</li>
+<li>探索分布式系统领域的前沿技术与发展趋势。</li>
+<li>激发学生对分布式系统研究与应用的兴趣。</li>
+</ol>
+<h4 id="1-2-课程内容安排"><a href="#1-2-课程内容安排" class="headerlink" title="1.2 课程内容安排"></a>1.2 课程内容安排</h4><table>
+<thead>
+<tr>
+<th>章节</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第1讲</td>
+<td>分布式系统概述</td>
+</tr>
+<tr>
+<td>第2讲</td>
+<td>分布式系统体系架构</td>
+</tr>
+<tr>
+<td>第3讲</td>
+<td>分布式系统进程模型</td>
+</tr>
+<tr>
+<td>第4讲</td>
+<td>分布式系统通信</td>
+</tr>
+<tr>
+<td>第5讲</td>
+<td>分布式系统命名</td>
+</tr>
+<tr>
+<td>第6讲</td>
+<td>时钟与时间同步</td>
+</tr>
+<tr>
+<td>第7讲</td>
+<td>分布式系统同步</td>
+</tr>
+<tr>
+<td>第8讲</td>
+<td>分布式系统一致性</td>
+</tr>
+<tr>
+<td>第9讲</td>
+<td>分布式系统复制</td>
+</tr>
+<tr>
+<td>第10讲</td>
+<td>容错与可靠性保障</td>
+</tr>
+<tr>
+<td>第11讲</td>
+<td>分布式系统共识</td>
+</tr>
+<tr>
+<td>第12讲</td>
+<td>Paxos及RAFT协议</td>
+</tr>
+<tr>
+<td>第13讲</td>
+<td>分布式文件系统与存储系统</td>
+</tr>
+<tr>
+<td>第14讲</td>
+<td>面向大数据与AI的分布式计算框架</td>
+</tr>
+<tr>
+<td>第15讲</td>
+<td>P2P及内容分发网络</td>
+</tr>
+</tbody></table>
+<h3 id="2-分布式系统基础概念"><a href="#2-分布式系统基础概念" class="headerlink" title="2. 分布式系统基础概念"></a>2. 分布式系统基础概念</h3><h4 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h4><p>分布式系统是由多个自主且独立的计算机通过网络互联而成的集合，对用户而言，这些计算机像是一个单一的整体系统。</p>
+<p><strong>Leslie Lamport</strong> 的著名定义：</p>
+<blockquote>
+<p>“A distributed system is one in which the failure of a computer you didn’t even know existed can render your own computer unusable.”</p>
+</blockquote>
+<h4 id="2-2-特性"><a href="#2-2-特性" class="headerlink" title="2.2 特性"></a>2.2 特性</h4><ol>
+<li><p><strong>自主性</strong></p>
+<ul>
+<li>计算节点的硬件与软件进程独立运行。</li>
+<li>节点在物理上分布，而在逻辑上协调一致。</li>
+</ul>
+</li>
+<li><p><strong>耦合性</strong></p>
+<ul>
+<li>用户感知系统为一个整体，隐藏了内部的分布性。</li>
+<li>节点之间需要协作，共同完成任务。</li>
+</ul>
+</li>
+<li><p><strong>其他特性</strong></p>
+<ul>
+<li>组件由所有用户共享访问。</li>
+<li>系统资源可能分布在不同的物理位置，不一定直接可访问。</li>
+<li>软件运行在不同处理器上的多个并发进程中。</li>
+<li>支持多点控制和多点故障。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-分布式系统目标"><a href="#3-分布式系统目标" class="headerlink" title="3. 分布式系统目标"></a>3. 分布式系统目标</h3><p>分布式系统设计主要围绕以下四个目标：</p>
+<ol>
+<li><p><strong>资源访问</strong></p>
+<ul>
+<li>提供便捷的资源访问方式，用户无需关注资源的实际存储位置。</li>
+</ul>
+</li>
+<li><p><strong>透明性</strong></p>
+<ul>
+<li>隐藏资源在网络上的分布，包括访问、位置、复制等方面的透明性。</li>
+</ul>
+</li>
+<li><p><strong>开放性</strong></p>
+<ul>
+<li>采用标准化的接口，确保系统的可扩展性和互操作性。</li>
+</ul>
+</li>
+<li><p><strong>可扩展性</strong></p>
+<ul>
+<li>系统能够在规模、地域和管理上灵活扩展，以适应不断增长的需求。</li>
+</ul>
+</li>
+</ol>
+<h4 id="3-1-透明性的详细分类"><a href="#3-1-透明性的详细分类" class="headerlink" title="3.1 透明性的详细分类"></a>3.1 透明性的详细分类</h4><table>
+<thead>
+<tr>
+<th>透明性类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>访问</td>
+<td>隐藏不同的数据表示形式及资源访问方式</td>
+</tr>
+<tr>
+<td>位置</td>
+<td>隐藏资源的实际物理位置</td>
+</tr>
+<tr>
+<td>迁移</td>
+<td>隐藏资源的动态移动，确保资源位置变化对用户透明</td>
+</tr>
+<tr>
+<td>重定位</td>
+<td>隐藏资源在使用过程中可能的迁移动作</td>
+</tr>
+<tr>
+<td>复制</td>
+<td>隐藏资源是否存在多个副本</td>
+</tr>
+<tr>
+<td>并发</td>
+<td>隐藏多个用户对资源的并发访问</td>
+</tr>
+<tr>
+<td>故障</td>
+<td>隐藏系统资源的故障与恢复过程</td>
+</tr>
+<tr>
+<td>持久化</td>
+<td>隐藏数据在主存与磁盘之间的存储细节</td>
+</tr>
+</tbody></table>
+<p><strong>注意</strong>：完全透明性难以实现，且可能带来性能开销。因此，设计时需在透明性与系统性能之间找到平衡。</p>
+<h3 id="4-可扩展性"><a href="#4-可扩展性" class="headerlink" title="4. 可扩展性"></a>4. 可扩展性</h3><h4 id="4-1-可扩展性的三个维度"><a href="#4-1-可扩展性的三个维度" class="headerlink" title="4.1 可扩展性的三个维度"></a>4.1 可扩展性的三个维度</h4><ol>
+<li><p><strong>规模可扩展性</strong></p>
+<ul>
+<li>支持用户数量和处理进程数量的增加。</li>
+</ul>
+</li>
+<li><p><strong>地理可扩展性</strong></p>
+<ul>
+<li>支持节点分布在广泛的地理位置，确保跨地域的数据访问与计算。</li>
+</ul>
+</li>
+<li><p><strong>管理可扩展性</strong></p>
+<ul>
+<li>系统管理结构能够适应管理域和组织结构的扩展。</li>
+</ul>
+</li>
+</ol>
+<h4 id="4-2-扩展技术"><a href="#4-2-扩展技术" class="headerlink" title="4.2 扩展技术"></a>4.2 扩展技术</h4><ol>
+<li><p><strong>隐藏通信延迟</strong></p>
+<ul>
+<li>使用异步通信技术，减少同步等待。</li>
+<li>设计分离的响应消息处理器，提高响应效率。</li>
+<li>将部分计算任务从服务器端迁移至客户端，减轻服务器负载。</li>
+</ul>
+</li>
+<li><p><strong>分布式处理</strong></p>
+<ul>
+<li>将数据和计算任务分布到多个机器上，提升并行处理能力。</li>
+<li>使用分布式命名服务器（如DNS）和分布式信息系统（如WWW）实现资源的全局管理。</li>
+</ul>
+</li>
+<li><p><strong>数据复制</strong></p>
+<ul>
+<li>在多个机器上创建数据副本，提升数据的可用性和访问速度。</li>
+<li>应用场景包括：分布式文件服务器、数据库复制、网站镜像和Web缓存等。</li>
+</ul>
+</li>
+</ol>
+<h3 id="5-分布式系统类型"><a href="#5-分布式系统类型" class="headerlink" title="5. 分布式系统类型"></a>5. 分布式系统类型</h3><h4 id="5-1-集群计算系统"><a href="#5-1-集群计算系统" class="headerlink" title="5.1 集群计算系统"></a>5.1 集群计算系统</h4><ul>
+<li><p><strong>特点</strong>：</p>
+<ul>
+<li>通过局域网（LAN）连接的高性能计算节点。</li>
+<li>同构：相同的操作系统和近似的硬件配置。</li>
+<li>由单一管理节点控制，管理集中。</li>
+</ul>
+</li>
+<li><p><strong>应用案例</strong>：</p>
+<ul>
+<li>高性能计算（HPC）集群，用于科学计算和模拟。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-2-网格计算系统"><a href="#5-2-网格计算系统" class="headerlink" title="5.2 网格计算系统"></a>5.2 网格计算系统</h4><ul>
+<li><p><strong>特点</strong>：</p>
+<ul>
+<li>节点地理分布广泛，可能跨越不同组织和网络。</li>
+<li>异构：不同节点可能运行不同的操作系统和硬件。</li>
+<li>易扩展至广域网（WAN）环境，适用于大规模分布式计算。</li>
+</ul>
+</li>
+<li><p><strong>应用案例</strong>：</p>
+<ul>
+<li>科学研究中的分布式模拟和数据分析。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-3-云计算"><a href="#5-3-云计算" class="headerlink" title="5.3 云计算"></a>5.3 云计算</h4><ul>
+<li><p><strong>架构层次</strong>：</p>
+<ol>
+<li><strong>硬件层</strong>：包括处理器、存储设备、网络设备等基础资源。</li>
+<li><strong>基础设施层</strong>：部署虚拟化技术，实现资源的虚拟化与管理。</li>
+<li><strong>平台层</strong>：提供操作系统、数据库等高层次服务。</li>
+<li><strong>应用程序层</strong>：用户实际使用的各类应用软件。</li>
+</ol>
+</li>
+<li><p><strong>主要服务</strong>：</p>
+<ul>
+<li>IaaS（基础设施即服务）、PaaS（平台即服务）、SaaS（软件即服务）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-4-普适计算系统"><a href="#5-4-普适计算系统" class="headerlink" title="5.4 普适计算系统"></a>5.4 普适计算系统</h4><ul>
+<li><p><strong>特点</strong>：</p>
+<ul>
+<li>设备通过网络灵活连接，实现高水平的用户与设备交互。</li>
+<li>系统具备上下文感知能力，能够根据用户的环境和需求动态调整。</li>
+<li>设备具有自主性和智能化，支持动态行为和复杂交互。</li>
+</ul>
+</li>
+<li><p><strong>应用案例</strong>：</p>
+<ul>
+<li>智能家居系统、物联网（IoT）应用。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-5-移动计算系统"><a href="#5-5-移动计算系统" class="headerlink" title="5.5 移动计算系统"></a>5.5 移动计算系统</h4><ul>
+<li><p><strong>特点</strong>：</p>
+<ul>
+<li>大量异构移动设备，位置随时间变化。</li>
+<li>设备间通信存在不确定性和延迟，需应对频繁的网络变化。</li>
+</ul>
+</li>
+<li><p><strong>应用案例</strong>：</p>
+<ul>
+<li>移动应用、车联网（V2X）系统。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-6-传感网络"><a href="#5-6-传感网络" class="headerlink" title="5.6 传感网络"></a>5.6 传感网络</h4><ul>
+<li><p><strong>特点</strong>：</p>
+<ul>
+<li>节点数量众多（数十至数千）。</li>
+<li>节点计算能力和存储有限，多数由电池供电。</li>
+<li>需要高效的通信和节能机制。</li>
+</ul>
+</li>
+<li><p><strong>应用案例</strong>：</p>
+<ul>
+<li>环境监测、智能农业、智能城市。</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-分布式系统面临的挑战"><a href="#6-分布式系统面临的挑战" class="headerlink" title="6. 分布式系统面临的挑战"></a>6. 分布式系统面临的挑战</h3><ol>
+<li><p><strong>系统设计</strong></p>
+<ul>
+<li>设计正确的接口和抽象层次。</li>
+<li>功能划分与可扩展性设计。</li>
+</ul>
+</li>
+<li><p><strong>一致性</strong></p>
+<ul>
+<li>共享数据的一致性保证。</li>
+<li>处理读写冲突与写写冲突。</li>
+</ul>
+</li>
+<li><p><strong>容错</strong></p>
+<ul>
+<li>确保系统在节点失效情况下的正常运行。</li>
+<li>设计有效的故障检测与恢复机制。</li>
+</ul>
+</li>
+<li><p><strong>部署场景差异</strong></p>
+<ul>
+<li>集群环境、广域网环境、传感网络等不同部署场景带来的设计与实现差异。</li>
+</ul>
+</li>
+<li><p><strong>实现问题</strong></p>
+<ul>
+<li>最大化并行性，消除性能瓶颈。</li>
+<li>负载均衡与资源优化。</li>
+</ul>
+</li>
+</ol>
+<h3 id="7-分布式系统架构"><a href="#7-分布式系统架构" class="headerlink" title="7. 分布式系统架构"></a>7. 分布式系统架构</h3><h4 id="7-1-案例分类"><a href="#7-1-案例分类" class="headerlink" title="7.1 案例分类"></a>7.1 案例分类</h4><ol>
+<li><p><strong>分布式文件系统</strong></p>
+<ul>
+<li>例子：HDFS、NFS、Ceph。</li>
+</ul>
+</li>
+<li><p><strong>分布式数据库</strong></p>
+<ul>
+<li>例子：MongoDB、Cassandra、Elasticsearch。</li>
+</ul>
+</li>
+<li><p><strong>分布式处理框架</strong></p>
+<ul>
+<li>例子：Hadoop、MPI、Spark、Storm。</li>
+</ul>
+</li>
+<li><p><strong>分布式调度器</strong></p>
+<ul>
+<li>例子：YARN、Mesos、Slurm。</li>
+</ul>
+</li>
+<li><p><strong>分布式操作系统</strong></p>
+<ul>
+<li>例子：Kubernetes、OpenStack。</li>
+</ul>
+</li>
+</ol>
+<h4 id="7-2-软件体系结构"><a href="#7-2-软件体系结构" class="headerlink" title="7.2 软件体系结构"></a>7.2 软件体系结构</h4><h5 id="7-2-1-基本概念"><a href="#7-2-1-基本概念" class="headerlink" title="7.2.1 基本概念"></a>7.2.1 基本概念</h5><ul>
+<li><strong>可替换性</strong>：组件具有定义良好的接口，便于替换与扩展。</li>
+<li><strong>互联方式</strong>：组件之间通过何种方式连接与通信。</li>
+<li><strong>数据交换</strong>：组件之间交换的数据格式与协议。</li>
+<li><strong>协同配置</strong>：组件与连接器的配置方式，确保系统协同工作。</li>
+</ul>
+<h5 id="7-2-2-软件体系结构风格"><a href="#7-2-2-软件体系结构风格" class="headerlink" title="7.2.2 软件体系结构风格"></a>7.2.2 软件体系结构风格</h5><ol>
+<li><p><strong>分层体系结构</strong></p>
+<ul>
+<li>分层设计，常用于客户端-服务器模型，如典型的三层架构（表示层、业务逻辑层、数据层）。</li>
+</ul>
+</li>
+<li><p><strong>面向对象的体系结构</strong></p>
+<ul>
+<li>基于对象的设计，适用于分布式对象系统，如CORBA。</li>
+</ul>
+</li>
+<li><p><strong>基于事件的体系结构</strong></p>
+<ul>
+<li>采用发布&#x2F;订阅模式，事件驱动，适用于高并发、高解耦系统。</li>
+</ul>
+</li>
+<li><p><strong>共享数据空间体系结构</strong></p>
+<ul>
+<li>通过共享内存或数据空间，实现进程间的解耦与协作。</li>
+</ul>
+</li>
+</ol>
+<h4 id="7-3-系统体系结构"><a href="#7-3-系统体系结构" class="headerlink" title="7.3 系统体系结构"></a>7.3 系统体系结构</h4><h5 id="7-3-1-类型划分"><a href="#7-3-1-类型划分" class="headerlink" title="7.3.1 类型划分"></a>7.3.1 类型划分</h5><ol>
+<li><p><strong>集中式体系结构（Master-Slave）</strong></p>
+<ul>
+<li>单一控制中心管理整个系统，协调各节点的工作。</li>
+</ul>
+</li>
+<li><p><strong>非集中式体系结构（P2P）</strong></p>
+<ul>
+<li>无中心控制，各节点自主运行，适用于去中心化应用。</li>
+</ul>
+</li>
+<li><p><strong>混合体系结构</strong></p>
+<ul>
+<li>结合集中式与非集中式特点，例如点对点文件共享系统，部分节点充当协调者。</li>
+</ul>
+</li>
+</ol>
+<h5 id="7-3-2-客户端-服务器模型"><a href="#7-3-2-客户端-服务器模型" class="headerlink" title="7.3.2 客户端-服务器模型"></a>7.3.2 客户端-服务器模型</h5><p><strong>特点</strong>：</p>
+<ol>
+<li><p><strong>服务器进程</strong></p>
+<ul>
+<li>提供特定服务的核心进程。</li>
+</ul>
+</li>
+<li><p><strong>客户端进程</strong></p>
+<ul>
+<li>发送请求并等待服务器响应，获取所需服务。</li>
+</ul>
+</li>
+<li><p><strong>通信协议</strong></p>
+<ul>
+<li>常用协议包括HTTP&#x2F;HTTPS（REST API）、AJAX（异步请求）、RPC（如XMLRPC、SOAP、gRPC）。</li>
+</ul>
+</li>
+</ol>
+<h5 id="7-3-3-应用分层"><a href="#7-3-3-应用分层" class="headerlink" title="7.3.3 应用分层"></a>7.3.3 应用分层</h5><p><strong>传统三层架构</strong>：</p>
+<ol>
+<li><p><strong>用户接口层</strong></p>
+<ul>
+<li>系统与用户直接交互的部分，如GUI、管理界面。</li>
+</ul>
+</li>
+<li><p><strong>应用逻辑层</strong></p>
+<ul>
+<li>包含业务逻辑与主要功能，不直接依赖具体数据存储。</li>
+</ul>
+</li>
+<li><p><strong>数据访问层</strong></p>
+<ul>
+<li>管理系统使用的实际数据，如数据库、文件系统。</li>
+</ul>
+</li>
+</ol>
+<h3 id="8-分布式系统通信"><a href="#8-分布式系统通信" class="headerlink" title="8. 分布式系统通信"></a>8. 分布式系统通信</h3><h4 id="8-1-基础网络模型"><a href="#8-1-基础网络模型" class="headerlink" title="8.1 基础网络模型"></a>8.1 基础网络模型</h4><h5 id="8-1-1-网络层次结构"><a href="#8-1-1-网络层次结构" class="headerlink" title="8.1.1 网络层次结构"></a>8.1.1 网络层次结构</h5><ol>
+<li><p><strong>物理层</strong></p>
+<ul>
+<li>负责数据的实际传输，处理物理媒介上的发送和接收。</li>
+</ul>
+</li>
+<li><p><strong>数据链路层</strong></p>
+<ul>
+<li>将数据组织成帧，提供错误检测与流量控制。</li>
+</ul>
+</li>
+<li><p><strong>网络层</strong></p>
+<ul>
+<li>负责数据包在网络中的路由与转发。</li>
+</ul>
+</li>
+<li><p><strong>传输层</strong></p>
+<ul>
+<li>提供端到端的通信服务，主要协议包括TCP（可靠）、UDP（不可靠）、QUIC（基于UDP的高效协议）。</li>
+</ul>
+</li>
+<li><p><strong>中间件层</strong></p>
+<ul>
+<li>提供通用的通信服务和协议支持，如数据封装、命名协议、安全协议等。</li>
+</ul>
+</li>
+</ol>
+<h4 id="8-2-通信类型"><a href="#8-2-通信类型" class="headerlink" title="8.2 通信类型"></a>8.2 通信类型</h4><h5 id="8-2-1-基本分类"><a href="#8-2-1-基本分类" class="headerlink" title="8.2.1 基本分类"></a>8.2.1 基本分类</h5><ol>
+<li><p><strong>瞬时通信 vs 持久通信</strong></p>
+<ul>
+<li>瞬时通信：消息无法传递时直接丢弃。</li>
+<li>持久通信：消息存储在服务器，直到成功传递。</li>
+</ul>
+</li>
+<li><p><strong>同步通信 vs 异步通信</strong></p>
+<ul>
+<li>同步通信：发送方在等待响应期间被阻塞。</li>
+<li>异步通信：发送方无需等待响应，可以继续执行其他任务。</li>
+</ul>
+</li>
+</ol>
+<h5 id="8-2-2-客户端-服务器通信特点"><a href="#8-2-2-客户端-服务器通信特点" class="headerlink" title="8.2.2 客户端-服务器通信特点"></a>8.2.2 客户端-服务器通信特点</h5><p><strong>同步通信缺点</strong>：</p>
+<ul>
+<li>双方必须同时在线。</li>
+<li>客户端请求后被阻塞，影响响应时间。</li>
+<li>必须立即处理故障，增加系统复杂度。</li>
+<li>不适用于需要长时间等待或高并发的应用场景。</li>
+</ul>
+<h4 id="8-3-远程过程调用（RPC）"><a href="#8-3-远程过程调用（RPC）" class="headerlink" title="8.3 远程过程调用（RPC）"></a>8.3 远程过程调用（RPC）</h4><h5 id="8-3-1-基本原理"><a href="#8-3-1-基本原理" class="headerlink" title="8.3.1 基本原理"></a>8.3.1 基本原理</h5><ul>
+<li>隐藏了调用者与被调用者之间的网络通信细节。</li>
+<li>通过过程调用的方式实现分布式通信，使开发者能够像调用本地函数一样调用远程服务。</li>
+</ul>
+<h5 id="8-3-2-参数传递注意事项"><a href="#8-3-2-参数传递注意事项" class="headerlink" title="8.3.2 参数传递注意事项"></a>8.3.2 参数传递注意事项</h5><ol>
+<li><p><strong>数据表示差异</strong></p>
+<ul>
+<li>客户端与服务器可能使用不同的数据表示方式，需要统一编码机制。</li>
+</ul>
+</li>
+<li><p><strong>编码机制</strong></p>
+<ul>
+<li>基本数据类型需统一表示，如整数、字符串。</li>
+<li>复杂数据类型需规范化，如结构体、对象的序列化与反序列化。</li>
+</ul>
+</li>
+</ol>
+<h5 id="8-3-3-RPC类型"><a href="#8-3-3-RPC类型" class="headerlink" title="8.3.3 RPC类型"></a>8.3.3 RPC类型</h5><ol>
+<li><p><strong>同步RPC</strong></p>
+<ul>
+<li>客户端发送请求后阻塞，直到接收到服务器响应。</li>
+</ul>
+</li>
+<li><p><strong>异步RPC</strong></p>
+<ul>
+<li>客户端发送请求后立即返回，后续通过回调或事件处理响应。</li>
+</ul>
+</li>
+<li><p><strong>多RPC调用</strong></p>
+<ul>
+<li>客户端同时向多个服务器发送请求，提高并发与效率。</li>
+</ul>
+</li>
+</ol>
+<h5 id="8-3-4-现代RPC实现：gRPC-Protobuf"><a href="#8-3-4-现代RPC实现：gRPC-Protobuf" class="headerlink" title="8.3.4 现代RPC实现：gRPC &amp; Protobuf"></a>8.3.4 现代RPC实现：gRPC &amp; Protobuf</h5><p><strong>特点</strong>：</p>
+<ol>
+<li>语言无关、平台无关，支持多种编程语言。</li>
+<li>高效，使用二进制序列化协议（Protobuf），体积小、传输快。</li>
+<li>支持流式通信，适合实时数据传输。</li>
+<li>严格的接口约束，确保服务的一致性与兼容性。</li>
+</ol>
+<h4 id="8-4-面向消息的通信"><a href="#8-4-面向消息的通信" class="headerlink" title="8.4 面向消息的通信"></a>8.4 面向消息的通信</h4><h5 id="8-4-1-Berkeley套接字"><a href="#8-4-1-Berkeley套接字" class="headerlink" title="8.4.1 Berkeley套接字"></a>8.4.1 Berkeley套接字</h5><p><strong>主要操作原语</strong>：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">socket()   <span class="comment">// 创建通信端点</span></span><br><span class="line">bind()     <span class="comment">// 绑定本地地址</span></span><br><span class="line">listen()   <span class="comment">// 监听连接</span></span><br><span class="line">accept()   <span class="comment">// 接受连接请求</span></span><br><span class="line">connect()  <span class="comment">// 建立连接</span></span><br><span class="line">send()     <span class="comment">// 发送数据</span></span><br><span class="line">recv()     <span class="comment">// 接收数据</span></span><br><span class="line">close()    <span class="comment">// 关闭连接</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="8-4-2-ZeroMQ高级消息模式"><a href="#8-4-2-ZeroMQ高级消息模式" class="headerlink" title="8.4.2 ZeroMQ高级消息模式"></a>8.4.2 ZeroMQ高级消息模式</h5><ol>
+<li><p><strong>请求-回复模式</strong></p>
+<ul>
+<li>客户端发送请求，服务器回复响应。</li>
+</ul>
+</li>
+<li><p><strong>发布-订阅模式</strong></p>
+<ul>
+<li>发布者广播消息，订阅者接收感兴趣的消息。</li>
+</ul>
+</li>
+<li><p><strong>管道模式</strong></p>
+<ul>
+<li>多生产者与多消费者通过队列交互，实现任务分发与处理。</li>
+</ul>
+</li>
+</ol>
+<h5 id="8-4-3-消息队列系统"><a href="#8-4-3-消息队列系统" class="headerlink" title="8.4.3 消息队列系统"></a>8.4.3 消息队列系统</h5><p><strong>特点</strong>：</p>
+<ol>
+<li>支持异步、持久化消息传递。</li>
+<li>通过队列管理器管理消息的存储与转发。</li>
+<li>提供灵活的消息路由功能，支持多种消息交换模式。</li>
+</ol>
+<h4 id="8-5-Kafka消息系统"><a href="#8-5-Kafka消息系统" class="headerlink" title="8.5 Kafka消息系统"></a>8.5 Kafka消息系统</h4><p><strong>主要组件</strong>：</p>
+<ol>
+<li><strong>Producer</strong> - 消息的生产者，负责发送消息到Kafka集群。</li>
+<li><strong>Consumer</strong> - 消息的消费者，从Kafka集群中读取消息。</li>
+<li><strong>Broker</strong> - Kafka集群中的服务器节点，负责消息的存储与转发。</li>
+<li><strong>Topic</strong> - 消息的主题，Producer发送消息到特定主题，Consumer订阅主题获取消息。</li>
+<li><strong>Partition</strong> - 主题的分区，Kafka通过分区实现消息的并行处理与负载均衡。</li>
+</ol>
+<h4 id="8-6-多播通信"><a href="#8-6-多播通信" class="headerlink" title="8.6 多播通信"></a>8.6 多播通信</h4><h5 id="8-6-1-应用层多播"><a href="#8-6-1-应用层多播" class="headerlink" title="8.6.1 应用层多播"></a>8.6.1 应用层多播</h5><p><strong>组织方式</strong>：</p>
+<ol>
+<li><p><strong>树状结构</strong></p>
+<ul>
+<li>节点间形成唯一路径，结构简单但可靠性较低。</li>
+</ul>
+</li>
+<li><p><strong>网络结构</strong></p>
+<ul>
+<li>节点有多个邻居，结构复杂但具备更高的健壮性。</li>
+</ul>
+</li>
+</ol>
+<h5 id="8-6-2-Gossip协议（流行病协议）"><a href="#8-6-2-Gossip协议（流行病协议）" class="headerlink" title="8.6.2 Gossip协议（流行病协议）"></a>8.6.2 Gossip协议（流行病协议）</h5><p><strong>传播模型</strong>：</p>
+<ol>
+<li><p><strong>反熵（Anti-entropy）模型</strong></p>
+<ul>
+<li>基于数据同步，确保最终一致性。</li>
+</ul>
+</li>
+<li><p><strong>流言传播模型</strong></p>
+<ul>
+<li>随机选择节点进行信息交换，具备良好的扩展性，适用于大规模系统。</li>
+</ul>
+</li>
+</ol>
+<h3 id="9-分布式系统命名系统"><a href="#9-分布式系统命名系统" class="headerlink" title="9. 分布式系统命名系统"></a>9. 分布式系统命名系统</h3><h4 id="9-1-基本概念"><a href="#9-1-基本概念" class="headerlink" title="9.1 基本概念"></a>9.1 基本概念</h4><h5 id="9-1-1-名称"><a href="#9-1-1-名称" class="headerlink" title="9.1.1 名称"></a>9.1.1 名称</h5><ul>
+<li>由字符组成的字符串，用于唯一标识分布式系统中的实体对象。</li>
+<li>标识的实体包括硬件资源（如主机、打印机、磁盘、文件）和抽象资源（如用户、邮箱、消息）。</li>
+</ul>
+<h5 id="9-1-2-访问点（Access-Point）"><a href="#9-1-2-访问点（Access-Point）" class="headerlink" title="9.1.2 访问点（Access Point）"></a>9.1.2 访问点（Access Point）</h5><ul>
+<li>进行实体操作的接口点，访问点的名称称为地址。</li>
+<li>一个实体可以拥有多个访问点，以支持不同的操作接口。</li>
+</ul>
+<h5 id="9-1-3-标识符（Identifiers）"><a href="#9-1-3-标识符（Identifiers）" class="headerlink" title="9.1.3 标识符（Identifiers）"></a>9.1.3 标识符（Identifiers）</h5><p><strong>特性</strong>：</p>
+<ol>
+<li>每个标识符唯一引用一个实体。</li>
+<li>每个实体最多由一个标识符引用。</li>
+<li>标识符一旦分配，永不重用，确保引用的一致性。</li>
+</ol>
+<h4 id="9-2-无层次结构命名"><a href="#9-2-无层次结构命名" class="headerlink" title="9.2 无层次结构命名"></a>9.2 无层次结构命名</h4><h5 id="9-2-1-基于广播-多播的命名解析"><a href="#9-2-1-基于广播-多播的命名解析" class="headerlink" title="9.2.1 基于广播&#x2F;多播的命名解析"></a>9.2.1 基于广播&#x2F;多播的命名解析</h5><ol>
+<li><p><strong>广播方式</strong></p>
+<ul>
+<li>客户端发送广播请求，实体响应当前地址。</li>
+<li><strong>局限性</strong>：难以跨越局域网，需所有进程监听请求，带来带宽浪费。</li>
+</ul>
+</li>
+<li><p><strong>多播方式</strong></p>
+<ul>
+<li>客户端发送多播请求，实体响应。</li>
+<li><strong>优势</strong>：适用于大规模网络，减少不必要的广播流量。</li>
+</ul>
+</li>
+</ol>
+<h5 id="9-2-2-基于转发指针的命名解析"><a href="#9-2-2-基于转发指针的命名解析" class="headerlink" title="9.2.2 基于转发指针的命名解析"></a>9.2.2 基于转发指针的命名解析</h5><p><strong>原理</strong>：</p>
+<ul>
+<li>当实体移动时，在当前位置留下指向新位置的指针，客户端通过指针链查找实体所在位置。</li>
+</ul>
+<p><strong>问题</strong>：</p>
+<ul>
+<li>长指针链可能断开，增加定位开销。</li>
+<li>地理可扩展性差，适用于小规模系统。</li>
+</ul>
+<h5 id="9-2-3-分布式散列表（DHT）"><a href="#9-2-3-分布式散列表（DHT）" class="headerlink" title="9.2.3 分布式散列表（DHT）"></a>9.2.3 分布式散列表（DHT）</h5><p>以Chord为例：</p>
+<p><strong>结构特点</strong>：</p>
+<ol>
+<li>节点组织成环形结构，每个节点有唯一的m位标识符。</li>
+<li>实体通过唯一的m位健值（Key）进行标识，存储在满足<code>ID &gt;= Key</code>的最小标识符节点上。</li>
+<li>每个节点维护m个指针，指向当前节点后的<code>2^(i-1)</code>位置节点，支持对数级别的查找效率。</li>
+</ol>
+<h4 id="9-3-结构化命名"><a href="#9-3-结构化命名" class="headerlink" title="9.3 结构化命名"></a>9.3 结构化命名</h4><h5 id="9-3-1-命名空间"><a href="#9-3-1-命名空间" class="headerlink" title="9.3.1 命名空间"></a>9.3.1 命名空间</h5><ul>
+<li>基于命名图（Naming Graph）组织命名空间。</li>
+<li><strong>叶节点</strong>：表示具体实体，存储实体属性与状态。</li>
+<li><strong>目录节点</strong>：包含指向其他节点的链接，组织命名层级结构。</li>
+</ul>
+<h5 id="9-3-2-名称解析机制"><a href="#9-3-2-名称解析机制" class="headerlink" title="9.3.2 名称解析机制"></a>9.3.2 名称解析机制</h5><ol>
+<li><p><strong>闭包机制</strong></p>
+<ul>
+<li>通过分层命名解析，如<code>www.domain.com</code>由DNS服务器解析，<code>/home/user/file</code>由本地文件服务器解析。</li>
+</ul>
+</li>
+<li><p><strong>链接类型</strong></p>
+<ul>
+<li><strong>硬链接</strong>：直接通过路径名查找。</li>
+<li><strong>软链接</strong>：通过存储绝对路径名实现引用。</li>
+</ul>
+</li>
+</ol>
+<h5 id="9-3-3-命名空间实现的三层结构"><a href="#9-3-3-命名空间实现的三层结构" class="headerlink" title="9.3.3 命名空间实现的三层结构"></a>9.3.3 命名空间实现的三层结构</h5><ol>
+<li><p><strong>全局层</strong></p>
+<ul>
+<li>包含根节点及近根节点，结构稳定，通常代表整个组织或多个组织群体。</li>
+</ul>
+</li>
+<li><p><strong>行政层</strong></p>
+<ul>
+<li>单个组织内部管理的目录节点，变化相对频繁，代表组织内的实体组。</li>
+</ul>
+</li>
+<li><p><strong>管理层</strong></p>
+<ul>
+<li>代表本地主机、文件系统等，节点状态频繁变更，由终端用户维护。</li>
+</ul>
+</li>
+</ol>
+<h4 id="9-4-名称解析方式"><a href="#9-4-名称解析方式" class="headerlink" title="9.4 名称解析方式"></a>9.4 名称解析方式</h4><h5 id="9-4-1-迭代式解析"><a href="#9-4-1-迭代式解析" class="headerlink" title="9.4.1 迭代式解析"></a>9.4.1 迭代式解析</h5><ul>
+<li>客户端依次查询每个解析服务器，每个服务器返回下一步查询的服务器信息，直至获得最终结果。</li>
+</ul>
+<h5 id="9-4-2-递归式解析"><a href="#9-4-2-递归式解析" class="headerlink" title="9.4.2 递归式解析"></a>9.4.2 递归式解析</h5><ul>
+<li>客户端一次性请求，服务器递归查询其他服务器，最终返回结果给客户端。</li>
+</ul>
+<h4 id="9-5-基于属性的命名"><a href="#9-5-基于属性的命名" class="headerlink" title="9.5 基于属性的命名"></a>9.5 基于属性的命名</h4><h5 id="9-5-1-LDAP（轻量级目录访问协议）"><a href="#9-5-1-LDAP（轻量级目录访问协议）" class="headerlink" title="9.5.1 LDAP（轻量级目录访问协议）"></a>9.5.1 LDAP（轻量级目录访问协议）</h5><p><strong>特点</strong>：</p>
+<ul>
+<li>结合数据库实现目录服务，每个目录项包含（属性, 值）对。</li>
+<li>赋予唯一名字，便于基于属性的查询与搜索。</li>
+</ul>
+<h5 id="9-5-2-扩展性考虑"><a href="#9-5-2-扩展性考虑" class="headerlink" title="9.5.2 扩展性考虑"></a>9.5.2 扩展性考虑</h5><ol>
+<li><p><strong>规模扩展性</strong></p>
+<ul>
+<li>服务器需处理大量并发请求，需具备高吞吐量与低延迟。</li>
+</ul>
+</li>
+<li><p><strong>地理扩展性</strong></p>
+<ul>
+<li>通过数据复制提高可用性，采用“就近服务”原则减少延迟。</li>
+</ul>
+</li>
+</ol>
+<h3 id="10-分布式系统协同"><a href="#10-分布式系统协同" class="headerlink" title="10. 分布式系统协同"></a>10. 分布式系统协同</h3><h4 id="10-1-基础概念"><a href="#10-1-基础概念" class="headerlink" title="10.1 基础概念"></a>10.1 基础概念</h4><h5 id="10-1-1-同步与协作"><a href="#10-1-1-同步与协作" class="headerlink" title="10.1.1 同步与协作"></a>10.1.1 同步与协作</h5><ol>
+<li><p><strong>同步类型</strong></p>
+<ul>
+<li><strong>事件同步</strong>：事件在时间上达成一致。</li>
+<li><strong>进程同步</strong>：一个进程等待其他进程完成特定操作。</li>
+<li><strong>数据同步</strong>：保证多个节点的数据集合保持一致。</li>
+</ul>
+</li>
+<li><p><strong>协作定义</strong></p>
+<ul>
+<li>管理系统中各行为之间的交互与依赖关系，分布式系统的协作复杂度高于单节点系统。</li>
+</ul>
+</li>
+</ol>
+<h4 id="10-2-时钟同步"><a href="#10-2-时钟同步" class="headerlink" title="10.2 时钟同步"></a>10.2 时钟同步</h4><h5 id="10-2-1-物理时钟"><a href="#10-2-1-物理时钟" class="headerlink" title="10.2.1 物理时钟"></a>10.2.1 物理时钟</h5><ol>
+<li><p><strong>统一协调时间（UTC）</strong></p>
+<ul>
+<li>基于原子钟的精确时间标准，通过网络时间协议（NTP）同步。</li>
+</ul>
+</li>
+<li><p><strong>时钟精度与准确度</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">精度定义：|Ci(t) - Cj(t)| ≤ ε</span><br><span class="line">准确度定义：|Ci(t) - t| ≤ α</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>Ci(t)</strong> 表示机器i在UTC时间t的时钟时间。</li>
+<li><strong>ε</strong> 为精度参数，<strong>α</strong> 为准确度参数。</li>
+</ul>
+</li>
+</ol>
+<h5 id="10-2-2-时钟漂移"><a href="#10-2-2-时钟漂移" class="headerlink" title="10.2.2 时钟漂移"></a>10.2.2 时钟漂移</h5><ol>
+<li><p><strong>时钟规约</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(1 - ρ) ≤ F(t)/F ≤ (1 + ρ)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>ρ</strong> 为最大时钟漂移率。</li>
+<li><strong>F(t)</strong> 为t时刻硬件时钟频率，<strong>F</strong> 为理想频率。</li>
+</ul>
+</li>
+<li><p><strong>时钟同步方法</strong></p>
+<p>a) <strong>Berkeley算法</strong></p>
+<ul>
+<li>时间服务器定期收集所有节点时间，计算均值后通知各节点调整时钟。</li>
+</ul>
+<p>b) <strong>参考广播同步化（RBS）</strong></p>
+<ul>
+<li>适用于无线网络，节点定期广播参考时间，接收节点通过线性回归调整本地时钟。</li>
+</ul>
+</li>
+</ol>
+<h4 id="10-3-逻辑时钟"><a href="#10-3-逻辑时钟" class="headerlink" title="10.3 逻辑时钟"></a>10.3 逻辑时钟</h4><h5 id="10-3-1-发生关系（Happen-before）"><a href="#10-3-1-发生关系（Happen-before）" class="headerlink" title="10.3.1 发生关系（Happen-before）"></a>10.3.1 发生关系（Happen-before）</h5><p><strong>定义三条规则</strong>：</p>
+<ol>
+<li>同一进程中，事件a在事件b之前发生，则a → b。</li>
+<li>事件a是消息的发送，事件b是消息的接收，则a → b。</li>
+<li>如果a → b 且 b → c，则a → c。</li>
+</ol>
+<h5 id="10-3-2-Lamport逻辑时钟"><a href="#10-3-2-Lamport逻辑时钟" class="headerlink" title="10.3.2 Lamport逻辑时钟"></a>10.3.2 Lamport逻辑时钟</h5><ol>
+<li><p><strong>时间戳规则</strong></p>
+<ul>
+<li><strong>P1</strong>：同进程事件a → b，则C(a) &lt; C(b)。</li>
+<li><strong>P2</strong>：消息发送事件a和接收事件b，则C(a) &lt; C(b)。</li>
+</ul>
+</li>
+<li><p><strong>实现机制</strong></p>
+<ol>
+<li>每个进程Pi维护本地计数器Ci。</li>
+<li>进程内部事件发生时，Ci &#x3D; Ci + 1。</li>
+<li>发送消息m时，Ci &#x3D; Ci + 1，将时间戳ts &#x3D; Ci附加到消息。</li>
+<li>接收消息m(ts)时，Ci &#x3D; max(Ci, ts) + 1。</li>
+</ol>
+</li>
+</ol>
+<h5 id="10-3-3-向量时钟"><a href="#10-3-3-向量时钟" class="headerlink" title="10.3.3 向量时钟"></a>10.3.3 向量时钟</h5><ol>
+<li><p><strong>数据结构</strong></p>
+<ul>
+<li>每个进程Pi维护一个向量VCi[1…N]。</li>
+<li><strong>VCi[j]</strong> 表示Pi已知的第j个进程的事件数。</li>
+</ul>
+</li>
+<li><p><strong>更新规则</strong></p>
+<ul>
+<li>进程Pi本地事件：VCi[i] &#x3D; VCi[i] + 1。</li>
+<li>Pi发送消息：先执行本地事件更新，再发送消息。</li>
+<li>Pi接收消息m(ts)：<ul>
+<li>对所有j，VCi[j] &#x3D; max(VCi[j], ts[j])。</li>
+<li>VCi[i] &#x3D; VCi[i] + 1。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="10-4-分布式互斥"><a href="#10-4-分布式互斥" class="headerlink" title="10.4 分布式互斥"></a>10.4 分布式互斥</h4><h5 id="10-4-1-基于许可的方法"><a href="#10-4-1-基于许可的方法" class="headerlink" title="10.4.1 基于许可的方法"></a>10.4.1 基于许可的方法</h5><ol>
+<li><p><strong>集中式方法</strong></p>
+<ul>
+<li>单一协调者控制资源访问，存在单点故障风险。</li>
+</ul>
+</li>
+<li><p><strong>分布式方法（Ricart &amp; Agrawala算法）</strong></p>
+<p>请求访问资源时：</p>
+<ol>
+<li>构造消息（资源名，进程号，逻辑时间）。</li>
+<li>发送给所有其他进程。</li>
+<li>等待所有进程回复OK。</li>
+</ol>
+<p>接收请求时：</p>
+<ol>
+<li>未访问资源：直接返回OK。</li>
+<li>已获得访问权：将请求加入队列。</li>
+<li>想访问但未获得：比较时间戳<ul>
+<li>接收到的消息时间戳早：返回OK。</li>
+<li>自己时间戳早：将请求加入队列。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h5 id="10-4-2-基于令牌的方法"><a href="#10-4-2-基于令牌的方法" class="headerlink" title="10.4.2 基于令牌的方法"></a>10.4.2 基于令牌的方法</h5><p><strong>令牌环算法</strong></p>
+<ul>
+<li>进程组织成逻辑环，令牌在环内传递。</li>
+<li>持有令牌的进程可进入临界区，完成后将令牌传递给下一个进程。</li>
+</ul>
+<h4 id="10-5-选举算法"><a href="#10-5-选举算法" class="headerlink" title="10.5 选举算法"></a>10.5 选举算法</h4><h5 id="10-5-1-Bully算法"><a href="#10-5-1-Bully算法" class="headerlink" title="10.5.1 Bully算法"></a>10.5.1 Bully算法</h5><p><strong>运行机制</strong>：</p>
+<ol>
+<li><p>Pi发起选举：</p>
+<ul>
+<li>向所有ID更大的进程发送ELECTION消息。</li>
+<li>如无人响应，Pi成为新Leader。</li>
+<li>有响应则等待更高ID进程的选举结果。</li>
+</ul>
+</li>
+<li><p>Pj收到ELECTION消息：</p>
+<ul>
+<li>发送OK给Pi。</li>
+<li>向更高ID进程发起新一轮选举。</li>
+</ul>
+</li>
+<li><p>胜出者发送COORDINATOR消息，宣布自己为Leader。</p>
+</li>
+</ol>
+<h5 id="10-5-2-Ring算法"><a href="#10-5-2-Ring算法" class="headerlink" title="10.5.2 Ring算法"></a>10.5.2 Ring算法</h5><p><strong>运行机制</strong>：</p>
+<ol>
+<li>进程按环形结构组织。</li>
+<li>选举发起者将自己的ID加入消息列表。</li>
+<li>消息沿环传递，各进程添加自己的ID。</li>
+<li>消息返回发起者时，选出最大ID作为Leader。</li>
+<li>新Leader通过环形广播通知所有进程。</li>
+</ol>
+<h3 id="11-分布式系统一致性与复制"><a href="#11-分布式系统一致性与复制" class="headerlink" title="11. 分布式系统一致性与复制"></a>11. 分布式系统一致性与复制</h3><h4 id="11-1-基础概念"><a href="#11-1-基础概念" class="headerlink" title="11.1 基础概念"></a>11.1 基础概念</h4><h5 id="11-1-1-复制的原因"><a href="#11-1-1-复制的原因" class="headerlink" title="11.1.1 复制的原因"></a>11.1.1 复制的原因</h5><ol>
+<li><p><strong>性能提升</strong></p>
+<ul>
+<li>通过在多个节点上存储数据副本，提升数据读取速度与系统吞吐量。</li>
+</ul>
+</li>
+<li><p><strong>提高可用性</strong></p>
+<ul>
+<li>数据副本的存在保证了部分节点故障时系统依然可用。</li>
+</ul>
+</li>
+</ol>
+<h5 id="11-1-2-主要挑战"><a href="#11-1-2-主要挑战" class="headerlink" title="11.1.2 主要挑战"></a>11.1.2 主要挑战</h5><ol>
+<li><p><strong>一致性保证</strong></p>
+<ul>
+<li>确保所有副本上的数据在任何时间点保持一致，防止数据冲突与不一致。</li>
+</ul>
+</li>
+<li><p><strong>冲突类型</strong></p>
+<ul>
+<li><strong>读写冲突</strong>：一个进程读取数据，另一个进程同时写入数据。</li>
+<li><strong>写写冲突</strong>：多个进程对同一数据进行并发写操作。</li>
+</ul>
+</li>
+</ol>
+<h4 id="11-2-数据中心一致性模型"><a href="#11-2-数据中心一致性模型" class="headerlink" title="11.2 数据中心一致性模型"></a>11.2 数据中心一致性模型</h4><h5 id="11-2-1-连续一致性模型"><a href="#11-2-1-连续一致性模型" class="headerlink" title="11.2.1 连续一致性模型"></a>11.2.1 连续一致性模型</h5><p><strong>偏差类型</strong>：</p>
+<ol>
+<li><p><strong>数值偏差</strong></p>
+<ul>
+<li>不同副本间的数值存在差异。</li>
+</ul>
+</li>
+<li><p><strong>新旧偏差</strong></p>
+<ul>
+<li>不同副本的数据新旧程度不同。</li>
+</ul>
+</li>
+<li><p><strong>顺序偏差</strong></p>
+<ul>
+<li>不同副本上操作的顺序和数量不一致。</li>
+</ul>
+</li>
+</ol>
+<h5 id="11-2-2-Consistency-Unit（Conit）"><a href="#11-2-2-Consistency-Unit（Conit）" class="headerlink" title="11.2.2 Consistency Unit（Conit）"></a>11.2.2 Consistency Unit（Conit）</h5><p><strong>结构组成</strong>：</p>
+<ol>
+<li>包含多个数据项（如x, y）。</li>
+<li>每个副本维护向量时钟，记录数据状态。</li>
+<li>操作持久化，不允许回滚，确保操作记录的不可更改性。</li>
+</ol>
+<p><strong>偏差度量</strong>：</p>
+<ul>
+<li>数值偏差 &#x3D; 未接收更新次数 × 偏差权重。</li>
+<li>偏差权重 &#x3D; 已提交值与未收到操作结果间差值的最大值。</li>
+</ul>
+<h5 id="11-2-3-顺序一致性"><a href="#11-2-3-顺序一致性" class="headerlink" title="11.2.3 顺序一致性"></a>11.2.3 顺序一致性</h5><p><strong>定义</strong>：所有进程看到的操作执行顺序一致，每个进程自身的操作按程序顺序执行。</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">时间轴示意：</span><br><span class="line">P1: W(x)1        R(x)1</span><br><span class="line">P2:     W(x)2    R(x)2   [顺序一致]</span><br></pre></td></tr></table></figure>
+
+<h5 id="11-2-4-因果一致性"><a href="#11-2-4-因果一致性" class="headerlink" title="11.2.4 因果一致性"></a>11.2.4 因果一致性</h5><p><strong>定义</strong>：具有因果关系的操作必须以相同顺序被所有进程看到，保持操作之间的因果依赖。</p>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>较弱于顺序一致性，允许并发操作以不同顺序被各进程观察。</li>
+<li>保持因果相关操作的顺序一致性。</li>
+</ul>
+<h4 id="11-3-客户端中心一致性模型"><a href="#11-3-客户端中心一致性模型" class="headerlink" title="11.3 客户端中心一致性模型"></a>11.3 客户端中心一致性模型</h4><h5 id="11-3-1-单调读一致性"><a href="#11-3-1-单调读一致性" class="headerlink" title="11.3.1 单调读一致性"></a>11.3.1 单调读一致性</h5><p><strong>定义</strong>：如果一个进程读取了数据项x的值，后续的读取操作不会读到更旧的值。</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">正确示例：</span><br><span class="line">P1: W(x)1    R(x)1    R(x)1</span><br><span class="line">P2:     W(x)2         R(x)2</span><br><span class="line">   </span><br><span class="line">错误示例：</span><br><span class="line">P1: W(x)1    R(x)2    R(x)1  [违反单调读]</span><br><span class="line">P2:     W(x)2</span><br></pre></td></tr></table></figure>
+
+<h5 id="11-3-2-单调写一致性"><a href="#11-3-2-单调写一致性" class="headerlink" title="11.3.2 单调写一致性"></a>11.3.2 单调写一致性</h5><p><strong>定义</strong>：一个进程的写操作必须按顺序完成，即后续的写操作不能先于先前的写操作执行。</p>
+<h5 id="11-3-3-读写一致性"><a href="#11-3-3-读写一致性" class="headerlink" title="11.3.3 读写一致性"></a>11.3.3 读写一致性</h5><p><strong>定义</strong>：进程的写操作结果必须对该进程的后续读操作可见，确保读到最新写入的数据。</p>
+<h4 id="11-4-复制管理"><a href="#11-4-复制管理" class="headerlink" title="11.4 复制管理"></a>11.4 复制管理</h4><h5 id="11-4-1-副本放置策略"><a href="#11-4-1-副本放置策略" class="headerlink" title="11.4.1 副本放置策略"></a>11.4.1 副本放置策略</h5><ol>
+<li><p><strong>服务器放置</strong></p>
+<ul>
+<li>从N个位置中选择K个最佳位置，考虑客户端距离最小化。</li>
+<li>常用方法：几何空间划分，如哈希分区、地理分布等。</li>
+</ul>
+</li>
+<li><p><strong>内容放置</strong></p>
+<ul>
+<li>使用多层次的放置策略，如三个同心环：<ul>
+<li><strong>永久副本</strong>（最内环）：关键数据的稳定副本。</li>
+<li><strong>服务器启动副本</strong>（中环）：由服务器自动管理的副本。</li>
+<li><strong>客户端启动副本</strong>（外环）：由客户端主动管理和维护的副本。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="11-4-2-内容分发策略"><a href="#11-4-2-内容分发策略" class="headerlink" title="11.4.2 内容分发策略"></a>11.4.2 内容分发策略</h5><ol>
+<li><p><strong>传播方式</strong></p>
+<ul>
+<li><strong>更新通知传播</strong>：服务器主动通知客户端更新信息。</li>
+<li><strong>数据传播</strong>：被动复制，通过请求拉取更新数据。</li>
+<li><strong>操作传播</strong>：主动复制，传递操作日志以同步更新。</li>
+</ul>
+</li>
+<li><p><strong>更新方式</strong></p>
+<p>Push方式：</p>
+<ul>
+<li>服务器主动推送更新到客户端。</li>
+<li>适用于频繁更新的数据。</li>
+</ul>
+<p>Pull方式：</p>
+<ul>
+<li>客户端按需主动请求更新。</li>
+<li>适用于低频更新或按需访问的数据。</li>
+</ul>
+</li>
+</ol>
+<h4 id="11-5-一致性协议"><a href="#11-5-一致性协议" class="headerlink" title="11.5 一致性协议"></a>11.5 一致性协议</h4><h5 id="11-5-1-基于主备份的协议"><a href="#11-5-1-基于主备份的协议" class="headerlink" title="11.5.1 基于主备份的协议"></a>11.5.1 基于主备份的协议</h5><ol>
+<li><p><strong>远程写协议</strong></p>
+<p>步骤：</p>
+<ol>
+<li>客户端发送更新请求到主副本。</li>
+<li>主副本转发更新请求到所有备份副本。</li>
+<li>备份副本确认接收更新。</li>
+<li>主副本向客户端返回成功响应。</li>
+</ol>
+</li>
+<li><p><strong>本地写协议</strong></p>
+<p>适用场景：</p>
+<ul>
+<li>离线计算环境、移动计算环境。</li>
+<li>进行数据传输前的本地缓存与更新。</li>
+</ul>
+</li>
+</ol>
+<h5 id="11-5-2-客户端中心一致性协议"><a href="#11-5-2-客户端中心一致性协议" class="headerlink" title="11.5.2 客户端中心一致性协议"></a>11.5.2 客户端中心一致性协议</h5><p><strong>实现机制</strong>：</p>
+<p>每个客户端维护：</p>
+<ol>
+<li>读操作集：与客户端读操作相关的写操作记录。</li>
+<li>写操作集：客户端自身的写操作记录。</li>
+</ol>
+<p>一致性检查：</p>
+<ul>
+<li>单调读&#x2F;写：在处理请求时，依据操作集保持一致性。</li>
+<li>读写一致：读操作前检查写操作集，确保读到最新数据。</li>
+<li>写读一致：写操作前检查读操作集，确保写入前的读操作已完成。</li>
+</ul>
+<h3 id="12-分布式系统容错"><a href="#12-分布式系统容错" class="headerlink" title="12. 分布式系统容错"></a>12. 分布式系统容错</h3><h4 id="12-1-基本概念与术语"><a href="#12-1-基本概念与术语" class="headerlink" title="12.1 基本概念与术语"></a>12.1 基本概念与术语</h4><h5 id="12-1-1-可依赖性相关概念"><a href="#12-1-1-可依赖性相关概念" class="headerlink" title="12.1.1 可依赖性相关概念"></a>12.1.1 可依赖性相关概念</h5><ol>
+<li><p><strong>可靠性（Reliability）</strong></p>
+<p>R(t) &#x3D; P(组件从t&#x3D;0到t时刻正常工作的概率)</p>
+<p>重要指标：</p>
+<ul>
+<li>MTTF（平均失效时间）：组件从工作开始到第一次失效的平均时间。</li>
+<li>MTTR（平均恢复时间）：组件失效后恢复正常工作的平均时间。</li>
+<li>MTBF（平均故障间隔时间）&#x3D; MTTF + MTTR。</li>
+</ul>
+</li>
+<li><p><strong>可用性（Availability）</strong></p>
+<p>A(t) &#x3D; 在[0,t]时间内组件可用时间的比例。<br>长期可用性：A &#x3D; MTTF &#x2F; (MTTF + MTTR)。</p>
+</li>
+</ol>
+<h5 id="12-1-2-故障分类"><a href="#12-1-2-故障分类" class="headerlink" title="12.1.2 故障分类"></a>12.1.2 故障分类</h5><ol>
+<li><p><strong>按持续性分类</strong></p>
+<ul>
+<li><strong>暂时性故障</strong>：仅发生一次，可以通过重试恢复。</li>
+<li><strong>间歇性故障</strong>：周期性发生，需要监控与预测。</li>
+<li><strong>持久性故障</strong>：持续存在，需人工干预或更换组件。</li>
+</ul>
+</li>
+<li><p><strong>按性质分类</strong></p>
+<ul>
+<li><strong>遗漏性失效</strong>：未执行应执行的操作，导致资源状态不可用。</li>
+<li><strong>执行性失效</strong>：执行了不应执行的操作，可能导致资源状态不一致。</li>
+</ul>
+</li>
+</ol>
+<h4 id="12-2-进程恢复机制"><a href="#12-2-进程恢复机制" class="headerlink" title="12.2 进程恢复机制"></a>12.2 进程恢复机制</h4><h5 id="12-2-1-冗余策略"><a href="#12-2-1-冗余策略" class="headerlink" title="12.2.1 冗余策略"></a>12.2.1 冗余策略</h5><ol>
+<li><p><strong>信息冗余</strong></p>
+<ul>
+<li>通过附加校验位或冗余信息，检测与纠错数据传输中的错误。</li>
+</ul>
+</li>
+<li><p><strong>时间冗余</strong></p>
+<ul>
+<li>通过重执行操作或事务处理，确保操作的可靠性。</li>
+</ul>
+</li>
+<li><p><strong>物理冗余</strong></p>
+<ul>
+<li>增加额外的设备或进程，提升系统的容错能力。</li>
+</ul>
+</li>
+</ol>
+<h5 id="12-2-2-K-容错组"><a href="#12-2-2-K-容错组" class="headerlink" title="12.2.2 K-容错组"></a>12.2.2 K-容错组</h5><p>容错度定义：</p>
+<ul>
+<li>停止失效：需要K+1个成员。</li>
+<li>随意失效：需要2K+1个成员。</li>
+</ul>
+<p><strong>假设条件</strong>：</p>
+<ol>
+<li>所有成员同质，具备相同能力。</li>
+<li>所有成员以相同顺序处理命令，确保操作一致性。</li>
+</ol>
+<h4 id="12-3-共识协议"><a href="#12-3-共识协议" class="headerlink" title="12.3 共识协议"></a>12.3 共识协议</h4><h5 id="12-3-1-基于泛洪的共识"><a href="#12-3-1-基于泛洪的共识" class="headerlink" title="12.3.1 基于泛洪的共识"></a>12.3.1 基于泛洪的共识</h5><p><strong>系统模型</strong>：</p>
+<p>组件：</p>
+<ul>
+<li>进程组 P &#x3D; {P1, P2, …, Pn}</li>
+<li>失效模型：Fail-stop（停止失效）</li>
+</ul>
+<p><strong>过程</strong>：</p>
+<ol>
+<li>客户端联系Pi执行命令。</li>
+<li>每个进程维护命令列表，基于轮数进行共识。</li>
+</ol>
+<h5 id="12-3-2-Paxos协议假设"><a href="#12-3-2-Paxos协议假设" class="headerlink" title="12.3.2 Paxos协议假设"></a>12.3.2 Paxos协议假设</h5><ol>
+<li><strong>系统模型</strong>：<ul>
+<li>半同步系统，消息可能延迟但最终会到达。</li>
+<li>通信不可靠，消息可能丢失、重复或乱序。</li>
+<li>能够检测并丢弃损坏的消息。</li>
+<li>操作具有确定性，保证相同输入产生相同输出。</li>
+<li>节点可能出现崩溃失效，但不会发生网络分区。</li>
+<li>节点不会串通欺骗，保持诚实。</li>
+</ul>
+</li>
+</ol>
+<h3 id="13-分布式系统容错"><a href="#13-分布式系统容错" class="headerlink" title="13. 分布式系统容错"></a>13. 分布式系统容错</h3><h4 id="13-1-可靠通信"><a href="#13-1-可靠通信" class="headerlink" title="13.1 可靠通信"></a>13.1 可靠通信</h4><h5 id="13-1-1-可靠RPC机制"><a href="#13-1-1-可靠RPC机制" class="headerlink" title="13.1.1 可靠RPC机制"></a>13.1.1 可靠RPC机制</h5><p><strong>错误类型及解决方案</strong>：</p>
+<ol>
+<li><p><strong>无法定位服务器</strong></p>
+<ul>
+<li>客户端返回错误信息，提示服务器不可达。</li>
+</ul>
+</li>
+<li><p><strong>请求丢失</strong></p>
+<ul>
+<li>客户端重新发送请求，确保最终传递。</li>
+</ul>
+</li>
+<li><p><strong>服务器崩溃</strong></p>
+<ul>
+<li>使用幂等操作，避免重复执行带来的副作用。</li>
+<li>采用事务处理机制，确保操作的原子性。</li>
+</ul>
+</li>
+<li><p><strong>客户端崩溃</strong></p>
+<ul>
+<li>使用孤儿操作消灭、任务再生和超时机制，确保系统状态一致。</li>
+</ul>
+</li>
+</ol>
+<h5 id="13-1-2-可靠组通信"><a href="#13-1-2-可靠组通信" class="headerlink" title="13.1.2 可靠组通信"></a>13.1.2 可靠组通信</h5><p><strong>实现方式</strong>：</p>
+<ol>
+<li><p><strong>基本机制</strong></p>
+<ul>
+<li>确保组内每个进程都能接收到消息。</li>
+<li>区分消息的发送与接收，防止消息丢失或重复。</li>
+</ul>
+</li>
+<li><p><strong>反馈控制</strong></p>
+<ul>
+<li><strong>无等级反馈</strong>：使用多播反馈抑制机制，减少重复反馈。</li>
+<li><strong>分等级反馈</strong>：采用树形结构组织反馈，提高反馈效率。</li>
+</ul>
+</li>
+</ol>
+<h4 id="13-2-分布式提交协议"><a href="#13-2-分布式提交协议" class="headerlink" title="13.2 分布式提交协议"></a>13.2 分布式提交协议</h4><h5 id="13-2-1-两阶段提交（2PC）"><a href="#13-2-1-两阶段提交（2PC）" class="headerlink" title="13.2.1 两阶段提交（2PC）"></a>13.2.1 两阶段提交（2PC）</h5><p>阶段1（投票阶段）：</p>
+<ol>
+<li>协调者发送VOTE_REQUEST给所有参与者。</li>
+<li>参与者返回VOTE_COMMIT或VOTE_ABORT。</li>
+</ol>
+<p>阶段2（提交阶段）：</p>
+<ol>
+<li>协调者根据投票结果发送GLOBAL_COMMIT或GLOBAL_ABORT。</li>
+<li>参与者执行相应操作并返回确认。</li>
+</ol>
+<p><strong>失效处理</strong>：</p>
+<ul>
+<li><strong>参与者失效</strong>：使用日志记录以便恢复。</li>
+<li><strong>协调者失效</strong>：可能导致整个提交过程阻塞，需要恢复机制。</li>
+</ul>
+<h5 id="13-2-2-恢复机制"><a href="#13-2-2-恢复机制" class="headerlink" title="13.2.2 恢复机制"></a>13.2.2 恢复机制</h5><ol>
+<li><p><strong>检查点机制</strong></p>
+<p>特点：</p>
+<ul>
+<li>定期记录进程状态，便于恢复。</li>
+<li>需要协调所有进程找到一致的恢复点。</li>
+<li>可能导致多米诺效应，即多个进程必须同时回滚。</li>
+</ul>
+<p>类型：</p>
+<ul>
+<li>独立检查点：每个进程独立记录状态。</li>
+<li>协调检查点：全局同步记录一致的状态。</li>
+</ul>
+</li>
+<li><p><strong>日志消息机制</strong></p>
+<p>优势：</p>
+<ul>
+<li>记录操作日志，支持通过重放达到一致状态。</li>
+<li>实现成本低于全面检查点。</li>
+</ul>
+<p>实现方式：</p>
+<ul>
+<li>持久化重要消息日志。</li>
+<li>保证消息的顺序一致性。</li>
+</ul>
+</li>
+<li><p><strong>面向恢复的计算（RoC）</strong></p>
+<p>特点：</p>
+<ul>
+<li>只重启系统的部分组件，减少恢复时间。</li>
+<li>系统组件高度分离，组件间依赖关系简单。</li>
+<li>支持增量恢复，提高恢复效率。</li>
+</ul>
+</li>
+</ol>
+<h3 id="14-分布式系统共识机制"><a href="#14-分布式系统共识机制" class="headerlink" title="14. 分布式系统共识机制"></a>14. 分布式系统共识机制</h3><h4 id="14-1-基础概念"><a href="#14-1-基础概念" class="headerlink" title="14.1 基础概念"></a>14.1 基础概念</h4><h5 id="14-1-1-背景"><a href="#14-1-1-背景" class="headerlink" title="14.1.1 背景"></a>14.1.1 背景</h5><ul>
+<li><strong>分布式系统协作</strong>：多个组件协同工作，对外呈现为一个整体系统。</li>
+<li><strong>一致性</strong>：确保系统中各个副本的数据对象保持一致。</li>
+<li><strong>共识</strong>：在分布式系统中，多节点就某个操作或值达成一致的过程。</li>
+</ul>
+<h5 id="14-1-2-系统特性"><a href="#14-1-2-系统特性" class="headerlink" title="14.1.2 系统特性"></a>14.1.2 系统特性</h5><p>基于BASE理论：</p>
+<ul>
+<li><strong>Basically Available</strong>（基本可用）：系统保证部分功能持续可用。</li>
+<li><strong>Soft-state</strong>（软状态）：系统状态可以通过交互动态变化。</li>
+<li><strong>Eventual Consistency</strong>（最终一致性）：所有副本最终将达到一致状态。</li>
+</ul>
+<h4 id="14-2-Paxos算法"><a href="#14-2-Paxos算法" class="headerlink" title="14.2 Paxos算法"></a>14.2 Paxos算法</h4><h5 id="14-2-1-基本概念"><a href="#14-2-1-基本概念" class="headerlink" title="14.2.1 基本概念"></a>14.2.1 基本概念</h5><p>角色定义：</p>
+<ol>
+<li>Proposer（提议者）：提出共识值的节点。</li>
+<li>Acceptor（接受者）：接收并投票的节点。</li>
+<li>Learner（学习者）：学习最终共识值的节点。</li>
+</ol>
+<p><strong>消息类型</strong>：</p>
+<ol>
+<li>**Prepare(n)**：准备请求，提议编号n。</li>
+<li>**Promise(n, v)**：承诺响应，承诺不接受编号小于n的提案，并返回已接受的最高编号提案值v。</li>
+<li>**Accept(n, v)**：接受请求，提议编号n和提议值v。</li>
+<li>**Accepted(n, v)**：接受响应，表示接受了提议编号n的值v。</li>
+</ol>
+<h5 id="14-2-2-算法流程"><a href="#14-2-2-算法流程" class="headerlink" title="14.2.2 算法流程"></a>14.2.2 算法流程</h5><p><strong>阶段1（Prepare）</strong>：</p>
+<p>Proposer：</p>
+<ol>
+<li>选择一个提案编号n。</li>
+<li>向所有Acceptor发送Prepare(n)消息。</li>
+</ol>
+<p>Acceptor：</p>
+<ol>
+<li>如果n大于已承诺的所有编号：<ul>
+<li>承诺不再接受编号小于n的提案。</li>
+<li>返回Promise(n, 已接受的最高编号提案值v)。</li>
+</ul>
+</li>
+<li>否则，拒绝Prepare请求。</li>
+</ol>
+<p><strong>阶段2（Accept）</strong>：</p>
+<p>Proposer：</p>
+<ol>
+<li>如果收到大多数Promise响应：<ul>
+<li>选择最高编号已接受的值v（如无则自由选择）。</li>
+<li>向所有Acceptor发送Accept(n, v)消息。</li>
+</ul>
+</li>
+</ol>
+<p>Acceptor：</p>
+<ol>
+<li>如果未对更大编号做出承诺：<ul>
+<li>接受提案，并发送Accepted(n, v)响应。</li>
+</ul>
+</li>
+<li>否则，拒绝Accept请求。</li>
+</ol>
+<h5 id="14-2-3-算法特性与示例"><a href="#14-2-3-算法特性与示例" class="headerlink" title="14.2.3 算法特性与示例"></a>14.2.3 算法特性与示例</h5><ol>
+<li><strong>无冲突情况</strong>：</li>
+</ol>
+<ul>
+<li>Proposer P1提出值v1。</li>
+<li>多数Acceptor接受v1。</li>
+<li>共识达成，值v1被选定。</li>
+</ul>
+<ol start="2">
+<li><strong>并发提案冲突</strong>：</li>
+</ol>
+<ul>
+<li>Proposer P1和P2同时提出不同的值。</li>
+<li>较大编号的提案获胜，确保只有一个值被选定。</li>
+</ul>
+<ol start="3">
+<li><strong>安全性保证</strong>：</li>
+</ol>
+<ul>
+<li>已确定的值不会被修改。</li>
+<li>较新的提案会继承已接受的值，保持一致性。</li>
+</ul>
+<h4 id="14-3-Raft算法"><a href="#14-3-Raft算法" class="headerlink" title="14.3 Raft算法"></a>14.3 Raft算法</h4><h5 id="14-3-1-核心概念"><a href="#14-3-1-核心概念" class="headerlink" title="14.3.1 核心概念"></a>14.3.1 核心概念</h5><p>角色定义：</p>
+<ol>
+<li>Leader（领导者）：负责处理所有客户端请求，并管理日志复制。</li>
+<li>Follower（跟随者）：被动响应Leader的请求或选举。</li>
+<li>Candidate（候选者）：在Leader失效时发起选举的节点。</li>
+</ol>
+<p>任期：</p>
+<ul>
+<li>时间被划分为任期，每个任期有唯一的递增编号。</li>
+<li>每个任期至多有一个Leader。</li>
+</ul>
+<h5 id="14-3-2-选举过程"><a href="#14-3-2-选举过程" class="headerlink" title="14.3.2 选举过程"></a>14.3.2 选举过程</h5><ol>
+<li>Follower在超时未收到Leader心跳后，转换为Candidate。</li>
+<li>Candidate增加当前任期编号，向其他节点发送选票请求。</li>
+<li>如果Candidate获得多数选票，成为新的Leader。</li>
+<li>Leader定期发送心跳消息，维持领导地位。</li>
+<li>如果其他Candidate在选举过程中发现更高任期的Leader，转换为Follower。</li>
+</ol>
+<h5 id="14-3-3-日志复制"><a href="#14-3-3-日志复制" class="headerlink" title="14.3.3 日志复制"></a>14.3.3 日志复制</h5><ul>
+<li>Leader接收客户端请求，追加到自己的日志。</li>
+<li>Leader将日志条目复制到所有Follower。</li>
+<li>当日志条目被大多数节点确认后，Leader提交该条目。</li>
+<li>Leader通过心跳消息通知Follower提交日志条目。</li>
+</ul>
+<h5 id="14-3-4-一致性保证"><a href="#14-3-4-一致性保证" class="headerlink" title="14.3.4 一致性保证"></a>14.3.4 一致性保证</h5><ul>
+<li>所有Leader的财产集必须一致。</li>
+<li>日志条目顺序一致，保证数据一致性。</li>
+<li>即使在Leader失效后，新Leader也能正确恢复日志状态。</li>
+</ul>
+<h4 id="14-4-PBFT（实用拜占庭容错）"><a href="#14-4-PBFT（实用拜占庭容错）" class="headerlink" title="14.4 PBFT（实用拜占庭容错）"></a>14.4 PBFT（实用拜占庭容错）</h4><h5 id="14-4-1-系统模型"><a href="#14-4-1-系统模型" class="headerlink" title="14.4.1 系统模型"></a>14.4.1 系统模型</h5><p>假设条件：</p>
+<ul>
+<li>系统由n个节点组成，其中最多f个节点可能是恶意的（拜占庭故障）。</li>
+<li>系统运行在异步网络环境，消息可能延迟、丢失。</li>
+<li>需要n ≥ 3f + 1以确保容错性。</li>
+</ul>
+<h5 id="14-4-2-协议流程"><a href="#14-4-2-协议流程" class="headerlink" title="14.4.2 协议流程"></a>14.4.2 协议流程</h5><ol>
+<li><p><strong>请求阶段</strong>：</p>
+<ul>
+<li>客户端发送请求消息到主节点。</li>
+</ul>
+</li>
+<li><p><strong>预准备阶段</strong>：</p>
+<ul>
+<li>主节点为请求分配序号，并广播预准备消息给所有节点。</li>
+</ul>
+</li>
+<li><p><strong>准备阶段</strong>：</p>
+<ul>
+<li>节点验证预准备消息，确认消息的合法性。</li>
+<li>节点广播准备消息给所有参与节点。</li>
+</ul>
+</li>
+<li><p><strong>提交阶段</strong>：</p>
+<ul>
+<li>节点在收到2f+1个准备消息后，广播提交消息。</li>
+</ul>
+</li>
+<li><p><strong>执行阶段</strong>：</p>
+<ul>
+<li>节点在收到2f+1个提交消息后，执行请求并向客户端发送响应。</li>
+</ul>
+</li>
+</ol>
+<h5 id="14-4-3-视图变更"><a href="#14-4-3-视图变更" class="headerlink" title="14.4.3 视图变更"></a>14.4.3 视图变更</h5><p>触发条件：</p>
+<ul>
+<li>主节点失效或通信故障。</li>
+<li>网络分区导致Leader通信中断。</li>
+<li>超时未收到心跳或响应。</li>
+</ul>
+<p>过程：</p>
+<ol>
+<li>副本节点广播视图变更请求。</li>
+<li>在接收到至少2f+1个视图变更请求后，开始选举新的主节点。</li>
+<li>选举出新主节点后，同步全局状态，恢复共识流程。</li>
+</ol>
+<p><strong>总结</strong>：</p>
+<ul>
+<li><strong>Paxos</strong>：理论完备，适用于高一致性要求场景，但实现复杂。</li>
+<li><strong>Raft</strong>：易于理解与实现，适用于实际工程项目。</li>
+<li><strong>PBFT</strong>：能够处理拜占庭故障，适用于对安全性要求高的分布式系统，但开销较大。</li>
+</ul>
+<p><strong>选择依据</strong>：系统需求（如一致性强度、容错类型）、性能要求与实现复杂度等。</p>
+<h3 id="15-分布式文件系统"><a href="#15-分布式文件系统" class="headerlink" title="15. 分布式文件系统"></a>15. 分布式文件系统</h3><h4 id="15-1-问题背景与概述"><a href="#15-1-问题背景与概述" class="headerlink" title="15.1 问题背景与概述"></a>15.1 问题背景与概述</h4><ul>
+<li><strong>问题</strong>：如何在分布式环境下高效、安全地存储和共享数据。</li>
+<li><strong>背景</strong>：<ul>
+<li>文件系统从本地（如FAT、NTFS、EXT）发展到集中式（如NFS、HDFS、Ceph），再到分布式文件系统（如GFS、DFS、Lustre）。</li>
+<li><strong>分布式文件系统</strong>旨在实现数据的高可用性、可扩展性与高性能访问，是分布式系统的重要组成部分。</li>
+</ul>
+</li>
+</ul>
+<h4 id="15-2-分布式文件系统的重要属性"><a href="#15-2-分布式文件系统的重要属性" class="headerlink" title="15.2 分布式文件系统的重要属性"></a>15.2 分布式文件系统的重要属性</h4><ul>
+<li><strong>网络互连</strong>：通过网络实现文件的共享与访问。</li>
+<li><strong>分布式</strong>：文件存储与客户端分布在不同的物理节点上。</li>
+<li><strong>透明性</strong>：用户无需感知文件的实际存储位置，使用方式与本地文件系统类似。</li>
+<li><strong>性能要求</strong>：高效的数据访问速度，满足服务质量（QoS）的要求。</li>
+<li><strong>并发支持</strong>：支持多用户对同一文件的并发访问与修改。</li>
+</ul>
+<h4 id="15-3-分布式文件系统的体系结构"><a href="#15-3-分布式文件系统的体系结构" class="headerlink" title="15.3 分布式文件系统的体系结构"></a>15.3 分布式文件系统的体系结构</h4><h5 id="15-3-1-客户端-服务器体系结构"><a href="#15-3-1-客户端-服务器体系结构" class="headerlink" title="15.3.1 客户端-服务器体系结构"></a>15.3.1 客户端-服务器体系结构</h5><ul>
+<li><p><strong>特点</strong>：</p>
+<ul>
+<li>典型代表：NFS（Network File System）。</li>
+<li>采用客户端-服务器模型，服务器提供统一的文件视图。</li>
+</ul>
+</li>
+<li><p><strong>NFS架构</strong>：</p>
+<ul>
+<li>服务器使用虚拟文件系统（VFS）层，隐藏本地与远程文件系统的差异。</li>
+<li>支持类似UNIX的文件操作，包括硬链接和符号链接。</li>
+<li>提供高效的远程文件访问，适用于网络环境下的文件共享。</li>
+</ul>
+</li>
+</ul>
+<h5 id="15-3-2-基于集群的分布式文件系统"><a href="#15-3-2-基于集群的分布式文件系统" class="headerlink" title="15.3.2 基于集群的分布式文件系统"></a>15.3.2 基于集群的分布式文件系统</h5><ul>
+<li><p><strong>适用场景</strong>：大规模数据集的存储与访问，如大数据分析、科学计算。</p>
+</li>
+<li><p><strong>关键技术</strong>：</p>
+<ul>
+<li><strong>文件分片</strong>：将大文件分割为多个小块，分布存储在不同节点上，实现并行访问。</li>
+<li><strong>大块存储</strong>：将文件划分为较大的数据块（如64MB），分布到多个存储节点，提高存储与读取效率。</li>
+</ul>
+</li>
+<li><p><strong>案例</strong>：</p>
+<ul>
+<li>Hadoop Distributed File System（HDFS）、Google File System（GFS）。</li>
+</ul>
+</li>
+</ul>
+<h5 id="15-3-3-Google文件系统（GFS）特点"><a href="#15-3-3-Google文件系统（GFS）特点" class="headerlink" title="15.3.3 Google文件系统（GFS）特点"></a>15.3.3 Google文件系统（GFS）特点</h5><ul>
+<li><p><strong>主服务器功能</strong>：</p>
+<ul>
+<li>维护文件名至块服务器的映射表，保持在内存中以提高访问速度。</li>
+<li>记录数据更新日志，定期生成检查点以防日志过大。</li>
+</ul>
+</li>
+<li><p><strong>数据复制</strong>：</p>
+<ul>
+<li>采用主备模式复制文件块，确保数据的高可用性与容错性。</li>
+<li>主服务器通过协调块服务器避免数据循环复制。</li>
+</ul>
+</li>
+<li><p><strong>扩展性</strong>：</p>
+<ul>
+<li>主服务器设计避免成为性能瓶颈，能够管理数百个块服务器。</li>
+</ul>
+</li>
+</ul>
+<h5 id="15-3-4-对称式体系结构"><a href="#15-3-4-对称式体系结构" class="headerlink" title="15.3.4 对称式体系结构"></a>15.3.4 对称式体系结构</h5><ul>
+<li><p><strong>特点</strong>：</p>
+<ul>
+<li>基于点对点（P2P）技术的完全对称体系结构。</li>
+<li>所有节点地位平等，资源分布均匀，无单点控制。</li>
+</ul>
+</li>
+<li><p><strong>优势</strong>：</p>
+<ul>
+<li>高容错性与可靠性，适合大规模分布式环境。</li>
+</ul>
+</li>
+<li><p><strong>应用案例</strong>：</p>
+<ul>
+<li>Lustre文件系统，广泛应用于高性能计算集群。</li>
+</ul>
+</li>
+</ul>
+<h4 id="15-4-文件系统中的进程"><a href="#15-4-文件系统中的进程" class="headerlink" title="15.4 文件系统中的进程"></a>15.4 文件系统中的进程</h4><h5 id="15-4-1-NFS的有状态与无状态模式"><a href="#15-4-1-NFS的有状态与无状态模式" class="headerlink" title="15.4.1 NFS的有状态与无状态模式"></a>15.4.1 NFS的有状态与无状态模式</h5><ol>
+<li><p><strong>无状态NFS</strong>：</p>
+<ul>
+<li><strong>优点</strong>：<ul>
+<li>服务器实现简单，易于扩展。</li>
+<li>即使服务器崩溃，客户端无需恢复状态。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li>无法实现文件锁定，容易导致并发访问冲突。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>有状态NFS</strong>：</p>
+<ul>
+<li><strong>优点</strong>：<ul>
+<li>支持文件锁定，确保并发访问的一致性。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li>服务器需要维护客户端的状态信息，增加实现复杂度。</li>
+<li>服务器崩溃后需恢复状态，影响系统可用性。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="15-4-2-分布式文件系统中的RPC"><a href="#15-4-2-分布式文件系统中的RPC" class="headerlink" title="15.4.2 分布式文件系统中的RPC"></a>15.4.2 分布式文件系统中的RPC</h5><ul>
+<li><p><strong>选择RPC的原因</strong>：</p>
+<ul>
+<li>隐藏底层通信细节，使系统独立于具体操作系统和网络协议。</li>
+</ul>
+</li>
+<li><p><strong>问题与解决方案</strong>：</p>
+<ul>
+<li><strong>性能瓶颈</strong>：跨网络的RPC调用性能较低，通过并行RPC和本地缓存机制提升效率。</li>
+</ul>
+</li>
+</ul>
+<h4 id="15-5-NFS的命名与挂载"><a href="#15-5-NFS的命名与挂载" class="headerlink" title="15.5 NFS的命名与挂载"></a>15.5 NFS的命名与挂载</h4><h5 id="15-5-1-命名原则"><a href="#15-5-1-命名原则" class="headerlink" title="15.5.1 命名原则"></a>15.5.1 命名原则</h5><ul>
+<li><strong>实现方式</strong>：通过在本地文件系统中挂载远程文件系统，实现用户对远程文件的透明访问。</li>
+<li><strong>目标</strong>：用户无需关心文件的实际存储位置，像操作本地文件一样操作远程文件。</li>
+</ul>
+<h5 id="15-5-2-自动挂载"><a href="#15-5-2-自动挂载" class="headerlink" title="15.5.2 自动挂载"></a>15.5.2 自动挂载</h5><ul>
+<li><strong>按需挂载</strong>：仅在用户访问时才挂载远程文件系统，节省资源。</li>
+<li><strong>潜在问题</strong>：自动挂载策略需谨慎设计，避免因意外挂载带来的性能和安全问题。</li>
+</ul>
+<h5 id="15-5-3-全局名称空间"><a href="#15-5-3-全局名称空间" class="headerlink" title="15.5.3 全局名称空间"></a>15.5.3 全局名称空间</h5><ul>
+<li><strong>功能</strong>：通过全局名称空间服务（GNS），将多个分布式文件系统整合为一个统一的名称空间。</li>
+<li><strong>需求</strong>：对于大型分布式系统，提供全局统一的文件访问视图，简化用户操作与数据管理。</li>
+</ul>
+<h4 id="15-6-文件同步"><a href="#15-6-文件同步" class="headerlink" title="15.6 文件同步"></a>15.6 文件同步</h4><h5 id="15-6-1-文件共享语义"><a href="#15-6-1-文件共享语义" class="headerlink" title="15.6.1 文件共享语义"></a>15.6.1 文件共享语义</h5><ul>
+<li><strong>挑战</strong>：处理分布式文件系统中多个用户对同一文件的并发读写操作，保证数据一致性与操作顺序。</li>
+</ul>
+<h5 id="15-6-2-同步方案"><a href="#15-6-2-同步方案" class="headerlink" title="15.6.2 同步方案"></a>15.6.2 同步方案</h5><ol>
+<li><p><strong>立即传播改动</strong></p>
+<ul>
+<li><strong>优点</strong>：简单直接，确保所有副本实时一致。</li>
+<li><strong>缺点</strong>：效率低下，增加网络带宽消耗。</li>
+</ul>
+</li>
+<li><p><strong>会话语义</strong></p>
+<ul>
+<li><strong>特点</strong>：文件修改仅对修改进程可见，文件关闭后对其他进程可见，降低同步频率。</li>
+<li><strong>适用场景</strong>：适用于需要中间状态不可见的应用，如文本编辑器。</li>
+</ul>
+</li>
+<li><p><strong>只读文件</strong></p>
+<ul>
+<li><strong>特点</strong>：文件仅支持创建与读取，避免写操作带来的同步问题。</li>
+<li><strong>适用场景</strong>：适用于日志文件、备份文件等仅需读操作的场景。</li>
+</ul>
+</li>
+<li><p><strong>原子事务</strong></p>
+<ul>
+<li><strong>特点</strong>：通过事务机制，保证共享文件的操作具有原子性，即操作要么全部成功，要么全部失败。</li>
+<li><strong>适用场景</strong>：需要确保操作一致性与完整性的应用，如数据库系统。</li>
+</ul>
+</li>
+</ol>
+<h5 id="15-6-3-文件锁定"><a href="#15-6-3-文件锁定" class="headerlink" title="15.6.3 文件锁定"></a>15.6.3 文件锁定</h5><ul>
+<li><p><strong>背景</strong>：</p>
+<ul>
+<li>在无状态NFS中，需额外机制协调对共享文件的访问，防止并发写操作导致数据不一致。</li>
+</ul>
+</li>
+<li><p><strong>实现方式</strong>：</p>
+<ul>
+<li>使用锁管理器，通过文件级或更细粒度的锁，实现对文件的同步访问控制。</li>
+</ul>
+</li>
+</ul>
+<h5 id="15-6-4-共享预约"><a href="#15-6-4-共享预约" class="headerlink" title="15.6.4 共享预约"></a>15.6.4 共享预约</h5><ul>
+<li><strong>定义</strong>：客户端在打开文件时指定访问类型（如读、写），服务器根据预约情况决定是否允许访问，确保不同访问类型的安全性与一致性。</li>
+</ul>
+<h3 id="16-分布式系统一致性与复制"><a href="#16-分布式系统一致性与复制" class="headerlink" title="16. 分布式系统一致性与复制"></a>16. 分布式系统一致性与复制</h3><h4 id="16-1-一致性模型"><a href="#16-1-一致性模型" class="headerlink" title="16.1 一致性模型"></a>16.1 一致性模型</h4><h5 id="16-1-1-连续一致性与顺序一致性"><a href="#16-1-1-连续一致性与顺序一致性" class="headerlink" title="16.1.1 连续一致性与顺序一致性"></a>16.1.1 连续一致性与顺序一致性</h5><ul>
+<li><p><strong>连续一致性</strong>：系统保证所有客户端看到的数据更新是按某一全局顺序执行的。</p>
+</li>
+<li><p><strong>顺序一致性</strong>：</p>
+<ul>
+<li><strong>定义</strong>：所有进程按照某个全局顺序执行操作，且每个进程的操作按程序顺序执行。</li>
+<li><strong>特点</strong>：简化了理解与设计，但在高延迟网络环境下实现复杂。</li>
+</ul>
+</li>
+</ul>
+<h5 id="16-1-2-因果一致性"><a href="#16-1-2-因果一致性" class="headerlink" title="16.1.2 因果一致性"></a>16.1.2 因果一致性</h5><ul>
+<li><p><strong>定义</strong>：满足因果关系的操作必须按相同的顺序被所有节点看到，非因果关系的操作可以任意顺序。</p>
+</li>
+<li><p><strong>特点</strong>：</p>
+<ul>
+<li>保证数据依赖关系的一致性。</li>
+<li>允许并发操作，提高系统的吞吐量与性能。</li>
+</ul>
+</li>
+</ul>
+<h4 id="16-2-一致性协议"><a href="#16-2-一致性协议" class="headerlink" title="16.2 一致性协议"></a>16.2 一致性协议</h4><h5 id="16-2-1-Paxos协议"><a href="#16-2-1-Paxos协议" class="headerlink" title="16.2.1 Paxos协议"></a>16.2.1 Paxos协议</h5><ul>
+<li><strong>特点</strong>：<ul>
+<li>理论完备，能够在有部分节点失效情况下达成一致。</li>
+<li>实现复杂，适用于高一致性要求的系统。</li>
+</ul>
+</li>
+</ul>
+<h5 id="16-2-2-Raft协议"><a href="#16-2-2-Raft协议" class="headerlink" title="16.2.2 Raft协议"></a>16.2.2 Raft协议</h5><ul>
+<li><strong>特点</strong>：<ul>
+<li>设计易于理解与实现，适用于实际工程项目。</li>
+<li>通过角色划分与日志复制机制，确保日志的一致性与可靠性。</li>
+</ul>
+</li>
+</ul>
+<h5 id="16-2-3-PBFT（实用拜占庭容错）"><a href="#16-2-3-PBFT（实用拜占庭容错）" class="headerlink" title="16.2.3 PBFT（实用拜占庭容错）"></a>16.2.3 PBFT（实用拜占庭容错）</h5><ul>
+<li><strong>特点</strong>：<ul>
+<li>能够处理拜占庭故障，适用于安全性要求高的系统。</li>
+<li>开销较大，适用于节点数量有限但安全性要求高的应用场景。</li>
+</ul>
+</li>
+</ul>
+<h3 id="17-分布式文件系统实例"><a href="#17-分布式文件系统实例" class="headerlink" title="17. 分布式文件系统实例"></a>17. 分布式文件系统实例</h3><h4 id="17-1-HDFS（Hadoop-Distributed-File-System）"><a href="#17-1-HDFS（Hadoop-Distributed-File-System）" class="headerlink" title="17.1 HDFS（Hadoop Distributed File System）"></a>17.1 HDFS（Hadoop Distributed File System）</h4><ul>
+<li><p><strong>架构特点</strong>：</p>
+<ul>
+<li>主从架构，NameNode负责元数据管理，DataNode负责数据存储。</li>
+<li>数据块（默认128MB）在多个DataNode上复制存储，保证数据高可用性。</li>
+</ul>
+</li>
+<li><p><strong>优势</strong>：</p>
+<ul>
+<li>高容错性与可扩展性，适用于大规模数据存储与处理。</li>
+<li>与Hadoop生态系统紧密集成，支持大数据分析与计算任务。</li>
+</ul>
+</li>
+</ul>
+<h4 id="17-2-Ceph文件系统"><a href="#17-2-Ceph文件系统" class="headerlink" title="17.2 Ceph文件系统"></a>17.2 Ceph文件系统</h4><ul>
+<li><p><strong>架构特点</strong>：</p>
+<ul>
+<li>无中心化的设计，通过CRUSH算法实现数据分布与副本管理。</li>
+<li>提供对象存储、块存储与文件系统存储多种接口。</li>
+</ul>
+</li>
+<li><p><strong>优势</strong>：</p>
+<ul>
+<li>高度可扩展性，适应大规模分布式存储需求。</li>
+<li>强一致性与高性能，支持复杂的存储应用场景。</li>
+</ul>
+</li>
+</ul>
+<h4 id="17-3-Lustre文件系统"><a href="#17-3-Lustre文件系统" class="headerlink" title="17.3 Lustre文件系统"></a>17.3 Lustre文件系统</h4><ul>
+<li><p><strong>架构特点</strong>：</p>
+<ul>
+<li>高性能的并行文件系统，广泛应用于高性能计算（HPC）领域。</li>
+<li>灵活的元数据服务器（MDS）与对象存储服务器（OSS）分离设计。</li>
+</ul>
+</li>
+<li><p><strong>优势</strong>：</p>
+<ul>
+<li>具有极高的吞吐量与低延迟，适用于需要高带宽的应用，如科学模拟、渲染等。</li>
+<li>支持大规模集群，具备良好的扩展性与容错能力。</li>
+</ul>
+</li>
+</ul>
+<h3 id="18-面向大数据与AI的分布式计算框架"><a href="#18-面向大数据与AI的分布式计算框架" class="headerlink" title="18. 面向大数据与AI的分布式计算框架"></a>18. 面向大数据与AI的分布式计算框架</h3><h4 id="18-1-分布式计算框架概述"><a href="#18-1-分布式计算框架概述" class="headerlink" title="18.1 分布式计算框架概述"></a>18.1 分布式计算框架概述</h4><ul>
+<li><strong>目标</strong>：处理大规模数据集，支持分布式计算任务，提高计算效率与数据处理能力。</li>
+<li><strong>关键技术</strong>：分布式存储、并行计算、任务调度、容错机制。</li>
+</ul>
+<h4 id="18-2-著名分布式计算框架"><a href="#18-2-著名分布式计算框架" class="headerlink" title="18.2 著名分布式计算框架"></a>18.2 著名分布式计算框架</h4><ol>
+<li><p><strong>Hadoop</strong></p>
+<ul>
+<li><strong>组件</strong>：HDFS（分布式存储）、MapReduce（计算模型）、YARN（资源管理）。</li>
+<li><strong>特点</strong>：适用于批处理大数据任务，具备高容错性与可扩展性。</li>
+</ul>
+</li>
+<li><p><strong>Spark</strong></p>
+<ul>
+<li><strong>特点</strong>：内存计算框架，支持多种计算模式（批处理、流处理、机器学习、图计算）。</li>
+<li><strong>优势</strong>：高性能、易用性，广泛应用于实时数据分析与机器学习任务。</li>
+</ul>
+</li>
+<li><p><strong>MPI（Message Passing Interface）</strong></p>
+<ul>
+<li><strong>特点</strong>：面向高性能计算的并行编程模型，适用于需要低延迟、密集通信的应用。</li>
+<li><strong>应用</strong>：科学计算、工程模拟、大规模并行应用。</li>
+</ul>
+</li>
+<li><p><strong>Storm</strong></p>
+<ul>
+<li><strong>特点</strong>：实时流处理框架，适用于实时数据分析与事件处理。</li>
+<li><strong>优势</strong>：低延迟、高吞吐，广泛应用于流数据处理系统。</li>
+</ul>
+</li>
+</ol>
+<h4 id="18-3-分布式机器学习平台"><a href="#18-3-分布式机器学习平台" class="headerlink" title="18.3 分布式机器学习平台"></a>18.3 分布式机器学习平台</h4><ol>
+<li><p><strong>Parameter Server（参数服务器）</strong></p>
+<ul>
+<li><strong>功能</strong>：管理和存储机器学习模型的参数，实现高效的参数访问与更新。</li>
+<li><strong>技术</strong>：采用一致性哈希进行参数分区，支持分布式并行训练。</li>
+</ul>
+</li>
+<li><p><strong>分布式训练策略</strong></p>
+<ul>
+<li><strong>数据并行</strong>：将数据集划分为多个子集，分布到不同的训练节点并行处理。</li>
+<li><strong>模型并行</strong>：将模型划分为不同部分，分布到多个节点进行并行计算。</li>
+</ul>
+</li>
+<li><p><strong>容错机制</strong></p>
+<ul>
+<li><strong>任务重试</strong>：在节点失效时，重新分配任务以保证任务完成。</li>
+<li><strong>参数恢复</strong>：通过日志或快照机制，恢复模型参数状态，确保模型一致性。</li>
+</ul>
+</li>
+</ol>
+<h4 id="18-4-深度学习在分布式环境中的应用"><a href="#18-4-深度学习在分布式环境中的应用" class="headerlink" title="18.4 深度学习在分布式环境中的应用"></a>18.4 深度学习在分布式环境中的应用</h4><h5 id="18-4-1-分布式深度学习的挑战"><a href="#18-4-1-分布式深度学习的挑战" class="headerlink" title="18.4.1 分布式深度学习的挑战"></a>18.4.1 分布式深度学习的挑战</h5><ol>
+<li><p><strong>计算复杂度高</strong></p>
+<ul>
+<li>深度学习模型包含大量参数，训练过程需要高性能计算资源。</li>
+<li>需要高效的计算资源管理与任务调度策略。</li>
+</ul>
+</li>
+<li><p><strong>通信瓶颈</strong></p>
+<ul>
+<li>模型参数的同步与更新会占用大量网络带宽，影响训练速度。</li>
+<li>需要优化通信协议与算法，减少带宽占用。</li>
+</ul>
+</li>
+</ol>
+<h5 id="18-4-2-分布式深度学习平台"><a href="#18-4-2-分布式深度学习平台" class="headerlink" title="18.4.2 分布式深度学习平台"></a>18.4.2 分布式深度学习平台</h5><ol>
+<li><p><strong>FloydHub</strong>：<a target="_blank" rel="noopener" href="https://www.floydhub.com/">https://www.floydhub.com/</a></p>
+<ul>
+<li>提供全托管的深度学习训练与部署服务，简化分布式训练流程。</li>
+</ul>
+</li>
+<li><p><strong>OpenPAI</strong>：<a target="_blank" rel="noopener" href="https://github.com/Microsoft/pai">https://github.com/Microsoft/pai</a></p>
+<ul>
+<li>微软开源的分布式人工智能平台，支持大规模分布式训练与模型管理。</li>
+</ul>
+</li>
+<li><p><strong>PaddlePaddle</strong>：<a target="_blank" rel="noopener" href="http://www.paddlepaddle.org/">http://www.paddlepaddle.org/</a></p>
+<ul>
+<li>百度开发的深度学习平台，支持高效的分布式训练与大规模模型部署。</li>
+</ul>
+</li>
+<li><p><strong>Kubeflow</strong>：<a target="_blank" rel="noopener" href="https://www.kubeflow.org/">https://www.kubeflow.org/</a></p>
+<ul>
+<li>基于Kubernetes的机器学习平台，支持分布式训练、模型部署与管理。</li>
+</ul>
+</li>
+<li><p><strong>Polyaxon</strong>：<a target="_blank" rel="noopener" href="https://polyaxon.com/">https://polyaxon.com/</a></p>
+<ul>
+<li>开源实验管理与分布式部署平台，支持机器学习模型的训练与调优。</li>
+</ul>
+</li>
+</ol>
+<h3 id="19-分布式文件系统案例分析"><a href="#19-分布式文件系统案例分析" class="headerlink" title="19. 分布式文件系统案例分析"></a>19. 分布式文件系统案例分析</h3><h4 id="19-1-HDFS（Hadoop-Distributed-File-System）"><a href="#19-1-HDFS（Hadoop-Distributed-File-System）" class="headerlink" title="19.1 HDFS（Hadoop Distributed File System）"></a>19.1 HDFS（Hadoop Distributed File System）</h4><ul>
+<li><p><strong>架构特点</strong>：</p>
+<ul>
+<li><strong>NameNode</strong>：管理文件系统的元数据，如文件名与数据块的映射关系。</li>
+<li><strong>DataNode</strong>：负责实际数据块的存储与管理。</li>
+<li><strong>数据复制</strong>：默认情况下，每个数据块在多个DataNode上复制，确保数据高可用性与容错性。</li>
+</ul>
+</li>
+<li><p><strong>优势</strong>：</p>
+<ul>
+<li>高容错性，通过数据冗余机制保障数据不丢失。</li>
+<li>可扩展性强，支持数千个节点的集群。</li>
+<li>与Hadoop生态系统紧密集成，支持大规模数据处理与分析任务。</li>
+</ul>
+</li>
+</ul>
+<h4 id="19-2-Ceph文件系统"><a href="#19-2-Ceph文件系统" class="headerlink" title="19.2 Ceph文件系统"></a>19.2 Ceph文件系统</h4><ul>
+<li><p><strong>架构特点</strong>：</p>
+<ul>
+<li><strong>无中心化设计</strong>：通过CRUSH算法实现数据在集群中的均匀分布，无需中心协调者。</li>
+<li><strong>多接口支持</strong>：支持对象存储、块存储与文件系统存储，适应多种应用场景。</li>
+</ul>
+</li>
+<li><p><strong>优势</strong>：</p>
+<ul>
+<li>高度可扩展，支持大规模存储与高并发访问。</li>
+<li>强一致性与高性能，满足复杂存储需求。</li>
+<li>自愈能力强，能自动检测与修复数据故障。</li>
+</ul>
+</li>
+</ul>
+<h4 id="19-3-Lustre文件系统"><a href="#19-3-Lustre文件系统" class="headerlink" title="19.3 Lustre文件系统"></a>19.3 Lustre文件系统</h4><ul>
+<li><p><strong>架构特点</strong>：</p>
+<ul>
+<li><strong>高性能并行文件系统</strong>，广泛应用于高性能计算（HPC）领域。</li>
+<li><strong>元数据服务器（MDS）</strong>与<strong>对象存储服务器（OSS）</strong>分离，提升系统性能与扩展性。</li>
+</ul>
+</li>
+<li><p><strong>优势</strong>：</p>
+<ul>
+<li>极高的吞吐量与低延迟，适用于需要高速数据访问的应用场景。</li>
+<li>灵活的扩展性，能够支持数万个客户端并发访问。</li>
+<li>高容错性，通过镜像与冗余机制保障数据安全。</li>
+</ul>
+</li>
+</ul>
+<h3 id="20-安全性在分布式系统中的应用"><a href="#20-安全性在分布式系统中的应用" class="headerlink" title="20. 安全性在分布式系统中的应用"></a>20. 安全性在分布式系统中的应用</h3><h4 id="20-1-NFS的安全性"><a href="#20-1-NFS的安全性" class="headerlink" title="20.1 NFS的安全性"></a>20.1 NFS的安全性</h4><ul>
+<li><p><strong>主要关注点</strong>：</p>
+<ul>
+<li>客户端与服务器之间的通信安全，防止数据被未授权访问或篡改。</li>
+</ul>
+</li>
+<li><p><strong>常用策略</strong>：</p>
+<ul>
+<li>使用基于Kerberos的认证机制，确保通信双方身份合法。</li>
+<li>加密数据传输，防止数据在传输过程中被截获或篡改。</li>
+</ul>
+</li>
+</ul>
+<h4 id="20-2-安全的RPC"><a href="#20-2-安全的RPC" class="headerlink" title="20.2 安全的RPC"></a>20.2 安全的RPC</h4><ul>
+<li><strong>身份认证方法</strong>：<ul>
+<li><strong>密钥交换</strong>：通过公钥基础设施（PKI）交换密钥，建立安全通信会话。</li>
+<li><strong>Kerberos协议</strong>：通过票据机制进行身份验证，防止未授权访问。</li>
+</ul>
+</li>
+</ul>
+<h4 id="20-3-安全的对等文件共享系统"><a href="#20-3-安全的对等文件共享系统" class="headerlink" title="20.3 安全的对等文件共享系统"></a>20.3 安全的对等文件共享系统</h4><ul>
+<li><strong>基于DHT的安全查找</strong>：<ul>
+<li><strong>防范Sybil攻击</strong>：限制每个实体的身份数量，确保网络中节点的真实性。</li>
+<li><strong>防范Eclipse攻击</strong>：通过多路径路由与节点验证，防止攻击者控制路由表。</li>
+<li><strong>安全传输</strong>：确保节点间的数据查找请求经过加密与认证，防止数据窃取与篡改。</li>
+</ul>
+</li>
+</ul>
+<h3 id="21-总结"><a href="#21-总结" class="headerlink" title="21. 总结"></a>21. 总结</h3><p>本课程全面涵盖了分布式系统的核心概念、架构设计、通信机制、一致性与复制、容错与可靠性保障以及分布式文件系统的实际应用。通过理论学习与案例分析，能够深入理解分布式系统的复杂性与设计挑战，掌握解决这些问题的关键技术与方法，为未来的研究与实际应用奠定坚实基础。</p>
+<p><strong>学习建议</strong>：</p>
+<ul>
+<li><strong>实践操作</strong>：通过搭建分布式系统实验环境，亲自体验分布式系统的部署与管理。</li>
+<li><strong>案例分析</strong>：深入分析HDFS、Ceph、Lustre等分布式文件系统的架构与实现，理解其设计理念与优势。</li>
+<li><strong>前沿探索</strong>：关注分布式系统领域的最新研究与技术发展，如分布式一致性协议的改进、新型分布式存储方案等。</li>
+</ul>
+<p>通过系统学习与实践，将具备设计、实现与维护高性能、高可用性分布式系统的能力，满足现代计算与大数据时代的需求。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Lavoisier</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://Lavoisier7.github.io/2024/12/06/Distributed_System/">http://Lavoisier7.github.io/2024/12/06/Distributed_System/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Lavoisier</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Operation-System/">
+                                    <span class="chip bg-color">Operation System</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">Your appreciation is my driving force for progress</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'j5FifBJFtHJ7QOATVuihjWvp-gzGzoHsz',
+        appKey: 'GRwn2SERkTOROu36TR5Ux6Nj',
+        serverURLs: 'https://j5FifBJFtHJ7QOATVuihjWvp-gzGzoHsz.leancloud.app',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'circumspection'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/12/06/Regular_Expression/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
+                        
+                        <span class="card-title">正则表达式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            计算机里的八股
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-12-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Computer-Science/" class="post-category">
+                                    Computer Science
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+                        <span class="chip bg-color">基础知识</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/11/26/Computer_Architecture/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Computer Architecture">
+                        
+                        <span class="card-title">Computer Architecture</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            进阶版计算机组成原理
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-11-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Computer-Science/" class="post-category">
+                                    Computer Science
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/elective/">
+                        <span class="chip bg-color">elective</span>
+                    </a>
+                    
+                    <a href="/tags/CA/">
+                        <span class="chip bg-color">CA</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: D<br />'
+            + '文章作者: Lavoisier<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者Lavoisier所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('1'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2024-2025</span>
+            
+            <a href="/about" target="_blank">Lavoisier</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">93.1k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2024";
+                        var startMonth = "11";
+                        var startDate = "19";
+                        var startHour = "20";
+                        var startMinute = "30";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Lavoisier7" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:wzd6@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "http://Lavoisier7.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>

@@ -1,0 +1,1684 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="Neural Network, D">
+    <meta name="description" content="神经网络">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Neural Network | D</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">D</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">D</div>
+        <div class="logo-desc">
+            
+            世故消耗激情，岁月打磨棱角，现实浪掷理想。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Lavoisier7/Lavoisier7.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Lavoisier7/Lavoisier7.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Neural Network</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/AI/">
+                                <span class="chip bg-color">AI</span>
+                            </a>
+                        
+                            <a href="/tags/NN/">
+                                <span class="chip bg-color">NN</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Computer-Science/" class="post-category">
+                                Computer Science
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-11-22
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2025-04-30
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6.7k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="神经网络简介"><a href="#神经网络简介" class="headerlink" title="神经网络简介"></a>神经网络简介</h2><h3 id="什么是神经网络"><a href="#什么是神经网络" class="headerlink" title="什么是神经网络"></a>什么是神经网络</h3><p>神经网络是一种模仿人脑神经系统工作原理的计算模型，由大量的相互连接的节点（神经元）组成。这些节点通过调整连接强度（权重）来学习并执行各种复杂的任务，如图像识别、语音处理、自然语言处理等。神经网络的结构包括输入层、隐藏层和输出层，通过反向传播算法不断优化权重，最终得到一个能够很好完成特定任务的模型。</p>
+<h3 id="神经网络的发展历史"><a href="#神经网络的发展历史" class="headerlink" title="神经网络的发展历史"></a>神经网络的发展历史</h3><p>神经网络的概念最早可以追溯到20世纪40年代，当时麦卡洛克和皮茨提出了最早的神经网络模型——感知机。此后，神经网络经历了几个重要的发展阶段：</p>
+<ul>
+<li>1980年代：反向传播算法的提出，使得多层神经网络的训练成为可能。</li>
+<li>1990年代：支持向量机（SVM）的兴起，一度对神经网络构成挑战。</li>
+<li>2000年代：GPU的出现，大幅提高了神经网络的训练速度，深度学习开始流行。</li>
+<li>近年来：随着计算能力的不断增强和大规模数据的积累，神经网络模型不断发展，广泛应用于各个领域。</li>
+</ul>
+<h3 id="神经网络的组成部分"><a href="#神经网络的组成部分" class="headerlink" title="神经网络的组成部分"></a>神经网络的组成部分</h3><p>神经网络主要由以下几个部分组成：</p>
+<ul>
+<li>输入层：接收输入数据。</li>
+<li>隐藏层：进行特征提取和模式识别。</li>
+<li>输出层：产生输出结果。</li>
+<li>连接权重：连接神经元之间的权重，通过训练不断调整。</li>
+<li>激活函数：决定神经元的输出，增加模型的非线性。</li>
+<li>损失函数：定义预测值与真实值之间的差距。</li>
+<li>优化算法：不断优化网络参数，如梯度下降算法。</li>
+</ul>
+<h3 id="神经网络与LLM的关系"><a href="#神经网络与LLM的关系" class="headerlink" title="神经网络与LLM的关系"></a>神经网络与LLM的关系</h3><p>LLM的兴起进一步推动了神经网络技术在自然语言处理方面的应用。LLM本质上也是基于神经网络的模型，利用海量文本数据进行预训练，学习到了强大的自然语言理解和生成能力。常用的神经网络架构如Transformer，以及新兴架构如Megatron等，都被用于构建LLM。这些模型在各种下游任务上表现优异，推动了神经网络在实际应用中的广泛应用。</p>
+<h2 id="NN分类及应用"><a href="#NN分类及应用" class="headerlink" title="NN分类及应用"></a>NN分类及应用</h2><p>神经网络有多种不同的分类方式，主要包括：</p>
+<p><strong>按结构分</strong>：</p>
+<ul>
+<li>前馈神经网络：最简单的神经网络结构，信息从输入层向输出层单向传播。</li>
+<li>循环神经网络（recurrent neural network, RNN）：能够处理序列数据，捕捉数据中的时序信息。</li>
+<li>卷积神经网络（convolutional neural network, CNN）：特别适用于处理图像数据，通过卷积层和池化层提取图像特征。</li>
+<li>递归神经网络：处理树形或图形结构的数据，如自然语言处理中的句法分析。</li>
+</ul>
+<p><strong>按学习方式分</strong>：</p>
+<ul>
+<li>监督学习神经网络：需要标记数据进行训练，如图像分类、语音识别等。</li>
+<li>无监督学习神经网络：不需要标记数据，如聚类、降维等。</li>
+<li>强化学习神经网络：通过与环境交互来学习最佳策略，如机器人控制、游戏AI等。</li>
+</ul>
+<p><strong>按应用领域分</strong>：</p>
+<ul>
+<li>图像识别&#x2F;计算机视觉：如人脸识别、自动驾驶等。</li>
+<li>自然语言处理：如机器翻译、情感分析等。</li>
+<li>语音识别：如语音助手、语音搜索等。</li>
+<li>推荐系统：如电商推荐、视频推荐等。</li>
+<li>金融&#x2F;股票预测：如市场趋势分析、风险管理等。</li>
+<li>医疗诊断：如疾病预测、影像识别等。</li>
+<li>机器人控制：如运动规划、自主导航等。</li>
+</ul>
+<h3 id="前馈神经网络"><a href="#前馈神经网络" class="headerlink" title="前馈神经网络"></a>前馈神经网络</h3><p><strong>一、定义</strong></p>
+<p>前馈神经网络（Feed-Forward Neural Network，简称FNN）是一种基本且广泛应用的人工神经网络结构。它是最简单的一种神经网络，其各神经元分层排列，每个神经元只与前一层的神经元相连，接收前一层的输出，并输出给下一层，各层间没有反馈。</p>
+<p><strong>二、结构</strong></p>
+<p>前馈神经网络主要由输入层、隐藏层和输出层组成：</p>
+<ol>
+<li><strong>输入层</strong>：从外部接收输入数据，并将其传输给网络的第一层。</li>
+<li><strong>隐藏层</strong>：对输入信号进行处理和特征提取，可以有一层或多层。每个隐层由多个神经元（或节点）组成，并且与前一层和后一层的神经元全连接。</li>
+<li><strong>输出层</strong>：产生最终的输出结果。输出层的神经元个数取决于问题的类型，例如，对于二分类问题，输出层通常只有一个神经元；对于多分类问题，输出层的神经元个数等于类别的数量。</li>
+</ol>
+<p><strong>三、工作原理</strong></p>
+<ol>
+<li><strong>输入数据</strong>：首先进入输入层。</li>
+<li><strong>权重和偏置</strong>：输入数据通过权重和偏置传递到隐藏层。权重控制信号在神经元之间的传递强度，偏置用于调整输入信号的加权总和。</li>
+<li><strong>隐藏层处理</strong>：隐藏层中的节点对输入进行加权求和，并通过激活函数进行非线性转换。</li>
+<li><strong>输出层输出</strong>：输出层接收到经过隐藏层处理的信号，并产生最终的输出。</li>
+</ol>
+<p><strong>四、激活函数</strong></p>
+<p>激活函数在人工神经网络中起着至关重要的作用，它们负责将神经元的输入映射到输出端，并引入非线性因素，使得神经网络能够学习和模拟复杂的函数。常见的激活函数包括：</p>
+<ol>
+<li><strong>Sigmoid函数</strong>：输出范围在（0,1）之间，适合用于二元分类问题。它连续且可微，但在函数的两端导数接近于0，可能导致梯度消失问题。</li>
+<li><strong>Tanh函数</strong>：输出范围在（-1,1）之间，具有零中心化特性，可以加速神经网络的训练过程。与Sigmoid函数一样，Tanh函数也是连续且可微的，但在深层网络中也可能遇到梯度消失的问题。</li>
+<li><strong>ReLU函数</strong>：对于所有正输入值，ReLU函数的输出等于输入值本身，这保持了其线性特性，避免了Sigmoid和Tanh函数在输入值较大或较小时的饱和问题。ReLU函数计算效率高，但在输入为负数时，输出恒为0，可能导致“死神经元”问题。</li>
+<li><strong>Leaky ReLU和PReLU</strong>：作为ReLU的变体，它们在输入为负数时引入非零斜率，以缓解“神经元死亡”问题。</li>
+</ol>
+<p><strong>五、训练过程</strong></p>
+<p>前馈神经网络的训练过程通常使用反向传播算法，该算法基于梯度下降法，通过计算损失函数对网络中的参数的导数来更新参数，以使网络的预测结果与实际结果更加接近。反向传播分为两个步骤：</p>
+<ol>
+<li><strong>前向传播</strong>：输入数据通过网络的每一层进行计算，得到预测结果。</li>
+<li><strong>反向传播</strong>：通过比较预测结果与实际结果之间的差异，计算损失函数。然后，从输出层开始，使用链式法则计算损失函数对每个层中的权重和偏置的导数，并使用梯度下降法来更新每个参数，减小损失函数的值。</li>
+</ol>
+<p><strong>六、应用场景</strong></p>
+<p>前馈神经网络适用于许多任务，如分类、回归和模式识别等。它还可以与其他模型结合使用，如CNN+Transformer，以进一步提高模型的性能。</p>
+<p>综上所述，前馈神经网络是一种基本且强大的人工神经网络结构，通过多层连接的神经元处理输入数据并生成输出。它在许多领域都有广泛的应用，并随着技术的不断发展而不断完善。</p>
+<h3 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h3><p>RNN是一种专门用于处理序列数据的神经网络结构，它能够在序列的演进方向上进行递归，并通过所有节点（循环单元）的链式连接来捕捉序列中的时序信息和语义信息。RNN的提出基于记忆模型的想法，期望网络能够记住前面出现的特征，并依据这些特征推断后续的结果。</p>
+<p>RNN的核心在于其循环结构，这一结构允许信息在不同时间步之间传递。在每个时间步，RNN接收当前的输入数据（如一个词的嵌入表示）和前一个时间步的隐藏状态，然后生成一个新的隐藏状态。这个新的隐藏状态不仅包含了当前时间步的信息，还融合了之前所有时间步的信息，因此RNN能够捕捉到序列数据中的上下文信息。</p>
+<p>RNN的基本结构包括输入层、隐藏层和输出层。其中，隐藏层的状态会随时间步更新，并作为下一时间步的输入之一。这种循环连接使得RNN具有记忆能力，能够捕捉序列中的长距离依赖关系。</p>
+<p>RNN的隐藏状态更新公式为：</p>
+<p>$$<br>h_t &#x3D; \text{tanh}(W_{xh}x_t + W_{hh}h_{t-1} + b_h)<br>$$</p>
+<p>其中，$x_t$是当前时间步的输入，$h_t$是当前时间步的隐藏状态，$h_{t-1}$是前一时间步的隐藏状态，$W_{xh}$和$W_{hh}$是权重矩阵，$b_h$是偏置项，$\text{tanh}$是激活函数。</p>
+<p>RNN的权重参数是共享的，即每个时间步都使用相同的权重矩阵。这种权重共享机制可以确保不同时间步的数据都使用相同的模型进行处理，从而保持模型的参数数量相对较小。同时，权重共享也使得RNN能够处理任意长度的序列数据，因为无论序列长度如何变化，模型的结构和参数都保持不变。</p>
+<p>RNN的前向传播过程是按照时间步的顺序逐步进行的。在每个时间步，根据当前的输入和前一时间步的隐藏状态计算出新的隐藏状态和输出。</p>
+<p>具体过程如下：</p>
+<p>输入层接收数据：在每个时间步，RNN的输入层接收当前的输入数据。这个数据可以是序列中的一个元素，如文本中的一个词或时间序列中的一个数据点。<br>隐藏层计算隐藏状态：隐藏层接收当前的输入数据和前一个时间步的隐藏状态，并通过权重矩阵和激活函数计算出新的隐藏状态。这个新的隐藏状态不仅包含了当前时间步的信息，还融合了之前所有时间步的信息。<br>输出层生成输出：输出层根据当前的隐藏状态和权重矩阵计算出输出。这个输出可以是序列中的下一个元素、分类结果或其他任务相关的输出。<br>而反向传播过程则是为了更新模型的权重参数，以最小化损失函数。在反向传播过程中，需要计算损失函数关于每个时间步隐藏状态和权重的梯度，并使用这些梯度来更新权重参数。</p>
+<h4 id="一、按输入输出结构分类"><a href="#一、按输入输出结构分类" class="headerlink" title="一、按输入输出结构分类"></a>一、按输入输出结构分类</h4><h5 id="1-N-vs-N-RNN"><a href="#1-N-vs-N-RNN" class="headerlink" title="1. N vs N - RNN"></a>1. N vs N - RNN</h5><ul>
+<li><strong>结构特点</strong>：输入和输出序列是等长的。每个时间步的输入都对应一个输出。</li>
+<li><strong>工作原理</strong>：网络在每个时间步都接收输入并产生输出，同时隐藏状态在时间步之间传递。</li>
+<li><strong>应用场景</strong>：由于输入输出等长，适用于生成等长度的合辙诗句、文本对文本的对齐等任务。</li>
+</ul>
+<h5 id="2-N-vs-1-RNN"><a href="#2-N-vs-1-RNN" class="headerlink" title="2. N vs 1 - RNN"></a>2. N vs 1 - RNN</h5><ul>
+<li><strong>结构特点</strong>：输入是一个序列，输出是一个单独的值或向量。</li>
+<li><strong>工作原理</strong>：网络接收序列输入，并在序列处理完毕后输出一个总结性的结果。</li>
+<li><strong>应用场景</strong>：情感分析（整个句子的情感倾向）、序列分类（如文本分类、语音识别中的词识别）等。</li>
+</ul>
+<h5 id="3-1-vs-N-RNN"><a href="#3-1-vs-N-RNN" class="headerlink" title="3. 1 vs N - RNN"></a>3. 1 vs N - RNN</h5><ul>
+<li><strong>结构特点</strong>：输入不是序列，而是一个单独的值或向量，输出是一个序列。</li>
+<li><strong>工作原理</strong>：网络根据单个输入生成一个序列输出。</li>
+<li><strong>应用场景</strong>：图像描述生成（根据图像生成描述性文本）、音乐生成（根据一个主题或风格生成音乐序列）等。</li>
+</ul>
+<h5 id="4-N-vs-M-RNN（seq2seq）"><a href="#4-N-vs-M-RNN（seq2seq）" class="headerlink" title="4. N vs M - RNN（seq2seq）"></a>4. N vs M - RNN（seq2seq）</h5><ul>
+<li><strong>结构特点</strong>：输入和输出序列的长度可以不同。通常包括编码器和解码器两部分。</li>
+<li><strong>工作原理</strong>：编码器将输入序列编码为一个固定长度的向量（也称为上下文向量或隐藏状态），解码器则根据这个向量生成输出序列。</li>
+<li><strong>应用场景</strong>：机器翻译（将一种语言的句子翻译成另一种语言）、文本摘要（将长文本压缩为短摘要）、问答系统（根据问题生成答案）等。</li>
+</ul>
+<h4 id="二、按内部构造分类"><a href="#二、按内部构造分类" class="headerlink" title="二、按内部构造分类"></a>二、按内部构造分类</h4><h5 id="1-传统RNN"><a href="#1-传统RNN" class="headerlink" title="1. 传统RNN"></a>1. 传统RNN</h5><ul>
+<li><strong>结构特点</strong>：隐藏层的状态是循环的，能够保存和传递之前时间步的信息。</li>
+<li><strong>工作原理</strong>：在每个时间步，网络根据当前输入和前一时刻的隐藏状态计算当前隐藏状态，并据此产生输出。</li>
+<li><strong>优缺点</strong>：能够处理序列数据，但处理长序列时容易遇到梯度消失或梯度爆炸问题。</li>
+</ul>
+<h5 id="2-LSTM（长短期记忆网络）"><a href="#2-LSTM（长短期记忆网络）" class="headerlink" title="2. LSTM（长短期记忆网络）"></a>2. LSTM（长短期记忆网络）</h5><ul>
+<li><strong>结构特点</strong>：引入特殊的记忆单元（LSTM单元），包括遗忘门、输入门、输出门和细胞状态。</li>
+<li><strong>工作原理</strong>：通过门控机制控制信息的流动和更新，解决梯度消失或梯度爆炸问题。</li>
+<li><strong>优点</strong>：能够学习到长距离的时序依赖关系。</li>
+</ul>
+<h5 id="3-GRU（门控循环单元）"><a href="#3-GRU（门控循环单元）" class="headerlink" title="3. GRU（门控循环单元）"></a>3. GRU（门控循环单元）</h5><ul>
+<li><strong>结构特点</strong>：LSTM的简化版本，只有两个门：更新门和重置门。</li>
+<li><strong>工作原理</strong>：通过更新门和重置门控制信息的流动和更新。</li>
+<li><strong>优点</strong>：在保证性能的同时降低了模型的复杂度和计算成本。</li>
+</ul>
+<h5 id="4-Bi-RNN（双向循环神经网络）"><a href="#4-Bi-RNN（双向循环神经网络）" class="headerlink" title="4. Bi-RNN（双向循环神经网络）"></a>4. Bi-RNN（双向循环神经网络）</h5><ul>
+<li><strong>结构特点</strong>：由两个独立的RNN组成，一个正向处理序列，一个反向处理序列。</li>
+<li><strong>工作原理</strong>：将两个RNN的输出合并或拼接，以获取序列数据的前后文信息。</li>
+<li><strong>优点</strong>：能够捕捉到序列数据中的前后文信息，提高模型的性能。</li>
+</ul>
+<p>综上所述，RNN可以按照输入输出结构和内部构造进行多种分类。每种类型的RNN都有其独特的特点和工作原理，适用于不同的应用场景和任务需求。在实际应用中，可以根据具体任务的需求选择合适的RNN类型。</p>
+<h3 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h3><p>CNN是一种专门用于处理网格数据的神经网络结构，尤其擅长处理图像数据。它通过卷积运算来捕捉图像中的局部特征，并通过池化操作来降低数据的维度和复杂度。CNN的提出基于特征提取的思想，期望网络能够自动学习到图像中的层次化特征表示，从而实现对图像的有效分类、识别和其他相关任务。</p>
+<p>CNN的核心在于其卷积层和池化层，这些层允许网络在输入数据上滑动窗口，并应用卷积核来提取特征。卷积层通过卷积运算将输入数据映射到特征空间，生成特征图。这些特征图包含了输入数据的局部特征信息，并且具有平移不变性。池化层则对特征图进行下采样，降低数据的维度和计算量，同时保留重要的特征信息。</p>
+<p>CNN的基本结构包括输入层、卷积层、池化层、全连接层和输出层。其中，卷积层和池化层交替出现，用于提取和降维特征；全连接层则用于对提取的特征进行分类或回归；输出层则根据任务需求生成最终的输出。</p>
+<p>CNN的卷积运算公式为：</p>
+<p>$$<br>y_{ij} &#x3D; \sum_{m}\sum_{n} x_{i+m,j+n} \cdot k_{mn} + b<br>$$</p>
+<p>其中，$x$是输入数据，$y$是卷积后的特征图，$k$是卷积核，$b$是偏置项，$i$和$j$表示特征图上的位置，$m$和$n$表示卷积核的大小。</p>
+<p>CNN的权重参数是局部连接的，即每个卷积核只与输入数据的一部分区域相连。这种局部连接机制使得CNN能够捕捉到图像中的局部特征，并且具有较少的参数数量。同时，卷积核的权重在输入数据的不同位置上是共享的，这种权重共享机制进一步减少了模型的参数数量，并提高了模型的泛化能力。</p>
+<p>CNN的前向传播过程是按照层次结构逐步进行的。在每个卷积层，网络通过卷积运算生成特征图；在每个池化层，网络对特征图进行下采样；在全连接层，网络对提取的特征进行分类或回归；最后，在输出层生成最终的输出。</p>
+<p>具体过程如下：</p>
+<p>输入层接收数据：CNN的输入层接收图像数据，这些数据可以是原始图像或经过预处理的图像。<br>卷积层提取特征：卷积层通过卷积运算和激活函数（如ReLU）提取输入数据的局部特征，并生成特征图。这些特征图包含了输入数据的层次化特征表示。<br>池化层降维：池化层对特征图进行下采样，降低数据的维度和计算量，同时保留重要的特征信息。常见的池化操作包括最大池化和平均池化。<br>全连接层分类或回归：全连接层接收池化层输出的特征向量，并通过权重矩阵和激活函数进行分类或回归任务。<br>输出层生成输出：输出层根据全连接层的输出生成最终的输出，如分类结果、回归值或其他任务相关的输出。</p>
+<h4 id="一、按网络结构分类"><a href="#一、按网络结构分类" class="headerlink" title="一、按网络结构分类"></a>一、按网络结构分类</h4><h5 id="1-LeNet"><a href="#1-LeNet" class="headerlink" title="1. LeNet"></a>1. LeNet</h5><ul>
+<li><strong>结构特点</strong>：较早的CNN结构，包括卷积层、池化层和全连接层。</li>
+<li><strong>工作原理</strong>：通过卷积和池化操作提取图像特征，并通过全连接层进行分类。</li>
+<li><strong>应用场景</strong>：手写数字识别等简单图像分类任务。</li>
+</ul>
+<h5 id="2-AlexNet"><a href="#2-AlexNet" class="headerlink" title="2. AlexNet"></a>2. AlexNet</h5><ul>
+<li><strong>结构特点</strong>：包含多个卷积层和池化层，以及较大的全连接层。</li>
+<li><strong>工作原理</strong>：通过更深的网络结构提取更复杂的图像特征，提高分类性能。</li>
+<li><strong>应用场景</strong>：大规模图像分类任务，如ImageNet竞赛。</li>
+</ul>
+<h5 id="3-VGG"><a href="#3-VGG" class="headerlink" title="3. VGG"></a>3. VGG</h5><ul>
+<li><strong>结构特点</strong>：采用较小的卷积核（如3x3）和较深的网络结构（如VGG-16、VGG-19）。</li>
+<li><strong>工作原理</strong>：通过堆叠多个小卷积核来提取图像特征，并增加网络的深度以提高性能。</li>
+<li><strong>应用场景</strong>：图像分类、目标检测等任务。</li>
+</ul>
+<h5 id="4-ResNet（残差网络）"><a href="#4-ResNet（残差网络）" class="headerlink" title="4. ResNet（残差网络）"></a>4. ResNet（残差网络）</h5><ul>
+<li><strong>结构特点</strong>：引入残差块，通过跳跃连接解决深层网络的梯度消失问题。</li>
+<li><strong>工作原理</strong>：残差块允许网络学习恒等映射，从而更容易地训练深层网络。</li>
+<li><strong>应用场景</strong>：图像分类、目标检测、图像分割等任务。</li>
+</ul>
+<h5 id="5-DenseNet（密集连接网络）"><a href="#5-DenseNet（密集连接网络）" class="headerlink" title="5. DenseNet（密集连接网络）"></a>5. DenseNet（密集连接网络）</h5><ul>
+<li><strong>结构特点</strong>：每一层都接收来自前面所有层的特征图作为输入。</li>
+<li><strong>工作原理</strong>：通过密集连接实现特征的重用和梯度流动，提高网络的性能。</li>
+<li><strong>应用场景</strong>：图像分类、目标检测、图像生成等任务。</li>
+</ul>
+<h4 id="二、按功能和应用分类"><a href="#二、按功能和应用分类" class="headerlink" title="二、按功能和应用分类"></a>二、按功能和应用分类</h4><h5 id="1-图像分类"><a href="#1-图像分类" class="headerlink" title="1. 图像分类"></a>1. 图像分类</h5><ul>
+<li><strong>结构特点</strong>：通常包含多个卷积层、池化层和全连接层。</li>
+<li><strong>工作原理</strong>：通过卷积和池化操作提取图像特征，并通过全连接层进行分类。</li>
+<li><strong>应用场景</strong>：如ImageNet竞赛、动物识别、植物识别等。</li>
+</ul>
+<h5 id="2-目标检测"><a href="#2-目标检测" class="headerlink" title="2. 目标检测"></a>2. 目标检测</h5><ul>
+<li><strong>结构特点</strong>：在图像分类的基础上增加区域候选网络（RPN）或YOLO等检测头。</li>
+<li><strong>工作原理</strong>：通过卷积层提取特征，并通过检测头生成目标的位置和类别信息。</li>
+<li><strong>应用场景</strong>：自动驾驶、人脸识别、安防监控等。</li>
+</ul>
+<h5 id="3-图像分割"><a href="#3-图像分割" class="headerlink" title="3. 图像分割"></a>3. 图像分割</h5><ul>
+<li><strong>结构特点</strong>：采用全卷积网络（FCN）或U-Net等结构。</li>
+<li><strong>工作原理</strong>：通过卷积层提取特征，并通过上采样操作恢复图像的分辨率，实现像素级别的分类。</li>
+<li><strong>应用场景</strong>：医学影像分析、自动驾驶中的道路识别、遥感图像分析等。</li>
+</ul>
+<h5 id="4-图像生成"><a href="#4-图像生成" class="headerlink" title="4. 图像生成"></a>4. 图像生成</h5><ul>
+<li><strong>结构特点</strong>：采用生成对抗网络（GAN）、变分自编码器（VAE）等结构。</li>
+<li><strong>工作原理</strong>：通过生成器和判别器的对抗训练，生成逼真的图像或视频。</li>
+<li><strong>应用场景</strong>：图像修复、图像超分辨率、视频生成等。</li>
+</ul>
+<p>综上所述，CNN可以按照网络结构和功能应用进行多种分类。每种类型的CNN都有其独特的特点和工作原理，适用于不同的应用场景和任务需求。在实际应用中，可以根据具体任务的需求选择合适的CNN类型。</p>
+<h3 id="递归神经网络（Recursive-Neural-Network-RecNN）"><a href="#递归神经网络（Recursive-Neural-Network-RecNN）" class="headerlink" title="递归神经网络（Recursive Neural Network, RecNN）"></a>递归神经网络（Recursive Neural Network, RecNN）</h3><p>递归神经网络是一种专门用于处理具有层次结构或树形结构数据的神经网络结构。与循环神经网络（RNN）不同，递归神经网络通过递归地应用相同的网络结构来处理不同层次的输入数据，从而能够捕捉数据中的层次信息和结构信息。递归神经网络在自然语言处理、图像解析和其他涉及层次结构数据的任务中表现出色。</p>
+<p>递归神经网络的核心在于其递归结构和信息传递机制。这些结构允许网络在输入数据的层次结构上递归地展开，并通过节点间的信息传递来捕捉层次关系。每个节点都代表一个递归神经网络的实例，它接收来自其子节点的信息，并处理这些信息以生成输出，该输出随后被传递给其父节点。这种递归机制使得网络能够处理任意深度的层次结构数据。</p>
+<p>递归神经网络的基本结构包括输入层、递归层（或称为隐藏层，但在这里强调其递归性质）和输出层。其中，递归层是核心部分，它负责在层次结构上递归地处理数据。输入层接收层次结构数据的根节点或初始节点作为输入，而输出层则根据任务需求生成最终的输出，如分类结果、解析树或其他相关输出。</p>
+<p>递归神经网络的信息传递过程是通过节点间的连接实现的。每个节点都维护一个内部状态，该状态用于存储从子节点接收到的信息以及节点自身的处理结果。当处理一个节点时，网络会将其子节点的输出作为输入，并通过递归层的处理来更新节点的内部状态。然后，该状态被用于生成节点的输出，该输出随后被传递给其父节点。</p>
+<p>具体过程如下：</p>
+<ol>
+<li><p><strong>输入层接收数据</strong>：递归神经网络的输入层接收具有层次结构的数据，如解析树、语法树或其他形式的树形结构数据。</p>
+</li>
+<li><p><strong>递归层处理数据</strong>：在递归层中，网络对每个节点进行递归处理。对于每个节点，网络会将其子节点的输出作为输入，并通过递归神经网络的运算来更新节点的内部状态。这个状态包含了从子节点接收到的信息以及节点自身的处理结果。然后，网络使用该状态来生成节点的输出。</p>
+</li>
+<li><p><strong>输出层生成输出</strong>：在输出层中，网络根据递归层生成的节点输出来生成最终的输出。这个输出可以是分类结果、解析树的结构或其他与任务相关的输出。</p>
+</li>
+</ol>
+<p>递归神经网络在处理具有层次结构的数据时具有显著的优势。它们能够捕捉数据中的层次关系和结构信息，从而实现对数据的更深入理解。然而，递归神经网络也面临一些挑战，如梯度消失或爆炸问题，这可能导致网络难以训练。为了解决这个问题，研究人员提出了多种改进方法，如使用门控机制、引入注意力机制或采用更复杂的网络结构。</p>
+<p>尽管递归神经网络在自然语言处理和其他涉及层次结构数据的任务中取得了显著成果，但它们的应用仍然受到一些限制。例如，对于非常深的层次结构数据，递归神经网络可能会面临计算复杂性和内存消耗的挑战。此外，由于递归神经网络的结构是树形的，它们可能不适用于处理具有循环或网状结构的数据。</p>
+<p>综上所述，递归神经网络是一种专门用于处理具有层次结构数据的神经网络结构。它们通过递归地应用相同的网络结构来处理不同层次的输入数据，从而能够捕捉数据中的层次信息和结构信息。尽管面临一些挑战和限制，递归神经网络在自然语言处理和其他相关任务中仍然具有广泛的应用前景。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Lavoisier</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://Lavoisier7.github.io/2024/11/22/Neural_Network/">http://Lavoisier7.github.io/2024/11/22/Neural_Network/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Lavoisier</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/AI/">
+                                    <span class="chip bg-color">AI</span>
+                                </a>
+                            
+                                <a href="/tags/NN/">
+                                    <span class="chip bg-color">NN</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">Your appreciation is my driving force for progress</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'j5FifBJFtHJ7QOATVuihjWvp-gzGzoHsz',
+        appKey: 'GRwn2SERkTOROu36TR5Ux6Nj',
+        serverURLs: 'https://j5FifBJFtHJ7QOATVuihjWvp-gzGzoHsz.leancloud.app',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'circumspection'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/11/24/Marcel_Proust/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Marcel Proust">
+                        
+                        <span class="card-title">Marcel Proust</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            前半生出入社交名利场，后半生缠绵病榻
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-11-24
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Literary-giants/" class="post-category">
+                                    Literary giants
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Marcel-Proust/">
+                        <span class="chip bg-color">Marcel Proust</span>
+                    </a>
+                    
+                    <a href="/tags/In-Search-of-Lost-Time/">
+                        <span class="chip bg-color">In Search of Lost Time</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/11/21/Book_Review2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="书评特辑·第二期">
+                        
+                        <span class="card-title">书评特辑·第二期</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            《倚天屠龙记》中周芷若形象之剖析
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-11-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Book-Review/" class="post-category">
+                                    Book Review
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%87%91%E5%BA%B8/">
+                        <span class="chip bg-color">金庸</span>
+                    </a>
+                    
+                    <a href="/tags/%E3%80%8A%E5%80%9A%E5%A4%A9%E5%B1%A0%E9%BE%99%E8%AE%B0%E3%80%8B/">
+                        <span class="chip bg-color">《倚天屠龙记》</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%91%A8%E8%8A%B7%E8%8B%A5/">
+                        <span class="chip bg-color">周芷若</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: D<br />'
+            + '文章作者: Lavoisier<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者Lavoisier所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('1'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2024-2025</span>
+            
+            <a href="/about" target="_blank">Lavoisier</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">93.1k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2024";
+                        var startMonth = "11";
+                        var startDate = "19";
+                        var startHour = "20";
+                        var startMinute = "30";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Lavoisier7" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:wzd6@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "http://Lavoisier7.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>

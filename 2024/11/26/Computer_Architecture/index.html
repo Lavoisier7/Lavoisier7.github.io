@@ -1,0 +1,2122 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="Computer Architecture, D">
+    <meta name="description" content="进阶版计算机组成原理">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Computer Architecture | D</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">D</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">D</div>
+        <div class="logo-desc">
+            
+            世故消耗激情，岁月打磨棱角，现实浪掷理想。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Lavoisier7/Lavoisier7.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Lavoisier7/Lavoisier7.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Computer Architecture</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/elective/">
+                                <span class="chip bg-color">elective</span>
+                            </a>
+                        
+                            <a href="/tags/CA/">
+                                <span class="chip bg-color">CA</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Computer-Science/" class="post-category">
+                                Computer Science
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-11-26
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2025-04-30
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.7k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="计算机体系结构"><a href="#计算机体系结构" class="headerlink" title="计算机体系结构"></a>计算机体系结构</h1><h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><h3 id="一、课程基本信息"><a href="#一、课程基本信息" class="headerlink" title="一、课程基本信息"></a>一、课程基本信息</h3><h4 id="1-课程定位与目标"><a href="#1-课程定位与目标" class="headerlink" title="1. 课程定位与目标"></a>1. 课程定位与目标</h4><ul>
+<li>面向对象：高年级本科生或研究生，特别是计划从事计算机体系结构研究的学生</li>
+<li>教学目标：<ul>
+<li>了解计算机体系结构基础和当代主流计算机系统</li>
+<li>掌握存储顺序性、Cache一致性、流水线和片上网络等内容</li>
+<li>掌握高性能处理器设计与分析方法</li>
+<li>了解异构计算和领域专用体系结构</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-课程内容结构"><a href="#2-课程内容结构" class="headerlink" title="2. 课程内容结构"></a>2. 课程内容结构</h4><p>八大章节：</p>
+<ol>
+<li>绪论</li>
+<li>基准评测集</li>
+<li>高性能计算机体系结构</li>
+<li>高性能处理器并行计算技术</li>
+<li>高性能计算机存储层次</li>
+<li>高性能计算机互连网络</li>
+<li>异构计算体系结构</li>
+<li>领域专用体系结构</li>
+</ol>
+<h3 id="二、量化设计与分析基础"><a href="#二、量化设计与分析基础" class="headerlink" title="二、量化设计与分析基础"></a>二、量化设计与分析基础</h3><h4 id="重点内容："><a href="#重点内容：" class="headerlink" title="重点内容："></a>重点内容：</h4><ol>
+<li>计算机技术发展的关键转折点</li>
+<li>丹纳德缩放定律(Dennard Scaling)及其终结</li>
+<li>摩尔定律及其面临的挑战</li>
+<li>单处理器性能发展历程</li>
+</ol>
+<h4 id="难点："><a href="#难点：" class="headerlink" title="难点："></a>难点：</h4><ol>
+<li>理解处理器性能增长放缓的深层原因</li>
+<li>掌握能耗墙、内存墙等技术瓶颈的本质</li>
+</ol>
+<h4 id="关键概念："><a href="#关键概念：" class="headerlink" title="关键概念："></a>关键概念：</h4><ol>
+<li><p>摩尔定律：</p>
+<ul>
+<li>定义：晶体管数量每18-24个月翻倍，成本减半</li>
+<li>现状：增长开始放缓</li>
+<li>面临挑战：物理极限、成本效益、散热问题</li>
+</ul>
+</li>
+<li><p>丹纳德缩放定律：</p>
+<ul>
+<li>核心内容：功率密度随面积保持不变</li>
+<li>终结时间：2004年</li>
+<li>影响：推动了多核处理器的发展</li>
+</ul>
+</li>
+</ol>
+<h3 id="三、高性能计算机发展史"><a href="#三、高性能计算机发展史" class="headerlink" title="三、高性能计算机发展史"></a>三、高性能计算机发展史</h3><h4 id="重点内容：-1"><a href="#重点内容：-1" class="headerlink" title="重点内容："></a>重点内容：</h4><ol>
+<li>高性能计算机四个发展阶段</li>
+<li>中国超级计算机发展历程</li>
+<li>超级计算机应用领域</li>
+</ol>
+<h4 id="实例分析："><a href="#实例分析：" class="headerlink" title="实例分析："></a>实例分析：</h4><p>重要里程碑机器：</p>
+<ol>
+<li>CDC 6600 (1964)：第一台真正的超级计算机</li>
+<li>Cray-1 (1976)：首次使用向量处理器架构</li>
+<li>天河一号(2009)：中国首台千万亿次超级计算机</li>
+<li>神威·太湖之光(2016)：首个使用国产芯片的世界最快超算</li>
+</ol>
+<h4 id="超级计算机应用领域："><a href="#超级计算机应用领域：" class="headerlink" title="超级计算机应用领域："></a>超级计算机应用领域：</h4><ol>
+<li>科学计算：气候环境、天文物理、材料化工</li>
+<li>工程应用：航空航天、石油勘探、工程设计</li>
+<li>新兴领域：智慧城市、人工智能、精准医疗</li>
+</ol>
+<h4 id="重要图表位置标注："><a href="#重要图表位置标注：" class="headerlink" title="重要图表位置标注："></a>重要图表位置标注：</h4><ol>
+<li>超级计算机性能发展曲线：P139</li>
+<li>CPU性能发展趋势图：P140</li>
+<li>超算应用领域分布图：P145</li>
+</ol>
+<h4 id="关键结论："><a href="#关键结论：" class="headerlink" title="关键结论："></a>关键结论：</h4><ol>
+<li>“并行”是实现超级计算的唯一途径</li>
+<li>未来发展趋势：<ul>
+<li>E级向Z级计算发展</li>
+<li>与AI、大数据融合</li>
+<li>探索非冯·诺依曼架构</li>
+</ul>
+</li>
+</ol>
+<h2 id="基准评测集"><a href="#基准评测集" class="headerlink" title="基准评测集"></a>基准评测集</h2><h3 id="一、计算机性能基础"><a href="#一、计算机性能基础" class="headerlink" title="一、计算机性能基础"></a>一、计算机性能基础</h3><h4 id="1-性能指标"><a href="#1-性能指标" class="headerlink" title="1. 性能指标"></a>1. 性能指标</h4><h5 id="重点：CPU性能评估方法"><a href="#重点：CPU性能评估方法" class="headerlink" title="重点：CPU性能评估方法"></a>重点：CPU性能评估方法</h5><ul>
+<li>CPU时间计算公式：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CPU Time = Instructions × CPI × Clock Cycle Time</span><br></pre></td></tr></table></figure></li>
+<li>主要影响因素：<ul>
+<li>指令数(Instructions)</li>
+<li>每指令周期数(CPI)</li>
+<li>时钟周期时间(Clock Cycle Time)</li>
+</ul>
+</li>
+</ul>
+<h5 id="性能度量标准："><a href="#性能度量标准：" class="headerlink" title="性能度量标准："></a>性能度量标准：</h5><ol>
+<li><p>MIPS (每秒百万指令数)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MIPS = Instructions Number/(Execution Time × 10^6)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>FLOPS (每秒浮点运算次数)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MFLOPS = Float Instructions Number/(Execution Time × 10^6)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="2-并行系统性能评估"><a href="#2-并行系统性能评估" class="headerlink" title="2. 并行系统性能评估"></a>2. 并行系统性能评估</h4><h4 id="重点概念："><a href="#重点概念：" class="headerlink" title="重点概念："></a>重点概念：</h4><ol>
+<li>加速比(Speedup)：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">S = Ts/Tp</span><br></pre></td></tr></table></figure>
+其中：</li>
+</ol>
+<ul>
+<li>Ts：串行执行时间</li>
+<li>Tp：并行执行时间</li>
+</ul>
+<ol start="2">
+<li>效率(Efficiency)：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">E = S/p</span><br></pre></td></tr></table></figure>
+其中p为处理器数量</li>
+</ol>
+<h5 id="难点：Amdahl定律"><a href="#难点：Amdahl定律" class="headerlink" title="难点：Amdahl定律"></a>难点：Amdahl定律</h5><ol>
+<li>核心公式：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">S = 1/(f + (1-f)/p)</span><br></pre></td></tr></table></figure>
+其中：</li>
+</ol>
+<ul>
+<li>f：串行部分比例</li>
+<li>p：处理器数量</li>
+</ul>
+<ol start="2">
+<li>关键结论：</li>
+</ol>
+<ul>
+<li>加速比存在上限：1&#x2F;f</li>
+<li>串行部分成为性能瓶颈</li>
+</ul>
+<h5 id="Gustafson定律"><a href="#Gustafson定律" class="headerlink" title="Gustafson定律"></a>Gustafson定律</h5><ol>
+<li>公式：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">S&#x27; = p - f(p-1)</span><br></pre></td></tr></table></figure></li>
+<li>特点：</li>
+</ol>
+<ul>
+<li>考虑问题规模随处理器数量增长</li>
+<li>突破了Amdahl定律的限制</li>
+</ul>
+<h3 id="二、基准测试程序"><a href="#二、基准测试程序" class="headerlink" title="二、基准测试程序"></a>二、基准测试程序</h3><h4 id="主要类型："><a href="#主要类型：" class="headerlink" title="主要类型："></a>主要类型：</h4><ol>
+<li>商用基准测试(TPC系列)：</li>
+</ol>
+<ul>
+<li>TPC-C：在线事务处理</li>
+<li>TPC-H：决策支持系统</li>
+<li>TPC-E：证券交易系统</li>
+</ul>
+<ol start="2">
+<li>SPEC测试程序：</li>
+</ol>
+<ul>
+<li>SPECint：整数运算</li>
+<li>SPECfp：浮点运算</li>
+<li>特点：标准化、可比性强</li>
+</ul>
+<ol start="3">
+<li>HPC特定测试：</li>
+</ol>
+<ul>
+<li>Linpack：稠密矩阵运算</li>
+<li>HPCG：稀疏矩阵求解</li>
+<li>Graph500：图算法性能</li>
+</ul>
+<h4 id="实例分析：-1"><a href="#实例分析：-1" class="headerlink" title="实例分析："></a>实例分析：</h4><p>以龙芯3A5000处理器为例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SPEC CPU2006测试结果：</span><br><span class="line">- SPECint2006：27.87</span><br><span class="line">- SPECfp2006：30.29</span><br></pre></td></tr></table></figure>
+<p>性能分析表明：</p>
+<ul>
+<li>定点性能接近同代x86处理器</li>
+<li>浮点性能仍有提升空间</li>
+</ul>
+<h3 id="三、性能提升方法"><a href="#三、性能提升方法" class="headerlink" title="三、性能提升方法"></a>三、性能提升方法</h3><h4 id="主要策略："><a href="#主要策略：" class="headerlink" title="主要策略："></a>主要策略：</h4><ol>
+<li>利用并行性</li>
+<li>遵循局部性原理</li>
+<li>关注常见情况优化</li>
+</ol>
+<h4 id="并行算法设计步骤："><a href="#并行算法设计步骤：" class="headerlink" title="并行算法设计步骤："></a>并行算法设计步骤：</h4><ol>
+<li>任务划分</li>
+<li>通信分析</li>
+<li>任务组合</li>
+<li>处理器映射</li>
+</ol>
+<h4 id="重要图表位置："><a href="#重要图表位置：" class="headerlink" title="重要图表位置："></a>重要图表位置：</h4><ul>
+<li>CPU性能影响因素表：P12</li>
+<li>处理器性能方程：P9-10</li>
+<li>性能评测指标汇总：P16</li>
+</ul>
+<h2 id="高性能计算机的体系结构"><a href="#高性能计算机的体系结构" class="headerlink" title="高性能计算机的体系结构"></a>高性能计算机的体系结构</h2><h3 id="一、超级计算机硬件组成"><a href="#一、超级计算机硬件组成" class="headerlink" title="一、超级计算机硬件组成"></a>一、超级计算机硬件组成</h3><h4 id="1-五大核心子系统"><a href="#1-五大核心子系统" class="headerlink" title="1. 五大核心子系统"></a>1. 五大核心子系统</h4><ol>
+<li>计算阵列：</li>
+</ol>
+<ul>
+<li>处理器节点的集合</li>
+<li>例子：天河一号(7168个节点)、天河二号(17920个节点)</li>
+<li>每个节点通常包含CPU和加速器(如GPU、Intel Xeon Phi)</li>
+</ul>
+<ol start="2">
+<li>存储阵列：</li>
+</ol>
+<ul>
+<li>采用层次式混合共享存储架构</li>
+<li>特点：大容量、高带宽、低延迟</li>
+<li>实例数据：<ul>
+<li>天河一号：262TB内存，2PB磁盘</li>
+<li>天河二号：1.408PB内存，12.4PB外存</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>服务阵列：</li>
+</ol>
+<ul>
+<li>基于商用服务器</li>
+<li>属于大容量胖节点</li>
+<li>物理组织：多个机架组成<ul>
+<li>天河一号：140个机架</li>
+<li>天河二号：125个机柜，500个机架</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>互连通信子系统：</li>
+</ol>
+<ul>
+<li>是大规模并行系统的核心</li>
+<li>典型拓扑：胖树结构</li>
+<li>支持硬件实现的集体操作(如多播、广播)</li>
+</ul>
+<ol start="5">
+<li>监控诊断子系统：</li>
+</ol>
+<ul>
+<li>功能：实时监控、控制、诊断系统状态</li>
+<li>监控对象：健康状态、功耗、温度等</li>
+</ul>
+<h3 id="二、计算机体系结构分类"><a href="#二、计算机体系结构分类" class="headerlink" title="二、计算机体系结构分类"></a>二、计算机体系结构分类</h3><h4 id="1-Flynn分类法"><a href="#1-Flynn分类法" class="headerlink" title="1. Flynn分类法"></a>1. Flynn分类法</h4><h5 id="重点概念：-1"><a href="#重点概念：-1" class="headerlink" title="重点概念："></a>重点概念：</h5><ol>
+<li>指令流(I)：执行的指令序列</li>
+<li>数据流(D)：被处理的数据序列</li>
+<li>多倍性(M)：同时处理的指令&#x2F;数据数量</li>
+</ol>
+<h5 id="四种基本类型："><a href="#四种基本类型：" class="headerlink" title="四种基本类型："></a>四种基本类型：</h5><ol>
+<li>SISD(单指令流单数据流)：</li>
+</ol>
+<ul>
+<li>传统串行计算机</li>
+<li>代表：早期PC机、8086处理器</li>
+</ul>
+<ol start="2">
+<li>SIMD(单指令流多数据流)：</li>
+</ol>
+<ul>
+<li>特点：对多个数据并行执行相同操作</li>
+<li>两个主要分支：<ul>
+<li>阵列计算机(如ILLIAC IV)</li>
+<li>向量计算机(如Cray-1)</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>MISD(多指令流单数据流)：</li>
+</ol>
+<ul>
+<li>存在争议</li>
+<li>可能的例子：流水线结构</li>
+</ul>
+<ol start="4">
+<li>MIMD(多指令流多数据流)：</li>
+</ol>
+<ul>
+<li>最广泛使用的并行架构</li>
+<li>两种主要实现：<ul>
+<li>共享内存系统</li>
+<li>分布式内存系统</li>
+</ul>
+</li>
+</ul>
+<h5 id="实例分析"><a href="#实例分析" class="headerlink" title="实例分析"></a>实例分析</h5><h6 id="Cray-1向量计算机结构："><a href="#Cray-1向量计算机结构：" class="headerlink" title="Cray-1向量计算机结构："></a>Cray-1向量计算机结构：</h6><ul>
+<li>向量寄存器组(V0-V7)：每个可存64个元素</li>
+<li>标量寄存器(S0-S7)</li>
+<li>后援寄存器(T0-T63)</li>
+</ul>
+<h4 id="2-MIMD细分类型"><a href="#2-MIMD细分类型" class="headerlink" title="2. MIMD细分类型"></a>2. MIMD细分类型</h4><h5 id="A-共享内存系统"><a href="#A-共享内存系统" class="headerlink" title="A. 共享内存系统"></a>A. 共享内存系统</h5><ol>
+<li>集中共享内存(CSM&#x2F;SMP&#x2F;UMA)：</li>
+</ol>
+<ul>
+<li>特点：所有处理器访问延迟相同</li>
+<li>优点：编程简单</li>
+<li>缺点：扩展性有限</li>
+</ul>
+<ol start="2">
+<li>分布式共享内存(DSM&#x2F;NUMA)：</li>
+</ol>
+<ul>
+<li>特点：本地访问快，远程访问慢</li>
+<li>两种类型：<ul>
+<li>NC-NUMA：无缓存</li>
+<li>CC-NUMA：带缓存一致性</li>
+</ul>
+</li>
+</ul>
+<h5 id="B-分布式内存系统"><a href="#B-分布式内存系统" class="headerlink" title="B. 分布式内存系统"></a>B. 分布式内存系统</h5><ol>
+<li>MPP(大规模并行处理器)：</li>
+</ol>
+<ul>
+<li>特点：专用高速互连网络</li>
+<li>应用：科学计算</li>
+<li>节点特征：共享磁盘系统</li>
+</ul>
+<ol start="2">
+<li>COW(工作站集群)：</li>
+</ol>
+<ul>
+<li>特点：商用网络连接</li>
+<li>应用：云计算数据中心</li>
+<li>每节点独立完整</li>
+</ul>
+<h3 id="三、非冯诺依曼体系结构"><a href="#三、非冯诺依曼体系结构" class="headerlink" title="三、非冯诺依曼体系结构"></a>三、非冯诺依曼体系结构</h3><h4 id="1-主要类型："><a href="#1-主要类型：" class="headerlink" title="1. 主要类型："></a>1. 主要类型：</h4><ul>
+<li>归约机</li>
+<li>数据流计算机</li>
+<li>量子计算机</li>
+<li>光子计算机</li>
+</ul>
+<h4 id="2-数据流计算机特点："><a href="#2-数据流计算机特点：" class="headerlink" title="2. 数据流计算机特点："></a>2. 数据流计算机特点：</h4><ul>
+<li>数据就绪驱动执行</li>
+<li>打破串行执行限制</li>
+<li>现代应用：云计算、大数据分析系统</li>
+</ul>
+<h5 id="重要图表位置标注：-1"><a href="#重要图表位置标注：-1" class="headerlink" title="重要图表位置标注："></a>重要图表位置标注：</h5><ul>
+<li>Flynn分类法示意图：P29</li>
+<li>共享内存系统架构图：P64-65</li>
+<li>分布式内存系统架构图：P74</li>
+<li>冯诺依曼架构图：P83</li>
+</ul>
+<h2 id="高性能处理器的并行计算技术-指令级并行"><a href="#高性能处理器的并行计算技术-指令级并行" class="headerlink" title="高性能处理器的并行计算技术-指令级并行"></a>高性能处理器的并行计算技术-指令级并行</h2><h3 id="一、指令级并行基础"><a href="#一、指令级并行基础" class="headerlink" title="一、指令级并行基础"></a>一、指令级并行基础</h3><h4 id="1-并行性类型"><a href="#1-并行性类型" class="headerlink" title="1. 并行性类型"></a>1. 并行性类型</h4><ol>
+<li>数据级并行(DLP)</li>
+</ol>
+<ul>
+<li>同时对多个数据项进行操作</li>
+</ul>
+<ol start="2">
+<li>任务级并行(TLP)</li>
+</ol>
+<ul>
+<li>多个独立任务并行执行</li>
+</ul>
+<h4 id="2-硬件利用并行性的四种方式："><a href="#2-硬件利用并行性的四种方式：" class="headerlink" title="2. 硬件利用并行性的四种方式："></a>2. 硬件利用并行性的四种方式：</h4><h5 id="A-指令级并行-ILP-："><a href="#A-指令级并行-ILP-：" class="headerlink" title="A. 指令级并行(ILP)："></a>A. 指令级并行(ILP)：</h5><ul>
+<li>通过流水线和投机执行等方式利用DLP</li>
+<li>主要特征：深度流水线、多功能部件、多发射</li>
+</ul>
+<h5 id="B-向量架构和GPU："><a href="#B-向量架构和GPU：" class="headerlink" title="B. 向量架构和GPU："></a>B. 向量架构和GPU：</h5><ul>
+<li>单指令操作多个数据集合</li>
+</ul>
+<h5 id="C-线程级并行："><a href="#C-线程级并行：" class="headerlink" title="C. 线程级并行："></a>C. 线程级并行：</h5><ul>
+<li>利用多线程执行</li>
+</ul>
+<h5 id="D-请求级并行："><a href="#D-请求级并行：" class="headerlink" title="D. 请求级并行："></a>D. 请求级并行：</h5><ul>
+<li>处理独立的程序请求</li>
+</ul>
+<h3 id="二、指令级并行的挑战"><a href="#二、指令级并行的挑战" class="headerlink" title="二、指令级并行的挑战"></a>二、指令级并行的挑战</h3><h4 id="1-三种基本冒险："><a href="#1-三种基本冒险：" class="headerlink" title="1. 三种基本冒险："></a>1. 三种基本冒险：</h4><h5 id="A-结构冒险："><a href="#A-结构冒险：" class="headerlink" title="A. 结构冒险："></a>A. 结构冒险：</h5><ul>
+<li>原因：多条指令竞争同一硬件资源</li>
+<li>示例：内存端口争用</li>
+<li>解决方案：资源复制(如分离的数据Cache和指令Cache)</li>
+</ul>
+<h5 id="B-数据冒险："><a href="#B-数据冒险：" class="headerlink" title="B. 数据冒险："></a>B. 数据冒险：</h5><ol>
+<li><p>RAW(Read After Write)：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">I1: add r1,r2,r3</span><br><span class="line">I2: sub r4,r1,r3  // 等待r1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>WAR(Write After Read)：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">I1: sub r4,r1,r3</span><br><span class="line">I2: add r1,r2,r3  // 必须等I1读完r1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>WAW(Write After Write)：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">I1: sub r1,r4,r3</span><br><span class="line">I2: add r1,r2,r3  // 写入次序不能颠倒</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="C-控制冒险："><a href="#C-控制冒险：" class="headerlink" title="C. 控制冒险："></a>C. 控制冒险：</h5><ul>
+<li>由分支指令引起</li>
+<li>影响严重：每3-6条指令就有一个分支</li>
+<li>解决方案：分支预测</li>
+</ul>
+<h4 id="2-解决数据冒险的基本方法："><a href="#2-解决数据冒险的基本方法：" class="headerlink" title="2. 解决数据冒险的基本方法："></a>2. 解决数据冒险的基本方法：</h4><h5 id="A-转发（Forward）："><a href="#A-转发（Forward）：" class="headerlink" title="A. 转发（Forward）："></a>A. 转发（Forward）：</h5><ul>
+<li>将计算结果直接转发给需要的功能部件</li>
+<li>优点：减少等待时间</li>
+<li>局限：不能解决所有RAW冒险</li>
+</ul>
+<h3 id="三、循环展开优化"><a href="#三、循环展开优化" class="headerlink" title="三、循环展开优化"></a>三、循环展开优化</h3><h4 id="重点概念：-2"><a href="#重点概念：-2" class="headerlink" title="重点概念："></a>重点概念：</h4><ol>
+<li>循环展开目的：</li>
+</ol>
+<ul>
+<li>减少循环控制开销</li>
+<li>增加指令级并行机会</li>
+</ul>
+<ol start="2">
+<li>基本步骤：</li>
+</ol>
+<ul>
+<li>确认循环迭代间独立性</li>
+<li>使用不同寄存器避免名字相关</li>
+<li>去除多余分支指令</li>
+<li>调整循环终止条件</li>
+<li>分析存储地址相关性</li>
+<li>进行指令调度</li>
+</ul>
+<h5 id="实例分析：-2"><a href="#实例分析：-2" class="headerlink" title="实例分析："></a>实例分析：</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">原始循环：</span><br><span class="line">Loop: fld f0,0(x1)</span><br><span class="line">      fadd.d f4,f0,f2</span><br><span class="line">      fsd f4,0(x1)</span><br><span class="line">      addi x1,x1,-8</span><br><span class="line">      bne x1,x2,Loop</span><br></pre></td></tr></table></figure>
+
+<p>展开优化后：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Loop: fld f0,0(x1)</span><br><span class="line">      fld f6,8(x1)</span><br><span class="line">      fld f10,16(x1)</span><br><span class="line">      fld f14,24(x1)</span><br><span class="line">      fadd.d f4,f0,f2</span><br><span class="line">      fadd.d f8,f6,f2</span><br><span class="line">      fadd.d f12,f0,f2</span><br><span class="line">      fadd.d f16,f14,f2</span><br><span class="line">      fsd f4,0(x1)</span><br><span class="line">      fsd f8,8(x1)</span><br><span class="line">      addi x1,x1,32</span><br><span class="line">      fsd f12,16(x1)</span><br><span class="line">      bne x1,x2,Loop</span><br><span class="line">      fsd f16,24(x1)</span><br></pre></td></tr></table></figure>
+
+<p>优化效果：</p>
+<ul>
+<li>未优化：每循环10个时钟周期</li>
+<li>优化后：每原始循环3.5个时钟周期</li>
+<li>加速比：2.86倍</li>
+</ul>
+<h3 id="四、分支预测"><a href="#四、分支预测" class="headerlink" title="四、分支预测"></a>四、分支预测</h3><h4 id="1-基本概念与重要性"><a href="#1-基本概念与重要性" class="headerlink" title="1. 基本概念与重要性"></a>1. 基本概念与重要性</h4><h5 id="重点："><a href="#重点：" class="headerlink" title="重点："></a>重点：</h5><ul>
+<li>分支指令频率：每3-6条指令就有一个分支</li>
+<li>影响程序性能：10%-30%的性能损失</li>
+<li>对ILP的影响：指令级并行度越高，分支预测的重要性越大</li>
+</ul>
+<h4 id="2-分支预测技术分类"><a href="#2-分支预测技术分类" class="headerlink" title="2. 分支预测技术分类"></a>2. 分支预测技术分类</h4><h5 id="A-静态预测："><a href="#A-静态预测：" class="headerlink" title="A. 静态预测："></a>A. 静态预测：</h5><ol>
+<li>基于编译时信息</li>
+<li>典型方法：</li>
+</ol>
+<ul>
+<li>总是预测分支不跳转</li>
+<li>总是预测分支跳转</li>
+<li>延迟分支（Delayed Branch）</li>
+</ul>
+<h5 id="B-动态预测："><a href="#B-动态预测：" class="headerlink" title="B. 动态预测："></a>B. 动态预测：</h5><ol>
+<li>简单的1位预测器：</li>
+</ol>
+<ul>
+<li>记录最近一次分支结果</li>
+</ul>
+<ol start="2">
+<li>2位预测器：</li>
+</ol>
+<ul>
+<li>使用饱和计数器</li>
+<li>需要连续两次预测错误才改变预测方向</li>
+</ul>
+<ol start="3">
+<li>相关预测器（两级预测器）：</li>
+</ol>
+<ul>
+<li>(m,n)预测器：<ul>
+<li>m位历史记录</li>
+<li>n位预测器</li>
+</ul>
+</li>
+<li>实例：(2,2)预测器<ul>
+<li>全局历史：2位</li>
+<li>每个分支2位预测器</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>竞赛预测器（Tournament Predictor）：</li>
+</ol>
+<ul>
+<li>结合局部预测和全局预测</li>
+<li>动态选择更准确的预测器</li>
+</ul>
+<h4 id="3-分支目标缓存-BTB"><a href="#3-分支目标缓存-BTB" class="headerlink" title="3. 分支目标缓存(BTB)"></a>3. 分支目标缓存(BTB)</h4><h5 id="重要组成："><a href="#重要组成：" class="headerlink" title="重要组成："></a>重要组成：</h5><ol>
+<li>基本结构：</li>
+</ol>
+<ul>
+<li>分支指令PC</li>
+<li>预测标志</li>
+<li>目标地址</li>
+</ul>
+<ol start="2">
+<li><p>工作流程：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if (PC in BTB) &#123;</span><br><span class="line">    next_PC = predicted_target;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    next_PC = PC + 4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>失效代价：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">BTB失效类型   预测   实际   惩罚周期</span><br><span class="line">命中          跳转   跳转   0</span><br><span class="line">命中          跳转   不跳转 2</span><br><span class="line">未命中        -      跳转   2</span><br><span class="line">未命中        -      不跳转 0</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="五、推测执行"><a href="#五、推测执行" class="headerlink" title="五、推测执行"></a>五、推测执行</h3><h4 id="1-重排序缓冲区-ROB"><a href="#1-重排序缓冲区-ROB" class="headerlink" title="1. 重排序缓冲区(ROB)"></a>1. 重排序缓冲区(ROB)</h4><h5 id="重点概念：-3"><a href="#重点概念：-3" class="headerlink" title="重点概念："></a>重点概念：</h5><ol>
+<li>ROB的基本功能：</li>
+</ol>
+<ul>
+<li>按序发射</li>
+<li>乱序执行</li>
+<li>按序提交</li>
+</ul>
+<ol start="2">
+<li>ROB条目构成：</li>
+</ol>
+<ul>
+<li>指令类型</li>
+<li>目标寄存器</li>
+<li>值</li>
+<li>就绪标志</li>
+</ul>
+<h5 id="重要机制："><a href="#重要机制：" class="headerlink" title="重要机制："></a>重要机制：</h5><ol>
+<li>指令发射：</li>
+</ol>
+<ul>
+<li>分配ROB和保留站</li>
+<li>读取可用操作数</li>
+</ul>
+<ol start="2">
+<li>指令执行：</li>
+</ol>
+<ul>
+<li>操作数就绪即可执行</li>
+<li>结果暂存ROB</li>
+</ul>
+<ol start="3">
+<li>写回结果：</li>
+</ol>
+<ul>
+<li>通过CDB广播结果</li>
+<li>更新等待该结果的条目</li>
+</ul>
+<ol start="4">
+<li>提交过程：</li>
+</ol>
+<ul>
+<li>按程序顺序提交</li>
+<li>确保精确中断</li>
+<li>处理预测错误</li>
+</ul>
+<h4 id="2-实例分析"><a href="#2-实例分析" class="headerlink" title="2. 实例分析"></a>2. 实例分析</h4><h5 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">L.D F6,34(R2)</span><br><span class="line">L.D F2,45(R3)</span><br><span class="line">MUL.D F0,F2,F4</span><br><span class="line">SUB.D F8,F6,F2</span><br><span class="line">DIV.D F10,F0,F6</span><br><span class="line">ADD.D F6,F8,F2</span><br></pre></td></tr></table></figure>
+
+<h5 id="执行过程："><a href="#执行过程：" class="headerlink" title="执行过程："></a>执行过程：</h5><ol>
+<li>Load指令:</li>
+</ol>
+<ul>
+<li>立即发射</li>
+<li>等待内存访问</li>
+<li>按序提交</li>
+</ul>
+<ol start="2">
+<li>计算指令：</li>
+</ol>
+<ul>
+<li>等待操作数就绪</li>
+<li>乱序执行</li>
+<li>按序提交</li>
+</ul>
+<ol start="3">
+<li>分支预测错误处理：</li>
+</ol>
+<ul>
+<li>清除ROB中错误路径指令</li>
+<li>恢复正确的程序状态</li>
+</ul>
+<p>【重要图表位置】</p>
+<ul>
+<li>两级预测器结构图：P25</li>
+<li>BTB结构图：P37</li>
+<li>ROB组织结构图：P47</li>
+</ul>
+<h3 id="六、超标量-Superscalar-处理器"><a href="#六、超标量-Superscalar-处理器" class="headerlink" title="六、超标量(Superscalar)处理器"></a>六、超标量(Superscalar)处理器</h3><h4 id="1-基本原理"><a href="#1-基本原理" class="headerlink" title="1. 基本原理"></a>1. 基本原理</h4><ol>
+<li>核心特征：</li>
+</ol>
+<ul>
+<li>每个时钟周期发射多条指令</li>
+<li>动态检测指令间依赖</li>
+<li>硬件负责调度</li>
+</ul>
+<ol start="2">
+<li>关键组件：</li>
+</ol>
+<ul>
+<li>多个功能部件</li>
+<li>复杂的发射逻辑</li>
+<li>动态依赖检测</li>
+</ul>
+<h4 id="2-主要挑战"><a href="#2-主要挑战" class="headerlink" title="2. 主要挑战"></a>2. 主要挑战</h4><h5 id="A-结构复杂度："><a href="#A-结构复杂度：" class="headerlink" title="A. 结构复杂度："></a>A. 结构复杂度：</h5><ul>
+<li>检测W条待发射指令与L组执行指令间的依赖</li>
+<li>复杂度：O(W * (W*L))</li>
+</ul>
+<h5 id="B-性能瓶颈："><a href="#B-性能瓶颈：" class="headerlink" title="B. 性能瓶颈："></a>B. 性能瓶颈：</h5><ol>
+<li>指令发射带宽限制</li>
+<li>功能部件数量限制</li>
+<li>转发(Forward)复杂度增加</li>
+</ol>
+<h4 id="3-实例分析"><a href="#3-实例分析" class="headerlink" title="3. 实例分析"></a>3. 实例分析</h4><p>双发射MIPS处理器示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Loop: L.D F0,0(R1)</span><br><span class="line">      ADD.D F4,F0,F2</span><br><span class="line">      S.D F4,0(R1)</span><br><span class="line">      DADDIU R1,R1,#-8</span><br><span class="line">      BNE R1,R2,Loop</span><br></pre></td></tr></table></figure>
+
+<p>执行效率：</p>
+<ul>
+<li>IPC(Instructions Per Clock)：1.67</li>
+<li>每3个时钟完成一次循环迭代</li>
+</ul>
+<h3 id="二、超长指令字-VLIW"><a href="#二、超长指令字-VLIW" class="headerlink" title="二、超长指令字(VLIW)"></a>二、超长指令字(VLIW)</h3><h4 id="1-基本特征："><a href="#1-基本特征：" class="headerlink" title="1. 基本特征："></a>1. 基本特征：</h4><ol>
+<li>编译时调度：</li>
+</ol>
+<ul>
+<li>编译器负责发现并行性</li>
+<li>将多条独立指令打包</li>
+</ul>
+<ol start="2">
+<li>指令包格式：</li>
+</ol>
+<ul>
+<li>长度：112-168位</li>
+<li>典型组成：<ul>
+<li>2个整数运算</li>
+<li>2个浮点运算</li>
+<li>2个访存操作</li>
+<li>1个分支指令</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-优缺点分析"><a href="#2-优缺点分析" class="headerlink" title="2. 优缺点分析"></a>2. 优缺点分析</h4><h5 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h5><ol>
+<li>硬件简单</li>
+<li>执行效率高</li>
+<li>功耗低</li>
+</ol>
+<h5 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h5><ol>
+<li>代码膨胀</li>
+<li>可移植性差</li>
+<li>Lock-step限制</li>
+</ol>
+<h5 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h5><ol>
+<li>代码压缩</li>
+<li>动态调度</li>
+<li>目标代码转换</li>
+</ol>
+<h3 id="七、同时多线程-SMT"><a href="#七、同时多线程-SMT" class="headerlink" title="七、同时多线程(SMT)"></a>七、同时多线程(SMT)</h3><h4 id="1-基本概念："><a href="#1-基本概念：" class="headerlink" title="1. 基本概念："></a>1. 基本概念：</h4><ul>
+<li>多个线程共享处理器资源</li>
+<li>每个线程有独立的上下文</li>
+<li>支持快速线程切换</li>
+</ul>
+<h4 id="2-实现方式："><a href="#2-实现方式：" class="headerlink" title="2. 实现方式："></a>2. 实现方式：</h4><h5 id="A-细粒度多线程："><a href="#A-细粒度多线程：" class="headerlink" title="A. 细粒度多线程："></a>A. 细粒度多线程：</h5><ul>
+<li>每个时钟切换线程</li>
+<li>优点：资源利用率高</li>
+<li>缺点：单线程延迟增加</li>
+</ul>
+<h5 id="B-粗粒度多线程："><a href="#B-粗粒度多线程：" class="headerlink" title="B. 粗粒度多线程："></a>B. 粗粒度多线程：</h5><ul>
+<li>长延迟事件触发切换</li>
+<li>优点：单线程性能好</li>
+<li>缺点：资源利用率较低</li>
+</ul>
+<h5 id="C-同时多线程-SMT-："><a href="#C-同时多线程-SMT-：" class="headerlink" title="C. 同时多线程(SMT)："></a>C. 同时多线程(SMT)：</h5><ul>
+<li>多个线程同时执行</li>
+<li>结合超标量技术</li>
+<li>需要更多硬件资源</li>
+</ul>
+<h3 id="八、ILP限制因素"><a href="#八、ILP限制因素" class="headerlink" title="八、ILP限制因素"></a>八、ILP限制因素</h3><h4 id="1-理想处理器假设："><a href="#1-理想处理器假设：" class="headerlink" title="1. 理想处理器假设："></a>1. 理想处理器假设：</h4><ol>
+<li>无限虚拟寄存器</li>
+<li>完美分支预测</li>
+<li>完美值预测</li>
+<li>无限缓存</li>
+</ol>
+<h4 id="2-实际限制："><a href="#2-实际限制：" class="headerlink" title="2. 实际限制："></a>2. 实际限制：</h4><h5 id="A-指令窗口大小："><a href="#A-指令窗口大小：" class="headerlink" title="A. 指令窗口大小："></a>A. 指令窗口大小：</h5><ul>
+<li>实际窗口大小：数百条指令</li>
+<li>影响IPC显著</li>
+</ul>
+<h5 id="B-分支预测："><a href="#B-分支预测：" class="headerlink" title="B. 分支预测："></a>B. 分支预测：</h5><ul>
+<li>完美预测vs实际预测</li>
+<li>预测错误代价高</li>
+</ul>
+<h5 id="C-寄存器数量："><a href="#C-寄存器数量：" class="headerlink" title="C. 寄存器数量："></a>C. 寄存器数量：</h5><ul>
+<li>256个寄存器基本足够</li>
+<li>更多寄存器收益递减</li>
+</ul>
+<h5 id="重要图表位置：-1"><a href="#重要图表位置：-1" class="headerlink" title="重要图表位置："></a>重要图表位置：</h5><ul>
+<li>窗口大小影响：P60-61</li>
+<li>分支预测影响：P64-65</li>
+<li>寄存器数量影响：P67-68</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Lavoisier</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://Lavoisier7.github.io/2024/11/26/Computer_Architecture/">http://Lavoisier7.github.io/2024/11/26/Computer_Architecture/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Lavoisier</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/elective/">
+                                    <span class="chip bg-color">elective</span>
+                                </a>
+                            
+                                <a href="/tags/CA/">
+                                    <span class="chip bg-color">CA</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">Your appreciation is my driving force for progress</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'j5FifBJFtHJ7QOATVuihjWvp-gzGzoHsz',
+        appKey: 'GRwn2SERkTOROu36TR5Ux6Nj',
+        serverURLs: 'https://j5FifBJFtHJ7QOATVuihjWvp-gzGzoHsz.leancloud.app',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'circumspection'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/12/06/Distributed_System/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="分布式系统">
+                        
+                        <span class="card-title">分布式系统</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            2024-2025 分布式系统
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-12-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Computer-Science/" class="post-category">
+                                    Computer Science
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Operation-System/">
+                        <span class="chip bg-color">Operation System</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/11/25/Database_Principle/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Database Principle">
+                        
+                        <span class="card-title">Database Principle</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            2024-2025 DCS281
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-11-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Computer-Science/" class="post-category">
+                                    Computer Science
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SQL-Server/">
+                        <span class="chip bg-color">SQL Server</span>
+                    </a>
+                    
+                    <a href="/tags/Database/">
+                        <span class="chip bg-color">Database</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: D<br />'
+            + '文章作者: Lavoisier<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者Lavoisier所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('1'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2024-2025</span>
+            
+            <a href="/about" target="_blank">Lavoisier</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">93.1k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2024";
+                        var startMonth = "11";
+                        var startDate = "19";
+                        var startHour = "20";
+                        var startMinute = "30";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Lavoisier7" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:wzd6@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "http://Lavoisier7.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>

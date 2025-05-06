@@ -1,0 +1,2514 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="Computer Graphics, D">
+    <meta name="description" content="2024-2025 计算机图形学">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Computer Graphics | D</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">D</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">D</div>
+        <div class="logo-desc">
+            
+            世故消耗激情，岁月打磨棱角，现实浪掷理想。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Lavoisier7/Lavoisier7.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Lavoisier7/Lavoisier7.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Computer Graphics</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/CG-%E2%89%A0-CV/">
+                                <span class="chip bg-color">CG ≠ CV</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Computer-Science/" class="post-category">
+                                Computer Science
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-11-20
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2025-04-30
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    13.4k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="计算机图形学"><a href="#计算机图形学" class="headerlink" title="计算机图形学"></a>计算机图形学</h1><h2 id="计算机图形学-第一讲"><a href="#计算机图形学-第一讲" class="headerlink" title="计算机图形学 第一讲"></a>计算机图形学 第一讲</h2><h3 id="1-课程介绍与概要"><a href="#1-课程介绍与概要" class="headerlink" title="1. 课程介绍与概要"></a>1. 课程介绍与概要</h3><h4 id="1-1-课程介绍"><a href="#1-1-课程介绍" class="headerlink" title="1.1 课程介绍"></a>1.1 课程介绍</h4><p>计算机图形学是研究如何利用计算机进行图形的表示、计算、处理与显示的科学学科。核心任务包括：</p>
+<ul>
+<li><strong>建模</strong>（Modeling）：如何在计算机中表示三维物体及场景？</li>
+<li><strong>渲染</strong>（Rendering）：如何将三维几何模型绘制出来，产生视觉效果？</li>
+<li><strong>动画</strong>（Animation）：如何描述物体随时间变化的状态？</li>
+<li><strong>交互</strong>（Interaction）：如何通过人机交互完成用户所希望的任务？</li>
+</ul>
+<h4 id="1-2-课程内容大纲"><a href="#1-2-课程内容大纲" class="headerlink" title="1.2 课程内容大纲"></a>1.2 课程内容大纲</h4><p>课程分为三个阶段：</p>
+<ol>
+<li><strong>相关知识背景</strong>（1-3周）：包括引言、历史与应用、渲染管线、OpenGL 编程基础。</li>
+<li><strong>计算机图形学基础</strong>（4-13周）：光栅化、几何变换、视角、曲线及曲面建模等。</li>
+<li><strong>进阶与扩展课题</strong>（14-17周）：网格处理、光影、全局光照、纹理映射、蒙特卡洛渲染、神经网络渲染等前沿技术。</li>
+</ol>
+<h4 id="1-3-课程评分标准"><a href="#1-3-课程评分标准" class="headerlink" title="1.3 课程评分标准"></a>1.3 课程评分标准</h4><ul>
+<li><strong>编程作业</strong>：占65%，重点考察完成度、编程规范及美观等。</li>
+<li><strong>期末大作业</strong>：占20%，需要完成报告及现场展示。</li>
+<li><strong>科技论文阅读</strong>：占10%，通过阅读前沿论文加深理解。</li>
+<li><strong>出勤及小测</strong>：占5%。</li>
+</ul>
+<h3 id="2-计算机图形学的基本任务"><a href="#2-计算机图形学的基本任务" class="headerlink" title="2. 计算机图形学的基本任务"></a>2. 计算机图形学的基本任务</h3><h4 id="2-1-建模（Modeling）"><a href="#2-1-建模（Modeling）" class="headerlink" title="2.1 建模（Modeling）"></a>2.1 建模（Modeling）</h4><p>建模的核心是<strong>如何在计算机中表示三维物体和场景</strong>。常见的建模方式包括：</p>
+<ul>
+<li><strong>实体几何构造</strong>（Constructive Solid Geometry，CSG）：通过几何运算生成新的形体。</li>
+<li><strong>网格</strong>（Mesh）：通过记录点的坐标及其连接关系，近似表示连续曲面，如著名的 <strong>Stanford bunny</strong> 。</li>
+<li><strong>样条曲线与曲面</strong>：用于工业造型的标准。</li>
+<li><strong>体数据</strong>（Volume）：常用于标量场的表示，如医学成像中的CT数据。</li>
+<li><strong>过程式建模</strong>：基于规则和语法生成模型，适合具有重复特征的几何物体（如树木）。</li>
+<li><strong>三维场景的神经网络表示</strong>：例如<strong>神经辐射场</strong>（NeRF）。</li>
+<li><strong>手工建模</strong>：利用软件工具手动构建模型。</li>
+<li><strong>三维扫描</strong>：通过扫描真实物体生成三维模型。</li>
+</ul>
+<h4 id="2-2-渲染（Rendering）"><a href="#2-2-渲染（Rendering）" class="headerlink" title="2.2 渲染（Rendering）"></a>2.2 渲染（Rendering）</h4><p>渲染是将三维几何模型转换为二维图像的过程，常见的渲染目标包括：</p>
+<ul>
+<li><strong>真实感渲染</strong>（Photorealistic Rendering）：通过物理模拟实现逼真的光影效果，通常用于电影特效等高质量场景。如电影《Monsters University》中的渲染，使用了24,000核的渲染农场，每帧渲染耗时29小时。</li>
+<li><strong>实时渲染</strong>（Interactive Rendering）：在数毫秒内生成图像，通常用于游戏等追求实时反馈的应用。</li>
+<li><strong>非真实感渲染</strong>（Non-photorealistic Rendering）：风格化渲染，用于艺术作品或示意图。</li>
+</ul>
+<h4 id="2-3-动画（Animation）"><a href="#2-3-动画（Animation）" class="headerlink" title="2.3 动画（Animation）"></a>2.3 动画（Animation）</h4><p>动画是使几何模型随时间变化的过程。常见手段包括：</p>
+<ul>
+<li><strong>手动关键帧动画</strong>：通过定义关键帧控制物体运动。</li>
+<li><strong>行为模拟</strong>：通过物理规则模拟物体在环境中的行为，如流体或刚体的运动。</li>
+<li><strong>物理模拟</strong>：通过物理方程模拟真实世界中的运动效果，如布料、烟雾等。</li>
+<li><strong>动作捕捉</strong>（Motion Capture）：通过捕捉实际人物的动作并映射到虚拟角色。</li>
+</ul>
+<h4 id="2-4-交互（Interaction）"><a href="#2-4-交互（Interaction）" class="headerlink" title="2.4 交互（Interaction）"></a>2.4 交互（Interaction）</h4><p>交互使用户能够控制物体的内容、结构、外观，并产生实时的视觉反馈。典型应用包括：</p>
+<ul>
+<li><strong>输入设备</strong>：如鼠标、手绘笔、多点触控设备等。</li>
+<li><strong>输出设备</strong>：如显示器、打印机等。</li>
+</ul>
+<p>最早的交互式图形系统为 <strong>Sketchpad</strong>，由 Ivan Sutherland 于1963年提出，奠定了现代交互式图形系统的基础。</p>
+<h3 id="3-计算机图形学的扩展"><a href="#3-计算机图形学的扩展" class="headerlink" title="3. 计算机图形学的扩展"></a>3. 计算机图形学的扩展</h3><h4 id="3-1-可视化（Visualization）"><a href="#3-1-可视化（Visualization）" class="headerlink" title="3.1 可视化（Visualization）"></a>3.1 可视化（Visualization）</h4><p>可视化是计算机图形学的一个分支，主要用于数据的图形化表现，帮助用户从数据中获取有用信息。常见的可视化类别包括：</p>
+<ul>
+<li><strong>科学可视化</strong>：如流场可视化，通过 LIC（Line Integral Convolution）等技术表现复杂数据。</li>
+<li><strong>信息可视化</strong>：如通过图表、关系图表现复杂信息。</li>
+<li><strong>可视分析</strong>：通过人机交互对数据进行分析。</li>
+</ul>
+<h4 id="3-2-设计（Design）"><a href="#3-2-设计（Design）" class="headerlink" title="3.2 设计（Design）"></a>3.2 设计（Design）</h4><p>设计是计算机图形学的另一应用领域，涉及到工业设计、交互设计和通信设计等。常用工具包括 CAD（计算机辅助设计）和 HCI（人机交互）系统。</p>
+<h3 id="4-参考资料"><a href="#4-参考资料" class="headerlink" title="4. 参考资料"></a>4. 参考资料</h3><h4 id="4-1-推荐教材"><a href="#4-1-推荐教材" class="headerlink" title="4.1 推荐教材"></a>4.1 推荐教材</h4><ul>
+<li><strong>E. Angel, D. Shreiner</strong>: <em>Interactive Computer Graphics — A Top-down Approach Using OpenGL</em> （第七版）</li>
+<li><strong>D. Hearn et al.</strong>: <em>Computer Graphics with OpenGL</em> （第四版，2014年）</li>
+<li><strong>J. Kessenich et al.</strong>: <em>OpenGL Programming Guide</em> （第九版，2016年）</li>
+</ul>
+<h3 id="4-2-在线资源"><a href="#4-2-在线资源" class="headerlink" title="4.2 在线资源"></a>4.2 在线资源</h3><ul>
+<li><strong>OpenGL-Song Ho Ahn</strong>: <a target="_blank" rel="noopener" href="http://www.songho.ca/opengl/">http://www.songho.ca/opengl/</a></li>
+<li><strong>NeHe Productions</strong>: <a target="_blank" rel="noopener" href="http://nehe.gamedev.net/">http://nehe.gamedev.net/</a></li>
+<li><strong>OpenGL-tutorial</strong>: <a target="_blank" rel="noopener" href="http://www.opengl-tutorial.org/">http://www.opengl-tutorial.org/</a></li>
+</ul>
+<h4 id="4-3-渲染软件"><a href="#4-3-渲染软件" class="headerlink" title="4.3 渲染软件"></a>4.3 渲染软件</h4><ul>
+<li><strong>Pixar’s RenderMan</strong>：著名的电影级渲染软件，广泛用于高质量的照片级渲染。</li>
+</ul>
+<h3 id="5-拓展阅读建议"><a href="#5-拓展阅读建议" class="headerlink" title="5. 拓展阅读建议"></a>5. 拓展阅读建议</h3><ul>
+<li><strong>神经网络与图形学结合</strong>：如 <strong>NeRF</strong>（Neural Radiance Fields）等技术代表了图形学领域的前沿方向。</li>
+<li><strong>GPGPU</strong>（通用图形处理器计算）：利用 GPU 的并行处理能力加速渲染、模拟等任务。</li>
+<li><strong>实时光影效果</strong>：深入研究实时光影渲染技术，如 <strong>Ray Tracing</strong> 在游戏中的应用。</li>
+</ul>
+<h2 id="计算机图形学-第二讲"><a href="#计算机图形学-第二讲" class="headerlink" title="计算机图形学 第二讲"></a>计算机图形学 第二讲</h2><h3 id="1-现代计算机图形学的发展"><a href="#1-现代计算机图形学的发展" class="headerlink" title="1. 现代计算机图形学的发展"></a>1. 现代计算机图形学的发展</h3><h4 id="1-1-硬件变革：显卡运算性能的爆炸性增长"><a href="#1-1-硬件变革：显卡运算性能的爆炸性增长" class="headerlink" title="1.1 硬件变革：显卡运算性能的爆炸性增长"></a>1.1 硬件变革：显卡运算性能的爆炸性增长</h4><p>随着<strong>显卡（GPU）运算性能的快速提升</strong>，计算机图形学迎来了巨大发展。显卡的发展主要依赖于以下几个因素：</p>
+<ul>
+<li><strong>摩尔定律</strong>：由英特尔创始人之一 <strong>戈登·摩尔</strong> 提出，集成电路上可容纳的晶体管数目大约每两年翻一倍。这意味着计算机硬件的性能也会随之提升。然而，摩尔定律也面临瓶颈，晶体管数量的增加并不意味着频率的提升，未来摩尔定律能持续多久也存在不确定性。</li>
+<li><strong>CPU 与 GPU 性能的对比</strong>：GPU 的并行计算能力远超 CPU，在处理图形渲染、模型计算等任务时显著加速。</li>
+</ul>
+<h4 id="1-2-GPU-的通用计算：GPGPU"><a href="#1-2-GPU-的通用计算：GPGPU" class="headerlink" title="1.2 GPU 的通用计算：GPGPU"></a>1.2 GPU 的通用计算：GPGPU</h4><p><strong>GPGPU</strong>（General-Purpose computing on Graphics Processing Unit）是将 GPU 从只处理图形任务扩展到通用计算的方案。GPGPU 的优势在于：</p>
+<ul>
+<li><strong>高度并行化</strong>：GPU 拥有大量计算核心，能够同时处理大量数据。</li>
+<li><strong>图形绘制流程的简化</strong>：如通过 <strong>Vertex Shader</strong> 和 <strong>Fragment Shader</strong> 进行图形的渲染，这些步骤可以通过用户编写的 <strong>shading language</strong>（着色语言）进行自定义。</li>
+</ul>
+<p>常见的 GPGPU 应用包括：</p>
+<ul>
+<li><strong>计算机视觉</strong>：如 OpenCV 库的加速。</li>
+<li><strong>深度学习</strong>：如 TensorFlow 框架中，利用 GPU 处理大量并行的计算任务。</li>
+</ul>
+<h4 id="1-3-输入输出设备的丰富化"><a href="#1-3-输入输出设备的丰富化" class="headerlink" title="1.3 输入输出设备的丰富化"></a>1.3 输入输出设备的丰富化</h4><p>现代计算机图形学不仅依赖于 GPU 的提升，还受益于输入输出设备的丰富化：</p>
+<ul>
+<li><strong>输入设备</strong>：包括传统的鼠标、手写笔、多点触控等设备，甚至包括体感设备（如 Xbox Kinect、Leap Motion）等。</li>
+<li><strong>输出设备</strong>：从台式机和笔记本电脑的显示屏，到智能手机、智能手表及 3D 虚拟现实设备（如 Oculus Rift、Google Cardboard、Microsoft Hololens）等。</li>
+</ul>
+<h3 id="2-计算机图形学的发展史"><a href="#2-计算机图形学的发展史" class="headerlink" title="2. 计算机图形学的发展史"></a>2. 计算机图形学的发展史</h3><h4 id="2-1-早期发展（1950-1970年代）"><a href="#2-1-早期发展（1950-1970年代）" class="headerlink" title="2.1 早期发展（1950-1970年代）"></a>2.1 早期发展（1950-1970年代）</h4><ul>
+<li><strong>1950年代</strong>：MIT 开发了首个可视显示单元（VDU），CalComp 推出了滚筒绘图仪，Gerber 公司开发了平板绘图仪，奠定了早期计算机图形学的硬件基础。</li>
+<li><strong>1960年代</strong>：<ul>
+<li><strong>Spacewar</strong>：第一个计算机游戏，由 MIT 学生 Steve Russell 开发。</li>
+<li><strong>Sketchpad 系统</strong>：由 Ivan Sutherland 在其博士论文中提出，成为第一个交互式图形系统。</li>
+<li><strong>CAD（计算机辅助设计）</strong>：由 MIT 教授 Steven Anson Coons 提出，CAD 系统在60年代末得到了广泛应用，尤其是 Bezier 曲线的发明对现代 CAD 产生了深远影响。</li>
+</ul>
+</li>
+<li><strong>1970年代</strong>：光栅化图形算法快速发展，标准化进程加速，出现了诸如 GKS、PHIGS 等图形标准。此外，Bouknight 提出了最早的光反射模型，Phong 着色模型的提出奠定了现代图形渲染的基础。</li>
+</ul>
+<h4 id="2-2-计算机图形学的里程碑（1980年代至今）"><a href="#2-2-计算机图形学的里程碑（1980年代至今）" class="headerlink" title="2.2 计算机图形学的里程碑（1980年代至今）"></a>2.2 计算机图形学的里程碑（1980年代至今）</h4><ul>
+<li><p><strong>1980年代</strong>：</p>
+<ul>
+<li><strong>光线追踪</strong>（Ray Tracing）和 <strong>辐射度</strong>（Radiosity）算法的提出使得图形渲染质量大幅提升，尤其是光线追踪技术可以模拟现实世界中的光影效果。</li>
+<li>专业图形工作站的出现推动了图形学的发展，但随着硬件的普及，越来越多的图形处理工作由 GPU 和通用硬件完成。</li>
+</ul>
+</li>
+<li><p><strong>1990年代</strong>：</p>
+<ul>
+<li><strong>建模技术</strong>：如网格、细分曲面、隐式曲面（Implicit Surface）等建模技术逐渐成熟。</li>
+<li><strong>渲染技术</strong>：基于图像的渲染、体渲染、点基渲染等新技术出现，进一步丰富了图形学的表现形式。</li>
+</ul>
+</li>
+<li><p><strong>2000年后</strong>：</p>
+<ul>
+<li><strong>3D 扫描技术</strong>：通过扫描真实物体生成三维模型的技术迅速发展。</li>
+<li><strong>GPU 并行编程</strong>：随着 GPU 的性能提升，计算机图形学任务越来越依赖于并行计算。</li>
+<li><strong>深度学习</strong>：神经网络的兴起推动了图形学领域的智能化发展，如神经渲染技术的应用。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-3-新兴趋势"><a href="#2-3-新兴趋势" class="headerlink" title="2.3 新兴趋势"></a>2.3 新兴趋势</h4><ul>
+<li><strong>体感设备</strong>：如微软的 Kinect，支持通过手势和身体动作进行交互。</li>
+<li><strong>3D 打印</strong>：3D 打印技术的普及使得虚拟设计与实际制造之间的距离越来越短。</li>
+<li><strong>虚拟现实</strong>（VR）：如 Cyberith Virtualizer，提供更加沉浸式的虚拟现实体验。</li>
+<li><strong>神经辐射场（NeRF）</strong>：利用神经网络对三维场景进行建模和渲染，成为图形学领域的前沿技术。</li>
+</ul>
+<h3 id="3-计算机图形学的应用"><a href="#3-计算机图形学的应用" class="headerlink" title="3. 计算机图形学的应用"></a>3. 计算机图形学的应用</h3><p>计算机图形学的应用领域非常广泛，涉及多个行业和技术领域：</p>
+<h4 id="3-1-电影与动画"><a href="#3-1-电影与动画" class="headerlink" title="3.1 电影与动画"></a>3.1 电影与动画</h4><ul>
+<li><strong>电影特效</strong>：计算机图形学在电影中的应用包括复杂的动画生成和物理仿真，尤其是动画电影和科幻电影中。</li>
+<li><strong>动作捕捉</strong>：通过捕捉真人的动作并映射到虚拟角色，广泛用于电影和游戏中的角色动画。</li>
+</ul>
+<h4 id="3-2-游戏"><a href="#3-2-游戏" class="headerlink" title="3.2 游戏"></a>3.2 游戏</h4><ul>
+<li><strong>实时渲染</strong>：游戏中广泛应用实时渲染技术，结合光影效果、物理引擎等，提升游戏的视觉体验。</li>
+</ul>
+<h4 id="3-3-图像与设计"><a href="#3-3-图像与设计" class="headerlink" title="3.3 图像与设计"></a>3.3 图像与设计</h4><ul>
+<li><strong>广告与艺术</strong>：计算机图形学已成为广告设计和艺术创作的重要工具，通过数字手段创造出逼真的视觉效果。</li>
+<li><strong>UI 设计</strong>：随着用户界面设计的复杂化，计算机图形学帮助设计出更加人性化和美观的用户界面。</li>
+</ul>
+<h4 id="3-4-训练与模拟"><a href="#3-4-训练与模拟" class="headerlink" title="3.4 训练与模拟"></a>3.4 训练与模拟</h4><ul>
+<li><strong>仿真系统</strong>：如飞行模拟器、驾驶训练系统，利用计算机图形学技术提供高度逼真的训练环境。</li>
+</ul>
+<h4 id="3-5-地理科学与医学影像"><a href="#3-5-地理科学与医学影像" class="headerlink" title="3.5 地理科学与医学影像"></a>3.5 地理科学与医学影像</h4><ul>
+<li><strong>地理信息系统（GIS）和数字城市</strong>：计算机图形学在地理科学中的应用包括几何对齐算法、数字地球和数字城市的构建。</li>
+<li><strong>医学影像</strong>：通过三维重建技术，医学图像可以在计算机上进行可视化分析，帮助医生更准确地诊断和治疗。</li>
+</ul>
+<h4 id="3-6-计算机辅助设计（CAD）"><a href="#3-6-计算机辅助设计（CAD）" class="headerlink" title="3.6 计算机辅助设计（CAD）"></a>3.6 计算机辅助设计（CAD）</h4><ul>
+<li>CAD 已广泛应用于多个行业，尤其是在工业设计和建筑设计中，计算机图形学帮助设计师创建精确的三维模型。</li>
+</ul>
+<h3 id="4-如何学习计算机图形学"><a href="#4-如何学习计算机图形学" class="headerlink" title="4. 如何学习计算机图形学"></a>4. 如何学习计算机图形学</h3><h4 id="4-1-学习动机"><a href="#4-1-学习动机" class="headerlink" title="4.1 学习动机"></a>4.1 学习动机</h4><ul>
+<li><strong>广泛应用</strong>：计算机图形学在电影、游戏、教育、科学等多个领域有着广泛的应用，且市场需求巨大。</li>
+<li><strong>兴趣驱动</strong>：学习计算机图形学可以发挥个人的创造力，通过编程和技术手段绘制出绚丽的图像。</li>
+</ul>
+<h4 id="4-2-学习计算机图形学的必备条件"><a href="#4-2-学习计算机图形学的必备条件" class="headerlink" title="4.2 学习计算机图形学的必备条件"></a>4.2 学习计算机图形学的必备条件</h4><ul>
+<li><strong>跨学科知识</strong>：需要掌握数学（几何、线性代数）、物理学、计算机科学以及艺术设计等多学科的知识。</li>
+<li><strong>好奇心与创造力</strong>：对未知的探索欲望和对技术的追求是学习计算机图形学的重要动力。</li>
+<li><strong>实践能力</strong>：通过编程实践（如 C++、OpenGL）掌握图形学的基本算法和技术。</li>
+</ul>
+<h4 id="4-3-课程目标"><a href="#4-3-课程目标" class="headerlink" title="4.3 课程目标"></a>4.3 课程目标</h4><p>通过本教程，你将会学习到：</p>
+<ul>
+<li><strong>基础计算机图形学算法</strong>：如几何处理、真实感渲染的算法与数据结构。</li>
+<li><strong>OpenGL 编程</strong>：掌握图形编程的基本技术，了解如何实现从建模到渲染的完整过程。</li>
+</ul>
+<h3 id="5-计算机图形学的前沿与资源"><a href="#5-计算机图形学的前沿与资源" class="headerlink" title="5. 计算机图形学的前沿与资源"></a>5. 计算机图形学的前沿与资源</h3><h4 id="5-1-国际会议"><a href="#5-1-国际会议" class="headerlink" title="5.1 国际会议"></a>5.1 国际会议</h4><ul>
+<li><strong>ACM SIGGRAPH</strong>：计算机图形学领域最重要的国际会议之一，致力于展示最新的图形学技术和研究成果。</li>
+<li><strong>Eurographics</strong>、<strong>Pacific Graphics</strong>、<strong>Chinagraph</strong>：其他重要的国际会议，涵盖了几何处理、渲染、动画等多个方向。</li>
+</ul>
+<h4 id="5-2-相关期刊"><a href="#5-2-相关期刊" class="headerlink" title="5.2 相关期刊"></a>5.2 相关期刊</h4><ul>
+<li><strong>ACM Transactions on Graphics</strong></li>
+<li><strong>IEEE Transactions on Graphics and Visualization</strong></li>
+<li><strong>Computer Graphics Forum</strong></li>
+<li><strong>Computer-aided Design</strong></li>
+<li><strong>中国图象图形学报</strong></li>
+</ul>
+<p>这些期刊汇集了图形学领域的最新研究成果，是学习和了解前沿技术的重要资源。</p>
+<h4 id="5-3-在线资源"><a href="#5-3-在线资源" class="headerlink" title="5.3 在线资源"></a>5.3 在线资源</h4><ul>
+<li><strong>NVIDIA GameWorks™</strong>：提供丰富的图形学开发示例和工具。</li>
+<li><strong>CGAL</strong>：计算几何算法库。</li>
+<li><strong>OpenMesh</strong>：用于三维网格处理的开源库。</li>
+<li><strong>Blender</strong>：开源的三维建模与渲染工具。</li>
+<li><strong>Unity 3D</strong>：广泛用于游戏开发的引擎，具备强大的图形渲染能力。</li>
+</ul>
+<p>以上资源为学习和实践计算机图形学技术提供了强有力的支持。</p>
+<hr>
+<p>通过第二讲的学习，我们了解了计算机图形学的发展历程、技术变革和广泛应用，同时也为后续的课程学习奠定了理论和技术基础。</p>
+<h2 id="计算机图形学-第三讲"><a href="#计算机图形学-第三讲" class="headerlink" title="计算机图形学 第三讲"></a>计算机图形学 第三讲</h2><h3 id="1-OpenGL-编程入门"><a href="#1-OpenGL-编程入门" class="headerlink" title="1. OpenGL 编程入门"></a>1. OpenGL 编程入门</h3><h4 id="1-1-OpenGL-是什么？"><a href="#1-1-OpenGL-是什么？" class="headerlink" title="1.1 OpenGL 是什么？"></a>1.1 OpenGL 是什么？</h4><p><strong>OpenGL</strong>，即 <strong>Open Graphics Library</strong>，是用于渲染 <strong>2D</strong> 和 <strong>3D</strong> 矢量图形的跨平台、跨语言的应用程序接口（API）。它的主要特性包括：</p>
+<ul>
+<li><strong>跨平台</strong>：可以在不同平台上使用，如 Windows、Linux、macOS 等。</li>
+<li><strong>跨语言</strong>：支持多种编程语言，如 C、C++、Python 等。</li>
+<li><strong>硬件依赖</strong>：虽然 OpenGL 是跨平台的，但其具体实现依赖于硬件厂商，通常由显示设备制造商提供。</li>
+<li><strong>渲染功能</strong>：OpenGL 主要用于图形渲染，不提供音频或窗口管理等功能，需要配合其他工具库（如 <strong>GLUT</strong>）使用。</li>
+</ul>
+<h5 id="OpenGL-的发展过程"><a href="#OpenGL-的发展过程" class="headerlink" title="OpenGL 的发展过程"></a>OpenGL 的发展过程</h5><ul>
+<li>1992年，由 <strong>Silicon Graphics Inc. (SGI)</strong> 领导成立 <strong>OpenGL 架构审查委员会</strong>（ARB），负责 OpenGL 规范的维护和扩展。</li>
+<li>2006年，OpenGL ARB 将控制权移交给 <strong>Khronos Group</strong>。</li>
+<li>OpenGL 的最新版本为 <strong>OpenGL 4.6</strong>，发布于2017年。</li>
+</ul>
+<h5 id="OpenGL-相关的其他选择"><a href="#OpenGL-相关的其他选择" class="headerlink" title="OpenGL 相关的其他选择"></a>OpenGL 相关的其他选择</h5><p>除了 OpenGL 之外，还存在其他图形渲染解决方案，如：</p>
+<ul>
+<li><strong>DirectX</strong>：主要用于 Windows 平台。</li>
+<li><strong>NVIDIA CUDA</strong>：尽管不是图形库，但提供了使用 GPU 进行高性能计算的开发环境。</li>
+<li><strong>Vulkan</strong>：由 Khronos Group 开发，继承了 OpenGL，但不再兼容旧版本。</li>
+</ul>
+<h4 id="1-2-OpenGL-能做什么？"><a href="#1-2-OpenGL-能做什么？" class="headerlink" title="1.2 OpenGL 能做什么？"></a>1.2 OpenGL 能做什么？</h4><p>OpenGL 的核心功能是图形渲染，具体来说，它可以：</p>
+<ul>
+<li><strong>定义物体形状</strong>：如顶点、几何形状等。</li>
+<li><strong>定义材料属性和光照</strong>：控制物体的颜色、光照反射等。</li>
+<li><strong>转换物体到屏幕坐标系</strong>：通过光栅化（Rasterization）将几何体转换为屏幕空间中的像素。</li>
+<li><strong>计算每个片段（Fragment）的颜色</strong>：混合每个片段的颜色，最终生成屏幕上的像素。</li>
+</ul>
+<h4 id="1-3-OpenGL-Utility-Toolkit（GLUT）"><a href="#1-3-OpenGL-Utility-Toolkit（GLUT）" class="headerlink" title="1.3 OpenGL Utility Toolkit（GLUT）"></a>1.3 OpenGL Utility Toolkit（GLUT）</h4><p><strong>GLUT</strong> 是一个实用工具包，虽然不是 OpenGL 的官方组成部分，但它提供了系统级别的输入输出功能。GLUT 提供以下功能：</p>
+<ul>
+<li><strong>窗口管理</strong>：定义窗口，控制窗口大小，捕获键盘和鼠标事件。</li>
+<li><strong>基本几何体绘制函数</strong>：如正方体、球体、Utah 茶壶等，支持实心和线框模式。</li>
+<li><strong>菜单功能</strong>：可以为应用程序添加简单的菜单结构。</li>
+</ul>
+<h5 id="GLUT-安装"><a href="#GLUT-安装" class="headerlink" title="GLUT 安装"></a>GLUT 安装</h5><p>对于 Windows 平台，可以按照以下步骤安装 GLUT：</p>
+<ol>
+<li>下载 GLUT 库（推荐使用 FreeGLUT）。</li>
+<li>将 <code>glut.dll</code> 文件复制到 <code>&#123;Windows DLL dir&#125;/glut32.dll</code>。</li>
+<li>将 <code>glut.lib</code> 文件复制到 <code>&#123;VC++ lib path&#125;/glut32.lib</code>。</li>
+<li>将 <code>glut.h</code> 文件复制到 <code>&#123;VC++ include path&#125;/GL/glut.h</code>。</li>
+<li>在代码中添加 <code>#include &lt;GL/glut&gt;</code>。</li>
+</ol>
+<p>在实际开发中，推荐使用更现代的工具，如 <strong>Qt</strong>，并提供了相应的程序模板。</p>
+<h3 id="2-OpenGL-是如何工作的？"><a href="#2-OpenGL-是如何工作的？" class="headerlink" title="2. OpenGL 是如何工作的？"></a>2. OpenGL 是如何工作的？</h3><h4 id="2-1-OpenGL-的状态机模型"><a href="#2-1-OpenGL-的状态机模型" class="headerlink" title="2.1 OpenGL 的状态机模型"></a>2.1 OpenGL 的状态机模型</h4><p>OpenGL 是一个 <strong>状态机</strong>，其工作原理是通过函数调用设置内部状态变量（如当前颜色、光源位置等）。每个状态变量都有初始值，且一旦设置状态，直到显式改变之前，状态保持不变。</p>
+<h4 id="2-2-OpenGL-渲染管线（Pipeline）"><a href="#2-2-OpenGL-渲染管线（Pipeline）" class="headerlink" title="2.2 OpenGL 渲染管线（Pipeline）"></a>2.2 OpenGL 渲染管线（Pipeline）</h4><p>OpenGL 的渲染过程可以用以下<strong>简易管线</strong>（pipeline）表示：</p>
+<ol>
+<li><strong>Display List</strong>：存储预编译的 OpenGL 命令列表，不能修改，执行速度快。</li>
+<li><strong>Evaluator</strong>：处理曲线和曲面的计算，将控制点描述的曲线&#x2F;曲面离散化为顶点。</li>
+<li><strong>Per-Vertex Operations</strong>：基于顶点进行的操作，如空间变换。</li>
+<li><strong>Primitive Assembly</strong>：将顶点组装成图元（如点、线、三角形等）。</li>
+<li><strong>Rasterization</strong>：将图元转换为片段（fragment），每个片段对应屏幕上的一个像素。</li>
+<li><strong>Per-Fragment Operations</strong>：对每个片段进行颜色和深度计算，最终确定屏幕上每个像素的颜色。</li>
+<li><strong>Frame Buffer</strong>：保存渲染结果，并传输到屏幕进行显示。</li>
+</ol>
+<h4 id="2-3-OpenGL-中的函数分类"><a href="#2-3-OpenGL-中的函数分类" class="headerlink" title="2.3 OpenGL 中的函数分类"></a>2.3 OpenGL 中的函数分类</h4><p>OpenGL 的函数可以分为以下几类：</p>
+<ul>
+<li><strong>图元</strong>：定义基本的几何体，如点、线、三角形。</li>
+<li><strong>属性</strong>：设置图元的属性，如颜色、材质等。</li>
+<li><strong>变换</strong>：控制图元的空间变换，如平移、旋转、缩放。</li>
+<li><strong>输入与控制</strong>：由 GLUT 等工具库提供，用于处理窗口、鼠标、键盘等输入事件。</li>
+<li><strong>查询</strong>：查询 OpenGL 的状态或属性。</li>
+</ul>
+<h3 id="3-OpenGL-程序结构简介"><a href="#3-OpenGL-程序结构简介" class="headerlink" title="3. OpenGL 程序结构简介"></a>3. OpenGL 程序结构简介</h3><h4 id="3-1-OpenGL-程序的基本文件需求"><a href="#3-1-OpenGL-程序的基本文件需求" class="headerlink" title="3.1 OpenGL 程序的基本文件需求"></a>3.1 OpenGL 程序的基本文件需求</h4><p>为了编写一个 OpenGL 程序，通常需要以下文件：</p>
+<ul>
+<li><strong>头文件</strong>：<ul>
+<li><code>#include &lt;GL/gl.h&gt;</code>：OpenGL 核心头文件。</li>
+<li><code>#include &lt;GL/glu.h&gt;</code>：OpenGL 实用库头文件。</li>
+<li><code>#include &lt;GL/glut.h&gt;</code>：GLUT 头文件。</li>
+</ul>
+</li>
+<li><strong>库文件</strong>：<ul>
+<li>静态库：<code>opengl32.lib</code>、<code>glu32.lib</code>、<code>glut32.lib</code>，需要将这些库放置在编译器的 lib 目录下。</li>
+<li>动态库：<code>opengl32.dll</code>、<code>glu32.dll</code>、<code>glut32.dll</code>，需要将这些动态库放置在系统目录中（如 <code>c:/Windows/System32</code>）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-OpenGL-程序的基本结构"><a href="#3-2-OpenGL-程序的基本结构" class="headerlink" title="3.2 OpenGL 程序的基本结构"></a>3.2 OpenGL 程序的基本结构</h4><p>OpenGL 程序通常是<strong>事件驱动编程</strong>，其基本结构如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. Configure &amp; Open Window</span><br><span class="line">2. Initializing Works</span><br><span class="line">3. Handle User Event</span><br><span class="line">4. Render</span><br></pre></td></tr></table></figure>
+
+<p>每个 OpenGL 程序通常包含一个无限循环，等待用户输入事件（如鼠标点击、键盘按下）并执行相应的渲染操作。</p>
+<h4 id="3-3-OpenGL-Hello-World-示例"><a href="#3-3-OpenGL-Hello-World-示例" class="headerlink" title="3.3 OpenGL Hello World 示例"></a>3.3 OpenGL Hello World 示例</h4><p>下面是一个简单的 OpenGL “Hello World” 示例，展示了如何绘制一个基本窗口并渲染内容：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;GL/glut.h&gt;</span> <span class="comment">// 包含 GLUT 头文件</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">display</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 清空窗口</span></span><br><span class="line">    <span class="built_in">glClear</span>(GL_COLOR_BUFFER_BIT);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 绘制一个白色四边形</span></span><br><span class="line">    <span class="built_in">glBegin</span>(GL_POLYGON);</span><br><span class="line">        <span class="built_in">glColor3f</span>(<span class="number">1.0</span>, <span class="number">1.0</span>, <span class="number">1.0</span>); <span class="comment">// 设置颜色为白色</span></span><br><span class="line">        <span class="built_in">glVertex2f</span>(<span class="number">-0.5</span>, <span class="number">-0.5</span>); <span class="comment">// 顶点1</span></span><br><span class="line">        <span class="built_in">glVertex2f</span>( <span class="number">0.5</span>, <span class="number">-0.5</span>); <span class="comment">// 顶点2</span></span><br><span class="line">        <span class="built_in">glVertex2f</span>( <span class="number">0.5</span>,  <span class="number">0.5</span>); <span class="comment">// 顶点3</span></span><br><span class="line">        <span class="built_in">glVertex2f</span>(<span class="number">-0.5</span>,  <span class="number">0.5</span>); <span class="comment">// 顶点4</span></span><br><span class="line">    <span class="built_in">glEnd</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 刷新显示</span></span><br><span class="line">    <span class="built_in">glFlush</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 初始化 GLUT</span></span><br><span class="line">    <span class="built_in">glutInit</span>(&amp;argc, argv);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 设置显示模式</span></span><br><span class="line">    <span class="built_in">glutInitDisplayMode</span>(GLUT_SINGLE | GLUT_RGB);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 设置窗口大小</span></span><br><span class="line">    <span class="built_in">glutInitWindowSize</span>(<span class="number">400</span>, <span class="number">300</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 设置窗口位置</span></span><br><span class="line">    <span class="built_in">glutInitWindowPosition</span>(<span class="number">100</span>, <span class="number">100</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 创建窗口</span></span><br><span class="line">    <span class="built_in">glutCreateWindow</span>(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 注册显示回调函数</span></span><br><span class="line">    <span class="built_in">glutDisplayFunc</span>(display);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 进入 GLUT 主循环</span></span><br><span class="line">    <span class="built_in">glutMainLoop</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>代码讲解：</strong><br><code>glutInit()</code>：初始化 GLUT 库。<br><code>glutInitDisplayMode()</code>：设置显示模式，<code>GLUT_SINGLE</code> 表示单缓冲，<code>GLUT_RGB</code> 表示使用 RGB 颜色模式。<br><code>glutInitWindowSize()</code>：设置窗口大小（400x300）。<br><code>glutInitWindowPosition()</code>：设置窗口在屏幕上的初始位置。<br><code>glutCreateWindow()</code>：创建一个名为 “Hello World” 的窗口。<br><code>glutDisplayFunc()</code>：注册一个显示回调函数，当窗口需要重绘时调用。<br><code>glutMainLoop()</code>：进入 GLUT 主循环，等待事件。</p>
+<h4 id="3-4-OpenGL-回调函数"><a href="#3-4-OpenGL-回调函数" class="headerlink" title="3.4 OpenGL 回调函数"></a>3.4 OpenGL 回调函数</h4><p>OpenGL 使用回调函数处理用户交互事件，如鼠标点击、键盘输入等。回调函数允许我们在事件发生时调用自定义的处理函数。</p>
+<p><strong>回调函数工作原理：</strong></p>
+<ul>
+<li>主线程等待事件（如鼠标点击、键盘按下）。</li>
+<li>当事件发生时，系统调用注册的回调函数，并将特定事件的信息传递给它。</li>
+</ul>
+<h4 id="3-5-GLUT-回调函数示例"><a href="#3-5-GLUT-回调函数示例" class="headerlink" title="3.5 GLUT 回调函数示例"></a>3.5 GLUT 回调函数示例</h4><p>以下是 GLUT 回调函数的示例代码，展示如何处理键盘和鼠标事件：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 键盘回调函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">keyboardCB</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> key, <span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (key == <span class="string">&#x27;a&#x27;</span>) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;a 键被按下&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 鼠标回调函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">mousebutton</span><span class="params">(<span class="type">int</span> button, <span class="type">int</span> state, <span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (button == GLUT_LEFT_BUTTON &amp;&amp; state == GLUT_DOWN) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;左键点击，坐标: (&quot;</span> &lt;&lt; x &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; y &lt;&lt; <span class="string">&quot;)&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">glutInit</span>(&amp;argc, argv);</span><br><span class="line">    <span class="built_in">glutInitDisplayMode</span>(GLUT_DOUBLE | GLUT_RGB);</span><br><span class="line">    <span class="built_in">glutInitWindowSize</span>(<span class="number">250</span>, <span class="number">250</span>);</span><br><span class="line">    <span class="built_in">glutCreateWindow</span>(<span class="string">&quot;GLUT 回调示例&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 注册回调函数</span></span><br><span class="line">    <span class="built_in">glutKeyboardFunc</span>(keyboardCB); <span class="comment">// 键盘事件</span></span><br><span class="line">    <span class="built_in">glutMouseFunc</span>(mousebutton);   <span class="comment">// 鼠标事件</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">glutMainLoop</span>(); <span class="comment">// 进入主循环</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>代码讲解</strong>：<br><code>keyboardCB()</code>：处理键盘事件，当按下 ‘a’ 键时输出相应信息。<br><code>mousebutton()</code>：处理鼠标事件，当鼠标左键按下时输出点击的坐标。<br><code>glutKeyboardFunc()</code> 和 <code>glutMouseFunc()</code>：注册键盘和鼠标回调函数。</p>
+<h3 id="4-OpenGL-基本概念与语句"><a href="#4-OpenGL-基本概念与语句" class="headerlink" title="4. OpenGL 基本概念与语句"></a>4. OpenGL 基本概念与语句</h3><h4 id="4-1-OpenGL-上下文（Context）与视口（Viewport）"><a href="#4-1-OpenGL-上下文（Context）与视口（Viewport）" class="headerlink" title="4.1 OpenGL 上下文（Context）与视口（Viewport）"></a>4.1 OpenGL 上下文（Context）与视口（Viewport）</h4><p>上下文：OpenGL 的 context 存储与当前 OpenGL 实例相关的所有状态信息（如颜色、光照、纹理等）。<br>视口：屏幕中显示 OpenGL 绘制内容的矩形区域，通常定义为窗口的一部分或整个窗口。</p>
+<h4 id="4-2-OpenGL-坐标系统"><a href="#4-2-OpenGL-坐标系统" class="headerlink" title="4.2 OpenGL 坐标系统"></a>4.2 OpenGL 坐标系统</h4><p>OpenGL 使用世界坐标系和窗口坐标系：</p>
+<p>世界坐标系原点在左下角，y 轴向上，通常不以像素为单位。<br>窗口坐标系原点在左上角，y 轴向下，使用像素作为单位。</p>
+<h4 id="4-3-OpenGL-常用函数"><a href="#4-3-OpenGL-常用函数" class="headerlink" title="4.3 OpenGL 常用函数"></a>4.3 OpenGL 常用函数</h4><p>OpenGL 提供了许多函数用于处理几何体、颜色、状态设置等。常见函数包括：</p>
+<p><code>glVertex*()</code>：输入几何体的顶点。<br><code>glColor*()</code>：设置颜色。<br><code>glBegin()</code> 和 <code>glEnd()</code>：定义图元类型（如点、线、多边形等）。<br>通过本讲的学习，我们了解了 OpenGL 的基本概念、渲染管线以及如何编写简单的 OpenGL 程序。接下来的课程将深入探讨 OpenGL 的矩阵操作、变换、投影等更高级的图形编程技术。</p>
+<h2 id="计算机图形学-第四讲"><a href="#计算机图形学-第四讲" class="headerlink" title="计算机图形学 第四讲"></a>计算机图形学 第四讲</h2><h3 id="1-计算机图形系统"><a href="#1-计算机图形系统" class="headerlink" title="1. 计算机图形系统"></a>1. 计算机图形系统</h3><h4 id="1-1-图像的来源与生成"><a href="#1-1-图像的来源与生成" class="headerlink" title="1.1 图像的来源与生成"></a>1.1 图像的来源与生成</h4><ul>
+<li><strong>图像从何而来？</strong><ul>
+<li>图像需要通过软件和硬件的共同协作生成。</li>
+</ul>
+</li>
+<li><strong>软件：</strong> 例如Maya、RenderMan等建模和渲染软件。</li>
+<li><strong>硬件：</strong> 显卡（PC或大规模渲染集群上的显卡）。</li>
+</ul>
+<h4 id="1-2-输入设备"><a href="#1-2-输入设备" class="headerlink" title="1.2 输入设备"></a>1.2 输入设备</h4><ul>
+<li><p><strong>消费电子产品：</strong></p>
+<ul>
+<li>摄影摄像设备变得越来越普及，智能手机摄像头的像素快速提升。</li>
+<li>例如：诺基亚N90（2005年，200万像素）与iPhone 6s Plus（2015年，前置500万像素，后置1200万像素）。</li>
+<li>提出了一个问题：<strong>5美刀的手机摄像头能否拍出5000美刀的单反的效果？</strong></li>
+</ul>
+</li>
+<li><p><strong>几何体形状：</strong></p>
+<ul>
+<li>使用深度摄像头（如Kinect）或三维扫描仪进行形状建模。</li>
+<li>例如，4步构建简易三维扫描系统：<a target="_blank" rel="noopener" href="https://www.instructables.com/id/3-D-Laser-Scanner/">https://www.instructables.com/id/3-D-Laser-Scanner/</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="1-3-输出设备"><a href="#1-3-输出设备" class="headerlink" title="1.3 输出设备"></a>1.3 输出设备</h4><ul>
+<li><p><strong>阴极射线管（CRT）：</strong></p>
+<ul>
+<li>通过电子枪发射电子束，经过聚焦和偏转系统，形成图像。</li>
+<li>包括向量显示器（如1979年的Asteroids游戏）和光栅显示器。</li>
+</ul>
+</li>
+<li><p><strong>平板显示器：</strong></p>
+<ul>
+<li>液晶显示器（LCD）、等离子显示器（Plasma）、发光二极管（LED）等。</li>
+<li>优点包括低能耗、低辐射、无闪烁和无几何失真。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-4-图像的基本概念"><a href="#1-4-图像的基本概念" class="headerlink" title="1.4 图像的基本概念"></a>1.4 图像的基本概念</h4><ul>
+<li><p><strong>采样：</strong></p>
+<ul>
+<li>图像是二维域中的有规律采样，每个采样点代表颜色（如RGB）。</li>
+</ul>
+</li>
+<li><p><strong>RGB和Alpha通道：</strong></p>
+<ul>
+<li>图像通常由三个通道（R、G、B）组成。</li>
+<li>Alpha通道用于表示透明度，取值范围为[0, 1]。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-图像建模"><a href="#2-图像建模" class="headerlink" title="2. 图像建模"></a>2. 图像建模</h3><h4 id="2-1-像素与图像"><a href="#2-1-像素与图像" class="headerlink" title="2.1 像素与图像"></a>2.1 像素与图像</h4><ul>
+<li><p><strong>像素：</strong> 是采样点加上值（而非方块）。</p>
+<ul>
+<li>在不同显示设备上，像素的形状可能会有所不同，例如在CRT显示器上接近圆形，而在LCD屏幕上接近长方形。</li>
+</ul>
+</li>
+<li><p><strong>离散图像与连续图像：</strong></p>
+<ul>
+<li>离散图像：常见的图像存储形式，定义域为离散。</li>
+<li>连续图像：真实世界中的表现形式，定义域为连续。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-2-矢量图与光栅图"><a href="#2-2-矢量图与光栅图" class="headerlink" title="2.2 矢量图与光栅图"></a>2.2 矢量图与光栅图</h4><ul>
+<li><p><strong>矢量图：</strong></p>
+<ul>
+<li>由绘制命令驱动，如<code>move(x, y)</code>，可缩放矢量图形。</li>
+</ul>
+</li>
+<li><p><strong>光栅图：</strong></p>
+<ul>
+<li>基于像素，由于离散采样可能产生锯齿效果。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-3-图像理解"><a href="#2-3-图像理解" class="headerlink" title="2.3 图像理解"></a>2.3 图像理解</h4><ul>
+<li><strong>图像是数据点的集合：</strong><ul>
+<li>可视为RGB空间中的点集合，计算灰度图像是降维问题。</li>
+</ul>
+</li>
+<li><strong>图像是矩阵：</strong><ul>
+<li>可以使用矩阵分解、低秩矩阵等方法进行处理。</li>
+</ul>
+</li>
+<li><strong>图像是函数：</strong><ul>
+<li>可使用网格对其近似，比如四边形域函数、三角形域函数。</li>
+</ul>
+</li>
+<li><strong>图像是图：</strong><ul>
+<li>使用图算法（如最大流最小割）进行分割。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-基于采样的图形-vs-基于几何的图形"><a href="#3-基于采样的图形-vs-基于几何的图形" class="headerlink" title="3. 基于采样的图形 vs 基于几何的图形"></a>3. 基于采样的图形 vs 基于几何的图形</h3><h4 id="3-1-基于采样的图形"><a href="#3-1-基于采样的图形" class="headerlink" title="3.1 基于采样的图形"></a>3.1 基于采样的图形</h4><ul>
+<li><strong>优点：</strong><ul>
+<li>易于操作，图像定义在规则网格上，可以修改每个格点的颜色或位置。</li>
+</ul>
+</li>
+<li><strong>缺点：</strong><ul>
+<li>缺乏额外信息（如深度、空间位置），无法更换观察视角，只能对像素进行操作。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-基于几何的图形"><a href="#3-2-基于几何的图形" class="headerlink" title="3.2 基于几何的图形"></a>3.2 基于几何的图形</h4><ul>
+<li><p><strong>几何对象：</strong></p>
+<ul>
+<li>创建几何对象及其附属外观属性，通过计算机图形学或可视化方法渲染。</li>
+<li>2D工具：Adobe Illustrator、CorelDRAW。</li>
+<li>3D工具：Autodesk AutoCAD、POV-Ray。</li>
+</ul>
+</li>
+<li><p><strong>几何图元：</strong></p>
+<ul>
+<li>简单几何体（球体、椎体、圆柱体等）和复杂图元（Spline、NURBS、隐函数、显函数、参数函数）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-3-融合方法"><a href="#3-3-融合方法" class="headerlink" title="3.3 融合方法"></a>3.3 融合方法</h4><ul>
+<li><strong>基于采样与基于几何的融合：</strong><ul>
+<li>用于提高渲染速度和图像质量，例如在图像上绘制几何体，或在3D场景中使用纹理贴图。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-物理成像系统"><a href="#4-物理成像系统" class="headerlink" title="4. 物理成像系统"></a>4. 物理成像系统</h3><h4 id="4-1-成像原理"><a href="#4-1-成像原理" class="headerlink" title="4.1 成像原理"></a>4.1 成像原理</h4><ul>
+<li><p><strong>基本元素：</strong></p>
+<ul>
+<li>物体、观察者、光源及其属性（如光源与物体材质的属性）。</li>
+</ul>
+</li>
+<li><p><strong>模拟相机模型：</strong></p>
+<ul>
+<li>物体、观察者、光源相互独立，2D图形可视为3D图形的特例。</li>
+<li>OpenGL、Direct3D等API基于此模型。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-2-光源类型"><a href="#4-2-光源类型" class="headerlink" title="4.2 光源类型"></a>4.2 光源类型</h4><ul>
+<li><p><strong>点光源：</strong></p>
+<ul>
+<li>如灯泡，光线从一点向四面八方发射。</li>
+</ul>
+</li>
+<li><p><strong>方向光源：</strong></p>
+<ul>
+<li>如太阳，假设所有光束平行。</li>
+</ul>
+</li>
+<li><p><strong>区域光源：</strong></p>
+<ul>
+<li>如吸顶灯，表面上的每个点沿所有方向发光。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-图形渲染管线"><a href="#5-图形渲染管线" class="headerlink" title="5. 图形渲染管线"></a>5. 图形渲染管线</h3><h4 id="5-1-渲染定义"><a href="#5-1-渲染定义" class="headerlink" title="5.1 渲染定义"></a>5.1 渲染定义</h4><ul>
+<li><strong>渲染：</strong> 将一组对象转换为像素阵列的过程。<ul>
+<li>渲染管线：将3D场景转换为2D图像的一系列步骤。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-2-渲染管线步骤"><a href="#5-2-渲染管线步骤" class="headerlink" title="5.2 渲染管线步骤"></a>5.2 渲染管线步骤</h4><ul>
+<li><strong>Application（应用阶段）：</strong> CPU完成碰撞检测、物理模拟、全局加速算法、动画等任务。</li>
+<li><strong>Geometry（几何阶段）：</strong> GPU完成几何变换，确定需要绘制的内容及位置。</li>
+<li><strong>Rasterizer（光栅化阶段）：</strong> GPU将屏幕空间中的二维顶点转换为像素，考虑深度和着色属性。</li>
+</ul>
+<h4 id="5-3-渲染过程"><a href="#5-3-渲染过程" class="headerlink" title="5.3 渲染过程"></a>5.3 渲染过程</h4><ul>
+<li><p><strong>纹理映射：</strong></p>
+<ul>
+<li>将图像贴在几何体上，fragment的颜色由图像中相应位置的颜色决定。</li>
+</ul>
+</li>
+<li><p><strong>深度测试：</strong></p>
+<ul>
+<li>通过深度测试去除被遮挡的几何体部分。</li>
+</ul>
+</li>
+<li><p><strong>Blending（颜色混合）：</strong></p>
+<ul>
+<li>按顺序渲染fragment，并将其线性合成。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-4-Frame-buffer"><a href="#5-4-Frame-buffer" class="headerlink" title="5.4 Frame-buffer"></a>5.4 Frame-buffer</h4><ul>
+<li><strong>双缓存：</strong><ul>
+<li>使用两个独立缓存，避免闪烁。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-5-渲染与建模"><a href="#5-5-渲染与建模" class="headerlink" title="5.5 渲染与建模"></a>5.5 渲染与建模</h4><ul>
+<li><strong>建模：</strong><ul>
+<li>创建模型，设置材质，将模型置于场景中，设置光源和摄像机。</li>
+</ul>
+</li>
+<li><strong>渲染：</strong><ul>
+<li>使用虚拟相机“拍照”，对顶点进行处理，生成fragment，并决定最终像素颜色。</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-小结"><a href="#6-小结" class="headerlink" title="6. 小结"></a>6. 小结</h3><h4 id="6-1-渲染管线基本步骤"><a href="#6-1-渲染管线基本步骤" class="headerlink" title="6.1 渲染管线基本步骤"></a>6.1 渲染管线基本步骤</h4><ul>
+<li><strong>顶点处理：</strong> 对每个顶点进行独立变换。</li>
+<li><strong>光栅化：</strong> 将几何体转化为fragment。</li>
+<li><strong>Fragment处理：</strong> 计算每个fragment的属性（如颜色）。</li>
+<li><strong>合并：</strong> 将fragment合并为最终的像素。</li>
+</ul>
+<h2 id="计算机图形学-第五讲"><a href="#计算机图形学-第五讲" class="headerlink" title="计算机图形学 第五讲"></a>计算机图形学 第五讲</h2><h3 id="1-基本几何概念"><a href="#1-基本几何概念" class="headerlink" title="1. 基本几何概念"></a>1. 基本几何概念</h3><h4 id="1-1-几何定义与研究对象"><a href="#1-1-几何定义与研究对象" class="headerlink" title="1.1 几何定义与研究对象"></a>1.1 几何定义与研究对象</h4><ul>
+<li><p><strong>几何研究的是n维空间中物体的表达</strong>。在计算机图形学中，关注的是二维和三维空间中的几何形态。</p>
+<ul>
+<li><strong>目标</strong>：通过最小的几何形状集合来表达复杂的物体。</li>
+<li><strong>三种基本几何元素</strong>：<ol>
+<li><strong>点（Point）</strong>：代表空间中的位置。</li>
+<li><strong>标量（Scalar）</strong>：表示大小，但无方向。</li>
+<li><strong>向量（Vector）</strong>：既有大小，也有方向。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><strong>笛卡尔坐标系</strong>：点在空间中的位置用笛卡尔坐标表示，例如 (x, y, z)。通过代数运算可以操作这些点，但它并非物理空间的精确模拟。</p>
+</li>
+</ul>
+<h4 id="1-2-标量与向量"><a href="#1-2-标量与向量" class="headerlink" title="1.2 标量与向量"></a>1.2 标量与向量</h4><ul>
+<li><p><strong>标量（Scalar）</strong>：</p>
+<ul>
+<li>标量只有大小，没有方向。常见的标量运算如加法和乘法是闭合的，满足交换律、结合律，并具有逆运算。</li>
+<li>标量本身没有几何意义。</li>
+</ul>
+</li>
+<li><p><strong>向量（Vector）</strong>：</p>
+<ul>
+<li>向量同时具有大小和方向。可以表示力、速度等物理量。</li>
+<li>向量通常在几何中表示为带有箭头的线段，箭头方向表示向量的方向，线段的长度表示向量的大小。</li>
+<li>向量的运算可以通过加法、点积、叉积等方式进行。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-3-向量的运算"><a href="#1-3-向量的运算" class="headerlink" title="1.3 向量的运算"></a>1.3 向量的运算</h4><ul>
+<li><p><strong>向量加法</strong>：</p>
+<ul>
+<li><strong>规则</strong>：向量的加法可以通过平行四边形法则实现。</li>
+<li><strong>性质</strong>：向量加法满足交换律和结合律，每个向量都有逆元素。</li>
+</ul>
+</li>
+<li><p><strong>向量点积（内积）</strong>：</p>
+<ul>
+<li><strong>定义</strong>：点积是两个向量分量相乘之和。</li>
+<li><strong>用途</strong>：点积可以用于计算两个向量之间的夹角，也可以用于计算向量在另一个向量上的投影。</li>
+<li><strong>公式</strong>：<br>$$<br>\mathbf{a} \cdot \mathbf{b} &#x3D; |\mathbf{a}| |\mathbf{b}| \cos(\theta)<br>$$<br>其中，θ 是两个向量之间的夹角。</li>
+</ul>
+</li>
+<li><p><strong>向量叉积（外积）</strong>：</p>
+<ul>
+<li><strong>定义</strong>：叉积是仅在三维空间中定义的运算，其结果是一个垂直于原向量的向量。</li>
+<li><strong>方向</strong>：叉积的方向由右手定则给出。</li>
+<li><strong>公式</strong>：<br>$$<br>\mathbf{a} \times \mathbf{b} &#x3D; |\mathbf{a}| |\mathbf{b}| \sin(\theta) \mathbf{n}<br>$$<br>其中，θ 是两个向量之间的夹角，n 是垂直于 a 和 b 的单位向量。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-4-线性空间"><a href="#1-4-线性空间" class="headerlink" title="1.4 线性空间"></a>1.4 线性空间</h4><ul>
+<li><strong>定义</strong>：线性空间，也称为向量空间，是由向量和标量组成的一个空间。在线性空间中，向量的加法和标量乘法满足特定的规则。</li>
+<li><strong>矩阵的列向量空间</strong>：<ul>
+<li>矩阵的列向量可以形成一个线性空间，矩阵乘法可以被看作是对向量的线性变换。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-5-点与向量的区别"><a href="#1-5-点与向量的区别" class="headerlink" title="1.5 点与向量的区别"></a>1.5 点与向量的区别</h4><ul>
+<li><strong>向量无位置依赖</strong>：所有长度相等、方向一致的向量都是相等的，向量的存在与位置无关。</li>
+<li><strong>点表示位置</strong>：点表示空间中的一个具体位置，通常需要通过向量从原点进行偏移来表示点的位置。</li>
+</ul>
+<h4 id="1-6-仿射空间"><a href="#1-6-仿射空间" class="headerlink" title="1.6 仿射空间"></a>1.6 仿射空间</h4><ul>
+<li><strong>定义</strong>：仿射空间是一个包含标量、点和向量的空间，在该空间中可以进行向量和点的加法运算。</li>
+<li><strong>坐标系的使用</strong>：仿射空间中的变换可以通过线性变换实现，将向量从一个坐标系变换到另一个坐标系。</li>
+</ul>
+<h4 id="1-7-线性组合与参数化表示"><a href="#1-7-线性组合与参数化表示" class="headerlink" title="1.7 线性组合与参数化表示"></a>1.7 线性组合与参数化表示</h4><ul>
+<li><strong>线性组合</strong>：向量的线性组合是给定多个向量和标量的乘积的和。通过线性组合可以表示直线、曲线、平面等几何对象。</li>
+<li><strong>参数化表示</strong>：<ul>
+<li><strong>直线</strong>：可以通过线性组合的方式表示为<br>$$<br>\mathbf{P}(t) &#x3D; \mathbf{P}_0 + t(\mathbf{P}_1 - \mathbf{P}_0)<br>$$</li>
+<li><strong>曲线</strong>：由一个参数决定，通常是非线性函数。</li>
+<li><strong>曲面</strong>：由两个参数决定，通常也是非线性函数。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-表现形式"><a href="#2-表现形式" class="headerlink" title="2. 表现形式"></a>2. 表现形式</h3><h4 id="2-1-标架（Frame）"><a href="#2-1-标架（Frame）" class="headerlink" title="2.1 标架（Frame）"></a>2.1 标架（Frame）</h4><ul>
+<li><strong>定义</strong>：标架是一个包含原点和基向量的坐标系。在几何学中，我们常通过标架来描述几何对象的位置和方向。</li>
+<li><strong>基向量</strong>：n 维向量空间可以通过 n 个线性无关的基向量进行表示，任何向量都可以表示为基向量的线性组合。</li>
+</ul>
+<h4 id="2-2-齐次坐标"><a href="#2-2-齐次坐标" class="headerlink" title="2.2 齐次坐标"></a>2.2 齐次坐标</h4><ul>
+<li><strong>定义</strong>：齐次坐标是一种表示点和向量的方法，统一了点和向量的表示形式。通过引入额外的一个维度，齐次坐标可以处理许多几何变换。</li>
+<li><strong>点与向量的区别</strong>：在齐次坐标中，当 w &#x3D; 0 时，表示向量；当 w ≠ 0 时，表示点。</li>
+<li><strong>应用</strong>：齐次坐标在计算机图形学中非常重要，所有的标准几何变换（如旋转、平移、缩放）都可以通过 4x4 矩阵进行齐次坐标的操作。</li>
+</ul>
+<h4 id="2-3-坐标系变换"><a href="#2-3-坐标系变换" class="headerlink" title="2.3 坐标系变换"></a>2.3 坐标系变换</h4><ul>
+<li><strong>坐标变换</strong>：坐标系变换是通过基向量的线性组合实现的。当一个向量在一个坐标系中表示时，可以通过矩阵运算将其转换到另一个坐标系中。</li>
+<li><strong>4x4 矩阵</strong>：在齐次坐标中，坐标系变换可以通过 4x4 的矩阵乘法来实现。这种矩阵形式统一了点和向量的表示，同时保证了计算效率。</li>
+</ul>
+<h4 id="2-4-齐次坐标的优势"><a href="#2-4-齐次坐标的优势" class="headerlink" title="2.4 齐次坐标的优势"></a>2.4 齐次坐标的优势</h4><ul>
+<li><strong>统一的变换方式</strong>：齐次坐标能够统一点和向量的变换，使得硬件可以高效地进行三维几何的变换操作。</li>
+<li><strong>矩阵叠加</strong>：多个变换可以通过矩阵乘法直接叠加，这使得复杂的变换可以通过简单的矩阵运算实现。</li>
+</ul>
+<h3 id="3-变换"><a href="#3-变换" class="headerlink" title="3. 变换"></a>3. 变换</h3><h4 id="3-1-广义变换"><a href="#3-1-广义变换" class="headerlink" title="3.1 广义变换"></a>3.1 广义变换</h4><ul>
+<li><strong>定义</strong>：广义变换是从一个点或向量映射到另一个点或向量的过程。通过对点集进行变换，可以实现物体的变换。</li>
+<li><strong>常见变换</strong>：包括平移、旋转、缩放、错切等变换。</li>
+</ul>
+<h4 id="3-2-仿射变换"><a href="#3-2-仿射变换" class="headerlink" title="3.2 仿射变换"></a>3.2 仿射变换</h4><ul>
+<li><strong>定义</strong>：仿射变换是保持直线共线性的变换。它包括了物理世界中的许多重要变换，如平移、旋转、缩放、错切等。</li>
+<li><strong>共线性</strong>：在仿射变换中，直线的端点进行变换后，其他点可以通过重新连接端点得到。</li>
+</ul>
+<h4 id="3-3-平移变换"><a href="#3-3-平移变换" class="headerlink" title="3.3 平移变换"></a>3.3 平移变换</h4><ul>
+<li><p><strong>定义</strong>：平移变换是将点从一个位置移动到另一个位置的过程。</p>
+</li>
+<li><p><strong>公式</strong>：<br>$$<br>\mathbf{P’} &#x3D; \mathbf{P} + \mathbf{d}<br>$$<br>其中，d 是平移向量，表示平移的方向和距离。</p>
+</li>
+<li><p><strong>齐次坐标表示</strong>：  </p>
+<div style="text-align: center;">
+$$
+T = 
+\begin{pmatrix}
+1 & 0 & 0 & d_x \\
+0 & 1 & 0 & d_y \\
+0 & 0 & 1 & d_z \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+$$
+</div>
+
+<p>可以通过 4x4 齐次坐标矩阵表示平移变换。</p>
+</li>
+</ul>
+<h4 id="3-4-旋转变换"><a href="#3-4-旋转变换" class="headerlink" title="3.4 旋转变换"></a>3.4 旋转变换</h4><ul>
+<li><p><strong>二维旋转</strong>：</p>
+<ul>
+<li><strong>定义</strong>：二维旋转是以原点为旋转中心，将向量逆时针旋转一定的角度。该变换是线性的。</li>
+<li><strong>公式</strong>：    <div style="text-align: center;">
+$$
+\mathbf{P}' = 
+\begin{pmatrix}
+\cos(\theta) & -\sin(\theta) \\
+\sin(\theta) & \cos(\theta)
+\end{pmatrix}
+\mathbf{P}
+$$
+  </div>
+其中，θ 是旋转角度。</li>
+</ul>
+</li>
+<li><p><strong>三维旋转</strong>：</p>
+<ul>
+<li><strong>绕任意轴旋转</strong>：三维旋转可以围绕任意轴进行，实现三维旋转的方式有多种，包括使用四元数和旋转矩阵。</li>
+</ul>
+</li>
+<li><p><strong>四元数旋转</strong>：</p>
+<ul>
+<li><strong>优势</strong>：四元数是一种表示旋转的最佳方式之一，具有稳定的插值效果。四元数的冗余信息少，计算效率高。</li>
+<li><strong>定义</strong>：四元数 q 可以表示为<br>$$<br>q &#x3D; w + xi + yj + zk<br>$$<br>其中，w, x, y, z 是实数，i, j, k 是单位四元数。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-5-非刚体变换"><a href="#3-5-非刚体变换" class="headerlink" title="3.5 非刚体变换"></a>3.5 非刚体变换</h4><ul>
+<li><p><strong>缩放变换</strong>：</p>
+<ul>
+<li><strong>定义</strong>：缩放变换是改变物体大小的变换，可以分别对 x, y, z 轴进行不同的缩放。</li>
+<li><strong>公式</strong>：  <div style="text-align: center;">
+$$
+S = 
+\begin{pmatrix}
+s_x & 0 & 0 & 0 \\
+0 & s_y & 0 & 0 \\
+0 & 0 & s_z & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}
+$$
+</div>
+其中，s_x, s_y, s_z 是三个方向上的缩放系数。</li>
+</ul>
+</li>
+<li><p><strong>错切变换</strong>：</p>
+<ul>
+<li><strong>定义</strong>：错切变换是一种将物体形变为平行四边形的变换。它可以沿一个轴方向对物体进行拉伸或压缩。</li>
+<li><strong>公式</strong>： <div style="text-align: center;"> 
+$$
+H = 
+\begin{pmatrix}
+1 & k_x & 0 & 0 \\
+0 & 1 & k_y & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}
+$$
+</div>
+其中，k_x 和 k_y 是错切系数。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-6-矩阵表示"><a href="#3-6-矩阵表示" class="headerlink" title="3.6 矩阵表示"></a>3.6 矩阵表示</h4><ul>
+<li><p><strong>矩阵运算</strong>：</p>
+<ul>
+<li>所有点和向量都可以表示为 4D 列向量，变换可以通过 4x4 矩阵进行。</li>
+<li><strong>矩阵乘法</strong>：多个变换可以通过矩阵乘法进行叠加，变换的逆运算也可以通过矩阵求逆来实现。</li>
+</ul>
+</li>
+<li><p><strong>矩阵乘法的非交换性</strong>：</p>
+<ul>
+<li>矩阵乘法不满足交换律，因此不同顺序的变换会得到不同的结果。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-OpenGL-中的变换"><a href="#4-OpenGL-中的变换" class="headerlink" title="4. OpenGL 中的变换"></a>4. OpenGL 中的变换</h3><h4 id="4-1-OpenGL-中的变换概述"><a href="#4-1-OpenGL-中的变换概述" class="headerlink" title="4.1 OpenGL 中的变换概述"></a>4.1 OpenGL 中的变换概述</h4><ul>
+<li><strong>状态机</strong>：OpenGL 是一个状态机，变换矩阵是状态的一部分。在绘制顶点前必须设置好变换矩阵来达到预期的效果。</li>
+<li><strong>建模</strong>：在建模过程中，物体通常是在物体坐标空间中定义的，需要通过变换将物体从其坐标空间移动到场景中。</li>
+<li><strong>矩阵堆栈</strong>：OpenGL 提供了多个堆栈来保存不同类型的变换矩阵（如 Modelview、Projection、Texture）。</li>
+</ul>
+<h4 id="4-2-CTM（当前变换矩阵）"><a href="#4-2-CTM（当前变换矩阵）" class="headerlink" title="4.2 CTM（当前变换矩阵）"></a>4.2 CTM（当前变换矩阵）</h4><ul>
+<li><strong>CTM</strong>：当前变换矩阵是一个 4x4 的齐次坐标矩阵，它可以通过一系列函数进行更改，并作用于渲染管线中后续定义的顶点上。</li>
+</ul>
+<h4 id="4-3-修改-CTM"><a href="#4-3-修改-CTM" class="headerlink" title="4.3 修改 CTM"></a>4.3 修改 CTM</h4><ul>
+<li><p><strong>设置 CTM 模式</strong>：  </p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">glMatrixMode</span>(mode);</span><br></pre></td></tr></table></figure>
+<p>mode 取值为 GL_MODELVIEW, GL_PROJECTION, GL_TEXTURE。</p>
+</li>
+<li><p><strong>载入 CTM</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">glLoadIdentity(void);</span><br><span class="line">glLoadMatrix&#123;fd&#125;(*m);</span><br></pre></td></tr></table></figure>
+<p>m 是指针，指向长度为 16 的数组（column major）。</p>
+</li>
+<li><p><strong>乘 CTM</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">glMultMatrix&#123;fd&#125;(*m);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="4-4-变换示例：沿任意轴旋转"><a href="#4-4-变换示例：沿任意轴旋转" class="headerlink" title="4.4 变换示例：沿任意轴旋转"></a>4.4 变换示例：沿任意轴旋转</h4><ul>
+<li><strong>旋转示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">glMatrixMode</span>(GL_MODELVIEW);</span><br><span class="line"><span class="built_in">glLoadIdentity</span>();</span><br><span class="line"><span class="built_in">glTranslatef</span>(<span class="number">4.0f</span>, <span class="number">3.0f</span>, <span class="number">2.0f</span>);</span><br><span class="line"><span class="built_in">glRotatef</span>(<span class="number">45.0f</span>, <span class="number">1.0f</span>, <span class="number">3.0f</span>, <span class="number">5.0f</span>);</span><br><span class="line"><span class="built_in">glTranslatef</span>(<span class="number">-4.0f</span>, <span class="number">-3.0f</span>, <span class="number">-2.0f</span>);</span><br><span class="line"><span class="built_in">glBegin</span>(...);</span><br><span class="line"><span class="built_in">glVertex</span>(...);</span><br><span class="line"><span class="built_in">glEnd</span>(...);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="4-5-矩阵堆栈"><a href="#4-5-矩阵堆栈" class="headerlink" title="4.5 矩阵堆栈"></a>4.5 矩阵堆栈</h4><ul>
+<li><strong>矩阵堆栈操作</strong>：<ul>
+<li><code>glPushMatrix()</code>：将当前矩阵保存到堆栈顶。</li>
+<li><code>glPopMatrix()</code>：将堆栈顶的矩阵恢复为当前矩阵。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-6-矩阵应用示例：绘制场景"><a href="#4-6-矩阵应用示例：绘制场景" class="headerlink" title="4.6 矩阵应用示例：绘制场景"></a>4.6 矩阵应用示例：绘制场景</h4><ul>
+<li><strong>绘制单个物体</strong>：定义一个绘制单元立方体的函数 drawUnitBox()，使用 OpenGL 的 GL_TRIANGLE_STRIP 进行绘制。</li>
+<li><strong>绘制桌子</strong>：通过缩放和平移操作绘制桌子的桌面和桌脚。</li>
+<li><strong>绘制多个物体</strong>：通过 glPushMatrix() 和 glPopMatrix() 实现矩阵的保存和恢复，从而绘制多个物体。</li>
+</ul>
+<h3 id="5-小结"><a href="#5-小结" class="headerlink" title="5. 小结"></a>5. 小结</h3><h4 id="5-1-基本概念"><a href="#5-1-基本概念" class="headerlink" title="5.1 基本概念"></a>5.1 基本概念</h4><ul>
+<li><strong>基本元素</strong>：点、标量、向量。</li>
+<li><strong>线性空间与仿射空间</strong>：通过线性组合与齐次坐标实现。</li>
+</ul>
+<h4 id="5-2-变换"><a href="#5-2-变换" class="headerlink" title="5.2 变换"></a>5.2 变换</h4><ul>
+<li><strong>常见变换</strong>：平移、旋转、缩放、错切。<ul>
+<li>注意：多个变换合成时的顺序会影响最终的结果。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-3-OpenGL-实现"><a href="#5-3-OpenGL-实现" class="headerlink" title="5.3 OpenGL 实现"></a>5.3 OpenGL 实现</h4><ul>
+<li><strong>变换函数</strong>：OpenGL 提供了多种函数来操作当前变换矩阵（CTM），如 glTranslate(), glScale(), glRotate() 等。</li>
+</ul>
+<h3 id="拓展内容说明："><a href="#拓展内容说明：" class="headerlink" title="拓展内容说明："></a>拓展内容说明：</h3><ol>
+<li><strong>向量的运算</strong>：在向量的加法、点积和叉积部分，添加了公式和解释，帮助理解这些运算的几何意义。</li>
+<li><strong>齐次坐标的优点</strong>：补充了齐次坐标在图形学中的优势，解释了为什么齐次坐标能够高效地表示三维变换。</li>
+<li><strong>非刚体变换</strong>：对缩放和错切变换进行了详细的公式推导，帮助读者理解这些变换的矩阵形式。</li>
+<li><strong>OpenGL 的矩阵操作</strong>：补充了如何在 OpenGL 中实现变换的具体代码示例，并解释了矩阵堆栈的作用和使用场景。</li>
+</ol>
+<h2 id="计算机图形学-第六讲"><a href="#计算机图形学-第六讲" class="headerlink" title="计算机图形学 第六讲"></a>计算机图形学 第六讲</h2><h3 id="1-二维观察"><a href="#1-二维观察" class="headerlink" title="1. 二维观察"></a>1. 二维观察</h3><h4 id="1-1-二维观察概述"><a href="#1-1-二维观察概述" class="headerlink" title="1.1 二维观察概述"></a>1.1 二维观察概述</h4><ul>
+<li><strong>二维观察</strong>（2D Viewing）：主要指在有限的屏幕上绘制二维平面图形。</li>
+<li><strong>问题</strong>：现实世界的二维平面可能是无限的，而屏幕有固定的大小，因此需要截取二维世界中的某个部分进行显示。<ul>
+<li><strong>视窗（Window）</strong>：二维世界中的一个矩形区域，定义了要显示的内容。</li>
+<li><strong>视口（Viewport）</strong>：屏幕上显示内容的区域，由像素组成。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-2-视窗与视口"><a href="#1-2-视窗与视口" class="headerlink" title="1.2 视窗与视口"></a>1.2 视窗与视口</h4><ul>
+<li><strong>视窗（Window）</strong>：在二维世界中的一个连续的矩形区域，通常用一对坐标 (xmin, ymin) 和 (xmax, ymax) 来定义。</li>
+<li><strong>视口（Viewport）</strong>：屏幕上由离散像素组成的矩阵。通过视窗的映射，内容会被绘制在视口内。</li>
+</ul>
+<h4 id="1-3-二维观察变换"><a href="#1-3-二维观察变换" class="headerlink" title="1.3 二维观察变换"></a>1.3 二维观察变换</h4><ul>
+<li><strong>二维观察变换</strong>：将二维世界中的视窗映射到屏幕中的视口。这个过程涉及平移和缩放。<ul>
+<li><strong>注意</strong>：屏幕空间的原点在左上角，y 轴向下。</li>
+<li><strong>保持纵横比</strong>：为了避免图像变形，x 和 y 方向的缩放因子需要一致。即使视窗和视口的纵横比不一致，也要通过调整缩放因子来适配。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-4-OpenGL命令"><a href="#1-4-OpenGL命令" class="headerlink" title="1.4 OpenGL命令"></a>1.4 OpenGL命令</h4><ul>
+<li><p><strong>gluOrtho2D</strong>：用于创建投影矩阵，将二维相机空间中的坐标变换为屏幕空间中的坐标。<br><code>gluOrtho2D(left, right, bottom, top);</code></p>
+</li>
+<li><p><strong>glViewport</strong>：定义最终绘制图像的视口，指定左下角位置 (x, y) 和视口的宽度与高度。<br><code>glViewport(x, y, width, height);</code></p>
+</li>
+</ul>
+<h3 id="2-三维观察"><a href="#2-三维观察" class="headerlink" title="2. 三维观察"></a>2. 三维观察</h3><h4 id="2-1-三维观察概述"><a href="#2-1-三维观察概述" class="headerlink" title="2.1 三维观察概述"></a>2.1 三维观察概述</h4><ul>
+<li><strong>三维观察（3D Viewing）</strong>：将三维世界投影到二维屏幕上。<ul>
+<li><strong>区别于二维观察</strong>：三维观察的复杂性在于需要更多参数来控制观察角度和投影方式。</li>
+<li><strong>降维</strong>：三维观察实际上是将三维空间的内容通过投影变换降维到二维平面上，类似于通过相机拍摄物体。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-2-建模与观察"><a href="#2-2-建模与观察" class="headerlink" title="2.2 建模与观察"></a>2.2 建模与观察</h4><ul>
+<li><strong>建模变换</strong>：用于改变物体在世界坐标中的位置。</li>
+<li><strong>观察变换</strong>：用于改变从世界坐标到屏幕的投影过程，它不会改变世界中的物体本身。</li>
+</ul>
+<h4 id="2-3-三维投影类型"><a href="#2-3-三维投影类型" class="headerlink" title="2.3 三维投影类型"></a>2.3 三维投影类型</h4><ul>
+<li><p><strong>平行投影</strong>：投影线为平行线，投影方向称为 DOP（Direction of Projection）。</p>
+<ul>
+<li><strong>平面投影</strong>：保持了线性，直线仍然是直线，尽管平行线未必仍然平行。</li>
+</ul>
+</li>
+<li><p><strong>透视投影</strong>：投影线汇聚于一点，称为 COP（Center of Projection）。这种投影方式模拟了“近大远小”的视觉效果。</p>
+</li>
+</ul>
+<h4 id="2-4-经典观察"><a href="#2-4-经典观察" class="headerlink" title="2.4 经典观察"></a>2.4 经典观察</h4><ul>
+<li><p><strong>多角度正交投影</strong>：投影平面平行于对象的某个主面，投影线垂直于投影平面。常见于 CAD 和建筑设计中。</p>
+<ul>
+<li><strong>优点</strong>：保持距离和角度不变，适用于精确测量。</li>
+<li><strong>缺点</strong>：难以直观地观察物体的整体形状，通常需要添加等角投影图来帮助理解。</li>
+</ul>
+</li>
+<li><p><strong>轴测投影</strong>：投影线仍然垂直于投影平面，但投影平面相对于对象的方向可以任意。会产生投影缩短现象，线段长度在图像空间中比对象空间中短。</p>
+</li>
+<li><p><strong>斜平行投影</strong>：一种最为一般的平行投影方式，投影线与投影平面成任意角度。常用于建筑物的图像生成。</p>
+</li>
+<li><p><strong>透视投影</strong>：投影线汇聚于一点，物体近大远小，并存在灭点（Vanishing Point）。透视投影不能保持平行，因此不能用于精确测量。</p>
+</li>
+</ul>
+<h3 id="3-计算机观察"><a href="#3-计算机观察" class="headerlink" title="3. 计算机观察"></a>3. 计算机观察</h3><h4 id="3-1-计算机观察概述"><a href="#3-1-计算机观察概述" class="headerlink" title="3.1 计算机观察概述"></a>3.1 计算机观察概述</h4><ul>
+<li><strong>虚拟照相机模型</strong>：计算机观察基于虚拟照相机模型，理论上可以生成任何一种经典投影图。<ul>
+<li><strong>区别于经典观察</strong>：计算机图形学强调对象定义和相机参数设置的独立性。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-三个主要步骤"><a href="#3-2-三个主要步骤" class="headerlink" title="3.2 三个主要步骤"></a>3.2 三个主要步骤</h4><ul>
+<li><p><strong>定位照相机</strong>：独立于对象的定义，设置相机的位置和方向。</p>
+<ul>
+<li><strong>通过修改 Modelview 矩阵实现</strong>。</li>
+</ul>
+</li>
+<li><p><strong>设置透镜</strong>：选择平行投影或透视投影。</p>
+<ul>
+<li><strong>通过修改 Projection 矩阵实现</strong>。</li>
+</ul>
+</li>
+<li><p><strong>设置裁剪体</strong>：定义视见体的范围，确定哪些内容将被投影到屏幕上。</p>
+</li>
+</ul>
+<h4 id="3-3-OpenGL中的虚拟照相机"><a href="#3-3-OpenGL中的虚拟照相机" class="headerlink" title="3.3 OpenGL中的虚拟照相机"></a>3.3 OpenGL中的虚拟照相机</h4><ul>
+<li><p><strong>初始状态</strong>：OpenGL 中的默认相机位于原点，朝向 z 轴负方向。默认的 frustum 是以原点为中心，宽度为 2 的立方体。</p>
+</li>
+<li><p><strong>Modelview 变换</strong>：负责描述物体和相机之间的相对运动。OpenGL 将建模和观察变换合并为一个 Modelview 变换，以提高计算效率。</p>
+</li>
+</ul>
+<h3 id="4-定位照相机"><a href="#4-定位照相机" class="headerlink" title="4. 定位照相机"></a>4. 定位照相机</h3><h4 id="4-1-照相机的三要素"><a href="#4-1-照相机的三要素" class="headerlink" title="4.1 照相机的三要素"></a>4.1 照相机的三要素</h4><ul>
+<li><strong>观察参考点（VRP, View Reference Point）</strong>：相机的观察参考位置。</li>
+<li><strong>观察方向（View Direction）</strong>：相机的观察方向。</li>
+<li><strong>正方向（Up Direction）</strong>：定义了视窗在观察参考平面上的角度。</li>
+</ul>
+<h4 id="4-2-观察坐标系"><a href="#4-2-观察坐标系" class="headerlink" title="4.2 观察坐标系"></a>4.2 观察坐标系</h4><ul>
+<li><strong>初始状态</strong>：观察坐标系与世界坐标系重合。</li>
+<li><strong>观察坐标系变换</strong>：通过 View Orientation Matrix 将世界坐标系变换为观察坐标系。</li>
+</ul>
+<h4 id="4-3-OpenGL中的定位照相机"><a href="#4-3-OpenGL中的定位照相机" class="headerlink" title="4.3 OpenGL中的定位照相机"></a>4.3 OpenGL中的定位照相机</h4><ul>
+<li><p><strong>gluLookAt</strong>：用于设置相机位置和方向。  </p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">gluLookAt</span>(</span><br><span class="line">    eyex, eyey, eyez,   <span class="comment">// 相机位置</span></span><br><span class="line">    atx, aty, atz,      <span class="comment">// 观察点</span></span><br><span class="line">    upx, upy, upz       <span class="comment">// 上方向向量</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>模型变换与观察变换</strong>：在 OpenGL 中，模型变换和观察变换被合并为一个 Modelview 矩阵。观察变换最先调用，应用于场景中的所有物体。</p>
+</li>
+</ul>
+<h3 id="5-平行投影"><a href="#5-平行投影" class="headerlink" title="5. 平行投影"></a>5. 平行投影</h3><h4 id="5-1-正投影"><a href="#5-1-正投影" class="headerlink" title="5.1 正投影"></a>5.1 正投影</h4><ul>
+<li><strong>正投影</strong>：场景中的所有物体沿垂直方向投影到观察参考平面上。</li>
+<li><strong>正投影矩阵</strong>：<br><code>glOrtho(left, right, bottom, top, near, far);</code></li>
+</ul>
+<h4 id="5-2-斜平行投影"><a href="#5-2-斜平行投影" class="headerlink" title="5.2 斜平行投影"></a>5.2 斜平行投影</h4><ul>
+<li><strong>斜平行投影</strong>：投影线与投影平面成任意角度。可以视为正投影与错切变换的组合：<ul>
+<li><strong>错切变换矩阵</strong>：  <div style="text-align: center;">
+$$
+M = 
+\begin{bmatrix}
+1 & 0 & \cot(\alpha) & 0 \\
+0 & 1 & \cot(\beta) & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+</div></li>
+</ul>
+</li>
+</ul>
+<h3 id="6-透视投影"><a href="#6-透视投影" class="headerlink" title="6. 透视投影"></a>6. 透视投影</h3><h4 id="6-1-透视投影概述"><a href="#6-1-透视投影概述" class="headerlink" title="6.1 透视投影概述"></a>6.1 透视投影概述</h4><ul>
+<li><strong>透视投影</strong>：投影线汇聚于一点，模拟真实世界中的视觉效果。</li>
+<li><strong>特点</strong>：近大远小，存在灭点。透视投影是保直线的，但不是仿射变换。</li>
+</ul>
+<h4 id="6-2-齐次坐标中的透视投影"><a href="#6-2-齐次坐标中的透视投影" class="headerlink" title="6.2 齐次坐标中的透视投影"></a>6.2 齐次坐标中的透视投影</h4><ul>
+<li><p><strong>透视投影矩阵</strong>：  </p>
+<div style="text-align: center;">
+$$
+P = 
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & \frac{1}{d} \\
+0 & 0 & 1 & 0
+\end{bmatrix}
+$$
+</div>
+其中，d 是投影距离。
+</li>
+<li><p><strong>透视除法</strong>：透视投影的非线性缩短效果通过透视除法实现，离投影中心越远，缩短越大。</p>
+</li>
+</ul>
+<h4 id="6-3-OpenGL中的透视投影"><a href="#6-3-OpenGL中的透视投影" class="headerlink" title="6.3 OpenGL中的透视投影"></a>6.3 OpenGL中的透视投影</h4><ul>
+<li><p><strong>glFrustum</strong>：定义视锥体，用于透视投影。<br><code>glFrustum(left, right, bottom, top, near, far);</code></p>
+</li>
+<li><p><strong>gluPerspective</strong>：简化透视投影的定义。<br><code>gluPerspective(fovy, aspect, near, far);</code></p>
+</li>
+</ul>
+<h3 id="7-小结"><a href="#7-小结" class="headerlink" title="7. 小结"></a>7. 小结</h3><ul>
+<li><strong>二维观察</strong>：通过视窗和视口的映射，将二维世界的内容映射到屏幕上。</li>
+<li><strong>三维观察</strong>：通过投影将三维世界内容映射到二维屏幕上，常用两种投影方式：平行投影和透视投影。</li>
+<li><strong>计算机观察</strong>：通过虚拟相机模型实现三维场景的投影，涉及设置相机位置、投影方式和裁剪体。</li>
+</ul>
+<h3 id="拓展内容说明：-1"><a href="#拓展内容说明：-1" class="headerlink" title="拓展内容说明："></a>拓展内容说明：</h3><ol>
+<li><strong>向量的运算</strong>：在向量的加法、点积和叉积部分，添加了公式和解释，帮助理解这些运算的几何意义。</li>
+<li><strong>齐次坐标的优点</strong>：补充了齐次坐标在图形学中的优势，解释了为什么齐次坐标能够高效地表示三维变换。</li>
+<li><strong>非刚体变换</strong>：对缩放和错切变换进行了详细的公式推导，帮助读者理解这些变换的矩阵形式。</li>
+<li><strong>OpenGL 的矩阵操作</strong>：补充了如何在 OpenGL 中实现变换的具体代码示例，并解释了矩阵堆栈的作用和使用场景。</li>
+</ol>
+<h2 id="计算机图形学-第七讲"><a href="#计算机图形学-第七讲" class="headerlink" title="计算机图形学 第七讲"></a>计算机图形学 第七讲</h2><h3 id="1-光栅化简介"><a href="#1-光栅化简介" class="headerlink" title="1. 光栅化简介"></a>1. 光栅化简介</h3><h4 id="1-1-光栅化定义"><a href="#1-1-光栅化定义" class="headerlink" title="1.1 光栅化定义"></a>1.1 光栅化定义</h4><ul>
+<li><strong>光栅化</strong>是将几何图元（如线段、多边形等）转换为像素的过程。通过光栅化，图形被离散化为屏幕上的像素。</li>
+<li>与之对应的是<strong>光线追踪</strong>，它通过模拟光线传播来生成图像。</li>
+<li><strong>Raster graphics</strong> 操作像素，而 <strong>Vector graphics</strong> 操作几何元素，但最终都需转换成像素。</li>
+</ul>
+<h4 id="1-2-计算机图形绘制过程"><a href="#1-2-计算机图形绘制过程" class="headerlink" title="1.2 计算机图形绘制过程"></a>1.2 计算机图形绘制过程</h4><ul>
+<li><strong>投影</strong>：将几何图元的顶点从三维空间映射到二维平面。</li>
+<li><strong>光栅化</strong>：将几何图元从连续的几何对象转换为离散的像素。<ul>
+<li>决定哪些像素与图元相关。</li>
+<li>确定每个像素的颜色。</li>
+<li>通过一系列高效的扫描转换算法在硬件上实现。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-线段光栅化"><a href="#2-线段光栅化" class="headerlink" title="2. 线段光栅化"></a>2. 线段光栅化</h3><h4 id="2-1-绘制目标"><a href="#2-1-绘制目标" class="headerlink" title="2.1 绘制目标"></a>2.1 绘制目标</h4><ul>
+<li>使用像素绘制两点 <code>(x1, y1)</code> 与 <code>(x2, y2)</code> 之间的线段。<ul>
+<li>选中像素应尽可能靠近理想线段。</li>
+<li>绘制出的线段应看起来尽量“直”。</li>
+<li>起点应包括在像素序列中。</li>
+<li>绘制应尽可能快速。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-2-思路一：使用解析式"><a href="#2-2-思路一：使用解析式" class="headerlink" title="2.2 思路一：使用解析式"></a>2.2 思路一：使用解析式</h4><ul>
+<li>直线可以表示为方程 <code>y = mx + c</code>，其中 m 为斜率，c 为截距。</li>
+<li><strong>DDA 算法</strong>（Digital Differential Analyzer）通过递增 x 来计算 y 的变化。</li>
+</ul>
+<p>示例代码：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">line_DDA</span><span class="params">(<span class="type">int</span> x1, <span class="type">int</span> y1, <span class="type">int</span> x2, <span class="type">int</span> y2)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> dx = x2 - x1, dy = y2 - y1, steps;</span><br><span class="line">    <span class="type">float</span> delta_x, delta_y, x = x1, y = y1;</span><br><span class="line"></span><br><span class="line">    steps = (<span class="built_in">abs</span>(dx) &gt; <span class="built_in">abs</span>(dy)) ? (<span class="built_in">abs</span>(dx)) : (<span class="built_in">abs</span>(dy));</span><br><span class="line">    delta_x = dx / (<span class="type">float</span>)steps;</span><br><span class="line">    delta_y = dy / (<span class="type">float</span>)steps;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">set_pixel</span>(<span class="built_in">round</span>(x), <span class="built_in">round</span>(y));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; steps; ++i) &#123;</span><br><span class="line">        x += delta_x;</span><br><span class="line">        y += delta_y;</span><br><span class="line">        <span class="built_in">set_pixel</span>(<span class="built_in">round</span>(x), <span class="built_in">round</span>(y));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-3-思路二：Bresenham-算法"><a href="#2-3-思路二：Bresenham-算法" class="headerlink" title="2.3 思路二：Bresenham 算法"></a>2.3 思路二：Bresenham 算法</h4><ul>
+<li><strong>Bresenham’s Algorithm</strong> 提供了一种更高效的线段绘制方法。<ul>
+<li>它仅使用整数运算，避免了 DDA 中的浮点运算。</li>
+<li>通过比较像素与直线的相对位置，判断下一步需要绘制的像素是 <code>(xi + 1, yi)</code> 还是 <code>(xi + 1, yi + 1)</code>。</li>
+</ul>
+</li>
+</ul>
+<p>Bresenham 算法 伪代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">void line_Bresenham(int x1, int y1, int x2, int y2) &#123;</span><br><span class="line">    int dx = x2 - x1</span><br><span class="line">    int dy = y2 - y1</span><br><span class="line">    int p = 2 * dy - dx</span><br><span class="line">    int y = y1</span><br><span class="line">    </span><br><span class="line">    for (int x = x1; x &lt;= x2; ++x) &#123;</span><br><span class="line">        set_pixel(x, y)</span><br><span class="line">        if (p &gt;= 0) &#123;</span><br><span class="line">            y += 1</span><br><span class="line">            p += 2 * (dy - dx)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            p += 2 * dy</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>标准代码示例：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">set_pixel</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 在此处实现绘制像素的逻辑</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Drawing pixel at (&quot;</span> &lt;&lt; x &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; y &lt;&lt; <span class="string">&quot;)\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">line_Bresenham</span><span class="params">(<span class="type">int</span> x1, <span class="type">int</span> y1, <span class="type">int</span> x2, <span class="type">int</span> y2)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> dx = x2 - x1;</span><br><span class="line">    <span class="type">int</span> dy = y2 - y1;</span><br><span class="line">    <span class="type">int</span> p = <span class="number">2</span> * dy - dx;</span><br><span class="line">    <span class="type">int</span> y = y1;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> x = x1; x &lt;= x2; ++x) &#123;</span><br><span class="line">        <span class="built_in">set_pixel</span>(x, y);</span><br><span class="line">        <span class="keyword">if</span> (p &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            y += <span class="number">1</span>;</span><br><span class="line">            p += <span class="number">2</span> * (dy - dx);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            p += <span class="number">2</span> * dy;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 示例：绘制从 (2, 3) 到 (10, 7) 的直线</span></span><br><span class="line">    <span class="built_in">line_Bresenham</span>(<span class="number">2</span>, <span class="number">3</span>, <span class="number">10</span>, <span class="number">7</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>解释</p>
+<ul>
+<li>参数:<ul>
+<li>x1, y1: 线段起点坐标。</li>
+<li>x2, y2: 线段终点坐标。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>变量:</p>
+<ul>
+<li>dx: 线段在 x 方向上的变化量。</li>
+<li>dy: 线段在 y 方向上的变化量。</li>
+<li>p: 决策变量，用于判断下一个像素的 y 坐标。</li>
+<li>y: 当前绘制的 y 坐标。</li>
+</ul>
+</li>
+<li><p>算法过程:</p>
+<ul>
+<li>计算 dx 和 dy。</li>
+<li>初始化决策变量 p。</li>
+<li>在 x 方向上循环，从 x1 到 x2：<ul>
+<li>绘制当前像素。</li>
+<li>根据 p 的值决定 y 是否增加，更新 p 的值。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>应用</p>
+<ul>
+<li>Bresenham 算法被广泛应用于图形学中，用于高效地绘制直线。由于其只使用整数运算，因此在性能和精度上都优于浮点运算的方法。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-多边形光栅化"><a href="#3-多边形光栅化" class="headerlink" title="3. 多边形光栅化"></a>3. 多边形光栅化</h3><h4 id="3-1-多边形光栅化概述"><a href="#3-1-多边形光栅化概述" class="headerlink" title="3.1 多边形光栅化概述"></a>3.1 多边形光栅化概述</h4><ul>
+<li><strong>多边形光栅化</strong>决定哪些像素与多边形相关。常见的两种方法为：<ul>
+<li><strong>扫描转换</strong>（Scan-conversion）：沿扫描线逐行扫描，设置边界内的像素。</li>
+<li><strong>填充</strong>（Fill）：从多边形内部的某个像素开始向外扩展。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-判断点是否在多边形内"><a href="#3-2-判断点是否在多边形内" class="headerlink" title="3.2 判断点是否在多边形内"></a>3.2 判断点是否在多边形内</h4><ul>
+<li><strong>Even-odd 测试</strong>：如果从多边形外任意一点引出一条直线与多边形的边相交次数为奇数，则点在多边形内。</li>
+<li><strong>Winding number 测试</strong>：计算多边形围绕该点的转角度数，如果转角度不为零，该点在多边形内。</li>
+</ul>
+<h4 id="3-3-三角形光栅化"><a href="#3-3-三角形光栅化" class="headerlink" title="3.3 三角形光栅化"></a>3.3 三角形光栅化</h4><ul>
+<li><strong>任意多边形可拆分为多个三角形</strong>。三角形光栅化是多边形光栅化的基础。</li>
+<li><strong>插值计算颜色</strong>：常使用基于<strong>重心坐标</strong>（Barycentric Coordinate）的插值方法。</li>
+</ul>
+<p>公式如下：<br>$$<br>p &#x3D; (1 - a - b) * p1 + a * p2 + b * p3;<br>$$</p>
+<ul>
+<li><strong>Edge-equation 方法</strong>：通过判断点是否位于三角形的三条边的同一侧来确定点是否在三角形内。</li>
+</ul>
+<h3 id="4-抗锯齿"><a href="#4-抗锯齿" class="headerlink" title="4. 抗锯齿"></a>4. 抗锯齿</h3><h4 id="4-1-锯齿现象"><a href="#4-1-锯齿现象" class="headerlink" title="4.1 锯齿现象"></a>4.1 锯齿现象</h4><ul>
+<li><strong>锯齿现象</strong>（Aliasing）是由于对几何物体的离散化导致的。它包括：<ul>
+<li>边缘的锯齿状效果。</li>
+<li>渲染细节丢失。</li>
+<li>微小物体的丢失。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-2-抗锯齿方法"><a href="#4-2-抗锯齿方法" class="headerlink" title="4.2 抗锯齿方法"></a>4.2 抗锯齿方法</h4><ul>
+<li><p><strong>超级采样抗锯齿（Super-sampling anti-aliasing, SSAA）</strong>：</p>
+<ul>
+<li>在比目标分辨率更高的分辨率下进行采样，然后将多个像素合并为一个像素。</li>
+</ul>
+</li>
+<li><p><strong>比率方法（Ratio method）</strong>：</p>
+<ul>
+<li>根据像素到线段的距离来决定颜色比例。</li>
+</ul>
+</li>
+<li><p><strong>区域采样（Area sampling）</strong>：</p>
+<ul>
+<li>扫描几何图元覆盖的像素区域，并根据像素距离边界的远近调整颜色。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-3-显卡上的常见抗锯齿设置"><a href="#4-3-显卡上的常见抗锯齿设置" class="headerlink" title="4.3 显卡上的常见抗锯齿设置"></a>4.3 显卡上的常见抗锯齿设置</h4><ul>
+<li><p><strong>多重采样抗锯齿（MSAA）</strong>：</p>
+<ul>
+<li>只对多边形的边缘进行抗锯齿处理，比 SSAA 更高效。</li>
+</ul>
+</li>
+<li><p><strong>快速近似抗锯齿（FXAA）</strong>：</p>
+<ul>
+<li>一种基于后期处理的抗锯齿方法，完全使用图像处理方式进行模糊。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-小结-1"><a href="#5-小结-1" class="headerlink" title="5. 小结"></a>5. 小结</h3><ul>
+<li><strong>光栅化</strong>是计算机图形学中将几何图元转化为像素的过程。</li>
+<li><strong>Bresenham 算法</strong>通过整数运算提供了高效的线段绘制方法。</li>
+<li><strong>多边形光栅化</strong>可通过扫描转换或填充方法来实现，三角形光栅化是其基础。</li>
+<li><strong>抗锯齿</strong>用于解决离散化过程中出现的锯齿问题，常用的方法包括超级采样和区域采样。</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Lavoisier</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://Lavoisier7.github.io/2024/11/20/Computer_Graphics/">http://Lavoisier7.github.io/2024/11/20/Computer_Graphics/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Lavoisier</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/CG-%E2%89%A0-CV/">
+                                    <span class="chip bg-color">CG ≠ CV</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">Your appreciation is my driving force for progress</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'j5FifBJFtHJ7QOATVuihjWvp-gzGzoHsz',
+        appKey: 'GRwn2SERkTOROu36TR5Ux6Nj',
+        serverURLs: 'https://j5FifBJFtHJ7QOATVuihjWvp-gzGzoHsz.leancloud.app',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'circumspection'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/11/21/Book_Review1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="书评特辑·第一期">
+                        
+                        <span class="card-title">书评特辑·第一期</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            《倚天屠龙记》中赵敏形象之剖析
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-11-21
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Book-Review/" class="post-category">
+                                    Book Review
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%87%91%E5%BA%B8/">
+                        <span class="chip bg-color">金庸</span>
+                    </a>
+                    
+                    <a href="/tags/%E3%80%8A%E5%80%9A%E5%A4%A9%E5%B1%A0%E9%BE%99%E8%AE%B0%E3%80%8B/">
+                        <span class="chip bg-color">《倚天屠龙记》</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%B5%B5%E6%95%8F/">
+                        <span class="chip bg-color">赵敏</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/11/20/Tencent_Practical_Training/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Tencent 蓝鲸智云开发">
+                        
+                        <span class="card-title">Tencent 蓝鲸智云开发</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            2024-2025 DS 企业实训
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-11-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Computer-Science/" class="post-category">
+                                    Computer Science
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Operation-System/">
+                        <span class="chip bg-color">Operation System</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: D<br />'
+            + '文章作者: Lavoisier<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者Lavoisier所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('1'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2024-2025</span>
+            
+            <a href="/about" target="_blank">Lavoisier</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">93.1k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2024";
+                        var startMonth = "11";
+                        var startDate = "19";
+                        var startHour = "20";
+                        var startMinute = "30";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Lavoisier7" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:wzd6@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "http://Lavoisier7.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>
