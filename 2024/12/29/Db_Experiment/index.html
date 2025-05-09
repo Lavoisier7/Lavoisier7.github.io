@@ -240,7 +240,7 @@ btf.addGlobalFn('pjaxComplete', () => {
 <li>基于 CHOICES 和 STUDENTS 的连接，先找到 cid &#x3D; ‘C0001’ 的记录，再用 AND 进一步筛选 score &gt; 80 的记录。</li>
 </ul>
 <hr>
-<h2 id="7-INSERT-语句-单条插入"><a href="#7-INSERT-语句-单条插入" class="headerlink" title="7. INSERT 语句 (单条插入)"></a>7. INSERT 语句 (单条插入)</h2><p><strong>题目描述</strong><br>往 STUDENTS 表中插入一条新学生信息，学号 sid &#x3D; ‘S1009’，姓名 sname &#x3D; ‘LinX’, email &#x3D; ‘<a href="mailto:&#108;&#x69;&#x6e;&#120;&#64;&#x73;&#99;&#x68;&#111;&#x6f;&#108;&#46;&#99;&#x6f;&#109;">&#108;&#x69;&#x6e;&#120;&#64;&#x73;&#99;&#x68;&#111;&#x6f;&#108;&#46;&#99;&#x6f;&#109;</a>‘, grade &#x3D; 2002。</p>
+<h2 id="7-INSERT-语句-单条插入"><a href="#7-INSERT-语句-单条插入" class="headerlink" title="7. INSERT 语句 (单条插入)"></a>7. INSERT 语句 (单条插入)</h2><p><strong>题目描述</strong><br>往 STUDENTS 表中插入一条新学生信息，学号 sid &#x3D; ‘S1009’，姓名 sname &#x3D; ‘LinX’, email &#x3D; ‘<a href="mailto:&#108;&#x69;&#110;&#x78;&#64;&#115;&#99;&#104;&#111;&#111;&#108;&#46;&#x63;&#111;&#109;">&#108;&#x69;&#110;&#x78;&#64;&#115;&#99;&#104;&#111;&#111;&#108;&#46;&#x63;&#111;&#109;</a>‘, grade &#x3D; 2002。</p>
 <p><strong>标准答案</strong>  </p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> STUDENTS (sid, sname, email, grade)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">&#x27;S1009&#x27;</span>, <span class="string">&#x27;LinX&#x27;</span>, <span class="string">&#x27;linx@school.com&#x27;</span>, <span class="number">2002</span>);</span><br></pre></td></tr></table></figure>
 
@@ -252,8 +252,8 @@ btf.addGlobalFn('pjaxComplete', () => {
 <hr>
 <h2 id="8-INSERT-语句-多条插入"><a href="#8-INSERT-语句-多条插入" class="headerlink" title="8. INSERT 语句 (多条插入)"></a>8. INSERT 语句 (多条插入)</h2><p><strong>题目描述</strong><br>在 TEACHERS 表中一次性插入两条新教师数据：  </p>
 <ol>
-<li>tid &#x3D; ‘T2001’，tname &#x3D; ‘Wang Wu’，email &#x3D; ‘<a href="mailto:&#x77;&#x61;&#x6e;&#x67;&#119;&#117;&#x40;&#120;&#x78;&#x78;&#46;&#x63;&#x6f;&#x6d;">&#x77;&#x61;&#x6e;&#x67;&#119;&#117;&#x40;&#120;&#x78;&#x78;&#46;&#x63;&#x6f;&#x6d;</a>‘，salary &#x3D; 4500  </li>
-<li>tid &#x3D; ‘T2002’，tname &#x3D; ‘Zhao Liu’，email &#x3D; ‘<a href="mailto:&#x7a;&#104;&#97;&#x6f;&#x6c;&#x69;&#x75;&#x40;&#x78;&#120;&#x78;&#46;&#99;&#x6f;&#x6d;">&#x7a;&#104;&#97;&#x6f;&#x6c;&#x69;&#x75;&#x40;&#x78;&#120;&#x78;&#46;&#99;&#x6f;&#x6d;</a>‘，salary &#x3D; 2000</li>
+<li>tid &#x3D; ‘T2001’，tname &#x3D; ‘Wang Wu’，email &#x3D; ‘<a href="mailto:&#119;&#x61;&#110;&#x67;&#x77;&#x75;&#x40;&#x78;&#x78;&#120;&#46;&#99;&#x6f;&#109;">&#119;&#x61;&#110;&#x67;&#x77;&#x75;&#x40;&#x78;&#x78;&#120;&#46;&#99;&#x6f;&#109;</a>‘，salary &#x3D; 4500  </li>
+<li>tid &#x3D; ‘T2002’，tname &#x3D; ‘Zhao Liu’，email &#x3D; ‘<a href="mailto:&#122;&#104;&#x61;&#111;&#x6c;&#x69;&#x75;&#64;&#x78;&#120;&#x78;&#46;&#99;&#111;&#109;">&#122;&#104;&#x61;&#111;&#x6c;&#x69;&#x75;&#64;&#x78;&#120;&#x78;&#46;&#99;&#111;&#109;</a>‘，salary &#x3D; 2000</li>
 </ol>
 <p><strong>标准答案</strong>  </p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> TEACHERS (tid, tname, email, salary)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">(<span class="string">&#x27;T2001&#x27;</span>, <span class="string">&#x27;Wang Wu&#x27;</span>, <span class="string">&#x27;wangwu@xxx.com&#x27;</span>, <span class="number">4500</span>),</span><br><span class="line">(<span class="string">&#x27;T2002&#x27;</span>, <span class="string">&#x27;Zhao Liu&#x27;</span>, <span class="string">&#x27;zhaoliu@xxx.com&#x27;</span>, <span class="number">2000</span>);</span><br></pre></td></tr></table></figure>
@@ -264,7 +264,7 @@ btf.addGlobalFn('pjaxComplete', () => {
 <li>注意字段与 VALUES 的顺序需一致。</li>
 </ul>
 <hr>
-<h2 id="9-UPDATE-语句-单表"><a href="#9-UPDATE-语句-单表" class="headerlink" title="9. UPDATE 语句 (单表)"></a>9. UPDATE 语句 (单表)</h2><p><strong>题目描述</strong><br>将 STUDENTS 表中学号 sid &#x3D; ‘S1002’ 的学生邮箱 (email) 改为 ‘<a href="mailto:&#110;&#x65;&#x77;&#x5f;&#x65;&#x6d;&#x61;&#105;&#x6c;&#x40;&#x73;&#99;&#x68;&#111;&#111;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#110;&#x65;&#x77;&#x5f;&#x65;&#x6d;&#x61;&#105;&#x6c;&#x40;&#x73;&#99;&#x68;&#111;&#111;&#108;&#x2e;&#99;&#x6f;&#x6d;</a>‘。</p>
+<h2 id="9-UPDATE-语句-单表"><a href="#9-UPDATE-语句-单表" class="headerlink" title="9. UPDATE 语句 (单表)"></a>9. UPDATE 语句 (单表)</h2><p><strong>题目描述</strong><br>将 STUDENTS 表中学号 sid &#x3D; ‘S1002’ 的学生邮箱 (email) 改为 ‘<a href="mailto:&#x6e;&#101;&#x77;&#95;&#101;&#x6d;&#x61;&#105;&#108;&#x40;&#115;&#x63;&#x68;&#x6f;&#x6f;&#108;&#46;&#99;&#111;&#x6d;">&#x6e;&#101;&#x77;&#95;&#101;&#x6d;&#x61;&#105;&#108;&#x40;&#115;&#x63;&#x68;&#x6f;&#x6f;&#108;&#46;&#99;&#111;&#x6d;</a>‘。</p>
 <p><strong>标准答案</strong>  </p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> STUDENTS</span><br><span class="line"><span class="keyword">SET</span> email <span class="operator">=</span> <span class="string">&#x27;new_email@school.com&#x27;</span></span><br><span class="line"><span class="keyword">WHERE</span> sid <span class="operator">=</span> <span class="string">&#x27;S1002&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
