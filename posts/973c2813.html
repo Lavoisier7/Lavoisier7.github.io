@@ -1,0 +1,551 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>DB Experiment | D</title><meta name="author" content="Lavoisier"><meta name="copyright" content="Lavoisier"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="以下是一套共 30 道数据库实验 (SYSU-DCS283) 期末考核题目示例，题目均基于所提供的 school 数据库表结构 (STUDENTS, TEACHERS, COURSES, CHOICES) 进行设计。每道题目包含简要描述、标准答案及解析，覆盖了数据查询（单表与多表连接）、数据操作（INSERT、UPDATE、DELETE）、表创建及约束、触发器和事务等主要内容。希望能帮助在复习和练">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta property="og:type" content="article">
+<meta property="og:title" content="DB Experiment">
+<meta property="og:url" content="http://lavoisier7.github.io/posts/973c2813.html">
+<meta property="og:site_name" content="D">
+<meta property="og:description" content="以下是一套共 30 道数据库实验 (SYSU-DCS283) 期末考核题目示例，题目均基于所提供的 school 数据库表结构 (STUDENTS, TEACHERS, COURSES, CHOICES) 进行设计。每道题目包含简要描述、标准答案及解析，覆盖了数据查询（单表与多表连接）、数据操作（INSERT、UPDATE、DELETE）、表创建及约束、触发器和事务等主要内容。希望能帮助在复习和练">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://lavoisier7.github.io/img/Yoimiya.jpg">
+<meta property="article:published_time" content="2024-12-29T01:44:59.000Z">
+<meta property="article:modified_time" content="2025-05-09T09:02:46.496Z">
+<meta property="article:author" content="Lavoisier">
+<meta property="article:tag" content="SQL Server">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://lavoisier7.github.io/img/Yoimiya.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "DB Experiment",
+  "url": "http://lavoisier7.github.io/posts/973c2813.html",
+  "image": "http://lavoisier7.github.io/img/Yoimiya.jpg",
+  "datePublished": "2024-12-29T01:44:59.000Z",
+  "dateModified": "2025-05-09T09:02:46.496Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Lavoisier",
+      "url": "http://lavoisier7.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/Yoimiya.jpg"><link rel="canonical" href="http://lavoisier7.github.io/posts/973c2813.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-QFGRX15K8W"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-QFGRX15K8W')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-QFGRX15K8W', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":120,"languages":{"author":"作者: Lavoisier","link":"链接: ","source":"来源: D","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'DB Experiment',
+  isHighlightShrink: true,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/Yoimiya.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bow.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/Yoimiya.jpg" alt="Logo"><span class="site-name">D</span></a><a class="nav-page-title" href="/"><span class="site-name">DB Experiment</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">DB Experiment</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-12-29T01:44:59.000Z" title="发表于 2024-12-29 09:44:59">2024-12-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-05-09T09:02:46.496Z" title="更新于 2025-05-09 17:02:46">2025-05-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Computer-Science/">Computer Science</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/973c2813.html#post-comment"><span class="waline-comment-count" data-path="/posts/973c2813.html"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>以下是一套共 30 道数据库实验 (SYSU-DCS283) 期末考核题目示例，题目均基于所提供的 school 数据库表结构 (STUDENTS, TEACHERS, COURSES, CHOICES) 进行设计。每道题目包含简要描述、标准答案及解析，覆盖了数据查询（单表与多表连接）、数据操作（INSERT、UPDATE、DELETE）、表创建及约束、触发器和事务等主要内容。希望能帮助在复习和练习中全面掌握 SQL Server 的核心技能。</p>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><hr>
+<h2 id="1-创建新表并设置主键与唯一性约束"><a href="#1-创建新表并设置主键与唯一性约束" class="headerlink" title="1. 创建新表并设置主键与唯一性约束"></a>1. 创建新表并设置主键与唯一性约束</h2><p><strong>题目描述</strong><br>在 school 数据库中，创建一个名为 Worker 的表，字段包括：  </p>
+<ul>
+<li>WID (int，主键)  </li>
+<li>Wname (char(20) ，姓名，需要唯一性约束)  </li>
+<li>Wage (int，年龄)  </li>
+<li>Wgender (char(1)，性别)</li>
+</ul>
+<p>要求：  </p>
+<ol>
+<li>将 WID 作为主键。  </li>
+<li>为 Wname 添加唯一性约束。  </li>
+<li>限制 Wage 不超过 30。</li>
+</ol>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Worker (</span><br><span class="line">    WID <span class="type">INT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    Wname <span class="type">CHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">UNIQUE</span>,</span><br><span class="line">    Wage <span class="type">INT</span> <span class="keyword">CHECK</span> (Wage <span class="operator">&lt;=</span> <span class="number">30</span>),</span><br><span class="line">    Wgender <span class="type">CHAR</span>(<span class="number">1</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ol>
+<li>PRIMARY KEY 关键字可直接在定义字段时声明，或在表最后统一声明。  </li>
+<li>UNIQUE 关键字可为字段设置唯一性约束。  </li>
+<li>CHECK 约束可限制字段的取值范围。</li>
+</ol>
+<hr>
+<h2 id="2-简单查询-单表"><a href="#2-简单查询-单表" class="headerlink" title="2. 简单查询 (单表)"></a>2. 简单查询 (单表)</h2><p><strong>题目描述</strong><br>查询 STUDENTS 表中所有 grade 等于 2001 的学生姓名（sname），并按照 sid 升序排列输出。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> sname</span><br><span class="line"><span class="keyword">FROM</span> STUDENTS</span><br><span class="line"><span class="keyword">WHERE</span> grade <span class="operator">=</span> <span class="number">2001</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> sid <span class="keyword">ASC</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>WHERE 子句筛选出 grade &#x3D; 2001 的记录。  </li>
+<li>ORDER BY 可控制结果集的排序，默认为升序，也可手动指定 ASC。</li>
+</ul>
+<hr>
+<h2 id="3-简单查询-单表，多字段"><a href="#3-简单查询-单表，多字段" class="headerlink" title="3. 简单查询 (单表，多字段)"></a>3. 简单查询 (单表，多字段)</h2><p><strong>题目描述</strong><br>查询 TEACHERS 表中所有老师（tid、tname、email）的信息，并按照 salary 降序排列。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> tid, tname, email</span><br><span class="line"><span class="keyword">FROM</span> TEACHERS</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> salary <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>仅需使用 SELECT 列出需要的字段。  </li>
+<li>ORDER BY salary DESC 进行降序排列。</li>
+</ul>
+<hr>
+<h2 id="4-条件查询与别名"><a href="#4-条件查询与别名" class="headerlink" title="4. 条件查询与别名"></a>4. 条件查询与别名</h2><p><strong>题目描述</strong><br>查询 COURSES 表中课时 (hour) 大于 40 的课程编号 (cid) 和课程名称 (cname)，并将查询结果中的字段起别名：课程编号 AS 课程代码、课程名称 AS 课程名称。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> cid <span class="keyword">AS</span> 课程代码, cname <span class="keyword">AS</span> 课程名称</span><br><span class="line"><span class="keyword">FROM</span> COURSES</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">hour</span> <span class="operator">&gt;</span> <span class="number">40</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>使用 AS 来给查询结果字段起别名。  </li>
+<li>WHERE hour &gt; 40 限制显示课时大于 40 的课程。</li>
+</ul>
+<hr>
+<h2 id="5-多表连接查询-内连接"><a href="#5-多表连接查询-内连接" class="headerlink" title="5. 多表连接查询 (内连接)"></a>5. 多表连接查询 (内连接)</h2><p><strong>题目描述</strong><br>查询所有选课记录中（CHOICES 表）学生姓名、课程名称、成绩（score）。结果中应包含学生姓名 (STUDENTS 表的 sname) 与课程名称 (COURSES 表的 cname)，且只显示有对应关系的行。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> S.sname, C.cname, CH.score</span><br><span class="line"><span class="keyword">FROM</span> CHOICES CH</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> STUDENTS S <span class="keyword">ON</span> CH.sid <span class="operator">=</span> S.sid</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> COURSES C <span class="keyword">ON</span> CH.cid <span class="operator">=</span> C.cid;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>先将 CHOICES 与 STUDENTS 表通过 sid 关联，再通过 CHOICES 与 COURSES 的 cid 关联。  </li>
+<li>INNER JOIN 仅返回存在匹配关系的记录。</li>
+</ul>
+<hr>
+<h2 id="6-多表条件查询-连接-条件"><a href="#6-多表条件查询-连接-条件" class="headerlink" title="6. 多表条件查询 (连接 + 条件)"></a>6. 多表条件查询 (连接 + 条件)</h2><p><strong>题目描述</strong><br>查询选修“C0001”课程且成绩大于 80 分的学生姓名及该课程成绩。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> S.sname, CH.score</span><br><span class="line"><span class="keyword">FROM</span> CHOICES CH</span><br><span class="line"><span class="keyword">JOIN</span> STUDENTS S <span class="keyword">ON</span> CH.sid <span class="operator">=</span> S.sid</span><br><span class="line"><span class="keyword">WHERE</span> CH.cid <span class="operator">=</span> <span class="string">&#x27;C0001&#x27;</span></span><br><span class="line">  <span class="keyword">AND</span> CH.score <span class="operator">&gt;</span> <span class="number">80</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>基于 CHOICES 和 STUDENTS 的连接，先找到 cid &#x3D; ‘C0001’ 的记录，再用 AND 进一步筛选 score &gt; 80 的记录。</li>
+</ul>
+<hr>
+<h2 id="7-INSERT-语句-单条插入"><a href="#7-INSERT-语句-单条插入" class="headerlink" title="7. INSERT 语句 (单条插入)"></a>7. INSERT 语句 (单条插入)</h2><p><strong>题目描述</strong><br>往 STUDENTS 表中插入一条新学生信息，学号 sid &#x3D; ‘S1009’，姓名 sname &#x3D; ‘LinX’, email &#x3D; ‘<a href="mailto:&#x6c;&#x69;&#110;&#x78;&#64;&#115;&#x63;&#x68;&#111;&#x6f;&#108;&#x2e;&#99;&#111;&#x6d;">&#x6c;&#x69;&#110;&#x78;&#64;&#115;&#x63;&#x68;&#111;&#x6f;&#108;&#x2e;&#99;&#111;&#x6d;</a>‘, grade &#x3D; 2002。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> STUDENTS (sid, sname, email, grade)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">&#x27;S1009&#x27;</span>, <span class="string">&#x27;LinX&#x27;</span>, <span class="string">&#x27;linx@school.com&#x27;</span>, <span class="number">2002</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>指定字段列表并与 VALUES 的值一一对应。  </li>
+<li>注意如果 sid 是主键，需保证该值无重复。</li>
+</ul>
+<hr>
+<h2 id="8-INSERT-语句-多条插入"><a href="#8-INSERT-语句-多条插入" class="headerlink" title="8. INSERT 语句 (多条插入)"></a>8. INSERT 语句 (多条插入)</h2><p><strong>题目描述</strong><br>在 TEACHERS 表中一次性插入两条新教师数据：  </p>
+<ol>
+<li>tid &#x3D; ‘T2001’，tname &#x3D; ‘Wang Wu’，email &#x3D; ‘<a href="mailto:&#119;&#97;&#x6e;&#103;&#x77;&#117;&#x40;&#x78;&#120;&#x78;&#x2e;&#99;&#111;&#x6d;">&#119;&#97;&#x6e;&#103;&#x77;&#117;&#x40;&#x78;&#120;&#x78;&#x2e;&#99;&#111;&#x6d;</a>‘，salary &#x3D; 4500  </li>
+<li>tid &#x3D; ‘T2002’，tname &#x3D; ‘Zhao Liu’，email &#x3D; ‘<a href="mailto:&#122;&#x68;&#97;&#x6f;&#108;&#x69;&#117;&#x40;&#x78;&#120;&#x78;&#x2e;&#x63;&#111;&#x6d;">&#122;&#x68;&#97;&#x6f;&#108;&#x69;&#117;&#x40;&#x78;&#120;&#x78;&#x2e;&#x63;&#111;&#x6d;</a>‘，salary &#x3D; 2000</li>
+</ol>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> TEACHERS (tid, tname, email, salary)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">(<span class="string">&#x27;T2001&#x27;</span>, <span class="string">&#x27;Wang Wu&#x27;</span>, <span class="string">&#x27;wangwu@xxx.com&#x27;</span>, <span class="number">4500</span>),</span><br><span class="line">(<span class="string">&#x27;T2002&#x27;</span>, <span class="string">&#x27;Zhao Liu&#x27;</span>, <span class="string">&#x27;zhaoliu@xxx.com&#x27;</span>, <span class="number">2000</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>SQL Server 支持在单条 INSERT 语句中使用多个 VALUES 子句进行批量数据插入。  </li>
+<li>注意字段与 VALUES 的顺序需一致。</li>
+</ul>
+<hr>
+<h2 id="9-UPDATE-语句-单表"><a href="#9-UPDATE-语句-单表" class="headerlink" title="9. UPDATE 语句 (单表)"></a>9. UPDATE 语句 (单表)</h2><p><strong>题目描述</strong><br>将 STUDENTS 表中学号 sid &#x3D; ‘S1002’ 的学生邮箱 (email) 改为 ‘<a href="mailto:&#x6e;&#x65;&#x77;&#x5f;&#101;&#x6d;&#97;&#x69;&#x6c;&#x40;&#x73;&#x63;&#x68;&#111;&#111;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#x6e;&#x65;&#x77;&#x5f;&#101;&#x6d;&#97;&#x69;&#x6c;&#x40;&#x73;&#x63;&#x68;&#111;&#111;&#108;&#x2e;&#99;&#x6f;&#x6d;</a>‘。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> STUDENTS</span><br><span class="line"><span class="keyword">SET</span> email <span class="operator">=</span> <span class="string">&#x27;new_email@school.com&#x27;</span></span><br><span class="line"><span class="keyword">WHERE</span> sid <span class="operator">=</span> <span class="string">&#x27;S1002&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>使用 UPDATE 表名 SET 字段 &#x3D; 值， WHERE 子句确定要更新哪条记录。  </li>
+<li>不加 WHERE 会导致该表所有记录都被更新。</li>
+</ul>
+<hr>
+<h2 id="10-DELETE-语句-单表"><a href="#10-DELETE-语句-单表" class="headerlink" title="10. DELETE 语句 (单表)"></a>10. DELETE 语句 (单表)</h2><p><strong>题目描述</strong><br>删除 TEACHERS 表中工资 (salary) 小于 2500 的所有教师记录。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> TEACHERS</span><br><span class="line"><span class="keyword">WHERE</span> salary <span class="operator">&lt;</span> <span class="number">2500</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>DELETE 语句配合 WHERE 子句定位要删除的行。  </li>
+<li>不带 WHERE 子句则会删除表的所有记录，需谨慎使用。</li>
+</ul>
+<hr>
+<h2 id="11-多表连接查询-左外连接"><a href="#11-多表连接查询-左外连接" class="headerlink" title="11. 多表连接查询 (左外连接)"></a>11. 多表连接查询 (左外连接)</h2><p><strong>题目描述</strong><br>查询所有 STUDENTS 表中的学生姓名以及他们在 CHOICES 表中是否有选课记录的成绩信息（score）。即使学生没有选课记录，也需要显示其姓名，score 字段可以显示为 NULL。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> S.sname, CH.score</span><br><span class="line"><span class="keyword">FROM</span> STUDENTS S</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> CHOICES CH <span class="keyword">ON</span> S.sid <span class="operator">=</span> CH.sid;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>LEFT JOIN 会保证左表 (STUDENTS) 的所有记录都被返回，即使右表 (CHOICES) 中无匹配行，右表字段以 NULL 填充。</li>
+</ul>
+<hr>
+<h2 id="12-多表连接查询-内连接-多条件"><a href="#12-多表连接查询-内连接-多条件" class="headerlink" title="12. 多表连接查询 (内连接 + 多条件)"></a>12. 多表连接查询 (内连接 + 多条件)</h2><p><strong>题目描述</strong><br>查询 CHOICES 表中成绩大于 90 分并且对应的教师 salary 大于 5000 的学生姓名、课程名称、教师姓名。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> S.sname, C.cname, T.tname</span><br><span class="line"><span class="keyword">FROM</span> CHOICES CH</span><br><span class="line"><span class="keyword">JOIN</span> STUDENTS S <span class="keyword">ON</span> CH.sid <span class="operator">=</span> S.sid</span><br><span class="line"><span class="keyword">JOIN</span> COURSES C <span class="keyword">ON</span> CH.cid <span class="operator">=</span> C.cid</span><br><span class="line"><span class="keyword">JOIN</span> TEACHERS T <span class="keyword">ON</span> CH.tid <span class="operator">=</span> T.tid</span><br><span class="line"><span class="keyword">WHERE</span> CH.score <span class="operator">&gt;</span> <span class="number">90</span></span><br><span class="line">  <span class="keyword">AND</span> T.salary <span class="operator">&gt;</span> <span class="number">5000</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>通过 STUDENTS、COURSES、TEACHERS 三表与 CHOICES 连接获取需要的信息。  </li>
+<li>WHERE 条件可并列多个限制。</li>
+</ul>
+<hr>
+<h2 id="13-使用别名与表达式"><a href="#13-使用别名与表达式" class="headerlink" title="13. 使用别名与表达式"></a>13. 使用别名与表达式</h2><p><strong>题目描述</strong><br>查询 TEACHERS 表中所有教师姓名 (tname) 及其工资的 12 个月总额 (命名为 AnnualSalary)。AnnualSalary &#x3D; salary * 12。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> tname,</span><br><span class="line">       salary <span class="operator">*</span> <span class="number">12</span> <span class="keyword">AS</span> AnnualSalary</span><br><span class="line"><span class="keyword">FROM</span> TEACHERS;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>可在 SELECT 字段时直接使用算术表达式。  </li>
+<li>AS AnnualSalary 用来设置输出字段别名。</li>
+</ul>
+<hr>
+<h2 id="14-使用聚合函数-COUNT"><a href="#14-使用聚合函数-COUNT" class="headerlink" title="14. 使用聚合函数 (COUNT)"></a>14. 使用聚合函数 (COUNT)</h2><p><strong>题目描述</strong><br>查询 STUDENTS 表中共有多少位学生 (统计行数)，并将结果命名为 StudentCount。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> StudentCount</span><br><span class="line"><span class="keyword">FROM</span> STUDENTS;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>COUNT(*) 会计数表中的所有行。  </li>
+<li>可以使用别名让结果列更具可读性。</li>
+</ul>
+<hr>
+<h2 id="15-使用聚合函数-MAX、MIN、AVG"><a href="#15-使用聚合函数-MAX、MIN、AVG" class="headerlink" title="15. 使用聚合函数 (MAX、MIN、AVG)"></a>15. 使用聚合函数 (MAX、MIN、AVG)</h2><p><strong>题目描述</strong><br>查询 TEACHERS 表中最大工资、最小工资以及平均工资，分别命名为 MaxSalary、MinSalary 和 AvgSalary。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    <span class="built_in">MAX</span>(salary) <span class="keyword">AS</span> MaxSalary,</span><br><span class="line">    <span class="built_in">MIN</span>(salary) <span class="keyword">AS</span> MinSalary,</span><br><span class="line">    <span class="built_in">AVG</span>(salary) <span class="keyword">AS</span> AvgSalary</span><br><span class="line"><span class="keyword">FROM</span> TEACHERS;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>聚合函数可直接应用于一个列上。  </li>
+<li>结果会在一行返回多个聚合值。</li>
+</ul>
+<hr>
+<h2 id="16-GROUP-BY-与-HAVING"><a href="#16-GROUP-BY-与-HAVING" class="headerlink" title="16. GROUP BY 与 HAVING"></a>16. GROUP BY 与 HAVING</h2><p><strong>题目描述</strong><br>查询每门课程的选课人数 (COUNT(sid))，仅显示选课人数大于 3 的课程编号和对应人数。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> cid, <span class="built_in">COUNT</span>(sid) <span class="keyword">AS</span> StudentCount</span><br><span class="line"><span class="keyword">FROM</span> CHOICES</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> cid</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(sid) <span class="operator">&gt;</span> <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>GROUP BY cid 先按课程分组，再使用 COUNT(sid) 聚合统计。  </li>
+<li>HAVING 相当于对分组后的结果做进一步筛选。</li>
+</ul>
+<hr>
+<h2 id="17-DISTINCT-去重"><a href="#17-DISTINCT-去重" class="headerlink" title="17. DISTINCT 去重"></a>17. DISTINCT 去重</h2><p><strong>题目描述</strong><br>查询所有已选课 (存在于 CHOICES 表中) 的学生年级 (grade) 信息，不可重复显示。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> S.grade</span><br><span class="line"><span class="keyword">FROM</span> CHOICES C</span><br><span class="line"><span class="keyword">JOIN</span> STUDENTS S <span class="keyword">ON</span> C.sid <span class="operator">=</span> S.sid;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>DISTINCT 可去除重复记录。  </li>
+<li>需要和 STUDENTS 表关联获取 grade 字段。</li>
+</ul>
+<hr>
+<h2 id="18-在现有表上增加列"><a href="#18-在现有表上增加列" class="headerlink" title="18. 在现有表上增加列"></a>18. 在现有表上增加列</h2><p><strong>题目描述</strong><br>在 STUDENTS 表中增加一个新列 phone，类型为 char(11)，允许 NULL 值。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> STUDENTS</span><br><span class="line"><span class="keyword">ADD</span> phone <span class="type">CHAR</span>(<span class="number">11</span>) <span class="keyword">NULL</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>使用 ALTER TABLE … ADD 语句为已存在的表添加列。  </li>
+<li>如果不指定 NULL&#x2F;NOT NULL，默认为允许 NULL。</li>
+</ul>
+<hr>
+<h2 id="19-修改列类型与名称"><a href="#19-修改列类型与名称" class="headerlink" title="19. 修改列类型与名称"></a>19. 修改列类型与名称</h2><p><strong>题目描述</strong><br>将 TEACHERS 表中的 salary 列改名为 baseSalary，并将数据类型修改为 decimal(8,2)。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">EXEC</span> sp_rename <span class="string">&#x27;TEACHERS.salary&#x27;</span>, <span class="string">&#x27;baseSalary&#x27;</span>, <span class="string">&#x27;COLUMN&#x27;</span>;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> TEACHERS</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">COLUMN</span> baseSalary <span class="type">DECIMAL</span>(<span class="number">8</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>sp_rename 用于修改列名，参数中需指定原表名.原列名、新列名以及 ‘COLUMN’ 关键字。  </li>
+<li>ALTER TABLE … ALTER COLUMN 修改字段数据类型。  </li>
+<li>注意某些情况下需要保证原字段的数据可兼容新的数据类型。</li>
+</ul>
+<hr>
+<h2 id="20-创建视图-VIEW"><a href="#20-创建视图-VIEW" class="headerlink" title="20. 创建视图 (VIEW)"></a>20. 创建视图 (VIEW)</h2><p><strong>题目描述</strong><br>创建一个名为 vHighScore 的视图，用于查询所有成绩大于等于 90 分的学生姓名、课程名称、成绩。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> vHighScore</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> S.sname, C.cname, CH.score</span><br><span class="line"><span class="keyword">FROM</span> CHOICES CH</span><br><span class="line"><span class="keyword">JOIN</span> STUDENTS S <span class="keyword">ON</span> CH.sid <span class="operator">=</span> S.sid</span><br><span class="line"><span class="keyword">JOIN</span> COURSES C <span class="keyword">ON</span> CH.cid <span class="operator">=</span> C.cid</span><br><span class="line"><span class="keyword">WHERE</span> CH.score <span class="operator">&gt;=</span> <span class="number">90</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>视图 (VIEW) 是一个“虚拟表”，可简化查询操作。  </li>
+<li>在 SSMS 中使用 CREATE VIEW 语句，并在 AS 后跟上具体的 SELECT 查询。</li>
+</ul>
+<hr>
+<h2 id="21-删除视图"><a href="#21-删除视图" class="headerlink" title="21. 删除视图"></a>21. 删除视图</h2><p><strong>题目描述</strong><br>删除上一步创建的视图 vHighScore。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> vHighScore;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>DROP VIEW 视图名 用于删除已存在的视图。  </li>
+<li>注意删除后无法直接引用该视图。</li>
+</ul>
+<hr>
+<h2 id="22-创建触发器-INSERT-或-UPDATE"><a href="#22-创建触发器-INSERT-或-UPDATE" class="headerlink" title="22. 创建触发器 (INSERT 或 UPDATE)"></a>22. 创建触发器 (INSERT 或 UPDATE)</h2><p><strong>题目描述</strong><br>为 TEACHERS 表创建触发器 T1，当向该表插入或更新记录时，如果 baseSalary（或 salary）低于 3000，则将其自动修改为 3000。</p>
+<p><strong>标准答案</strong><br>下面的示例假设列名已经改为 baseSalary；如果仍是 salary，请相应调整列名。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> T1</span><br><span class="line"><span class="keyword">ON</span> TEACHERS</span><br><span class="line"><span class="keyword">FOR</span> <span class="keyword">INSERT</span>, <span class="keyword">UPDATE</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    <span class="comment">-- 将新插入或更新的记录里 baseSalary &lt; 3000 的部分自动修正为 3000</span></span><br><span class="line">    <span class="keyword">UPDATE</span> TEACHERS</span><br><span class="line">    <span class="keyword">SET</span> TEACHERS.baseSalary <span class="operator">=</span> <span class="number">3000</span></span><br><span class="line">    <span class="keyword">FROM</span> TEACHERS</span><br><span class="line">    <span class="keyword">JOIN</span> Inserted I <span class="keyword">ON</span> TEACHERS.tid <span class="operator">=</span> I.tid</span><br><span class="line">    <span class="keyword">WHERE</span> I.baseSalary <span class="operator">&lt;</span> <span class="number">3000</span>;</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>触发器 (TRIGGER) 在某些指定事件 (INSERT、UPDATE、DELETE) 发生时自动执行。  </li>
+<li>Inserted 表是 SQL Server 触发器内的虚拟表，包含新插入或更新的记录。  </li>
+<li>在触发器中可以对 Inserted 中不符合条件的数据做二次处理或拒绝等操作。</li>
+</ul>
+<hr>
+<h2 id="23-创建触发器-DELETE"><a href="#23-创建触发器-DELETE" class="headerlink" title="23. 创建触发器 (DELETE)"></a>23. 创建触发器 (DELETE)</h2><p><strong>题目描述</strong><br>在 STUDENTS 表上创建触发器 T_StuDel，当删除学生记录时，需要先将此学生在 CHOICES 中的学习记录删除，然后才允许删除 STUDENTS 中对应记录。</p>
+<p><strong>题目提示</strong><br>可以在触发器中手动先 DELETE CHOICES 表，再 DELETE STUDENTS，也可以使用其他方式保证清理。  </p>
+<p><strong>标准答案</strong><br>(一种可能实现方式——先删除 CHOICES 中相关记录，再删除 STUDENTS。)</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> T_StuDel</span><br><span class="line"><span class="keyword">ON</span> STUDENTS</span><br><span class="line">INSTEAD <span class="keyword">OF</span> <span class="keyword">DELETE</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    <span class="keyword">DELETE</span> <span class="keyword">FROM</span> CHOICES</span><br><span class="line">    <span class="keyword">WHERE</span> sid <span class="keyword">IN</span> (<span class="keyword">SELECT</span> sid <span class="keyword">FROM</span> DELETED);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">DELETE</span> <span class="keyword">FROM</span> STUDENTS</span><br><span class="line">    <span class="keyword">WHERE</span> sid <span class="keyword">IN</span> (<span class="keyword">SELECT</span> sid <span class="keyword">FROM</span> DELETED);</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>INSTEAD OF DELETE 触发器可拦截原始 DELETE 操作，改为在触发器主体中执行自定义逻辑。  </li>
+<li>DELETED 虚拟表中包含被删除的记录信息，可用 sid 匹配引用。</li>
+</ul>
+<hr>
+<h2 id="24-事务处理-简单示例"><a href="#24-事务处理-简单示例" class="headerlink" title="24. 事务处理 (简单示例)"></a>24. 事务处理 (简单示例)</h2><p><strong>题目描述</strong><br>往 COURSES 表中插入两条记录 (cid、cname、hour)。如果任意一条插入失败，则回滚事务，保证数据一致性。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">BEGIN</span> TRANSACTION;</span><br><span class="line"></span><br><span class="line"><span class="keyword">BEGIN</span> TRY</span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> COURSES (cid, cname, <span class="keyword">hour</span>)</span><br><span class="line">    <span class="keyword">VALUES</span> (<span class="string">&#x27;C1005&#x27;</span>, <span class="string">&#x27;Physics&#x27;</span>, <span class="number">60</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> COURSES (cid, cname, <span class="keyword">hour</span>)</span><br><span class="line">    <span class="keyword">VALUES</span> (<span class="string">&#x27;C1006&#x27;</span>, <span class="string">&#x27;Chemistry&#x27;</span>, <span class="number">55</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">COMMIT</span> TRANSACTION;</span><br><span class="line"><span class="keyword">END</span> TRY</span><br><span class="line"><span class="keyword">BEGIN</span> CATCH</span><br><span class="line">    <span class="keyword">ROLLBACK</span> TRANSACTION;</span><br><span class="line">    PRINT <span class="string">&#x27;插入失败，事务已回滚。&#x27;</span>;</span><br><span class="line"><span class="keyword">END</span> CATCH;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>BEGIN TRANSACTION、COMMIT TRANSACTION、ROLLBACK TRANSACTION 结合使用，对操作进行事务保护。  </li>
+<li>BEGIN TRY … BEGIN CATCH 结构便于捕获异常，并在发生异常时回滚。</li>
+</ul>
+<hr>
+<h2 id="25-事务处理-多表操作"><a href="#25-事务处理-多表操作" class="headerlink" title="25. 事务处理 (多表操作)"></a>25. 事务处理 (多表操作)</h2><p><strong>题目描述</strong><br>需要同时往 STUDENTS 表和 CHOICES 表各插入一条相关记录。如果插入 STUDENTS 表成功但插入 CHOICES 表失败，则需回滚所有操作。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">BEGIN</span> TRANSACTION;</span><br><span class="line"></span><br><span class="line"><span class="keyword">BEGIN</span> TRY</span><br><span class="line">    <span class="comment">-- 假设待插入学生</span></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> STUDENTS (sid, sname, email, grade)</span><br><span class="line">    <span class="keyword">VALUES</span> (<span class="string">&#x27;S1010&#x27;</span>, <span class="string">&#x27;Sun Qi&#x27;</span>, <span class="string">&#x27;sunqi@school.com&#x27;</span>, <span class="number">2003</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">-- 再往 CHOICES 表插入对应选课信息</span></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> CHOICES (<span class="keyword">no</span>, sid, tid, cid, score)</span><br><span class="line">    <span class="keyword">VALUES</span> (<span class="number">1010</span>, <span class="string">&#x27;S1010&#x27;</span>, <span class="string">&#x27;T1001&#x27;</span>, <span class="string">&#x27;C0001&#x27;</span>, <span class="number">85</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">COMMIT</span> TRANSACTION;</span><br><span class="line"><span class="keyword">END</span> TRY</span><br><span class="line"><span class="keyword">BEGIN</span> CATCH</span><br><span class="line">    <span class="keyword">ROLLBACK</span> TRANSACTION;</span><br><span class="line">    PRINT <span class="string">&#x27;出现错误，事务已回滚&#x27;</span>;</span><br><span class="line"><span class="keyword">END</span> CATCH;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>同一事务 (BEGIN TRANSACTION … COMMIT&#x2F;ROLLBACK) 内的多表操作如果有一处失败，需要回滚所有操作。</li>
+</ul>
+<hr>
+<h2 id="26-CHECK-约束"><a href="#26-CHECK-约束" class="headerlink" title="26. CHECK 约束"></a>26. CHECK 约束</h2><p><strong>题目描述</strong><br>在 COURSES 表中新增一个 CHECK 约束，保证课程课时 (hour) 大于 0。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> COURSES</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> CK_COURSES_HOUR <span class="keyword">CHECK</span> (<span class="keyword">hour</span> <span class="operator">&gt;</span> <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>ALTER TABLE … ADD CONSTRAINT 来增加约束。  </li>
+<li>CHECK(hour &gt; 0) 可防止插入或更新到非正值课时。</li>
+</ul>
+<hr>
+<h2 id="27-FOREIGN-KEY-约束的创建"><a href="#27-FOREIGN-KEY-约束的创建" class="headerlink" title="27. FOREIGN KEY 约束的创建"></a>27. FOREIGN KEY 约束的创建</h2><p><strong>题目描述</strong><br>尝试在 CHOICES 表上添加一个外键约束 FK_CHOICES_TEACHERS2，要求 tid 必须是 TEACHERS 表中已存在的教师编号 (tid)，一旦在 TEACHERS 中删除记录时，自动删除 CHOICES 中相应的记录 (ON DELETE CASCADE)。</p>
+<p>注意：可能与现有外键 FK_CHOICES_TEACHERS 冲突，需先删除或更改已有外键以作演示。</p>
+<p><strong>标准答案</strong><br>(仅作示例，若已存在外键，需要先 DROP 再 CREATE。)</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> CHOICES</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> FK_CHOICES_TEACHERS2</span><br><span class="line"><span class="keyword">FOREIGN</span> KEY (tid) <span class="keyword">REFERENCES</span> TEACHERS(tid)</span><br><span class="line"><span class="keyword">ON</span> <span class="keyword">DELETE</span> CASCADE;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>在 CHOICES 中通过外键引用 TEACHERS 的主键，指定 ON DELETE CASCADE 表示当父表记录删除时，子表对应记录也一并删除。  </li>
+<li>需留意与已有外键冲突的问题。</li>
+</ul>
+<hr>
+<h2 id="28-UNIQUE-约束的添加"><a href="#28-UNIQUE-约束的添加" class="headerlink" title="28. UNIQUE 约束的添加"></a>28. UNIQUE 约束的添加</h2><p><strong>题目描述</strong><br>在 TEACHERS 表中为 email 字段添加唯一性约束，保证同一老师邮箱不重复。若 email 字段已有重复值，需要先行修改或删除。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> TEACHERS</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> UQ_TEACHERS_EMAIL <span class="keyword">UNIQUE</span>(email);</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>ALTER TABLE … ADD CONSTRAINT … UNIQUE(字段) 用于添加唯一性约束。  </li>
+<li>注意使用前需确保该字段中不存在重复值，否则会报错。</li>
+</ul>
+<hr>
+<h2 id="29-复杂多表查询-三表连接-聚合"><a href="#29-复杂多表查询-三表连接-聚合" class="headerlink" title="29. 复杂多表查询 (三表连接 + 聚合)"></a>29. 复杂多表查询 (三表连接 + 聚合)</h2><p><strong>题目描述</strong><br>查询各个教师 (tid) 所授课程 (名下 CHOICES 记录) 的平均成绩，结果包含 tid、教师姓名、平均成绩(别名 AvgScore)，并按 AvgScore 降序排序。</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> T.tid, T.tname, <span class="built_in">AVG</span>(CH.score) <span class="keyword">AS</span> AvgScore</span><br><span class="line"><span class="keyword">FROM</span> TEACHERS T</span><br><span class="line"><span class="keyword">JOIN</span> CHOICES CH <span class="keyword">ON</span> T.tid <span class="operator">=</span> CH.tid</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> T.tid, T.tname</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> AvgScore <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>首先使用 TEACHERS 与 CHOICES 进行关联，根据教师id 分组计算平均成绩。  </li>
+<li>GROUP BY T.tid, T.tname 后才能使用聚合函数 AVG(CH.score)。  </li>
+<li>ORDER BY AvgScore DESC 降序显示平均成绩。</li>
+</ul>
+<hr>
+<h2 id="30-子查询"><a href="#30-子查询" class="headerlink" title="30. 子查询"></a>30. 子查询</h2><p><strong>题目描述</strong><br>查询成绩高于 TEACHERS 表平均工资的学生选课记录信息 (sname、课程名称 cname、score)，要求只显示满足“score &gt; 平均 salary”的记录。</p>
+<p>(注意：这里将教师的平均工资与学生的分数做对比仅是题目示例，并不一定具有实际业务逻辑。)</p>
+<p><strong>标准答案</strong>  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> S.sname, C.cname, CH.score</span><br><span class="line"><span class="keyword">FROM</span> CHOICES CH</span><br><span class="line"><span class="keyword">JOIN</span> STUDENTS S <span class="keyword">ON</span> CH.sid <span class="operator">=</span> S.sid</span><br><span class="line"><span class="keyword">JOIN</span> COURSES C <span class="keyword">ON</span> CH.cid <span class="operator">=</span> C.cid</span><br><span class="line"><span class="keyword">WHERE</span> CH.score <span class="operator">&gt;</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="built_in">AVG</span>(T.salary) <span class="keyword">FROM</span> TEACHERS T</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析</strong>  </p>
+<ul>
+<li>在 WHERE 子句中使用子查询，先求 TEACHERS 表平均工资，再与 CHOICES.score 做比较。  </li>
+<li>子查询返回一个标量值，可直接参与比较运算。</li>
+</ul>
+<hr>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ol>
+<li>本套题目共 30 道，覆盖了 SQL Server Management Studio (SSMS) 中常见且重要的操作场景，包括数据库对象创建（表、视图、触发器）、数据操作（增删改）、查询（单表、多表、聚合、子查询）、约束（PRIMARY KEY、FOREIGN KEY、CHECK、UNIQUE）以及事务处理等关键内容。  </li>
+<li>题目设置难度适中，既包含基础语法 (简单增删改查) 又涉及多表连接、外键级联、触发器、事务等稍具复杂性或需要理解机制的考核点。  </li>
+<li>每道题目的“解析”部分对常见的使用场景、语法形式及注意事项进行了简要说明。学生在完成这些题目后，可有效复习并掌握 SQL Server 操作的核心内容。</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://Lavoisier7.github.io">Lavoisier</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://lavoisier7.github.io/posts/973c2813.html">http://lavoisier7.github.io/posts/973c2813.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://Lavoisier7.github.io" target="_blank">D</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/SQL-Server/">SQL Server</a></div><div class="post-share"><div class="social-share" data-image="/img/Yoimiya.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/b3f8ec47.html" title="Encoding System"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Encoding System</div></div><div class="info-2"><div class="info-item-1">编码系统 以下是对 ASCII、GBK、Unicode 和 UTF-8 的详细总结，结合示例来解释它们的工作原理及特点。 1. ASCII 编码定义 ASCII （American Standard Code for Information Interchange）是一种基于拉丁字母的编码系统，用于表示现代英语及西欧语言中的基本字符。 ASCII 是最早的字符编码方案之一，由 7 位二进制数字组成，可以表示 128 个字符（0x00 ~ 0x7F）。  范围 控制字符：0x00 - 0x1F 和 0x7F（如换行 \n、回车 \r 等）。 可打印字符：0x20 - 0x7E（如字母、数字、标点符号）。  特点 单字节编码，字节大小为 1 个字节。 向后兼容所有现代编码方案（如...</div></div></div></a><a class="pagination-related" href="/posts/b2bcd4bc.html" title="The Book of Songs"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">The Book of Songs</div></div><div class="info-2"><div class="info-item-1">十月之交 诗经·小雅〔先秦〕 十月之交，朔月辛卯。日有食之，亦孔之丑。彼月而微，此日而微；今此下民，亦孔之哀。 日月告凶，不用其行。四国无政，不用其良。彼月而食，则维其常；此日而食，于何不臧。 烨烨震电，不宁不令。百川沸腾，山冢崒崩。高岸为谷，深谷为陵。哀今之人，胡憯莫惩？ 皇父卿士，番维司徒。家伯维宰，仲允膳夫。棸子内史，蹶维趣马。楀维师氏，艳妻煽方处。 抑此皇父，岂曰不时？胡为我作，不即我谋？彻我墙屋，田卒污莱。曰予不戕，礼则然矣。 皇父孔圣，作都于向。择三有事，亶侯多藏。不慭遗一老，俾守我王。择有车马，以居徂向。 黾勉从事，不敢告劳。无罪无辜，谗口嚣嚣。下民之孽，匪降自天。噂沓背憎，职竞由人。 悠悠我里，亦孔之痗。四方有羡，我独居忧。民莫不逸，我独不敢休。天命不彻，我不敢效我友自逸。 </div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/d9196bbd.html" title="Database Principle"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-25</div><div class="info-item-2">Database Principle</div></div><div class="info-2"><div class="info-item-1">2024-2025 DCS281 本文基于《Database System Concepts, 7th Ed.》的课本内容，对 SYSU-CSE DCS281 计算机专业课《数据库系统原理》进行较为详尽的知识点总结，涵盖少量实例分析。 第一章 数据库系统概述1.1 数据库应用实例重点：  了解数据库在各行业中的应用，如企业信息管理、制造业、银行与金融、大学系统、航空公司、电信、网络服务等。  难点：  理解不同应用场景下数据库系统的具体需求和实现方式。  实例分析：  银行与金融：管理客户信息、账户、贷款及交易。 航空公司：处理预订和航班时刻表。 电信：记录通话、短信和数据使用情况，生成月度账单。  1.2 数据与数据库系统重点：  区分数据与信息，理解数据库系统的定义及其目的。  难点：  理解数据抽象及其在数据库系统中的作用。  实例分析：  数据：符号化的信息，如学生成绩、图片的像素点。 信息：数据的语义解释，如“学生A的数学成绩为90分”。  1.3...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/Yoimiya.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Lavoisier</div><div class="author-info-description">世故消耗激情，岁月打磨棱角，现实浪掷理想。</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Lavoisier7"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Lavoisier7" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:wzd6@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">世故消耗激情，岁月打磨棱角，现实浪掷理想。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E6%96%B0%E8%A1%A8%E5%B9%B6%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%94%AE%E4%B8%8E%E5%94%AF%E4%B8%80%E6%80%A7%E7%BA%A6%E6%9D%9F"><span class="toc-number">1.</span> <span class="toc-text">1. 创建新表并设置主键与唯一性约束</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%AE%80%E5%8D%95%E6%9F%A5%E8%AF%A2-%E5%8D%95%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text">2. 简单查询 (单表)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%AE%80%E5%8D%95%E6%9F%A5%E8%AF%A2-%E5%8D%95%E8%A1%A8%EF%BC%8C%E5%A4%9A%E5%AD%97%E6%AE%B5"><span class="toc-number">3.</span> <span class="toc-text">3. 简单查询 (单表，多字段)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2%E4%B8%8E%E5%88%AB%E5%90%8D"><span class="toc-number">4.</span> <span class="toc-text">4. 条件查询与别名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2-%E5%86%85%E8%BF%9E%E6%8E%A5"><span class="toc-number">5.</span> <span class="toc-text">5. 多表连接查询 (内连接)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%A4%9A%E8%A1%A8%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2-%E8%BF%9E%E6%8E%A5-%E6%9D%A1%E4%BB%B6"><span class="toc-number">6.</span> <span class="toc-text">6. 多表条件查询 (连接 + 条件)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-INSERT-%E8%AF%AD%E5%8F%A5-%E5%8D%95%E6%9D%A1%E6%8F%92%E5%85%A5"><span class="toc-number">7.</span> <span class="toc-text">7. INSERT 语句 (单条插入)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-INSERT-%E8%AF%AD%E5%8F%A5-%E5%A4%9A%E6%9D%A1%E6%8F%92%E5%85%A5"><span class="toc-number">8.</span> <span class="toc-text">8. INSERT 语句 (多条插入)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-UPDATE-%E8%AF%AD%E5%8F%A5-%E5%8D%95%E8%A1%A8"><span class="toc-number">9.</span> <span class="toc-text">9. UPDATE 语句 (单表)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-DELETE-%E8%AF%AD%E5%8F%A5-%E5%8D%95%E8%A1%A8"><span class="toc-number">10.</span> <span class="toc-text">10. DELETE 语句 (单表)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2-%E5%B7%A6%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="toc-number">11.</span> <span class="toc-text">11. 多表连接查询 (左外连接)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2-%E5%86%85%E8%BF%9E%E6%8E%A5-%E5%A4%9A%E6%9D%A1%E4%BB%B6"><span class="toc-number">12.</span> <span class="toc-text">12. 多表连接查询 (内连接 + 多条件)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E4%BD%BF%E7%94%A8%E5%88%AB%E5%90%8D%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">13.</span> <span class="toc-text">13. 使用别名与表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E4%BD%BF%E7%94%A8%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0-COUNT"><span class="toc-number">14.</span> <span class="toc-text">14. 使用聚合函数 (COUNT)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-%E4%BD%BF%E7%94%A8%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0-MAX%E3%80%81MIN%E3%80%81AVG"><span class="toc-number">15.</span> <span class="toc-text">15. 使用聚合函数 (MAX、MIN、AVG)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-GROUP-BY-%E4%B8%8E-HAVING"><span class="toc-number">16.</span> <span class="toc-text">16. GROUP BY 与 HAVING</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-DISTINCT-%E5%8E%BB%E9%87%8D"><span class="toc-number">17.</span> <span class="toc-text">17. DISTINCT 去重</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-%E5%9C%A8%E7%8E%B0%E6%9C%89%E8%A1%A8%E4%B8%8A%E5%A2%9E%E5%8A%A0%E5%88%97"><span class="toc-number">18.</span> <span class="toc-text">18. 在现有表上增加列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-%E4%BF%AE%E6%94%B9%E5%88%97%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%90%8D%E7%A7%B0"><span class="toc-number">19.</span> <span class="toc-text">19. 修改列类型与名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE-VIEW"><span class="toc-number">20.</span> <span class="toc-text">20. 创建视图 (VIEW)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E5%88%A0%E9%99%A4%E8%A7%86%E5%9B%BE"><span class="toc-number">21.</span> <span class="toc-text">21. 删除视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E5%88%9B%E5%BB%BA%E8%A7%A6%E5%8F%91%E5%99%A8-INSERT-%E6%88%96-UPDATE"><span class="toc-number">22.</span> <span class="toc-text">22. 创建触发器 (INSERT 或 UPDATE)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-%E5%88%9B%E5%BB%BA%E8%A7%A6%E5%8F%91%E5%99%A8-DELETE"><span class="toc-number">23.</span> <span class="toc-text">23. 创建触发器 (DELETE)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86-%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B"><span class="toc-number">24.</span> <span class="toc-text">24. 事务处理 (简单示例)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#25-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86-%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">25.</span> <span class="toc-text">25. 事务处理 (多表操作)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#26-CHECK-%E7%BA%A6%E6%9D%9F"><span class="toc-number">26.</span> <span class="toc-text">26. CHECK 约束</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#27-FOREIGN-KEY-%E7%BA%A6%E6%9D%9F%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">27.</span> <span class="toc-text">27. FOREIGN KEY 约束的创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#28-UNIQUE-%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%B7%BB%E5%8A%A0"><span class="toc-number">28.</span> <span class="toc-text">28. UNIQUE 约束的添加</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#29-%E5%A4%8D%E6%9D%82%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2-%E4%B8%89%E8%A1%A8%E8%BF%9E%E6%8E%A5-%E8%81%9A%E5%90%88"><span class="toc-number">29.</span> <span class="toc-text">29. 复杂多表查询 (三表连接 + 聚合)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#30-%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-number">30.</span> <span class="toc-text">30. 子查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">31.</span> <span class="toc-text">小结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/328b98cc.html" title="当程序正义无法抵达事实的彼岸">当程序正义无法抵达事实的彼岸</a><time datetime="2025-08-03T12:34:01.000Z" title="发表于 2025-08-03 20:34:01">2025-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/b5644c66.html" title="Awsome Debate Competition">Awsome Debate Competition</a><time datetime="2025-05-06T11:06:31.000Z" title="发表于 2025-05-06 19:06:31">2025-05-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/d32a2f6f.html" title="Compiler Principle">Compiler Principle</a><time datetime="2025-05-05T17:02:13.000Z" title="发表于 2025-05-06 01:02:13">2025-05-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/f82e7011.html" title="Computer Organization">Computer Organization</a><time datetime="2025-05-05T16:40:57.000Z" title="发表于 2025-05-06 00:40:57">2025-05-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/9c4bc814.html" title="本站评论使用手册">本站评论使用手册</a><time datetime="2025-05-04T07:51:47.000Z" title="发表于 2025-05-04 15:51:47">2025-05-04</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/bow.jpg);"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By Lavoisier</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div><div class="footer_custom_text">直觉让我回了头，却没能让我转过身。</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"requiredMeta":["nick","mail"],"locale":null,"placeholder":"昵称和邮箱为必填项，为了您能及时收到相关回复的邮件通知，请确保邮箱的正确性！"}
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://report.lavoisier7.xyz/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      comment: true,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo-inject:begin --><!-- hexo-inject:end --></body></html>
